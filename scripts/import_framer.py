@@ -2,7 +2,7 @@
 """프레이머 공개 HTML(portfolio-import/framer-export/raw)을 콘텐츠 컬렉션으로 변환한다. 일회성.
 사용: python3 scripts/import_framer.py [--dry]
 """
-import json, re, shutil, sys
+import json, re, shutil, subprocess, sys
 from html.parser import HTMLParser
 from pathlib import Path
 
@@ -210,14 +210,62 @@ def yl(items):
     return '[' + ', '.join(ys(i) for i in items) + ']'
 
 
+MAX_LONG_EDGE = 2000  # 설계 문서 §6: 레포엔 긴 변 2000px 이하 이미지만
+
+
+def long_edge(path):
+    """sips로 픽셀 크기를 읽어 긴 변을 반환한다."""
+    out = subprocess.run(['sips', '-g', 'pixelWidth', '-g', 'pixelHeight', str(path)],
+                          capture_output=True, text=True).stdout
+    dims = {}
+    for line in out.splitlines():
+        k, _, v = line.strip().partition(':')
+        if k in ('pixelWidth', 'pixelHeight'):
+            dims[k] = int(v.strip())
+    return max(dims.get('pixelWidth', 0), dims.get('pixelHeight', 0))
+
+
+def downscale_if_needed(path):
+    """긴 변이 MAX_LONG_EDGE를 넘으면만 sips -Z로 줄인다. sips -Z는 작은 이미지를 큰 쪽으로
+    늘리기도 해서(확인함) 무조건 돌리면 안 되고, 넘을 때만 호출해야 한다. svg는 호출하는 쪽에서
+    이미 제외된다(코퍼스 전체에서 실제 사진이 아니라 UI 아이콘에만 쓰임 — chrome/svg 필터 참고).
+    """
+    ext = path.suffix.lower()
+    if ext not in ('.jpg', '.jpeg', '.png'):
+        return False
+    if long_edge(path) <= MAX_LONG_EDGE:
+        return False
+    if ext in ('.jpg', '.jpeg'):
+        subprocess.run(['sips', '-Z', str(MAX_LONG_EDGE), '-s', 'formatOptions', '90', str(path)],
+                        capture_output=True)
+    else:
+        subprocess.run(['sips', '-Z', str(MAX_LONG_EDGE), str(path)], capture_output=True)
+    return True
+
+
 def copy_image(url, dest, dry):
     src = IMPORT / 'images' / Path(url).name
     if not src.exists():
         return f'missing image {src.name}'
-    if not dry:
-        dest.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(src, dest)
-    return None
+    if dry:
+        return None
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(src, dest)
+    return 'resized' if downscale_if_needed(dest) else None
+
+
+def copy_images(pairs, dry):
+    """(url, dest) 쌍을 모두 복사하고, missing/resized 요약을 warn 줄 목록으로 돌려준다."""
+    warn, resized = [], 0
+    for url, dest in pairs:
+        w = copy_image(url, dest, dry)
+        if w == 'resized':
+            resized += 1
+        elif w:
+            warn.append(w)
+    if resized:
+        warn.append(f'resized {resized}')
+    return warn
 
 
 def write(path, text, dry):
@@ -253,10 +301,8 @@ def import_works(chrome, dry):
         fm += [f'tags: {yl(split_csv(m.get("responsibilities", "")) or ["Hardware UX"])}',
                f'kind: {"note" if slug in NOTE_ONLY else "case-study"}',
                f'cover: ./cover{Path(cover).suffix.lower()}', f'order: {order}', 'draft: false']
-        for url, name in [(cover, f'cover{Path(cover).suffix.lower()}')] + imgs:
-            w = copy_image(url, out / name, dry)
-            if w:
-                warn.append(w)
+        pairs = [(cover, out / f'cover{Path(cover).suffix.lower()}')] + [(u, out / n) for u, n in imgs]
+        warn += copy_images(pairs, dry)
         write(out / 'index.md', '---\n' + '\n'.join(fm) + '\n---\n\n' + body, dry)
         print(f'works/{slug:10s} imgs={len(imgs) + 1:2d} body_lines={body.count(chr(10)):3d} {" | ".join(warn)}')
 
@@ -281,10 +327,8 @@ def import_activities(chrome, dry):
         fm = [f'title: {ys(title)}', f'subtitle: {ys(subtitle)}', f'role: {ys(role)}', f'period: {ys(period)}',
               'links: [' + ', '.join(f'{{ label: {ys(l)}, url: {ys(u)} }}' for l, u in links) + ']',
               f'cover: ./cover{Path(cover).suffix.lower()}', f'order: {order}', f'draft: {"true" if draft else "false"}']
-        for url, name in [(cover, f'cover{Path(cover).suffix.lower()}')] + imgs:
-            w = copy_image(url, out / name, dry)
-            if w:
-                warn.append(w)
+        pairs = [(cover, out / f'cover{Path(cover).suffix.lower()}')] + [(u, out / n) for u, n in imgs]
+        warn += copy_images(pairs, dry)
         write(out / 'index.md', '---\n' + '\n'.join(fm) + '\n---\n\n' + body, dry)
         print(f'activities/{slug:10s} imgs={len(imgs) + 1:2d} {" | ".join(warn)}')
 
