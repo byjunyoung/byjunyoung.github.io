@@ -22,6 +22,21 @@ RULE = re.compile(r'^[—–-]{1,3}$')
 HEADING = re.compile(r'^[A-Z0-9][A-Z0-9 :&/\-]{1,40}$')
 
 
+def cols_from_sizes(sizes):
+    """Framer <img sizes>의 데스크톱(≥1200px) 값으로 원본 그리드 열 수를 읽는다.
+    항목 구분 콤마는 최상위(다음 항목이 '(min-width:'/'(max-width:'로 시작하는 지점)만 보고,
+    calc()/max()/min() 안에 중첩된 콤마(예: min(100vw, 1200px))는 값의 일부로 취급한다."""
+    m = re.search(r'\(min-width:\s*1200px\)\s*(.+?)(?:,\s*\((?:min|max)-width|\Z)', sizes or '')
+    v = m.group(1) if m else ''
+    # 코퍼스 전체에 `/ 2`(2열)뿐 아니라 `/ 3`(3열) 나눗셈 공식도 동일한 빈도로 쓰인다(원본 그리드).
+    div = re.search(r'/\s*(\d+)\b', v)
+    if div:
+        return int(div.group(1))
+    if re.fullmatch(r'\s*(3[0-9]{2}|4[0-4][0-9])px\s*', v):
+        return 3
+    return 1
+
+
 def fix_bold_spacing(text):
     """`**` 안쪽 앞뒤 공백을 마커 밖으로 옮긴다. 원문 저작 시 <strong> 경계에 공백이 들쭉날쭉 들어가 있어
     (예: '<strong>레이블 </strong>본문' 처럼 여는/닫는 태그 안쪽에 공백이 남는 경우), 그대로 옮기면
@@ -65,7 +80,7 @@ class Walker(HTMLParser):
             return
         if tag == 'img' and 'framerusercontent.com/images/' in (a.get('src') or ''):
             self._flush('p')
-            self.blocks.append(('img', a['src'].split('?')[0], a.get('alt', '')))
+            self.blocks.append(('img', a['src'].split('?')[0], cols_from_sizes(a.get('sizes'))))
         elif tag == 'a' and (a.get('href') or '').startswith('http'):
             self._href = a['href']
         elif tag == 'strong':
@@ -177,8 +192,19 @@ def parse_page(raw, chrome):
 
 
 def render_body(blocks, skip_url=None):
-    """블록 → 마크다운 본문, [(원본URL, 파일명)]. skip_url(=cover)과 같은 이미지는 본문에서 뺀다."""
-    lines, imgs, n = [], [], 0
+    """블록 → 마크다운 본문, [(원본URL, 파일명)]. skip_url(=cover)과 같은 이미지는 본문에서 뺀다.
+    연속된 이미지는 <img sizes>로 읽은 원본 열 수(cols)만큼 한 줄에 묶는다(원본 그리드 복원)."""
+    lines, imgs, n, pending = [], [], 0, []
+
+    def flush_imgs():
+        nonlocal pending
+        if not pending:
+            return
+        cols = pending[0][1]
+        for i in range(0, len(pending), cols):
+            lines.append(' '.join(f'![](./{name})' for name, _ in pending[i:i + cols]) + '\n')
+        pending = []
+
     for kind, text, extra in blocks:
         if kind == 'img':
             if text == skip_url:
@@ -186,8 +212,12 @@ def render_body(blocks, skip_url=None):
             n += 1
             name = f'{n:02d}{Path(text).suffix.lower() or ".jpg"}'
             imgs.append((text, name))
-            lines.append(f'![](./{name})\n')
-        elif kind == 'embed':
+            if pending and pending[0][1] != extra:
+                flush_imgs()
+            pending.append((name, extra))
+            continue
+        flush_imgs()
+        if kind == 'embed':
             lines.append(f'<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/{text}?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>\n')
         elif RULE.match(text):
             continue
@@ -201,6 +231,7 @@ def render_body(blocks, skip_url=None):
             lines.append(('1. ' if extra else '- ') + text)
         else:
             lines.append(text + '\n')
+    flush_imgs()
     return '\n'.join(lines).strip() + '\n', imgs
 
 

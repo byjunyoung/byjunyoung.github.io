@@ -37,15 +37,9 @@ draft: false
 
 ![](./04.png)
 
-![](./05.png)
+![](./05.png) ![](./06.png)
 
-![](./06.png)
-
-![](./07.png)
-
-![](./08.png)
-
-![](./09.png)
+![](./07.png) ![](./08.png) ![](./09.png)
 
 <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/irJ2ge-0ZDw?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
@@ -60,15 +54,9 @@ draft: false
 
 ![](./10.jpg)
 
-![](./11.jpg)
+![](./11.jpg) ![](./12.jpg) ![](./13.jpg)
 
-![](./12.jpg)
-
-![](./13.jpg)
-
-![](./14.jpg)
-
-![](./15.jpg)
+![](./14.jpg) ![](./15.jpg)
 
 
 ## IMPLEMENTATION

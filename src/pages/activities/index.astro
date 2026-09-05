@@ -1,20 +1,12 @@
 ---
 // src/pages/activities/index.astro
 import Base from '../../layouts/Base.astro';
+import ActivityCard from '../../components/ActivityCard.astro';
 import { getCollection } from 'astro:content';
 const acts = (await getCollection('activities', ({ data }) => !data.draft)).sort((a, b) => a.data.order - b.data.order);
 ---
 <Base title="Activities">
   <p class="label">Activities</p>
   <p class="intro">Discover my journey beyond design projects, where community events, interviews, and hands-on projects come together. Each activity reflects my drive to connect, share knowledge, and contribute to a thriving, collaborative design community.</p>
-  <ul class="rows">
-    {acts.map((a) => (
-      <li>
-        <a class="t" href={`/activities/${a.id}/`}>{a.data.title}</a>
-        <span>{a.data.subtitle}</span>
-        <span class="m">{a.data.role}</span>
-        <span class="m">{a.data.period}</span>
-      </li>
-    ))}
-  </ul>
+  <section class="grid">{acts.map((a, i) => <ActivityCard entry={a} eager={i < 2} />)}</section>
 </Base>

@@ -26,7 +26,7 @@ class ImportTest(unittest.TestCase):
         self.assertEqual(page['meta']['org'], 'UNIST')
         self.assertEqual(page['meta']['responsibilities'], 'Research, Product Design')
         self.assertEqual(imp.split_links(page['meta']['link']), [("Master's Thesis", 'https://x.y/z')])
-        self.assertEqual(page['body'][0], ('img', 'https://framerusercontent.com/images/hero.jpg', ''))
+        self.assertEqual(page['body'][0], ('img', 'https://framerusercontent.com/images/hero.jpg', 1))
 
     def test_render_body(self):
         page = imp.parse_page(HTML, CHROME)
@@ -57,6 +57,24 @@ class ImportTest(unittest.TestCase):
         self.assertTrue(i_first < i_embed < i_second)
         self.assertIn('https://www.youtube-nocookie.com/embed/YvDX9E_5jvk?rel=0&modestbranding=1', body)
         self.assertEqual(imgs, [])
+
+    def test_cols_from_sizes(self):
+        self.assertEqual(imp.cols_from_sizes('(min-width: 1200px) calc(min(100vw, 1200px) - 80px), (max-width: 809px) 100vw'), 1)
+        self.assertEqual(imp.cols_from_sizes('(min-width: 1200px) max((min(100vw, 1200px) - 82px) / 2, 1px), (max-width: 809px) 100vw'), 2)
+        self.assertEqual(imp.cols_from_sizes('(min-width: 1200px) 400px, (min-width: 810px) and (max-width: 1199px) 33vw'), 3)
+        self.assertEqual(imp.cols_from_sizes('(min-width: 1200px) 1120px, (max-width: 809px) 100vw'), 1)
+        self.assertEqual(imp.cols_from_sizes(''), 1)
+
+    def test_render_groups_consecutive_images_by_cols(self):
+        blocks = [('p', 'PROBLEM', False), ('p', '문단', False),
+                  ('img', 'https://f/a.jpg', 2), ('img', 'https://f/b.jpg', 2), ('img', 'https://f/c.jpg', 2),
+                  ('img', 'https://f/d.jpg', 1),
+                  ('img', 'https://f/e.jpg', 3), ('img', 'https://f/f.jpg', 3), ('img', 'https://f/g.jpg', 3)]
+        body, imgs = imp.render_body(blocks)
+        lines = [l for l in body.splitlines() if l.startswith('![](')]
+        self.assertEqual(lines, ['![](./01.jpg) ![](./02.jpg)', '![](./03.jpg)', '![](./04.jpg)',
+                                 '![](./05.jpg) ![](./06.jpg) ![](./07.jpg)'])
+        self.assertEqual([n for _, n in imgs], ['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg'])
 
     def test_control_chars_stripped(self):
         html = '<h1>T</h1><p>부제</p><h6>ROLE</h6><p>R</p><p>Note</p><p>가\x08나</p><p>junyoung735@gmail.com</p>'

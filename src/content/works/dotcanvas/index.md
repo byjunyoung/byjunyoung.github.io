@@ -62,15 +62,9 @@ draft: false
 
 ![](./05.jpg)
 
-![](./06.jpeg)
+![](./06.jpeg) ![](./07.jpeg) ![](./08.jpeg)
 
-![](./07.jpeg)
-
-![](./08.jpeg)
-
-![](./09.jpg)
-
-![](./10.jpg)
+![](./09.jpg) ![](./10.jpg)
 
 
 ## IMPLEMENTATION

@@ -34,15 +34,9 @@ draft: false
 1. **정량/정성 데이터 분석 및 인사이트 도출**: 연구를 통해 수집된 정성 데이터와 정량 데이터를 근거로 사용자의 행동과 경험을 분석해, 버디의 효과를 평가하고 인사이트를 도출했습니다.
 ![](./02.jpg)
 
-![](./03.jpg)
+![](./03.jpg) ![](./04.jpg)
 
-![](./04.jpg)
-
-![](./05.jpg)
-
-![](./06.jpg)
-
-![](./07.jpg)
+![](./05.jpg) ![](./06.jpg) ![](./07.jpg)
 
 <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/YvDX9E_5jvk?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
@@ -59,15 +53,9 @@ Birdy는 노년층 사용자가 자연스럽게 접근할 수 있도록 설계�
 
 ![](./08.jpg)
 
-![](./09.jpg)
+![](./09.jpg) ![](./10.jpeg) ![](./11.jpg)
 
-![](./10.jpeg)
-
-![](./11.jpg)
-
-![](./12.jpg)
-
-![](./13.jpg)
+![](./12.jpg) ![](./13.jpg)
 
 
 ## IMPLEMENTATION

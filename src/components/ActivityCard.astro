@@ -1,0 +1,18 @@
+---
+// src/components/ActivityCard.astro
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+interface Props { entry: CollectionEntry<'activities'>; eager?: boolean }
+const { entry, eager = false } = Astro.props;
+const d = entry.data;
+---
+<a class="card" href={`/activities/${entry.id}/`}>
+  <div class="media">
+    {d.cover && <Image src={d.cover} alt={d.title} widths={[640, 960, 1280]} sizes="(max-width: 720px) 100vw, 560px" loading={eager ? 'eager' : 'lazy'} />}
+  </div>
+  <div class="body">
+    <div class="row"><h2>{d.title}</h2></div>
+    <p class="org">{d.role} · {d.period}</p>
+    <p class="sub">{d.subtitle}</p>
+  </div>
+</a>

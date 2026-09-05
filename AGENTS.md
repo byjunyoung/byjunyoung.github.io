@@ -17,7 +17,7 @@ Junyoung Kim 포트폴리오. Astro 정적 사이트, GitHub Pages(main 푸시 �
 5. `npm test` 통과 → 커밋 → push
 
 ## 본문 관례
-- 이미지 한 줄 = 전폭. 같은 줄에 이미지 두 개(`![](./02.jpg) ![](./03.jpg)`) = 2-up 그리드
+- 이미지 한 줄 = 전폭. 같은 줄에 두 개 = 2열, 세 개 = 3열 그리드 (`![](./02.jpg) ![](./03.jpg)`)
 - 본문 영상: `<video src="/media/works/<slug>/02.mp4" autoplay muted loop playsinline></video>`
 - 인용: `>` 블록 = 연한 배경 박스
 - 이미지는 반드시 마크다운 문법(`![]()`)으로. `<img>` 를 쓰면 최적화되지 않는다
