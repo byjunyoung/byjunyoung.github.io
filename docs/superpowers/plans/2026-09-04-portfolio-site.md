@@ -1440,3 +1440,168 @@ git add -A && git commit -m "content: loop videos for works" && git push origin 
 ```bash
 git add -A && git commit -m "docs: close out spec open items" && git push origin main
 ```
+
+---
+
+### Task 13: 디자인 패스 — 프레이머와 거리 두기 (Task 8 검수 결과)
+
+사용자 피드백(2026-09-05): "디자인이 너무 프레이머 따라한 것 같다." 검수에서 발견한 결함 2개(상세 페이지 좌측 빈 공간, 히어로 지연 로딩)와 함께 한 번에 고친다. 방향은 설계 §2의 레퍼런스에서 가져온다: 스페셜 프로젝트(연회색 캔버스 위 밝은 패널, 가운데 워드마크, 표 형태 메타 카드, 굵은 소제목 + 짧은 밑줄, 플로트 메타 카드 옆에서 본문 시작), TE(카탈로그식 인덱스 번호).
+
+**Files:**
+- Modify: `src/styles/global.css` (전체 교체), `src/layouts/Base.astro` (header만), `src/components/WorkCard.astro` (전체 교체), `src/pages/index.astro` (카드 호출), `src/pages/works/[slug].astro` (히어로 loading), `src/pages/activities/[slug].astro` (히어로 loading)
+
+**Interfaces:**
+- `WorkCard` props become `{ entry: CollectionEntry<'works'>; index: number; eager?: boolean }`.
+- `MetaCard` unchanged (dl/dt/dd). CSS class names unchanged except new `.mark`, `.card .body/.row/.idx/.org`.
+
+- [ ] **Step 1: global.css 전체 교체**
+
+```css
+/* src/styles/global.css */
+:root {
+  --bg: #e9e9e6;
+  --surface: #f7f7f5;
+  --tint: #efefec;
+  --fg: #161616;
+  --muted: #6f6f6f;
+  --line: #d6d6d2;
+  --max: 1120px;
+  --pad: 24px;
+  --gap: 24px;
+  --fs-xs: 11px;
+  --fs-sm: 13px;
+  --fs-md: 15px;
+  --fs-lg: 20px;
+  --font: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto,
+    "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+}
+* { box-sizing: border-box; }
+html { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: var(--fs-md); line-height: 1.65; -webkit-font-smoothing: antialiased; word-break: keep-all; }
+body { margin: 0; }
+a { color: inherit; text-decoration: none; }
+img, video { display: block; max-width: 100%; height: auto; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+
+.nav { display: flex; flex-direction: column; align-items: center; gap: 10px; max-width: var(--max); margin: 0 auto; padding: 28px var(--pad) 20px; border-bottom: 1px solid var(--line); }
+.nav .mark { font-size: var(--fs-md); font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; }
+.nav nav { display: flex; gap: 20px; font-size: var(--fs-xs); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.nav nav a:hover { color: var(--fg); }
+
+.label { font-size: var(--fs-xs); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-align: center; margin: 40px 0 8px; }
+.intro { max-width: 620px; margin: 0 auto 48px; text-align: center; color: var(--muted); font-size: var(--fs-sm); }
+
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gap); margin-bottom: 96px; }
+@media (max-width: 720px) { .grid { grid-template-columns: 1fr; } }
+.card { display: block; background: var(--surface); border: 1px solid var(--line); }
+.card .media { aspect-ratio: 4 / 3; overflow: hidden; background: var(--tint); border-bottom: 1px solid var(--line); }
+.card .media img, .card .media video { width: 100%; height: 100%; object-fit: cover; }
+.card .body { padding: 16px 18px 18px; background: var(--tint); }
+.card .row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.card h2 { font-size: var(--fs-md); font-weight: 600; margin: 0; }
+.card .idx { font-size: var(--fs-xs); letter-spacing: 0.08em; color: var(--muted); }
+.card .org { margin: 10px 0 2px; font-size: var(--fs-sm); font-weight: 600; }
+.card .sub { margin: 0; font-size: var(--fs-sm); }
+.card .meta { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; margin-top: 12px; font-size: var(--fs-xs); letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); }
+.badge { padding: 2px 6px; border: 1px solid var(--line); border-radius: 2px; }
+
+.hero { margin: 24px 0 32px; background: var(--surface); border: 1px solid var(--line); }
+.hero img, .hero video { width: 100%; }
+.detail { margin-bottom: 8px; }
+.detail-head h1 { font-size: var(--fs-lg); font-weight: 600; margin: 0 0 4px; }
+.detail-head p { margin: 0 0 24px; color: var(--muted); }
+.metacard { float: right; width: 360px; margin: 0 0 32px 48px; background: var(--surface); border: 1px solid var(--line); font-size: var(--fs-sm); }
+.metacard dl { margin: 0; padding: 12px 16px; border-bottom: 1px solid var(--line); }
+.metacard dl:last-child { border-bottom: 0; }
+.metacard dl:nth-child(odd) { background: var(--tint); }
+.metacard dt { font-size: var(--fs-xs); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 2px; }
+.metacard dd { margin: 0; }
+.metacard a { text-decoration: underline; }
+@media (max-width: 860px) { .metacard { float: none; width: auto; margin: 0 0 32px; } }
+
+.prose > :not(img):not(video):not(p:has(> img)) { max-width: 640px; }
+.prose h2 { font-size: var(--fs-sm); font-weight: 600; letter-spacing: 0.06em; margin: 48px 0 16px; }
+.prose h2::after { content: ""; display: block; width: 28px; height: 2px; background: var(--fg); margin-top: 8px; }
+.prose h3 { font-size: var(--fs-md); font-weight: 600; margin: 28px 0 8px; }
+.prose p { margin: 0 0 14px; }
+.prose li { margin: 0 0 8px; }
+.prose img, .prose video { width: 100%; margin: 28px 0; background: var(--surface); border: 1px solid var(--line); clear: both; }
+.prose p:has(> img) { max-width: none; clear: both; }
+.prose p:has(> img + img) { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.prose p:has(> img + img) img { margin: 0; }
+.prose blockquote { margin: 24px 0; padding: 16px 20px; background: var(--surface); border: 1px solid var(--line); }
+.prose blockquote p { margin: 0; }
+
+.next { clear: both; margin: 96px 0; padding-top: 24px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; font-size: var(--fs-sm); }
+
+.rows { margin: 0 0 96px; padding: 0; list-style: none; background: var(--surface); border: 1px solid var(--line); }
+.rows li { display: grid; grid-template-columns: 2fr 3fr 1fr 1fr; gap: 16px; padding: 18px 20px; border-bottom: 1px solid var(--line); font-size: var(--fs-sm); }
+.rows li:last-child { border-bottom: 0; }
+.rows li .t { font-weight: 600; }
+.rows li .m { color: var(--muted); }
+@media (max-width: 720px) { .rows li { grid-template-columns: 1fr; gap: 2px; } }
+
+.footer { display: flex; justify-content: space-between; padding-top: 24px; padding-bottom: 48px; border-top: 1px solid var(--line); font-size: var(--fs-sm); color: var(--muted); }
+.footer .n { color: var(--fg); }
+.footer-links { display: flex; gap: 16px; }
+```
+
+- [ ] **Step 2: Base.astro 헤더만 교체**
+
+`<header class="nav">…</header>` 블록을 아래로 바꾼다 (나머지는 그대로):
+
+```astro
+    <header class="nav">
+      <a class="mark" href="/">Junyoung Kim</a>
+      <nav>
+        <a href="/">works</a>
+        <a href="/activities/">activities</a>
+        <a href="https://byjunyoung.github.io/resume/">resume</a>
+      </nav>
+    </header>
+```
+
+- [ ] **Step 3: WorkCard.astro 전체 교체**
+
+```astro
+---
+// src/components/WorkCard.astro
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+interface Props { entry: CollectionEntry<'works'>; index: number; eager?: boolean }
+const { entry, index, eager = false } = Astro.props;
+const d = entry.data;
+const idx = String(index).padStart(2, '0');
+---
+<a class="card" href={`/works/${entry.id}/`}>
+  <div class="media">
+    {d.loop
+      ? <video src={d.loop} poster={d.cover.src} autoplay muted loop playsinline preload="metadata"></video>
+      : <Image src={d.cover} alt={d.title} widths={[640, 960, 1280]} sizes="(max-width: 720px) 100vw, 560px" loading={eager ? 'eager' : 'lazy'} />}
+  </div>
+  <div class="body">
+    <div class="row"><h2>{d.title}</h2><span class="idx">{idx}</span></div>
+    <p class="org">{d.org} · {d.year}</p>
+    <p class="sub">{d.subtitle}</p>
+    <div class="meta">
+      <span class="badge">{d.kind === 'case-study' ? 'Case study' : 'Note'}</span>
+      {d.tags.map((t) => <span>{t}</span>)}
+    </div>
+  </div>
+</a>
+```
+
+- [ ] **Step 4: index.astro 카드 호출**
+
+`{works.map((w) => <WorkCard entry={w} />)}` → `{works.map((w, i) => <WorkCard entry={w} index={i + 1} eager={i < 2} />)}`
+
+- [ ] **Step 5: 히어로 즉시 로딩**
+
+`src/pages/works/[slug].astro` 와 `src/pages/activities/[slug].astro` 의 히어로 `<Image … />` 에 `loading="eager"` 속성을 추가한다 (video 분기는 그대로).
+
+- [ ] **Step 6: 정적 확인·커밋**
+
+`grep -nE '#[0-9a-fA-F]{3,6}\b' src/layouts src/components src/pages` → 없음. `grep -c 'loading="eager"' 'src/pages/works/[slug].astro' 'src/pages/activities/[slug].astro'` → 각 1.
+
+```bash
+git add -A && git commit -m "style: design pass — gray canvas, framed panels, centered wordmark, floated meta table, eager hero"
+```
