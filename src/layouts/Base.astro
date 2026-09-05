@@ -1,0 +1,49 @@
+---
+// src/layouts/Base.astro
+import '../styles/global.css';
+interface Props { title?: string; description?: string; ogImage?: string }
+const {
+  title,
+  description = 'Hardware UX designer. I design the part of products that lives beyond the screen — form, touch, space, feedback.',
+  ogImage,
+} = Astro.props;
+const fullTitle = title ? `${title} — Junyoung Kim` : 'Junyoung Kim';
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    {ogImage && <meta property="og:image" content={new URL(ogImage, Astro.site)} />}
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  </head>
+  <body>
+    <header class="nav">
+      <a href="/">Junyoung Kim</a>
+      <nav>
+        <a href="/">works</a>
+        <a href="/activities/">activities</a>
+        <a href="https://byjunyoung.github.io/resume/">resume</a>
+      </nav>
+    </header>
+    <main class="wrap"><slot /></main>
+    <footer class="footer wrap">
+      <div>
+        <div class="n">Junyoung Kim</div>
+        <a href="mailto:junyoung735@gmail.com">junyoung735@gmail.com</a>
+      </div>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/byjunyoung/">LinkedIn</a>
+        <a href="https://www.instagram.com/byjunyoung/">Instagram</a>
+      </div>
+    </footer>
+  </body>
+</html>

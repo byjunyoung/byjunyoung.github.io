@@ -1,17 +1,12 @@
 ---
-
+// src/pages/index.astro
+import Base from '../layouts/Base.astro';
+import WorkCard from '../components/WorkCard.astro';
+import { getCollection } from 'astro:content';
+const works = (await getCollection('works', ({ data }) => !data.draft)).sort((a, b) => a.data.order - b.data.order);
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Base>
+  <p class="label">Works</p>
+  <p class="intro">Hardware UX designer. I design the part of products that lives beyond the screen — form, touch, space, feedback. Currently shipping BarisBrew at XYZ Inc., previously the Dot Pad tactile display.</p>
+  <section class="grid">{works.map((w) => <WorkCard entry={w} />)}</section>
+</Base>

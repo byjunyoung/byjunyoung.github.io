@@ -1,0 +1,22 @@
+---
+// src/components/WorkCard.astro
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+interface Props { entry: CollectionEntry<'works'> }
+const { entry } = Astro.props;
+const d = entry.data;
+---
+<a class="card" href={`/works/${entry.id}/`}>
+  <div class="media">
+    {d.loop
+      ? <video src={d.loop} poster={d.cover.src} autoplay muted loop playsinline preload="metadata"></video>
+      : <Image src={d.cover} alt={d.title} widths={[640, 960, 1280]} sizes="(max-width: 720px) 100vw, 560px" />}
+  </div>
+  <h2>{d.title}</h2>
+  <p class="sub">{d.subtitle}</p>
+  <div class="meta">
+    <span>{d.org}</span><span>·</span><span>{d.year}</span>
+    <span class="badge">{d.kind === 'case-study' ? 'Case study' : 'Note'}</span>
+  </div>
+  <div class="tags">{d.tags.map((t) => <span>{t}</span>)}</div>
+</a>
