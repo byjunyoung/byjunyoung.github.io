@@ -2,10 +2,10 @@
 title: "인턴뷰"
 subtitle: "Youtube Series"
 role: "Producer"
-period: "TBD"
+period: "2018"
 links: []
 cover: ./cover.jpg
 order: 5
-draft: true
+draft: false
 ---
 

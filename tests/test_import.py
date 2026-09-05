@@ -46,5 +46,23 @@ class ImportTest(unittest.TestCase):
     def test_split_csv(self):
         self.assertEqual(imp.split_csv('Research, Product Design / UX'), ['Research', 'Product Design', 'UX'])
 
+    def test_youtube_embed_block_in_order(self):
+        html = ('<h1>T</h1><p>부제</p><h6>ORGANIZATION</h6><p>X</p><h6>YEAR</h6><p>2020</p><h6>ROLE</h6><p>R</p>'
+                '<p>PROBLEM</p><p>첫 문단</p>'
+                '<div><iframe title="Youtube Video" src="https://www.youtube.com/embed/YvDX9E_5jvk?rel=0&amp;x=1"></iframe></div>'
+                '<p>둘째 문단</p><p>junyoung735@gmail.com</p>')
+        page = imp.parse_page(html, set())
+        body, imgs = imp.render_body(page['body'])
+        i_first, i_embed, i_second = body.index('첫 문단'), body.index('class="embed"'), body.index('둘째 문단')
+        self.assertTrue(i_first < i_embed < i_second)
+        self.assertIn('https://www.youtube-nocookie.com/embed/YvDX9E_5jvk?rel=0&modestbranding=1', body)
+        self.assertEqual(imgs, [])
+
+    def test_control_chars_stripped(self):
+        html = '<h1>T</h1><p>부제</p><h6>ROLE</h6><p>R</p><p>Note</p><p>가\x08나</p><p>junyoung735@gmail.com</p>'
+        body, _ = imp.render_body(imp.parse_page(html, set())['body'])
+        self.assertIn('가나', body)
+        self.assertNotIn('\x08', body)
+
 if __name__ == '__main__':
     unittest.main()

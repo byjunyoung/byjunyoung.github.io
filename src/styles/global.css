@@ -1,6 +1,6 @@
 /* src/styles/global.css */
 :root {
-  --bg: #e9e9e6;
+  --bg: #ffffff;
   --surface: #f7f7f5;
   --tint: #efefec;
   --fg: #161616;
@@ -59,7 +59,7 @@ img, video { display: block; max-width: 100%; height: auto; }
 .metacard a { text-decoration: underline; }
 @media (max-width: 860px) { .metacard { float: none; width: auto; margin: 0 0 32px; } }
 
-.prose > :not(img):not(video):not(p:has(> img)) { max-width: 640px; }
+.prose > :not(img):not(video):not(.embed):not(p:has(> img)) { max-width: 640px; }
 .prose h2 { font-size: var(--fs-sm); font-weight: 600; letter-spacing: 0.06em; margin: 48px 0 16px; }
 .prose h2::after { content: ""; display: block; width: 28px; height: 2px; background: var(--fg); margin-top: 8px; }
 .prose h3 { font-size: var(--fs-md); font-weight: 600; margin: 28px 0 8px; }
@@ -71,6 +71,8 @@ img, video { display: block; max-width: 100%; height: auto; }
 .prose p:has(> img + img) img { margin: 0; }
 .prose blockquote { margin: 24px 0; padding: 16px 20px; background: var(--surface); border: 1px solid var(--line); }
 .prose blockquote p { margin: 0; }
+.prose .embed { aspect-ratio: 16 / 9; width: 100%; margin: 28px 0; background: var(--surface); border: 1px solid var(--line); clear: both; }
+.prose .embed iframe { width: 100%; height: 100%; border: 0; display: block; }
 
 .next { clear: both; margin: 96px 0; padding-top: 24px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; font-size: var(--fs-sm); }
 

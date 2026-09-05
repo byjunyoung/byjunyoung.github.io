@@ -21,6 +21,7 @@ Junyoung Kim 포트폴리오. Astro 정적 사이트, GitHub Pages(main 푸시 �
 - 본문 영상: `<video src="/media/works/<slug>/02.mp4" autoplay muted loop playsinline></video>`
 - 인용: `>` 블록 = 연한 배경 박스
 - 이미지는 반드시 마크다운 문법(`![]()`)으로. `<img>` 를 쓰면 최적화되지 않는다
+- 유튜브: `<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/<ID>?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allowfullscreen></iframe></div>` — 전폭 16:9
 
 ## 문구 원칙
 - 담백하고 사실만. 제공되지 않은 사실·수치·효과를 만들거나 부풀리지 않는다.

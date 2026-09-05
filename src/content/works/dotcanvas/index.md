@@ -40,6 +40,8 @@ draft: false
 
 ![](./04.jpg)
 
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/N_L3hR81nik?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
 
 ## DOT CANVAS WEB
 
@@ -87,6 +89,8 @@ draft: false
 
 
 ## IMPACT
+
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/AHK3VnjvA5Y?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 **시각 장애 교육 환경 개선 :** 닷 캔버스는 학생들의 학습 접근성을 높이고, 교사들에게는 효율적인 자료 관리 및 학습 지원 도구를 제공했습니다.
 

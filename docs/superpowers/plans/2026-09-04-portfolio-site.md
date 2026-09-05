@@ -1605,3 +1605,89 @@ const idx = String(index).padStart(2, '0');
 ```bash
 git add -A && git commit -m "style: design pass — gray canvas, framed panels, centered wordmark, floated meta table, eager hero"
 ```
+
+---
+
+### Task 14: 유튜브 임베드 복원 · 활동 5개 노출 · 소셜 링크 · 흰 배경 (2차 검수 피드백)
+
+사용자 피드백(2026-09-05): (1) 원본 프로젝트 페이지의 유튜브 영상이 모두 빠짐 (2) 활동이 많이 빠짐 (3) GitHub 등 소셜 링크 추가 (4) 디자인은 좋은데 배경은 흰색.
+
+사실(확인됨): 원본 raw HTML에 `<iframe … src="https://www.youtube.com/embed/<ID>?…">` 가 works 7개 페이지에 있다 — adio 7O4_Z_1cJk8, barisbrew GnPiB19v5kQ, birdy YvDX9E_5jvk, dotcanvas AHK3VnjvA5Y·N_L3hR81nik, dotpad iSmRM2PUBzA, meemo nXMv4ztNLbA, zibot irJ2ge-0ZDw (storagy 없음, 총 8개 iframe). 활동 uxeed·dino·internview는 원본 상세가 비어 있어 `draft: true`였음. 이력서 기준 UXeed 기간 2022 – 2024. DINO·인턴뷰 기간은 사용자 확인 전까지 `—`.
+
+**Files:**
+- Modify: `scripts/import_framer.py`, `tests/test_import.py`, `src/styles/global.css`, `src/layouts/Base.astro`(footer), `AGENTS.md`(=CLAUDE.md 심링크)
+- Regenerate: `src/content/works/*/index.md`(임베드 삽입), `src/content/activities/*/index.md`(draft/period)
+
+- [ ] **Step 1: 실패하는 테스트 추가** (`tests/test_import.py`의 `ImportTest`에 메서드 추가)
+
+```python
+    def test_youtube_embed_block_in_order(self):
+        html = ('<h1>T</h1><p>부제</p><h6>ORGANIZATION</h6><p>X</p><h6>YEAR</h6><p>2020</p><h6>ROLE</h6><p>R</p>'
+                '<p>PROBLEM</p><p>첫 문단</p>'
+                '<div><iframe title="Youtube Video" src="https://www.youtube.com/embed/YvDX9E_5jvk?rel=0&amp;x=1"></iframe></div>'
+                '<p>둘째 문단</p><p>junyoung735@gmail.com</p>')
+        page = imp.parse_page(html, set())
+        body, imgs = imp.render_body(page['body'])
+        i_first, i_embed, i_second = body.index('첫 문단'), body.index('class="embed"'), body.index('둘째 문단')
+        self.assertTrue(i_first < i_embed < i_second)
+        self.assertIn('https://www.youtube-nocookie.com/embed/YvDX9E_5jvk?rel=0&modestbranding=1', body)
+        self.assertEqual(imgs, [])
+
+    def test_control_chars_stripped(self):
+        html = '<h1>T</h1><p>부제</p><h6>ROLE</h6><p>R</p><p>Note</p><p>가\x08나</p><p>junyoung735@gmail.com</p>'
+        body, _ = imp.render_body(imp.parse_page(html, set())['body'])
+        self.assertIn('가나', body)
+        self.assertNotIn('\x08', body)
+```
+
+Run: `python3 -m unittest tests/test_import.py -v` → 두 테스트 FAIL.
+
+- [ ] **Step 2: 임포터 수정** (기존 코드 구조를 유지하고 아래만 추가·변경)
+
+1. `Walker.handle_starttag`: `img` 분기 앞에 iframe 처리 —
+```python
+        if tag == 'iframe' and 'youtube' in (a.get('src') or ''):
+            m = re.search(r'/embed/([A-Za-z0-9_-]{6,})', a['src'])
+            if m:
+                self._flush('p')
+                self.blocks.append(('embed', m.group(1), ''))
+            return
+```
+2. `Walker._flush`: 텍스트 정규화 직후 제어문자 제거 — `text = re.sub(r'[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]', '', text)`.
+3. `render_body`: `kind == 'img'` 분기 다음에 —
+```python
+        elif kind == 'embed':
+            lines.append(f'<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/{text}?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>\n')
+```
+4. `blocks_of`의 이미지 dedup/필터 로직이 `embed` 블록을 버리지 않는지 확인(`b[0] == 'img'` 조건만 건드리도록).
+5. `import_activities`: 빈 페이지 처리를 `draft = False`, `period = PERIODS.get(slug, '—')` 로 바꾸고 모듈 상단에 `PERIODS = {'uxeed': '2022 – 2024', 'dino': '—', 'internview': '—'}` 추가. 경고 문구는 `'empty page → meta only'`.
+
+Run: `python3 -m unittest tests/test_import.py -v` → 전부 OK (기존 4 + 새 2).
+
+- [ ] **Step 3: 임포터 재실행** (`npm run import:framer`). 제어문자 제거가 임포터에 들어갔으므로 dotcanvas 수동 수정은 재현된다. 확인:
+- `grep -c 'class="embed"' src/content/works/*/index.md` → adio 1, barisbrew 1, birdy 1, dotcanvas 2, dotpad 1, meemo 1, storagy 0, zibot 1.
+- `grep -l 'draft: true' src/content/activities/*/index.md` → 없음. `grep -h '^period' src/content/activities/*/index.md` → uxeed `"2022 – 2024"`, dino·internview `"—"`.
+- `git diff --stat -- src/content` 에서 이미지 파일이 바뀌지 않았는지 (리사이즈는 결정적이라 바이트 동일해야 함; 다르면 보고).
+- `git diff -- 'src/content/works/*/index.md' | grep '^[-+]' | grep -v '^[-+][-+]' | grep -v 'class="embed"'` → 빈 줄 외 출력 없음(임베드 삽입 외 본문 변화 없음).
+
+- [ ] **Step 4: CSS** (`src/styles/global.css`)
+- `:root`의 `--bg: #e9e9e6;` → `--bg: #ffffff;`. `--surface`·`--tint`·`--line` 유지(패널 구조 유지).
+- `.prose > :not(img):not(video):not(p:has(> img))` → `.prose > :not(img):not(video):not(.embed):not(p:has(> img))`.
+- `.prose blockquote` 규칙 뒤에 추가:
+```css
+.prose .embed { aspect-ratio: 16 / 9; width: 100%; margin: 28px 0; background: var(--surface); border: 1px solid var(--line); clear: both; }
+.prose .embed iframe { width: 100%; height: 100%; border: 0; display: block; }
+```
+
+- [ ] **Step 5: 푸터 GitHub 링크** (`src/layouts/Base.astro`) — `.footer-links` 안 LinkedIn 앞에 `<a href="https://github.com/byjunyoung">GitHub</a>` 추가.
+
+- [ ] **Step 6: CLAUDE.md 관례 추가** (`AGENTS.md`의 "## 본문 관례" 목록 끝에)
+```
+- 유튜브: `<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/<ID>?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allowfullscreen></iframe></div>` — 전폭 16:9
+```
+
+- [ ] **Step 7: 확인·커밋**
+`node --test tests/scripts.test.mjs` 통과, `grep -c '<a href="https://github.com/byjunyoung">' src/layouts/Base.astro` → 1, `grep -n -- '--bg' src/styles/global.css` → `#ffffff`.
+```bash
+git add -A && git commit -m "content: restore youtube embeds, list all activities; style: white canvas, embed frame; footer github link"
+```

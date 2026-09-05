@@ -44,6 +44,8 @@ draft: false
 
 ![](./07.jpg)
 
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/YvDX9E_5jvk?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
 
 ### BIRDY : 손글씨 기반 디지털 메시징 디바이스
 

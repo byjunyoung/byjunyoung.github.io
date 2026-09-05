@@ -14,6 +14,7 @@ ACTS_OUT = ROOT / 'src/content/activities'
 WORK_ORDER = ['birdy', 'meemo', 'zibot', 'dotcanvas', 'adio', 'barisbrew', 'storagy', 'dotpad']
 NOTE_ONLY = {'barisbrew', 'storagy', 'dotpad'}
 ACT_ORDER = ['hux', 'uxeed', 'dino', 'svip', 'internview']   # activities 목록 페이지의 표시 순서
+PERIODS = {'uxeed': '2022 – 2024', 'dino': '2020 – 2022', 'internview': '2018'}
 META = {'ORGANIZATION': 'org', 'YEAR': 'year', 'ROLE': 'role', 'RESPONSIBILITIES': 'responsibilities',
         'WITH': 'with', 'KEYWORDS': 'keywords', 'LINK': 'link', 'LINKS': 'links'}
 STOP = ('junyoung735@gmail.com', 'Select Language', 'Create a free website')
@@ -56,6 +57,12 @@ class Walker(HTMLParser):
             self._skip += 1
         if self._skip:
             return
+        if tag == 'iframe' and 'youtube' in (a.get('src') or ''):
+            m = re.search(r'/embed/([A-Za-z0-9_-]{6,})', a['src'])
+            if m:
+                self._flush('p')
+                self.blocks.append(('embed', m.group(1), ''))
+            return
         if tag == 'img' and 'framerusercontent.com/images/' in (a.get('src') or ''):
             self._flush('p')
             self.blocks.append(('img', a['src'].split('?')[0], a.get('alt', '')))
@@ -94,6 +101,7 @@ class Walker(HTMLParser):
 
     def _flush(self, tag):
         text = re.sub(r'\s+', ' ', ''.join(self._buf)).strip()
+        text = re.sub(r'[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]', '', text)
         text = fix_bold_spacing(text)
         self._buf = []
         if not text:
@@ -163,8 +171,8 @@ def parse_page(raw, chrome):
             meta[META[texts[n][1]]] = val
             n += 2
     body_start = texts[n][0] if n < len(texts) else len(blocks)
-    # 메타와 본문 사이에 낀 이미지(히어로)도 본문 앞에 붙인다
-    hero = [b for b in blocks[texts[first][0]:body_start] if b[0] == 'img']
+    # 메타와 본문 사이에 낀 이미지·임베드(히어로)도 본문 앞에 붙인다
+    hero = [b for b in blocks[texts[first][0]:body_start] if b[0] in ('img', 'embed')]
     return {'title': title, 'subtitle': subtitle, 'meta': meta, 'body': hero + blocks[body_start:]}
 
 
@@ -179,6 +187,8 @@ def render_body(blocks, skip_url=None):
             name = f'{n:02d}{Path(text).suffix.lower() or ".jpg"}'
             imgs.append((text, name))
             lines.append(f'![](./{name})\n')
+        elif kind == 'embed':
+            lines.append(f'<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/{text}?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>\n')
         elif RULE.match(text):
             continue
         elif text.upper() == 'NOTE':
@@ -322,8 +332,8 @@ def import_activities(chrome, dry):
             links = split_links(m.get('links', ''))
             period, draft = m.get('year', ''), False
         else:
-            body, imgs, links, period, draft = '', [], [], 'TBD', True
-            warn.append('empty page → draft')
+            body, imgs, links, period, draft = '', [], [], PERIODS.get(slug, '—'), False
+            warn.append('empty page → meta only')
         fm = [f'title: {ys(title)}', f'subtitle: {ys(subtitle)}', f'role: {ys(role)}', f'period: {ys(period)}',
               'links: [' + ', '.join(f'{{ label: {ys(l)}, url: {ys(u)} }}' for l, u in links) + ']',
               f'cover: ./cover{Path(cover).suffix.lower()}', f'order: {order}', f'draft: {"true" if draft else "false"}']
