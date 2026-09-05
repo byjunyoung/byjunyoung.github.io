@@ -1,0 +1,39 @@
+---
+// src/pages/works/[slug].astro
+import Base from '../../layouts/Base.astro';
+import MetaCard from '../../components/MetaCard.astro';
+import { Image } from 'astro:assets';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const works = (await getCollection('works', ({ data }) => !data.draft)).sort((a, b) => a.data.order - b.data.order);
+  return works.map((entry, i) => ({ params: { slug: entry.id }, props: { entry, next: works[(i + 1) % works.length] } }));
+}
+const { entry, next } = Astro.props;
+const d = entry.data;
+const { Content } = await render(entry);
+const rows = [
+  { label: 'Organization', value: d.org },
+  { label: 'Year', value: d.year },
+  { label: 'Role', value: d.role },
+  { label: 'Responsibilities', value: d.responsibilities.join(', ') },
+  { label: 'With', value: d.with },
+  { label: 'Keywords', value: d.keywords.join(', ') || undefined },
+  { label: 'Link', value: d.link?.label, href: d.link?.url },
+  { label: 'Press', value: d.press.map((p) => p.label).join(', ') || undefined },
+  { label: 'Awards', value: d.awards.join(', ') || undefined },
+];
+---
+<Base title={d.title} description={d.subtitle} ogImage={d.cover.src}>
+  <div class="hero">
+    {d.loop
+      ? <video src={d.loop} poster={d.cover.src} autoplay muted loop playsinline></video>
+      : <Image src={d.cover} alt={d.title} widths={[960, 1440, 2000]} sizes="(max-width: 1120px) 100vw, 1120px" />}
+  </div>
+  <div class="detail">
+    <div class="detail-head"><h1>{d.title}</h1><p>{d.subtitle}</p></div>
+    <MetaCard rows={rows} />
+  </div>
+  <article class="prose"><Content /></article>
+  <nav class="next"><a href="/">← Works</a><a href={`/works/${next.id}/`}>{next.data.title} →</a></nav>
+</Base>

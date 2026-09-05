@@ -1,0 +1,13 @@
+---
+// src/components/MetaCard.astro
+interface Props { rows: Array<{ label: string; value?: string; href?: string }> }
+const { rows } = Astro.props;
+---
+<aside class="metacard">
+  {rows.filter((r) => r.value).map((r) => (
+    <dl>
+      <dt>{r.label}</dt>
+      <dd>{r.href ? <a href={r.href} target="_blank" rel="noopener">{r.value}</a> : r.value}</dd>
+    </dl>
+  ))}
+</aside>
