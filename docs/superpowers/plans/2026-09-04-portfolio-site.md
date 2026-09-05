@@ -1691,3 +1691,123 @@ Run: `python3 -m unittest tests/test_import.py -v` → 전부 OK (기존 4 + 새
 ```bash
 git add -A && git commit -m "content: restore youtube embeds, list all activities; style: white canvas, embed frame; footer github link"
 ```
+
+---
+
+### Task 15: 원본 이미지 그리드 복원 · 활동 목록 카드화 (3차 검수 피드백)
+
+사용자 피드백(2026-09-05): (1) 활동 페이지가 너무 간소화됨 — 원본은 사진 카드 목록 (2) 상세 페이지에서 사진을 전부 전폭으로 나열하니 가독성이 떨어짐 — 원본의 그리드를 참고.
+
+사실(확인됨, 원본 `<img sizes>`의 `(min-width: 1200px)` 값): `calc(min(100vw, 1200px) - 80px)` · `max(min(100vw, 1200px) - 80px, 1px)` · `1120px` · `100vw` = 전폭(1열); `max((min(100vw, 1200px) - 82px) / 2, 1px)` = 2열; `400px` = 3열. 예: birdy는 PROBLEM 전폭1 / APPROACH 전폭1 + 2열5 / 영상 / 전폭1 + 2열5 / IMPLEMENTATION 전폭3 / IMPACT 전폭1. 활동 상세 사진 5장은 3열(마키). 활동 목록 원본 = 사진 + 이름/한 줄/역할 카드.
+
+**Files:**
+- Modify: `scripts/import_framer.py`, `tests/test_import.py`, `src/styles/global.css`, `src/pages/activities/index.astro`, `AGENTS.md`
+- Create: `src/components/ActivityCard.astro`
+- Regenerate: `src/content/works/*/index.md`, `src/content/activities/*/index.md` (이미지 줄 묶음만 달라짐)
+
+- [ ] **Step 1: 실패하는 테스트** — `tests/test_import.py`에 추가하고, 기존 `test_parse_page_title_meta_body`의 `page['body'][0]` 기대값을 `('img', 'https://framerusercontent.com/images/hero.jpg', 1)` 로 바꾼다 (블록 3번째 값이 alt → 열 수).
+
+```python
+    def test_cols_from_sizes(self):
+        self.assertEqual(imp.cols_from_sizes('(min-width: 1200px) calc(min(100vw, 1200px) - 80px), (max-width: 809px) 100vw'), 1)
+        self.assertEqual(imp.cols_from_sizes('(min-width: 1200px) max((min(100vw, 1200px) - 82px) / 2, 1px), (max-width: 809px) 100vw'), 2)
+        self.assertEqual(imp.cols_from_sizes('(min-width: 1200px) 400px, (min-width: 810px) and (max-width: 1199px) 33vw'), 3)
+        self.assertEqual(imp.cols_from_sizes('(min-width: 1200px) 1120px, (max-width: 809px) 100vw'), 1)
+        self.assertEqual(imp.cols_from_sizes(''), 1)
+
+    def test_render_groups_consecutive_images_by_cols(self):
+        blocks = [('p', 'PROBLEM', False), ('p', '문단', False),
+                  ('img', 'https://f/a.jpg', 2), ('img', 'https://f/b.jpg', 2), ('img', 'https://f/c.jpg', 2),
+                  ('img', 'https://f/d.jpg', 1),
+                  ('img', 'https://f/e.jpg', 3), ('img', 'https://f/f.jpg', 3), ('img', 'https://f/g.jpg', 3)]
+        body, imgs = imp.render_body(blocks)
+        lines = [l for l in body.splitlines() if l.startswith('![](')]
+        self.assertEqual(lines, ['![](./01.jpg) ![](./02.jpg)', '![](./03.jpg)', '![](./04.jpg)',
+                                 '![](./05.jpg) ![](./06.jpg) ![](./07.jpg)'])
+        self.assertEqual([n for _, n in imgs], ['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg'])
+```
+
+Run: `python3 -m unittest tests/test_import.py -v` → 새 테스트 2개 FAIL(+ 수정한 기존 테스트 1개 FAIL).
+
+- [ ] **Step 2: 임포터**
+
+1. 모듈 함수 추가:
+```python
+def cols_from_sizes(sizes):
+    """Framer <img sizes>의 데스크톱(≥1200px) 값으로 원본 그리드 열 수를 읽는다."""
+    m = re.search(r'\(min-width:\s*1200px\)\s*([^,]+)', sizes or '')
+    v = m.group(1) if m else ''
+    if '/ 2' in v:
+        return 2
+    if re.fullmatch(r'\s*(3[0-9]{2}|4[0-4][0-9])px\s*', v):
+        return 3
+    return 1
+```
+2. `Walker.handle_starttag`의 img 분기: `self.blocks.append(('img', a['src'].split('?')[0], cols_from_sizes(a.get('sizes'))))` (alt 대신 열 수).
+3. `render_body`: 연속된 img 블록을 모아 열 수별로 줄을 만든다 — 같은 열 수의 연속 이미지를 `cols`개씩 끊어 한 줄에 공백으로 이어 붙인다(`![](./01.jpg) ![](./02.jpg)`), 열 수가 바뀌거나 텍스트/embed가 오면 묶음을 끝낸다. 각 이미지 줄 뒤엔 빈 줄. 파일명 번호는 등장 순서 그대로. 구현 예:
+```python
+    def flush_imgs():
+        nonlocal pending
+        if not pending:
+            return
+        cols = pending[0][1]
+        for i in range(0, len(pending), cols):
+            lines.append(' '.join(f'![](./{name})' for name, _ in pending[i:i + cols]) + '\n')
+        pending = []
+```
+img 블록마다 `n += 1; name = …; imgs.append((url, name))` 후 `if pending and pending[0][1] != cols: flush_imgs()` 다음 `pending.append((name, cols))`; 다른 블록을 만나면 먼저 `flush_imgs()`; 루프 끝에도 `flush_imgs()`. `skip_url` 처리는 그대로.
+4. `parse_page`의 hero 판별에서 `b[0] == 'img'` 조건은 그대로(튜플 3번째 값 변경 무관). `blocks_of`의 dedup/svg 필터도 그대로.
+
+Run: `python3 -m unittest tests/test_import.py -v` → 전부 OK.
+
+- [ ] **Step 3: 임포터 재실행** (`npm run import:framer`, sips 때문에 수 분). 확인:
+- `grep -c '^!\[\](./[0-9]*\.[a-z]*) !\[\]' src/content/works/birdy/index.md` → 2열 줄이 4개 이상(APPROACH 5장 → 2+2+1 이 두 번).
+- `grep -cE '^(!\[\]\([^)]*\) ){2}!\[\]' src/content/activities/svip/index.md` → 3열 줄 1개 이상.
+- `git diff -- 'src/content/**/index.md' | grep '^[-+]' | grep -v '^[-+][-+]' | grep -vE '^\+?-?\s*$' | grep -v '!\[\]'` → 출력 없음(이미지 줄 외 본문 변화 없음). 활동 md의 `period`·`draft`는 유지돼야 한다(임포터 PERIODS가 이미 반영됨).
+- `git diff --stat -- src/content | grep -vE 'index\.md'` → 이미지 파일 변화 없음.
+
+- [ ] **Step 4: CSS** (`src/styles/global.css`, `.prose p:has(> img + img) img { margin: 0; }` 뒤에 추가)
+```css
+.prose p:has(> img + img + img) { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 720px) { .prose p:has(> img + img) { grid-template-columns: 1fr; } }
+```
+
+- [ ] **Step 5: 활동 카드**
+
+```astro
+---
+// src/components/ActivityCard.astro
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+interface Props { entry: CollectionEntry<'activities'>; eager?: boolean }
+const { entry, eager = false } = Astro.props;
+const d = entry.data;
+---
+<a class="card" href={`/activities/${entry.id}/`}>
+  <div class="media">
+    {d.cover && <Image src={d.cover} alt={d.title} widths={[640, 960, 1280]} sizes="(max-width: 720px) 100vw, 560px" loading={eager ? 'eager' : 'lazy'} />}
+  </div>
+  <div class="body">
+    <div class="row"><h2>{d.title}</h2></div>
+    <p class="org">{d.role} · {d.period}</p>
+    <p class="sub">{d.subtitle}</p>
+  </div>
+</a>
+```
+
+`src/pages/activities/index.astro`의 `<ul class="rows">…</ul>` 블록을 아래로 교체하고 상단 import에 `import ActivityCard from '../../components/ActivityCard.astro';` 추가:
+```astro
+  <section class="grid">{acts.map((a, i) => <ActivityCard entry={a} eager={i < 2} />)}</section>
+```
+(`.rows` CSS는 남겨 둔다 — 다른 곳에서 안 쓰지만 제거는 이 Task 범위 밖.)
+
+- [ ] **Step 6: AGENTS.md 관례** — "## 본문 관례"의 2-up 줄을 아래로 바꾼다:
+```
+- 이미지 한 줄 = 전폭. 같은 줄에 두 개 = 2열, 세 개 = 3열 그리드 (`![](./02.jpg) ![](./03.jpg)`)
+```
+
+- [ ] **Step 7: 확인·커밋**
+`python3 -m unittest tests/test_import.py` OK, `node --test tests/scripts.test.mjs` OK, `grep -c 'ActivityCard' src/pages/activities/index.astro` → 2.
+```bash
+git add -A && git commit -m "content: restore original image grids from framer sizes; activities as photo cards"
+```
