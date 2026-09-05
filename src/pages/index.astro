@@ -8,5 +8,5 @@ const works = (await getCollection('works', ({ data }) => !data.draft)).sort((a,
 <Base>
   <p class="label">Works</p>
   <p class="intro">Hardware UX designer. I design the part of products that lives beyond the screen — form, touch, space, feedback. Currently shipping BarisBrew at XYZ Inc., previously the Dot Pad tactile display.</p>
-  <section class="grid">{works.map((w) => <WorkCard entry={w} />)}</section>
+  <section class="grid">{works.map((w, i) => <WorkCard entry={w} index={i + 1} eager={i < 2} />)}</section>
 </Base>

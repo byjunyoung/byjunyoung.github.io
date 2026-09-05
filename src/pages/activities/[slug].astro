@@ -19,7 +19,7 @@ const rows = [
 ];
 ---
 <Base title={d.title} description={d.subtitle} ogImage={d.cover?.src}>
-  {d.cover && <div class="hero"><Image src={d.cover} alt={d.title} widths={[960, 1440, 2000]} sizes="(max-width: 1120px) 100vw, 1120px" /></div>}
+  {d.cover && <div class="hero"><Image src={d.cover} alt={d.title} widths={[960, 1440, 2000]} sizes="(max-width: 1120px) 100vw, 1120px" loading="eager" /></div>}
   <div class="detail">
     <div class="detail-head"><h1>{d.title}</h1><p>{d.subtitle}</p></div>
     <MetaCard rows={rows} />

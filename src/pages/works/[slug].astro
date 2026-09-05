@@ -28,7 +28,7 @@ const rows = [
   <div class="hero">
     {d.loop
       ? <video src={d.loop} poster={d.cover.src} autoplay muted loop playsinline></video>
-      : <Image src={d.cover} alt={d.title} widths={[960, 1440, 2000]} sizes="(max-width: 1120px) 100vw, 1120px" />}
+      : <Image src={d.cover} alt={d.title} widths={[960, 1440, 2000]} sizes="(max-width: 1120px) 100vw, 1120px" loading="eager" />}
   </div>
   <div class="detail">
     <div class="detail-head"><h1>{d.title}</h1><p>{d.subtitle}</p></div>
