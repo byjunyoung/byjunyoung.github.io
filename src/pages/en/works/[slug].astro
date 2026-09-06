@@ -1,13 +1,13 @@
 ---
-// src/pages/works/[slug].astro
-import WorkDetail from '../../components/pages/WorkDetail.astro';
+// src/pages/en/works/[slug].astro
+import WorkDetail from '../../../components/pages/WorkDetail.astro';
 import { getCollection } from 'astro:content';
-import { byLang, slugOf } from '../../lib/i18n';
+import { byLang, slugOf } from '../../../lib/i18n';
 
 export async function getStaticPaths() {
-  const works = byLang(await getCollection('works'), 'ko');
+  const works = byLang(await getCollection('works'), 'en');
   return works.map((entry, i) => ({ params: { slug: slugOf(entry.id) }, props: { entry, next: works[(i + 1) % works.length] } }));
 }
 const { entry, next } = Astro.props;
 ---
-<WorkDetail lang="ko" entry={entry} next={next} />
+<WorkDetail lang="en" entry={entry} next={next} />

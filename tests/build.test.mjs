@@ -7,6 +7,7 @@ const slugs = (dir) =>
     ? readdirSync(dir, { withFileTypes: true }).filter((d) => d.isDirectory() && !d.name.startsWith('_')).map((d) => d.name)
     : [];
 const isDraft = (path) => /^draft:\s*true/m.test(readFileSync(path, 'utf8'));
+const enSlugs = (dir) => slugs(dir).filter((s) => existsSync(`src/content/${dir.split('/').pop()}/${s}/index.en.md`) && !isDraft(`src/content/${dir.split('/').pop()}/${s}/index.en.md`));
 
 test('published works each have a page in dist', () => {
   for (const slug of slugs('src/content/works')) {
@@ -49,4 +50,27 @@ test('birdy og:image points at an optimized derivative, not the raw cover', () =
   const m = html.match(/property="og:image" content="([^"]+)"/);
   assert.ok(m, `${path} missing og:image meta`);
   assert.ok(!m[1].endsWith('cover.jpg'), m && m[1]);
+});
+
+test('english works/activities each have a page under dist/en', () => {
+  for (const slug of enSlugs('src/content/works')) assert.ok(existsSync(`dist/en/works/${slug}/index.html`), `en/works/${slug}`);
+  for (const slug of enSlugs('src/content/activities')) assert.ok(existsSync(`dist/en/activities/${slug}/index.html`), `en/activities/${slug}`);
+});
+
+test('english home exists and links every english work', () => {
+  const home = readFileSync('dist/en/index.html', 'utf8');
+  assert.ok(home.includes('<html lang="en"'), 'lang=en');
+  for (const slug of enSlugs('src/content/works')) assert.ok(home.includes(`/en/works/${slug}/`), slug);
+});
+
+test('korean home declares lang=ko and hreflang alternates', () => {
+  const home = readFileSync('dist/index.html', 'utf8');
+  assert.ok(home.includes('<html lang="ko"'), 'lang=ko');
+  assert.ok(home.includes('hreflang="en" href="https://byjunyoung.github.io/en/"'), 'hreflang en');
+  assert.ok(home.includes('hreflang="x-default" href="https://byjunyoung.github.io/"'), 'x-default');
+});
+
+test('sitemap lists english pages', () => {
+  const xml = readdirSync('dist').filter((f) => /^sitemap-\d+\.xml$/.test(f)).map((f) => readFileSync(`dist/${f}`, 'utf8')).join('');
+  assert.ok(xml.includes('https://byjunyoung.github.io/en/'), 'en in sitemap');
 });

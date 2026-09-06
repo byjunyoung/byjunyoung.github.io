@@ -1,30 +1,13 @@
 ---
 // src/pages/activities/[slug].astro
-import Base from '../../layouts/Base.astro';
-import MetaCard from '../../components/MetaCard.astro';
-import { Image, getImage } from 'astro:assets';
-import { getCollection, render } from 'astro:content';
+import ActivityDetail from '../../components/pages/ActivityDetail.astro';
+import { getCollection } from 'astro:content';
+import { byLang, slugOf } from '../../lib/i18n';
 
 export async function getStaticPaths() {
-  const acts = await getCollection('activities', ({ data }) => !data.draft);
-  return acts.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+  const acts = byLang(await getCollection('activities'), 'ko');
+  return acts.map((entry) => ({ params: { slug: slugOf(entry.id) }, props: { entry } }));
 }
 const { entry } = Astro.props;
-const d = entry.data;
-const { Content } = await render(entry);
-const og = d.cover ? await getImage({ src: d.cover, width: 1200, format: 'jpg' }) : undefined;
-const rows = [
-  { label: 'Role', value: d.role },
-  { label: 'Period', value: d.period },
-  ...d.links.map((l) => ({ label: 'Link', value: l.label, href: l.url })),
-];
 ---
-<Base title={d.title} description={d.subtitle} ogImage={og?.src}>
-  {d.cover && <div class="hero"><Image src={d.cover} alt={d.title} widths={[960, 1440, 2000]} sizes="(max-width: 1120px) 100vw, 1120px" loading="eager" /></div>}
-  <div class="detail">
-    <div class="detail-head"><h1>{d.title}</h1><p>{d.subtitle}</p></div>
-    <MetaCard rows={rows} />
-  </div>
-  <article class="prose"><Content /></article>
-  <nav class="next"><a href="/activities/">← Activities</a><span></span></nav>
-</Base>
+<ActivityDetail lang="ko" entry={entry} />

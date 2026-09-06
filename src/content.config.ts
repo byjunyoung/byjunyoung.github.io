@@ -3,10 +3,13 @@ import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
 const link = z.object({ label: z.string().min(1), url: z.string().url() });
-const folderId = ({ entry }: { entry: string }) => entry.split('/')[0];
+const localeId = ({ entry }: { entry: string }) => {
+  const [slug, file] = entry.split('/');
+  return file === 'index.en.md' ? `en/${slug}` : slug;
+};
 
 const works = defineCollection({
-  loader: glob({ pattern: '*/index.md', base: './src/content/works', generateId: folderId }),
+  loader: glob({ pattern: ['*/index.md', '*/index.en.md'], base: './src/content/works', generateId: localeId }),
   schema: ({ image }) =>
     z.object({
       title: z.string().min(1),
@@ -30,7 +33,7 @@ const works = defineCollection({
 });
 
 const activities = defineCollection({
-  loader: glob({ pattern: '*/index.md', base: './src/content/activities', generateId: folderId }),
+  loader: glob({ pattern: ['*/index.md', '*/index.en.md'], base: './src/content/activities', generateId: localeId }),
   schema: ({ image }) =>
     z.object({
       title: z.string().min(1),

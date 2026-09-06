@@ -1,0 +1,41 @@
+---
+// src/components/pages/WorkDetail.astro
+import Base from '../../layouts/Base.astro';
+import MetaCard from '../MetaCard.astro';
+import { Image, getImage } from 'astro:assets';
+import { getCollection, render } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import { counterpartId, slugOf, localePath, type Lang } from '../../lib/i18n';
+interface Props { lang: Lang; entry: CollectionEntry<'works'>; next: CollectionEntry<'works'> }
+const { lang, entry, next } = Astro.props;
+const d = entry.data;
+const { Content } = await render(entry);
+const og = await getImage({ src: d.cover, width: 1200, format: 'jpg' });
+const poster = d.loop ? (await getImage({ src: d.cover, width: 960, format: 'jpg' })).src : undefined;
+const rows = [
+  { label: 'Organization', value: d.org },
+  { label: 'Year', value: d.year },
+  { label: 'Role', value: d.role },
+  { label: 'Responsibilities', value: d.responsibilities.join(', ') },
+  { label: 'With', value: d.with },
+  { label: 'Keywords', value: d.keywords.join(', ') || undefined },
+  { label: 'Link', value: d.link?.label, href: d.link?.url },
+  { label: 'Press', value: d.press.map((p) => p.label).join(', ') || undefined },
+  { label: 'Awards', value: d.awards.join(', ') || undefined },
+];
+const counterpart = (await getCollection('works')).find((e) => e.id === counterpartId(entry.id) && !e.data.draft);
+const altPath = counterpart ? `/works/${slugOf(entry.id)}/` : undefined;
+---
+<Base title={d.title} description={d.subtitle} ogImage={og.src} lang={lang} altPath={altPath}>
+  <div class="hero">
+    {d.loop
+      ? <video src={d.loop} poster={poster} autoplay muted loop playsinline></video>
+      : <Image src={d.cover} alt={d.title} widths={[960, 1440, 2000]} sizes="(max-width: 1120px) 100vw, 1120px" loading="eager" />}
+  </div>
+  <div class="detail">
+    <div class="detail-head"><h1>{d.title}</h1><p>{d.subtitle}</p></div>
+    <MetaCard rows={rows} />
+  </div>
+  <article class="prose"><Content /></article>
+  <nav class="next"><a href={localePath(lang, '/')}>← Works</a><a href={localePath(lang, `/works/${slugOf(next.id)}/`)}>{next.data.title} →</a></nav>
+</Base>

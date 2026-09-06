@@ -1,0 +1,30 @@
+---
+// src/components/pages/ActivityDetail.astro
+import Base from '../../layouts/Base.astro';
+import MetaCard from '../MetaCard.astro';
+import { Image, getImage } from 'astro:assets';
+import { getCollection, render } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import { counterpartId, slugOf, localePath, type Lang } from '../../lib/i18n';
+interface Props { lang: Lang; entry: CollectionEntry<'activities'> }
+const { lang, entry } = Astro.props;
+const d = entry.data;
+const { Content } = await render(entry);
+const og = d.cover ? await getImage({ src: d.cover, width: 1200, format: 'jpg' }) : undefined;
+const rows = [
+  { label: 'Role', value: d.role },
+  { label: 'Period', value: d.period },
+  ...d.links.map((l) => ({ label: 'Link', value: l.label, href: l.url })),
+];
+const counterpart = (await getCollection('activities')).find((e) => e.id === counterpartId(entry.id) && !e.data.draft);
+const altPath = counterpart ? `/activities/${slugOf(entry.id)}/` : undefined;
+---
+<Base title={d.title} description={d.subtitle} ogImage={og?.src} lang={lang} altPath={altPath}>
+  {d.cover && <div class="hero"><Image src={d.cover} alt={d.title} widths={[960, 1440, 2000]} sizes="(max-width: 1120px) 100vw, 1120px" loading="eager" /></div>}
+  <div class="detail">
+    <div class="detail-head"><h1>{d.title}</h1><p>{d.subtitle}</p></div>
+    <MetaCard rows={rows} />
+  </div>
+  <article class="prose"><Content /></article>
+  <nav class="next"><a href={localePath(lang, '/activities/')}>← Activities</a><span></span></nav>
+</Base>

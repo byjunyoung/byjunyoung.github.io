@@ -1,0 +1,15 @@
+---
+// src/components/pages/Home.astro
+import Base from '../../layouts/Base.astro';
+import WorkCard from '../WorkCard.astro';
+import { getCollection } from 'astro:content';
+import { byLang, type Lang } from '../../lib/i18n';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const works = byLang(await getCollection('works'), lang);
+---
+<Base lang={lang} altPath="/">
+  <h1 class="label">Works</h1>
+  <p class="intro">Hardware UX designer. I design the part of products that lives beyond the screen — form, touch, space, feedback. Currently shipping BarisBrew at XYZ Inc., previously the Dot Pad tactile display.</p>
+  <section class="grid">{works.map((w, i) => <WorkCard entry={w} index={i + 1} eager={i < 2} />)}</section>
+</Base>

@@ -2,11 +2,12 @@
 // src/components/ActivityCard.astro
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
+import { langOf, slugOf, localePath } from '../lib/i18n';
 interface Props { entry: CollectionEntry<'activities'>; eager?: boolean }
 const { entry, eager = false } = Astro.props;
 const d = entry.data;
 ---
-<a class="card" href={`/activities/${entry.id}/`}>
+<a class="card" href={localePath(langOf(entry.id), `/activities/${slugOf(entry.id)}/`)}>
   <div class="media">
     {d.cover && <Image src={d.cover} alt={d.title} widths={[640, 960, 1280]} sizes="(max-width: 720px) 100vw, 560px" loading={eager ? 'eager' : 'lazy'} />}
   </div>

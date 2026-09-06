@@ -1,0 +1,13 @@
+---
+// src/pages/en/activities/[slug].astro
+import ActivityDetail from '../../../components/pages/ActivityDetail.astro';
+import { getCollection } from 'astro:content';
+import { byLang, slugOf } from '../../../lib/i18n';
+
+export async function getStaticPaths() {
+  const acts = byLang(await getCollection('activities'), 'en');
+  return acts.map((entry) => ({ params: { slug: slugOf(entry.id) }, props: { entry } }));
+}
+const { entry } = Astro.props;
+---
+<ActivityDetail lang="en" entry={entry} />
