@@ -10,6 +10,7 @@ Junyoung Kim 포트폴리오. Astro 정적 사이트, GitHub Pages(main 푸시 �
 - 스키마: `src/content.config.ts`. 필드가 틀리면 빌드가 실패한다 — 스키마를 바꾸지 말고 콘텐츠를 고친다.
 - `draft: true` 는 빌드에서 빠진다. `order` 가 홈 정렬. `kind` 는 `case-study` | `note`(본문 없이 한 단락).
 - 영문: 같은 폴더의 index.en.md (있는 항목만 /en/에 나온다). 이미지·order·cover 등 공유 값은 두 파일이 같아야 한다.
+- 글(링크 모음): `src/content/writing/<slug>/index.md` — title·date(YYYY-MM-DD)·source·url·summary. 본문 없음, 원문 링크로만 간다. 영문은 index.en.md(제목·요약만).
 
 ## 프로젝트 추가 절차
 1. `npm run new:work <slug>` → 템플릿 생성 (draft)
@@ -18,6 +19,12 @@ Junyoung Kim 포트폴리오. Astro 정적 사이트, GitHub Pages(main 푸시 �
 3-1. 영문 index.en.md 를 같이 만든다(용어·톤은 기존 en 파일을 따른다). 없으면 /en/ 목록에서 빠진다.
 4. 영상: `npm run media -- <slug> <원본.mov> [--start 초] [--dur 초]` → `public/media/works/<slug>/loop.mp4`, 출력에 찍힌 `loop:` 줄을 frontmatter에 붙인다
 5. `npm test` 통과 → 커밋 → push
+
+## 글 추가 절차
+1. 폴더 이름은 날짜-키워드(예: 2026-08-barisbrew-v4)
+2. index.md 에 title·date·source·url·summary
+3. index.en.md 는 title·summary 만 영어로
+4. npm test → push
 
 ## 본문 관례
 - 이미지 한 줄 = 전폭. 같은 줄에 두 개 = 2열, 세 개 = 3열 그리드 (`![](./02.jpg) ![](./03.jpg)`)

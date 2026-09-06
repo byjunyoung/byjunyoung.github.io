@@ -53,6 +53,15 @@ img, video { display: block; max-width: 100%; height: auto; }
 .card .meta { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; margin-top: 12px; font-size: var(--fs-xs); letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); }
 .badge { padding: 2px 6px; border: 1px solid var(--line); border-radius: 2px; }
 
+.posts { list-style: none; margin: 0 0 96px; padding: 0; border-top: 1px solid var(--line); }
+.posts li { border-bottom: 1px solid var(--line); }
+.posts a { display: grid; grid-template-columns: 180px 1fr; gap: 4px 24px; padding: 18px 0; }
+.posts .when { font-size: var(--fs-xs); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); padding-top: 3px; }
+.posts .t { font-size: var(--fs-md); font-weight: 600; }
+.posts .s { grid-column: 2; font-size: var(--fs-sm); color: var(--muted); }
+.posts a:hover .t { text-decoration: underline; text-underline-offset: 0.15em; }
+@media (max-width: 720px) { .posts a { grid-template-columns: 1fr; } .posts .s { grid-column: 1; } }
+
 .hero { margin: 24px 0 32px; background: var(--surface); border: 1px solid var(--line); }
 .hero img, .hero video { width: 100%; }
 .detail { margin-bottom: 8px; }

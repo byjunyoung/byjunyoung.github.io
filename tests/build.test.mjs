@@ -74,3 +74,16 @@ test('sitemap lists english pages', () => {
   const xml = readdirSync('dist').filter((f) => /^sitemap-\d+\.xml$/.test(f)).map((f) => readFileSync(`dist/${f}`, 'utf8')).join('');
   assert.ok(xml.includes('https://byjunyoung.github.io/en/'), 'en in sitemap');
 });
+
+test('writing index exists in both languages and links every published post', () => {
+  for (const [dir, lang] of [['dist/writing/index.html', 'ko'], ['dist/en/writing/index.html', 'en']]) {
+    const html = existsSync(dir) ? readFileSync(dir, 'utf8') : '';
+    assert.ok(html.includes('<h1 class="label">'), dir);
+    for (const slug of slugs('src/content/writing')) {
+      const file = lang === 'en' ? `src/content/writing/${slug}/index.en.md` : `src/content/writing/${slug}/index.md`;
+      if (!existsSync(file) || isDraft(file)) continue;
+      const url = readFileSync(file, 'utf8').match(/^url:\s*"?([^"\s]+)/m)?.[1];
+      assert.ok(url && html.includes(url), `${lang} ${slug}`);
+    }
+  }
+});
