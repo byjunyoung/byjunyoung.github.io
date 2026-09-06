@@ -41,7 +41,7 @@ When I joined in August 2025, I took on the role of tying the customer channels 
 
 ### Customer channels
 
-**Kiosk:** I shortened the coupon flow to QR scan, items added automatically, edit the menu, pay, and merged the payment method selection and guidance screens. For the barrier-free kiosk I kept the existing form factor and added a speaker, microphone, and keypad, then reviewed TTS timing, focus order, and screen reader behavior.
+**Kiosk:** I shortened the coupon flow to QR scan, items added automatically, edit the menu, pay, and merged the payment method selection and guidance screens. For the barrier-free kiosk I kept the existing form factor and, to meet the accessibility standard for unattended terminals, added a physical keypad, voice guidance, high contrast, and magnification, then reviewed TTS timing, focus order, and screen reader behavior.
 
 **Mobile app:** I managed app updates centered on pre-ordering and pickup notifications, and added a temperature-based price option.
 
@@ -53,7 +53,7 @@ When I joined in August 2025, I took on the role of tying the customer channels 
 
 ### Operator back office, BarisON
 
-I defined a three-tier permission model for headquarters, purchasing partners, and store operators, and turned the operations interview into requirements for product, stock, payment, and sales analysis features. I also designed the functions an unmanned store needs, such as device power management (restart, shutdown, One-Stop On/Off) and pickup zone background video management.
+I defined BarisON as the console from which headquarters runs and monitors unmanned stores remotely. Building on the operations interview, I planned remote store and robot control (power, status, cameras), unified management of the headquarters master catalog and each store's products and stock, payment and sales analysis, an alarm system organized by operational severity, and a three-tier account model for headquarters admins, operations staff, and store owners. I also set common policies such as input form validation and button label conventions.
 
 ![](./06.jpg)
 
@@ -64,7 +64,7 @@ I designed the prompts and conversation flow for an LLM-based voice ordering ser
 
 ## IMPLEMENTATION
 
-**Documentation and handoff:** I managed screen specs and functional specs separately from Figma and handed them to development in phases. I chaired the BarisON project meetings to set priorities with the development team.
+**Documentation and handoff:** From 2026 I set up a PRD per product (kiosk, BarisON) that maps features and policies one-to-one to Figma pages, with a change log. Work was handed to development in phases, and I chaired the BarisON project meetings to set priorities with the development team.
 
 **Validation:** I validated the designs with a store pilot checklist, barrier-free kiosk QA, and analysis of voice order logs. The logs showed people using it like a voice assistant, which I reframed as a UI problem rather than an AI capability problem.
 
