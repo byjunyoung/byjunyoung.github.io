@@ -10,6 +10,7 @@ link: { label: "STORAGY Website", url: "https://xyzcorp.io/STORAGY" }
 tags: ["HRI Design", "LED & Sound Feedback", "Expressive Display"]
 kind: note
 cover: ./cover.png
+loop: "/media/works/storagy/loop.mp4"
 order: 2
 draft: false
 ---
