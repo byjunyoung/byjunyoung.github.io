@@ -1994,3 +1994,90 @@ export default defineConfig({
 - [ ] **Step 2: 스킬** — `/portfolio` SKILL.md "## 문구 원칙"에 `- 한글을 고치면 같은 폴더 index.en.md 도 같이 고친다. 영문은 이력서 영문판 용어를 따르고, 직역체·콩글리시 없이. 영문만 따로 요청받으면 한글은 건드리지 않는다.` 추가, "## 이미 정한 디자인 방향"에 `- 언어: 한국어 루트, 영어 /en/. 헤더 오른쪽 KR/EN 배지. 소개문·라벨은 영어 공용.` 추가.
 - [ ] **Step 3: 스펙 §9** — 미결 목록에 `- (해결 2026-09-06) 언어: §11` 한 줄.
 - [ ] **Step 4: 커밋** — 레포는 `git add AGENTS.md docs && git commit -m "docs: ko/en content rules"`. 스킬은 claude-settings 레포에서 `git add skills/portfolio/SKILL.md && git commit -m "portfolio: ko/en rules"`(푸시는 컨트롤러가 사용자 go 후).
+
+### Task 20: WRITING 메뉴 — 글 링크 모음 컬렉션·목록 페이지 (한/영)
+
+**Files:**
+- Modify: `src/content.config.ts`, `src/layouts/Base.astro`, `src/styles/global.css`, `tests/build.test.mjs`, `AGENTS.md`
+- Create: `src/components/pages/Writing.astro`, `src/pages/writing/index.astro`, `src/pages/en/writing/index.astro`, `src/content/writing/.gitkeep`
+
+**Interfaces:**
+- Consumes: `src/lib/i18n.ts` (`Lang`, `byLang`, `localePath`, `langOf`), `Base.astro` props `lang`·`altPath`, 기존 `localeId` generateId.
+- Produces: 컬렉션 `writing` — frontmatter `title`(string), `date`(YYYY-MM-DD 문자열, 정렬 키), `source`(string, 예: "LinkedIn"), `url`(url), `summary`(string, optional), `tags`(string[], default []), `draft`(boolean, default false). id는 ko `<slug>`, en `en/<slug>`. 본문은 쓰지 않는다(있어도 렌더하지 않음).
+
+- [ ] **Step 1: 실패하는 테스트** — `tests/build.test.mjs`에 추가:
+```js
+test('writing index exists in both languages and links every published post', () => {
+  for (const [dir, lang] of [['dist/writing/index.html', 'ko'], ['dist/en/writing/index.html', 'en']]) {
+    const html = existsSync(dir) ? readFileSync(dir, 'utf8') : '';
+    assert.ok(html.includes('<h1 class="label">'), dir);
+    for (const slug of slugs('src/content/writing')) {
+      const file = lang === 'en' ? `src/content/writing/${slug}/index.en.md` : `src/content/writing/${slug}/index.md`;
+      if (!existsSync(file) || isDraft(file)) continue;
+      const url = readFileSync(file, 'utf8').match(/^url:\s*"?([^"\s]+)/m)?.[1];
+      assert.ok(url && html.includes(url), `${lang} ${slug}`);
+    }
+  }
+});
+```
+- [ ] **Step 2: 실패 확인** — 기존 dist에 `dist/writing/`이 없어 FAIL.
+- [ ] **Step 3: 스키마** — `src/content.config.ts`에 컬렉션 추가(loader는 works와 같은 두 패턴 + `localeId`, base `./src/content/writing`):
+```ts
+const writing = defineCollection({
+  loader: glob({ pattern: ['*/index.md', '*/index.en.md'], base: './src/content/writing', generateId: localeId }),
+  schema: z.object({
+    title: z.string().min(1),
+    date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+    source: z.string().min(1),
+    url: z.string().url(),
+    summary: z.string().optional(),
+    tags: z.array(z.string()).default([]),
+    draft: z.boolean().default(false),
+  }),
+});
+export const collections = { works, activities, writing };
+```
+`byLang`은 `order`로 정렬하므로 writing에는 쓰지 않는다 — 목록 컴포넌트에서 `langOf`·draft 필터 후 `date` 내림차순으로 직접 정렬한다.
+- [ ] **Step 4: 목록 컴포넌트** — `src/components/pages/Writing.astro` (props `{ lang: Lang }`):
+```astro
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+import { langOf, type Lang } from '../../lib/i18n';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const posts = (await getCollection('writing')).filter((e) => langOf(e.id) === lang && !e.data.draft).sort((a, b) => b.data.date.localeCompare(a.data.date));
+---
+<Base title="Writing" lang={lang} altPath="/writing/">
+  <h1 class="label">Writing</h1>
+  <p class="intro">Posts and articles on hardware UX, robots, and the craft of designing what lives beyond the screen.</p>
+  <ul class="posts">
+    {posts.map((p) => (
+      <li>
+        <a href={p.data.url} target="_blank" rel="noopener">
+          <span class="when">{p.data.date} · {p.data.source}</span>
+          <span class="t">{p.data.title}</span>
+          {p.data.summary && <span class="s">{p.data.summary}</span>}
+        </a>
+      </li>
+    ))}
+  </ul>
+</Base>
+```
+소개문 문장은 위 영어 문장 그대로(두 언어 공용). 목록이 비어 있어도 빌드된다.
+- [ ] **Step 5: 페이지 래퍼** — `src/pages/writing/index.astro`는 `<Writing lang="ko" />`, `src/pages/en/writing/index.astro`는 `<Writing lang="en" />`(다른 래퍼와 같은 형식).
+- [ ] **Step 6: 헤더 메뉴** — `Base.astro` nav에 activities 다음, resume 앞에 `<a href={localePath(lang, '/writing/')}>writing</a>`.
+- [ ] **Step 7: 스타일** — `global.css`에 추가(토큰만):
+```css
+.posts { list-style: none; margin: 0 0 96px; padding: 0; border-top: 1px solid var(--line); }
+.posts li { border-bottom: 1px solid var(--line); }
+.posts a { display: grid; grid-template-columns: 180px 1fr; gap: 4px 24px; padding: 18px 0; }
+.posts .when { font-size: var(--fs-xs); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); padding-top: 3px; }
+.posts .t { font-size: var(--fs-md); font-weight: 600; }
+.posts .s { grid-column: 2; font-size: var(--fs-sm); color: var(--muted); }
+.posts a:hover .t { text-decoration: underline; text-underline-offset: 0.15em; }
+@media (max-width: 720px) { .posts a { grid-template-columns: 1fr; } .posts .s { grid-column: 1; } }
+```
+- [ ] **Step 8: 빈 컬렉션 자리** — `src/content/writing/.gitkeep`(빈 파일). 실제 글은 컨트롤러가 뒤에 넣는다.
+- [ ] **Step 9: AGENTS.md** — "## 콘텐츠가 유일한 소스"에 `- 글(링크 모음): src/content/writing/<slug>/index.md — title·date(YYYY-MM-DD)·source·url·summary. 본문 없음, 원문 링크로만 간다. 영문은 index.en.md(제목·요약만).` 추가. "## 프로젝트 추가 절차" 아래에 `## 글 추가 절차` 소절: `1. 폴더 이름은 날짜-키워드(예: 2026-08-barisbrew-v4) 2. index.md 에 title·date·source·url·summary 3. index.en.md 는 title·summary 만 영어로 4. npm test → push`.
+- [ ] **Step 10: 검증·커밋** — `npm test` 포그라운드 1회(33 pages: 31 + writing 2). `git add src tests AGENTS.md && git commit -m "feat: writing section — link collection with ko/en list pages"`.
