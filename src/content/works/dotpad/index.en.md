@@ -19,4 +19,8 @@ draft: false
 
 I designed the tactile interface — PUI, haptics, LED feedback — of the tactile display Dot Pad, and it went into the production model. I reviewed and applied UX improvements such as defining key functions consistently and adding physical markings.
 
+![](./01.jpg) ![](./02.jpg)
+
 I compared more than 20 braille devices to define Dot Pad's tactile notation and the specs and requirements for the next model. I evaluated the user experience to draw out insights for improving its features, and gathered feedback to carry into the next model.
+
+![](./03.jpg)
