@@ -5,5 +5,6 @@ source: "LinkedIn"
 url: "https://www.linkedin.com/feed/update/urn:li:activity:7475167157685911552/"
 summary: "Back at my alma mater as an industry judge for the HRI class showcase and as an alumnus at the program briefing."
 tags: []
+cover: ./cover.jpg
 draft: false
 ---

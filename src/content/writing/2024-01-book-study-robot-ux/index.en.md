@@ -5,5 +5,6 @@ source: "LinkedIn"
 url: "https://www.linkedin.com/feed/update/urn:li:activity:7154117500937424896/"
 summary: "Recruiting readers for a study of new UX paradigms for human-robot interaction design."
 tags: []
+cover: ./cover.jpg
 draft: false
 ---

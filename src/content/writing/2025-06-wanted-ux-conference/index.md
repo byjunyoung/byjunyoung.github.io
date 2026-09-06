@@ -5,5 +5,6 @@ source: "LinkedIn"
 url: "https://www.linkedin.com/feed/update/urn:li:activity:7339094879760748544/"
 summary: "'제가요?' 연사 제안을 받고 겁이 났던 이야기와, 같은 고민을 하는 사람들에게 전하고 싶은 것."
 tags: []
+cover: ./cover.jpg
 draft: false
 ---

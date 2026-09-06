@@ -5,5 +5,6 @@ source: "LinkedIn"
 url: "https://www.linkedin.com/feed/update/urn:li:activity:6959040113922232320/"
 summary: "A product study on bringing the experience of a paper book to audiobooks."
 tags: []
+cover: ./cover.jpg
 draft: false
 ---

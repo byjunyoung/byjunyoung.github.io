@@ -5,5 +5,6 @@ source: "LinkedIn"
 url: "https://www.linkedin.com/feed/update/urn:li:activity:6959040113922232320/"
 summary: "종이책의 경험을 오디오북에 제공하려는 시도를 담은 제품 연구."
 tags: []
+cover: ./cover.jpg
 draft: false
 ---

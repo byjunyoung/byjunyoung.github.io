@@ -5,5 +5,6 @@ source: "LinkedIn"
 url: "https://www.linkedin.com/feed/update/urn:li:activity:7163496320396148736/"
 summary: "I joined Dot as a hardware UX designer, but the first year was mostly planning and designing the web and app services Dot Pad needed."
 tags: []
+cover: ./cover.jpg
 draft: false
 ---

@@ -5,5 +5,6 @@ source: "LinkedIn"
 url: "https://www.linkedin.com/feed/update/urn:li:activity:7339094879760748544/"
 summary: "'Me?' On being scared by the speaker invitation, and what I wanted to share with people carrying the same questions."
 tags: []
+cover: ./cover.jpg
 draft: false
 ---

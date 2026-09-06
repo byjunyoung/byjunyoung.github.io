@@ -49,13 +49,15 @@ const activities = defineCollection({
 
 const writing = defineCollection({
   loader: glob({ pattern: ['*/index.md', '*/index.en.md'], base: './src/content/writing', generateId: localeId }),
-  schema: z.object({
+  schema: ({ image }) =>
+    z.object({
     title: z.string().min(1),
     date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
     source: z.string().min(1),
     url: z.string().url(),
     summary: z.string().optional(),
     tags: z.array(z.string()).default([]),
+    cover: image().optional(),
     draft: z.boolean().default(false),
   }),
 });
