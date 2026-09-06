@@ -56,14 +56,15 @@ img, video { display: block; max-width: 100%; height: auto; }
 .posts { list-style: none; margin: 0 0 96px; padding: 0; border-top: 1px solid var(--line); }
 .posts li { border-bottom: 1px solid var(--line); }
 .posts a { display: flex; gap: 32px; align-items: flex-start; padding: 28px 0; }
-.posts .thumb { flex: 0 0 220px; aspect-ratio: 4 / 3; background: var(--tint); border: 1px solid var(--line); overflow: hidden; }
-.posts .thumb img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.posts .thumb { flex: 0 0 220px; }
+.posts .thumb:has(img) { border: 1px solid var(--line); }
+.posts .thumb img { width: 100%; height: auto; display: block; }
 .posts .body { flex: 1; display: flex; flex-direction: column; gap: 8px; padding-top: 2px; }
 .posts .when { font-size: var(--fs-xs); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
 .posts .t { font-size: var(--fs-lg); font-weight: 600; line-height: 1.35; }
 .posts .s { font-size: var(--fs-sm); color: var(--muted); max-width: 640px; }
 .posts a:hover .t { text-decoration: underline; text-underline-offset: 0.15em; }
-@media (max-width: 720px) { .posts a { flex-direction: column; gap: 12px; padding: 20px 0; } .posts .thumb { flex-basis: auto; width: 100%; } }
+@media (max-width: 720px) { .posts a { flex-direction: column; gap: 12px; padding: 20px 0; } .posts .thumb { flex-basis: auto; width: 100%; } .posts .thumb:not(:has(img)) { display: none; } }
 
 .hero { margin: 24px 0 32px; border: 1px solid var(--line); }
 .hero img, .hero video { width: 100%; }
