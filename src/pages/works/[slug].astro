@@ -2,7 +2,7 @@
 // src/pages/works/[slug].astro
 import Base from '../../layouts/Base.astro';
 import MetaCard from '../../components/MetaCard.astro';
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -12,6 +12,8 @@ export async function getStaticPaths() {
 const { entry, next } = Astro.props;
 const d = entry.data;
 const { Content } = await render(entry);
+const og = await getImage({ src: d.cover, width: 1200, format: 'jpg' });
+const poster = d.loop ? (await getImage({ src: d.cover, width: 960, format: 'jpg' })).src : undefined;
 const rows = [
   { label: 'Organization', value: d.org },
   { label: 'Year', value: d.year },
@@ -24,10 +26,10 @@ const rows = [
   { label: 'Awards', value: d.awards.join(', ') || undefined },
 ];
 ---
-<Base title={d.title} description={d.subtitle} ogImage={d.cover.src}>
+<Base title={d.title} description={d.subtitle} ogImage={og.src}>
   <div class="hero">
     {d.loop
-      ? <video src={d.loop} poster={d.cover.src} autoplay muted loop playsinline></video>
+      ? <video src={d.loop} poster={poster} autoplay muted loop playsinline></video>
       : <Image src={d.cover} alt={d.title} widths={[960, 1440, 2000]} sizes="(max-width: 1120px) 100vw, 1120px" loading="eager" />}
   </div>
   <div class="detail">

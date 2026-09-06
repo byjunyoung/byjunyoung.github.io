@@ -1,5 +1,5 @@
 {
-  "name": "scaffold",
+  "name": "byjunyoung.github.io",
   "type": "module",
   "version": "0.0.1",
   "engines": {
@@ -13,7 +13,8 @@
     "test": "npm run build && node --test \"tests/**/*.test.mjs\"",
     "new:work": "node scripts/new-work.mjs",
     "media": "node scripts/media.mjs",
-    "import:framer": "python3 scripts/import_framer.py"
+    "import:framer": "python3 scripts/import_framer.py",
+    "test:import": "python3 -m unittest discover -s tests -p 'test_*.py'"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",

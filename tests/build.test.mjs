@@ -35,3 +35,18 @@ test('loop videos declared in frontmatter exist under public/', () => {
     if (m) assert.ok(existsSync(`public${m[1]}`), m[1]);
   }
 });
+
+test('index pages render an h1.label', () => {
+  for (const path of ['dist/index.html', 'dist/activities/index.html']) {
+    const html = existsSync(path) ? readFileSync(path, 'utf8') : '';
+    assert.ok(html.includes('<h1 class="label">'), path);
+  }
+});
+
+test('birdy og:image points at an optimized derivative, not the raw cover', () => {
+  const path = 'dist/works/birdy/index.html';
+  const html = existsSync(path) ? readFileSync(path, 'utf8') : '';
+  const m = html.match(/property="og:image" content="([^"]+)"/);
+  assert.ok(m, `${path} missing og:image meta`);
+  assert.ok(!m[1].endsWith('cover.jpg'), m && m[1]);
+});

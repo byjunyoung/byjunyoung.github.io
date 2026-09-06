@@ -1,16 +1,17 @@
 ---
 // src/components/WorkCard.astro
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 interface Props { entry: CollectionEntry<'works'>; index: number; eager?: boolean }
 const { entry, index, eager = false } = Astro.props;
 const d = entry.data;
 const idx = String(index).padStart(2, '0');
+const poster = d.loop ? (await getImage({ src: d.cover, width: 960, format: 'jpg' })).src : undefined;
 ---
 <a class="card" href={`/works/${entry.id}/`}>
   <div class="media">
     {d.loop
-      ? <video src={d.loop} poster={d.cover.src} autoplay muted loop playsinline preload="metadata"></video>
+      ? <video src={d.loop} poster={poster} autoplay muted loop playsinline preload="metadata"></video>
       : <Image src={d.cover} alt={d.title} widths={[640, 960, 1280]} sizes="(max-width: 720px) 100vw, 560px" loading={eager ? 'eager' : 'lazy'} />}
   </div>
   <div class="body">

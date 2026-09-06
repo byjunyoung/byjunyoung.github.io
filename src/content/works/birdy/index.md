@@ -5,7 +5,7 @@ org: "UNIST"
 year: "2021 (1y)"
 role: "리드 연구원"
 responsibilities: ["Research", "Product Design", "Prototyping", "Project Management"]
-with: "김나눔​, 윤혜정 (보조 연구원)"
+with: "김나눔, 윤혜정 (보조 연구원)"
 keywords: ["digital divide", "assistive technology", "inclusive design", "IoT"]
 link: { label: "Master's Thesis", url: "https://drive.google.com/file/d/1Ys_DDoIZfHbj7Bq9uYravbCF2H8DK-5J/view?usp=sharing" }
 tags: ["Research", "Product Design", "Prototyping", "Project Management"]
