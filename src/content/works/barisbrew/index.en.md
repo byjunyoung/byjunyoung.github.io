@@ -43,6 +43,8 @@ When I joined in August 2025, I took on the role of tying the customer channels 
 
 **Kiosk:** I shortened the coupon flow to QR scan, items added automatically, edit the menu, pay, and merged the payment method selection and guidance screens. For the barrier-free kiosk I kept the existing form factor and, to meet the accessibility standard for unattended terminals, added a physical keypad, voice guidance, high contrast, and magnification, then reviewed TTS timing, focus order, and screen reader behavior.
 
+![](./07.jpg)
+
 **Mobile app:** I managed app updates centered on pre-ordering and pickup notifications, and added a temperature-based price option.
 
 **Pickup zone and front display:** I designed the brewing status guidance and the feedback right after pickup, and unified the wording for retrieval and disposal situations across the app and the displays. The pickup zone screen stays simple, with motion and labels kept to a minimum.
