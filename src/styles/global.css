@@ -70,7 +70,8 @@ img, video { display: block; max-width: 100%; height: auto; }
 .prose p:has(> img + img) { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .prose p:has(> img + img) img { margin: 0; }
 .prose p:has(> img + img + img) { grid-template-columns: repeat(3, 1fr); }
-@media (max-width: 720px) { .prose p:has(> img + img) { grid-template-columns: 1fr; } }
+.prose p:has(> img + img) img { aspect-ratio: 4 / 3; object-fit: cover; }
+@media (max-width: 720px) { .prose p:has(> img + img), .prose p:has(> img + img + img) { grid-template-columns: 1fr; } }
 .prose blockquote { margin: 24px 0; padding: 16px 20px; background: var(--surface); border: 1px solid var(--line); }
 .prose blockquote p { margin: 0; }
 .prose .embed { aspect-ratio: 16 / 9; width: 100%; margin: 28px 0; background: var(--surface); border: 1px solid var(--line); clear: both; }

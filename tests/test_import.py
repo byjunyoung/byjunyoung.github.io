@@ -76,6 +76,11 @@ class ImportTest(unittest.TestCase):
                                  '![](./05.jpg) ![](./06.jpg) ![](./07.jpg)'])
         self.assertEqual([n for _, n in imgs], ['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg'])
 
+    def test_blank_line_after_list_before_image(self):
+        blocks = [('li', '첫째', True), ('li', '둘째', True), ('img', 'https://f/a.jpg', 1)]
+        body, _ = imp.render_body(blocks)
+        self.assertIn('1. 둘째\n\n![](./01.jpg)', body)
+
     def test_control_chars_stripped(self):
         html = '<h1>T</h1><p>부제</p><h6>ROLE</h6><p>R</p><p>Note</p><p>가\x08나</p><p>junyoung735@gmail.com</p>'
         body, _ = imp.render_body(imp.parse_page(html, set())['body'])

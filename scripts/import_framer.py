@@ -194,7 +194,7 @@ def parse_page(raw, chrome):
 def render_body(blocks, skip_url=None):
     """블록 → 마크다운 본문, [(원본URL, 파일명)]. skip_url(=cover)과 같은 이미지는 본문에서 뺀다.
     연속된 이미지는 <img sizes>로 읽은 원본 열 수(cols)만큼 한 줄에 묶는다(원본 그리드 복원)."""
-    lines, imgs, n, pending = [], [], 0, []
+    lines, imgs, n, pending, prev_li = [], [], 0, [], False
 
     def flush_imgs():
         nonlocal pending
@@ -206,6 +206,12 @@ def render_body(blocks, skip_url=None):
         pending = []
 
     for kind, text, extra in blocks:
+        # 리스트 항목은 줄 끝에 개행이 없어(리스트 안에서는 한 줄바꿈만 필요), 리스트 다음에
+        # 바로 다른 블록(특히 이미지)이 오면 빈 줄 없이 이어져 CommonMark가 그 블록을 리스트 항목의
+        # lazy continuation으로 읽어버린다. 리스트 다음 비-li 블록 앞엔 빈 줄을 끼워 리스트를 닫는다.
+        if kind != 'li' and prev_li:
+            lines.append('')
+        prev_li = kind == 'li'
         if kind == 'img':
             if text == skip_url:
                 continue
