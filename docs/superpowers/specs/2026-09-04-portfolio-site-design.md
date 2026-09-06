@@ -136,7 +136,7 @@ activities frontmatter: title, subtitle, role, period, links[], cover, order, dr
 
 ## 9. 미결 (TBD)
 
-- 커스텀 도메인 보유 여부 (있으면 CNAME 한 줄)
+- (해결 2026-09-06) 커스텀 도메인 없이 byjunyoung.github.io 그대로 쓴다 (사용자 결정)
 - 영상 파일 위치 (로컬/드라이브/유튜브)
 - (해결 2026-09-06) 활동 5개 본문·기간·링크·사진·영상은 프레이머 CMS 내보내기에서 복원했다.
 - 프레이머 사이트를 유지할지, 새 주소로 안내만 남길지 — 2026-09-06 홈 상단에 새 주소 안내 한 줄 추가함(Publish 는 사용자)
