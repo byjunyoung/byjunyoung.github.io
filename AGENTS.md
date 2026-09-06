@@ -9,11 +9,13 @@ Junyoung Kim 포트폴리오. Astro 정적 사이트, GitHub Pages(main 푸시 �
 - 활동은 프레이머 CMS 내보내기(~/Documents/Claude/portfolio-import/cms/activities.json)에서 임포트했다. 이후 수정은 md에서 직접.
 - 스키마: `src/content.config.ts`. 필드가 틀리면 빌드가 실패한다 — 스키마를 바꾸지 말고 콘텐츠를 고친다.
 - `draft: true` 는 빌드에서 빠진다. `order` 가 홈 정렬. `kind` 는 `case-study` | `note`(본문 없이 한 단락).
+- 영문: 같은 폴더의 index.en.md (있는 항목만 /en/에 나온다). 이미지·order·cover 등 공유 값은 두 파일이 같아야 한다.
 
 ## 프로젝트 추가 절차
 1. `npm run new:work <slug>` → 템플릿 생성 (draft)
 2. `cover.jpg` (긴 변 2000px 이하) 를 폴더에 넣고 frontmatter를 채운다 (cover 가 없으면 스키마의 image() 때문에 draft 여도 빌드가 실패한다 — 1번 직후 `npm test` 는 깨진다)
 3. 본문은 마크다운. 섹션 제목은 `## PROBLEM` 처럼 대문자 h2 (관례, 강제 아님)
+3-1. 영문 index.en.md 를 같이 만든다(용어·톤은 기존 en 파일을 따른다). 없으면 /en/ 목록에서 빠진다.
 4. 영상: `npm run media -- <slug> <원본.mov> [--start 초] [--dur 초]` → `public/media/works/<slug>/loop.mp4`, 출력에 찍힌 `loop:` 줄을 frontmatter에 붙인다
 5. `npm test` 통과 → 커밋 → push
 
@@ -49,3 +51,4 @@ Junyoung Kim 포트폴리오. Astro 정적 사이트, GitHub Pages(main 푸시 �
 ## 검증
 - `npm test` = 빌드 + dist 검증. `npm run test:import` = 임포터 단위 테스트. `npm run check` = 타입.
 - 화면 확인은 `npm run dev` 후 크롬 스크린샷. 디자인 변경은 스크린샷을 사용자에게 보여주고 승인 후 push.
+- 한/영 둘 다 고쳤는지: git diff --name-only 에 index.md 와 index.en.md 가 짝으로 있는지 본다.
