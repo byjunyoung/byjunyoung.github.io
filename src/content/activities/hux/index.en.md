@@ -1,5 +1,5 @@
 ---
-title: "설계자들"
+title: "Seolgyejadeul"
 subtitle: "Hardware UX Community"
 role: "Co-Founder"
 period: "2024 - 2025 (2y)"
@@ -9,7 +9,7 @@ order: 1
 draft: false
 ---
 
-[**설계자들**](https://uxdesigners.notion.site/2962d67da32c4f218fbea5944f612e60) is a community for practitioners working on hardware and auditory experience, started together with the co-organizers of [UXeed](/en/activities/uxeed). I co-founded and ran the hardware experience group, holding a regular book study and networking meetups with about 20 practitioners and researchers.
+[**Seolgyejadeul**](https://uxdesigners.notion.site/2962d67da32c4f218fbea5944f612e60) is a community for practitioners working on hardware and auditory experience, started together with the co-organizers of [UXeed](/en/activities/uxeed). I co-founded and ran the hardware experience group, holding a regular book study and networking meetups with about 20 practitioners and researchers.
 
 ![](./01.jpeg) ![](./02.jpeg) ![](./03.jpeg)
 
