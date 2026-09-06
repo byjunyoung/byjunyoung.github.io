@@ -15,12 +15,12 @@ const posts = (await getCollection('writing')).filter((e) => langOf(e.id) === la
     {posts.map((p) => (
       <li>
         <a href={p.data.url} target="_blank" rel="noopener">
-          <span class="when">{p.data.date} · {p.data.source}</span>
+          <span class="thumb">{p.data.cover && <Image src={p.data.cover} alt="" width={480} height={360} loading="lazy" />}</span>
           <span class="body">
+            <span class="when">{p.data.date} · {p.data.source}</span>
             <span class="t">{p.data.title}</span>
             {p.data.summary && <span class="s">{p.data.summary}</span>}
           </span>
-          {p.data.cover && <Image class="thumb" src={p.data.cover} alt="" width={240} height={180} loading="lazy" />}
         </a>
       </li>
     ))}
