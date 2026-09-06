@@ -1867,3 +1867,130 @@ Run: `python3 -m unittest tests/test_import.py -v` → 전부 OK (기존 테스�
 ```bash
 git add -A && git commit -m "content: activities from framer cms (descriptions, periods, links, galleries, videos); anchors as markdown links"
 ```
+
+---
+
+### Task 17: 한/영 라우팅·콘텐츠 모델·헤더 토글 (설계 §11)
+
+**Files:**
+- Modify: `src/content.config.ts`, `astro.config.mjs`, `src/layouts/Base.astro`, `src/styles/global.css`, `src/components/WorkCard.astro`, `src/components/ActivityCard.astro`, `src/pages/index.astro`, `src/pages/activities/index.astro`, `src/pages/works/[slug].astro`, `src/pages/activities/[slug].astro`, `src/pages/404.astro`, `tests/build.test.mjs`
+- Create: `src/lib/i18n.ts`, `src/components/pages/Home.astro`, `src/components/pages/Activities.astro`, `src/components/pages/WorkDetail.astro`, `src/components/pages/ActivityDetail.astro`, `src/pages/en/index.astro`, `src/pages/en/activities/index.astro`, `src/pages/en/works/[slug].astro`, `src/pages/en/activities/[slug].astro`
+
+**Interfaces:**
+- Produces: `src/lib/i18n.ts` —
+  ```ts
+  export type Lang = 'ko' | 'en';
+  export const LANGS: readonly Lang[] = ['ko', 'en'];
+  export const langOf = (id: string): Lang => (id.startsWith('en/') ? 'en' : 'ko');
+  export const slugOf = (id: string): string => id.replace(/^en\//, '');
+  export const counterpartId = (id: string): string => (langOf(id) === 'en' ? slugOf(id) : `en/${id}`);
+  export const localePath = (lang: Lang, path: string): string => (lang === 'en' ? `/en${path}` : path); // path starts with '/'
+  export function byLang<T extends { id: string; data: { draft: boolean; order: number } }>(entries: T[], lang: Lang): T[] {
+    return entries.filter((e) => langOf(e.id) === lang && !e.data.draft).sort((a, b) => a.data.order - b.data.order);
+  }
+  ```
+- Consumes: Task 18 produces `index.en.md` files with the same schema; this task must build with zero or more of them present.
+
+- [ ] **Step 1: 실패하는 테스트** — `tests/build.test.mjs`에 추가:
+```js
+const enSlugs = (dir) => slugs(dir).filter((s) => existsSync(`src/content/${dir.split('/').pop()}/${s}/index.en.md`) && !isDraft(`src/content/${dir.split('/').pop()}/${s}/index.en.md`));
+
+test('english works/activities each have a page under dist/en', () => {
+  for (const slug of enSlugs('src/content/works')) assert.ok(existsSync(`dist/en/works/${slug}/index.html`), `en/works/${slug}`);
+  for (const slug of enSlugs('src/content/activities')) assert.ok(existsSync(`dist/en/activities/${slug}/index.html`), `en/activities/${slug}`);
+});
+
+test('english home exists and links every english work', () => {
+  const home = readFileSync('dist/en/index.html', 'utf8');
+  assert.ok(home.includes('<html lang="en"'), 'lang=en');
+  for (const slug of enSlugs('src/content/works')) assert.ok(home.includes(`/en/works/${slug}/`), slug);
+});
+
+test('korean home declares lang=ko and hreflang alternates', () => {
+  const home = readFileSync('dist/index.html', 'utf8');
+  assert.ok(home.includes('<html lang="ko"'), 'lang=ko');
+  assert.ok(home.includes('hreflang="en" href="https://byjunyoung.github.io/en/"'), 'hreflang en');
+  assert.ok(home.includes('hreflang="x-default" href="https://byjunyoung.github.io/"'), 'x-default');
+});
+
+test('sitemap lists english pages', () => {
+  const xml = readdirSync('dist').filter((f) => /^sitemap-\d+\.xml$/.test(f)).map((f) => readFileSync(`dist/${f}`, 'utf8')).join('');
+  assert.ok(xml.includes('https://byjunyoung.github.io/en/'), 'en in sitemap');
+});
+```
+- [ ] **Step 2: 실패 확인** — 기존 dist가 있으면 `node --test "tests/**/*.test.mjs"`로 새 테스트 4개가 FAIL(dist/en 없음). dist가 없으면 RED 실행은 생략하고 리포트에 적는다.
+- [ ] **Step 3: 컬렉션 로더** — `src/content.config.ts` 두 컬렉션 모두 `pattern: ['*/index.md', '*/index.en.md']`, `generateId`는 파일명이 `index.en.md`면 `en/<폴더>`, 아니면 `<폴더>`:
+```ts
+const localeId = ({ entry }: { entry: string }) => {
+  const [slug, file] = entry.split('/');
+  return file === 'index.en.md' ? `en/${slug}` : slug;
+};
+```
+- [ ] **Step 4: Astro 설정** — `astro.config.mjs`:
+```js
+export default defineConfig({
+  site: 'https://byjunyoung.github.io',
+  i18n: { defaultLocale: 'ko', locales: ['ko', 'en'], routing: { prefixDefaultLocale: false } },
+  integrations: [sitemap({ i18n: { defaultLocale: 'ko', locales: { ko: 'ko-KR', en: 'en-US' } } })],
+});
+```
+- [ ] **Step 5: `src/lib/i18n.ts`** — Interfaces 블록의 코드 그대로.
+- [ ] **Step 6: Base.astro** — Props에 `lang?: Lang`(기본 `'ko'`), `altPath?: string`(접두 없는 이 페이지 경로. 상대 언어 페이지가 있을 때만 넘긴다). 동작:
+  - `<html lang={lang}>`
+  - `altPath`가 있으면 `<link rel="alternate" hreflang="ko" href={new URL(altPath, Astro.site)}>`, `hreflang="en" href={new URL('/en'+altPath, Astro.site)}`, `hreflang="x-default"`는 ko URL. 없으면 hreflang 링크를 내지 않는다.
+  - 워드마크 href `localePath(lang,'/')`, 메뉴 works `localePath(lang,'/')`, activities `localePath(lang,'/activities/')`, resume는 그대로.
+  - 토글: 헤더 안에
+```astro
+<div class="lang" aria-label="Language">
+  <a href={altPath ?? '/'} class={lang === 'ko' ? 'active' : undefined} hreflang="ko" lang="ko">KR</a>
+  <a href={altPath ? `/en${altPath}` : '/en/'} class={lang === 'en' ? 'active' : undefined} hreflang="en" lang="en">EN</a>
+</div>
+```
+- [ ] **Step 7: global.css** — `.nav`에 `position: relative;` 추가, 그리고:
+```css
+.lang { position: absolute; right: var(--pad); top: 28px; display: flex; font-size: var(--fs-xs); letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.4; }
+.lang a { color: var(--muted); border: 1px solid var(--line); padding: 4px 10px; border-radius: 2px 0 0 2px; }
+.lang a + a { border-radius: 0 2px 2px 0; margin-left: -1px; }
+.lang a:hover { color: var(--fg); }
+.lang a.active { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+@media (max-width: 720px) { .lang { top: 20px; right: 12px; } }
+```
+- [ ] **Step 8: 카드 링크** — `WorkCard.astro`·`ActivityCard.astro`의 href를 `localePath(langOf(entry.id), \`/works/${slugOf(entry.id)}/\`)`(활동은 `/activities/`)로. 나머지 마크업 그대로.
+- [ ] **Step 9: 페이지 컴포넌트** — 현재 4개 페이지의 `<Base>…</Base>` 본문을 `src/components/pages/`로 옮긴다. 각각 `lang: Lang` prop을 받고, 내부 링크는 `localePath(lang, …)`, `Base`에 `lang`·`altPath`를 넘긴다.
+  - `Home.astro`: `byLang(await getCollection('works'), lang)` → 카드. `altPath="/"`.
+  - `Activities.astro`: 같은 방식, `altPath="/activities/"`.
+  - `WorkDetail.astro` props `{ lang, entry, next }`: 기존 상세 마크업. `altPath`는 `counterpartId(entry.id)`가 컬렉션에 draft 아닌 항목으로 존재할 때만 `/works/${slugOf(entry.id)}/`. "← Works"는 `localePath(lang,'/')`, next 링크는 `localePath(lang, \`/works/${slugOf(next.id)}/\`)`.
+  - `ActivityDetail.astro` props `{ lang, entry }`: 같은 규칙, "← Activities"는 `localePath(lang,'/activities/')`.
+  - 소개문(홈·활동)은 두 언어 같은 영어 문장 유지.
+- [ ] **Step 10: 페이지 래퍼** — `src/pages/index.astro`는 `<Home lang="ko" />`만, `src/pages/en/index.astro`는 `<Home lang="en" />`. 활동 목록도 같은 식. 상세는 `getStaticPaths`에서 `byLang(await getCollection('works'), 'ko')`(en 래퍼는 `'en'`)로 `params.slug = slugOf(entry.id)`, `props { entry, next }`(next는 같은 언어 목록의 순환). 활동 상세도 같은 규칙(next 없음).
+- [ ] **Step 11: 404** — `<p class="intro">페이지가 없습니다. <a href="/" style="text-decoration: underline">홈으로</a> · Page not found. <a href="/en/" style="text-decoration: underline">Home</a></p>`
+- [ ] **Step 12: 검증** — `npm test`를 포그라운드·타임아웃 10분으로 한 번. 16 + en 페이지(홈·활동 목록 최소 2)가 빌드되고 테스트 전부 통과. `grep -rn '#[0-9a-fA-F]\{3,6\}\|[0-9]px' src/components src/pages src/layouts src/lib` → 하드코딩 없음(404의 기존 inline underline 제외).
+- [ ] **Step 13: 커밋** — `git add src astro.config.mjs tests && git commit -m "feat: ko/en routing, locale-aware content ids, header language toggle, hreflang + sitemap i18n"`
+
+### Task 18: 영문 콘텐츠 초안 (index.en.md 13개)
+
+**Files:**
+- Create (레포 밖 초안 폴더): `~/Documents/Claude/portfolio-import/en-draft/works/<slug>/index.en.md` ×8 (adio, barisbrew, birdy, dotcanvas, dotpad, meemo, storagy, zibot), `~/Documents/Claude/portfolio-import/en-draft/activities/<slug>/index.en.md` ×5 (dino, hux, internview, svip, uxeed)
+- Create: `~/Documents/Claude/portfolio-import/en-draft/review.md` (검수 대조표)
+- 레포는 읽기만 한다. 커밋·빌드 없음(컨트롤러가 Task 17 뒤에 옮겨 넣고 빌드).
+
+**Interfaces:**
+- Consumes: 원문 `src/content/works/<slug>/index.md`, `src/content/activities/<slug>/index.md`, 용어집은 `~/Documents/커리어/웹이력서/index.html`의 `id="resume-en"` 구간.
+- Produces: 스키마가 같은 `index.en.md`. frontmatter 키 집합·순서는 원문과 동일.
+
+- [ ] **Step 1: 원문 13개와 이력서 영문 구간을 읽는다.** 용어를 표로 정리해 review.md 맨 위에 둔다(예: 촉각 디스플레이 → tactile display, 촉각 그래픽 저작 툴 → tactile-graphics authoring tool, 점자 → braille, 시각장애 학생 → visually impaired students, 특수학교 교사 → special-education teachers, 바리스타 로봇 → BarisBrew robot café(고유명사 유지), 실내 배송 로봇 → indoor delivery robot / AMR, HRI, PUI, 보조 연구원 → research assistant, 리드 연구원 → lead researcher, UX 디자이너 → UX Designer, 디자인 엔지니어 → Design Engineer, 서비스 기획자 → service planner, GUI 디자이너 → GUI designer, 프로젝트 매니저 → project manager, 제품 디자이너 → product designer).
+- [ ] **Step 2: frontmatter 규칙** — 모든 키를 원문 순서 그대로 복사. 번역하는 값: works `subtitle`, `role`, `with`의 괄호 안 역할, `keywords`·`awards`·`press[].label` 중 한글인 것, `responsibilities` 중 한글인 것. 그대로 두는 값: `title`(제품명), `org`, `year`, `link`, `tags`, `kind`, `cover`, `loop`, `order`, `draft`; activities `title`(단, 인턴뷰 → `"InternView"`), `subtitle`, `role`, `period`, `links`, `cover`, `order`, `draft`. 사람 이름은 원문 표기 그대로(한글 이름은 한글, 로마자는 로마자).
+- [ ] **Step 3: 본문 규칙** — 문단·헤딩·이미지 줄·임베드·목록·굵게·링크 구조를 원문과 1:1로 유지. 헤딩(`## PROBLEM` 등)은 그대로. 내부 링크 `/activities/uxeed` → `/en/activities/uxeed`. 외부 링크·이미지 경로는 그대로. 자연스러운 미국식 영어, 포트폴리오 톤(짧고 담백, 현재·과거 시제 일관). 원문에 없는 사실·수치·형용사를 넣지 않는다. 직역체·콩글리시 금지(예: "진행했습니다" → 단순히 did/ran/led 중 문맥에 맞게).
+- [ ] **Step 4: 파일 작성** — 13개 파일. 각 파일 끝 개행 하나.
+- [ ] **Step 5: review.md** — 항목별 표: 폴더 / title / subtitle(ko → en) / role(ko → en) / with(ko → en) / 판단이 필요한 부분(고유명사·모호한 표현·이름 표기). 마지막에 "번역하면서 확신이 없던 문장" 목록(파일:문단 번호, 원문, 번역, 이유).
+- [ ] **Step 6: 자체 검증** — 각 파일의 frontmatter 키 집합이 원문과 같은지 `python3`로 대조(키 순서 포함), 본문 이미지 줄 수·임베드 수·헤딩 수가 원문과 같은지 대조해 결과를 review.md 끝에 붙인다. 한글이 남은 곳(이름 제외)이 없는지 `grep -P '[\x{AC00}-\x{D7A3}]'`로 확인해 목록을 적는다.
+
+### Task 19: 문서·스킬 갱신 (한/영)
+
+**Files:**
+- Modify: `AGENTS.md`(= CLAUDE.md), `~/.claude/skills/portfolio/SKILL.md`, `docs/superpowers/specs/2026-09-04-portfolio-site-design.md` §9 미결(언어 항목 해결 표기)
+
+- [ ] **Step 1: AGENTS.md** — "## 콘텐츠가 유일한 소스"에 `- 영문: 같은 폴더의 index.en.md (있는 항목만 /en/에 나온다). 이미지·order·cover 등 공유 값은 두 파일이 같아야 한다.` 추가. "## 프로젝트 추가 절차" 3번 뒤에 `3-1. 영문 index.en.md 를 같이 만든다(용어·톤은 기존 en 파일을 따른다). 없으면 /en/ 목록에서 빠진다.` 추가. "## 검증"에 `- 한/영 둘 다 고쳤는지: git diff --name-only 에 index.md 와 index.en.md 가 짝으로 있는지 본다.` 추가.
+- [ ] **Step 2: 스킬** — `/portfolio` SKILL.md "## 문구 원칙"에 `- 한글을 고치면 같은 폴더 index.en.md 도 같이 고친다. 영문은 이력서 영문판 용어를 따르고, 직역체·콩글리시 없이. 영문만 따로 요청받으면 한글은 건드리지 않는다.` 추가, "## 이미 정한 디자인 방향"에 `- 언어: 한국어 루트, 영어 /en/. 헤더 오른쪽 KR/EN 배지. 소개문·라벨은 영어 공용.` 추가.
+- [ ] **Step 3: 스펙 §9** — 미결 목록에 `- (해결 2026-09-06) 언어: §11` 한 줄.
+- [ ] **Step 4: 커밋** — 레포는 `git add AGENTS.md docs && git commit -m "docs: ko/en content rules"`. 스킬은 claude-settings 레포에서 `git add skills/portfolio/SKILL.md && git commit -m "portfolio: ko/en rules"`(푸시는 컨트롤러가 사용자 go 후).

@@ -146,3 +146,15 @@ activities frontmatter: title, subtitle, role, period, links[], cover, order, dr
 - node v25.8.1, npm 11.11.0, git 2.50.1, ffmpeg 8.0.1, gh 로그인 byjunyoung
 - 추출물: ~/Documents/Claude/portfolio-import/framer-export (pages/*.md, images/ 93장, manifest.json, raw/*.html)
 - 레퍼런스 스크린샷: ~/Documents/Claude/portfolio-import/reference-screenshots
+
+## 11. 언어 (2026-09-06 추가)
+
+- 목적: 한국어·영어 두 언어로 같은 사이트를 낸다. 영문은 프레이머 로케일을 쓰지 않고 한글 콘텐츠를 직접 자연스럽게 번역한다.
+- 주소: 한국어는 루트(`/works/birdy/`), 영어는 `/en/` 접두(`/en/works/birdy/`). 페이지마다 `<link rel="alternate" hreflang>`로 서로를 가리키고 `x-default`는 한국어. 사이트맵에 두 언어 모두.
+- 콘텐츠 모델: 폴더마다 `index.md`(ko) + `index.en.md`(en). 이미지·영상·`order`·`cover`·`kind`·`tags`·`link`·`links`·`period`·`year`·`org`는 두 파일에 같은 값. 스키마는 하나. 컬렉션 id는 ko `birdy`, en `en/birdy`.
+- 영문 파일이 없는 항목은 `/en/`에서 빠진다(목록·상세 모두). 그 항목의 한국어 페이지는 hreflang 없이 토글만 영문 홈으로 보낸다.
+- 페이지: 홈·활동 목록·프로젝트 상세·활동 상세 본문은 `src/components/pages/`의 컴포넌트가 `lang`을 받아 렌더하고, `src/pages/`와 `src/pages/en/`에는 얇은 래퍼만 둔다.
+- UI 문구(메뉴·메타 라벨·배지·소개문)는 이미 영어라 언어별로 나누지 않는다. `<html lang>`만 언어별. 404는 두 언어 한 줄씩.
+- 전환 UI: 헤더 오른쪽 KR/EN 분할 배지(이력서 사이트와 같은 스타일: 11px 대문자, 헤어라인, 2px 모서리, 선택은 fg 채움). 같은 페이지의 다른 언어로 이동. 이력서 링크는 언어와 무관하게 `/resume/`.
+- 번역 원칙: 사실·수치·고유명사 그대로, 수식어 추가 금지, 이력서 영문판 용어를 따른다(tactile display, Dot Canvas tactile-graphics authoring tool, CES 2024 Innovation Award, BarisBrew robot café, AMR, HRI, PUI). 사람 이름은 원문 표기 유지(한글 이름은 한글, 로마자는 로마자), 괄호 안 역할만 번역. 활동 제목 "설계자들"은 고유명사로 유지, "인턴뷰"는 시리즈 표기 "InternView".
+- 검수: 영문 초안 → 로컬 빌드 → 스크린샷·대조표로 사용자 검수 → 수정 → go → push.
