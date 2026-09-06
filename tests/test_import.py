@@ -87,5 +87,19 @@ class ImportTest(unittest.TestCase):
         self.assertIn('가나', body)
         self.assertNotIn('\x08', body)
 
+    def test_anchor_becomes_markdown_link(self):
+        html = '<h1>T</h1><p>부제</p><h6>ROLE</h6><p>R</p><p>Note</p><p>앞 <a href="https://x.y/">링크</a> 뒤</p><p>junyoung735@gmail.com</p>'
+        body, _ = imp.render_body(imp.parse_page(html, set())['body'])
+        self.assertIn('앞 [링크](https://x.y/) 뒤', body)
+        self.assertNotIn('<https://', body)
+
+    def test_html_to_md_description(self):
+        html = '<p dir="auto"><a href="https://a.b/" target="_blank"><strong>설계자들</strong></a>은 <a href="/activities/uxeed">UXeed</a>의 모임입니다.</p><p>둘째 문단<br>줄바꿈</p>'
+        self.assertEqual(imp.html_to_md(html), '[**설계자들**](https://a.b/)은 [UXeed](/activities/uxeed)의 모임입니다.\n\n둘째 문단 줄바꿈')
+
+    def test_links_from_html(self):
+        self.assertEqual(imp.links_from_html('<p><a href="https://h/">Home</a> / <a href="https://i/">Instagram</a></p>'), [('Home', 'https://h/'), ('Instagram', 'https://i/')])
+        self.assertEqual(imp.links_from_html('<p dir="auto"><br><br class="trailing-break"></p>'), [])
+
 if __name__ == '__main__':
     unittest.main()

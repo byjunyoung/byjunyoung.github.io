@@ -6,6 +6,7 @@ Junyoung Kim 포트폴리오. Astro 정적 사이트, GitHub Pages(main 푸시 �
 ## 콘텐츠가 유일한 소스
 - 프로젝트: `src/content/works/{slug}/index.md` + `cover.*` + 본문 이미지 `01.jpg …`
 - 활동: `src/content/activities/{slug}/index.md` + `cover.*`
+- 활동은 프레이머 CMS 내보내기(~/Documents/Claude/portfolio-import/cms/activities.json)에서 임포트했다. 이후 수정은 md에서 직접.
 - 스키마: `src/content.config.ts`. 필드가 틀리면 빌드가 실패한다 — 스키마를 바꾸지 말고 콘텐츠를 고친다.
 - `draft: true` 는 빌드에서 빠진다. `order` 가 홈 정렬. `kind` 는 `case-study` | `note`(본문 없이 한 단락).
 

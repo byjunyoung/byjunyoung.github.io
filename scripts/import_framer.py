@@ -2,24 +2,34 @@
 """프레이머 공개 HTML(portfolio-import/framer-export/raw)을 콘텐츠 컬렉션으로 변환한다. 일회성.
 사용: python3 scripts/import_framer.py [--dry]
 """
-import json, re, shutil, subprocess, sys
+import json, re, shutil, subprocess, sys, urllib.request
 from html.parser import HTMLParser
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 IMPORT = Path.home() / 'Documents/Claude/portfolio-import/framer-export'
+ACTS_CMS = Path.home() / 'Documents/Claude/portfolio-import/cms/activities.json'
 WORKS_OUT = ROOT / 'src/content/works'
 ACTS_OUT = ROOT / 'src/content/activities'
 
 WORK_ORDER = ['birdy', 'meemo', 'zibot', 'dotcanvas', 'adio', 'barisbrew', 'storagy', 'dotpad']
 NOTE_ONLY = {'barisbrew', 'storagy', 'dotpad'}
 ACT_ORDER = ['hux', 'uxeed', 'dino', 'svip', 'internview']   # activities 목록 페이지의 표시 순서
-PERIODS = {'uxeed': '2022 – 2024', 'dino': '2020 – 2022', 'internview': '2018'}
+# 프레이머 CMS activities 컬렉션(id E_ju10rBl) 필드 id
+ACT_FIELD = {'cover': 'A4TAvjUiL', 'title': 'xQgMccVzV', 'subtitle': 'NG0B_paBD', 'period': 'VXuQBHODd',
+             'role': 'r654WdnKz', 'body': 'FGtWtwN8l', 'links': 'hYCcXEbYm'}
+ACT_VIDEO_FIELDS = ['qVOdHx9fc', 'vrpP0BfX9', 'vWo1Vl6ep']
+ACT_IMAGE_FIELDS = ['kC9O0vHO8', 'VUNIVtyBq', 'ytOV0971V', 'HlVBwh2Z6', 'IwhondQmL']
 META = {'ORGANIZATION': 'org', 'YEAR': 'year', 'ROLE': 'role', 'RESPONSIBILITIES': 'responsibilities',
         'WITH': 'with', 'KEYWORDS': 'keywords', 'LINK': 'link', 'LINKS': 'links'}
 STOP = ('junyoung735@gmail.com', 'Select Language', 'Create a free website')
 RULE = re.compile(r'^[—–-]{1,3}$')
 HEADING = re.compile(r'^[A-Z0-9][A-Z0-9 :&/\-]{1,40}$')
+
+
+def is_link_href(href):
+    """마크다운 링크로 옮길 대상: 외부 http(s) 링크와 사이트 내부 /works/·/activities/ 링크."""
+    return bool(href) and (href.startswith('http') or href.startswith('/works/') or href.startswith('/activities/'))
 
 
 def cols_from_sizes(sizes):
@@ -81,8 +91,9 @@ class Walker(HTMLParser):
         if tag == 'img' and 'framerusercontent.com/images/' in (a.get('src') or ''):
             self._flush('p')
             self.blocks.append(('img', a['src'].split('?')[0], cols_from_sizes(a.get('sizes'))))
-        elif tag == 'a' and (a.get('href') or '').startswith('http'):
+        elif tag == 'a' and is_link_href(a.get('href')):
             self._href = a['href']
+            self._buf.append('[')
         elif tag == 'strong':
             self._buf.append('**')
         elif tag == 'ol':
@@ -99,7 +110,7 @@ class Walker(HTMLParser):
         if self._skip:
             return
         if tag == 'a' and self._href:
-            self._buf.append(f' <{self._href}>')
+            self._buf.append(f']({self._href})')
             self._href = None
         elif tag == 'strong':
             self._buf.append('**')
@@ -135,7 +146,92 @@ def chrome_images(manifest):
 
 
 def split_links(text):
+    """LINK/LINKS 메타 값에서 (라벨, url) 목록을 뽑는다. Walker가 앵커를 마크다운 링크
+    `[label](url)`로 만들므로 그 형식을 먼저 보고, 옛 ` <url>` 마커 형식도 계속 인식한다."""
+    md = re.findall(r'\[([^\]]+)\]\(([^)]+)\)', text)
+    if md:
+        return [(lab.strip(' /'), url) for lab, url in md]
     return [(lab.strip(' /'), url) for lab, url in re.findall(r'([^<>]+?)\s*<(https?://[^>]+)>', text)]
+
+
+class _MdParser(HTMLParser):
+    """CMS formattedText(HTML) → 마크다운 문단. <p>는 빈 줄로 구분되는 문단,
+    <br>는 공백, <strong>는 **, <a href>는 [text](href). 그 외 태그는 벗기고 텍스트만 남긴다."""
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.paras, self._buf, self._href = [], [], None
+
+    def handle_starttag(self, tag, attrs):
+        if tag == 'a':
+            href = dict(attrs).get('href')
+            if href:
+                self._href = href
+                self._buf.append('[')
+        elif tag in ('strong', 'b'):
+            self._buf.append('**')
+        elif tag == 'br':
+            self._buf.append(' ')
+
+    def handle_endtag(self, tag):
+        if tag == 'a' and self._href:
+            self._buf.append(f']({self._href})')
+            self._href = None
+        elif tag in ('strong', 'b'):
+            self._buf.append('**')
+        elif tag == 'p':
+            self._flush()
+
+    def handle_data(self, data):
+        if data:
+            self._buf.append(data)
+
+    def _flush(self):
+        text = re.sub(r'\s+', ' ', ''.join(self._buf)).strip()
+        self._buf = []
+        if text:
+            self.paras.append(text)
+
+
+def html_to_md(html):
+    p = _MdParser()
+    p.feed(html)
+    p._flush()  # <p>로 닫히지 않은 꼬리 텍스트도 담는다
+    return '\n\n'.join(p.paras).strip()
+
+
+class _LinkParser(HTMLParser):
+    """HTML 안의 <a href> 목록을 (라벨, url) 순서대로 뽑는다."""
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.links, self._buf, self._href = [], [], None
+
+    def handle_starttag(self, tag, attrs):
+        if tag == 'a':
+            self._href = dict(attrs).get('href')
+            self._buf = []
+
+    def handle_data(self, data):
+        if self._href is not None:
+            self._buf.append(data)
+
+    def handle_endtag(self, tag):
+        if tag == 'a' and self._href is not None:
+            self.links.append((''.join(self._buf).strip(), self._href))
+            self._href = None
+
+
+def links_from_html(html):
+    p = _LinkParser()
+    p.feed(html or '')
+    return p.links
+
+
+def youtube_id(url):
+    """youtu.be/<ID>?si=…, watch?v=<ID>, /embed/<ID> 모두에서 유튜브 ID를 뽑는다."""
+    m = re.search(r'(?:youtu\.be/|[?&]v=|/embed/)([A-Za-z0-9_-]{6,})', url or '')
+    return m.group(1) if m else None
 
 
 def split_csv(text):
@@ -315,6 +411,34 @@ def copy_images(pairs, dry):
     return warn
 
 
+def download_image(url, dest, dry):
+    """framerusercontent.com 원본 이미지를(쿼리 제거 후) 내려받는다. 같은 파일명이 이미 있으면
+    다시 받지 않는다."""
+    if dest.exists():
+        return None
+    if dry:
+        return None
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        urllib.request.urlretrieve(url.split('?')[0], dest)
+    except OSError as e:
+        return f'download failed {dest.name}: {e}'
+    return 'resized' if downscale_if_needed(dest) else None
+
+
+def download_images(pairs, dry):
+    warn, resized = [], 0
+    for url, dest in pairs:
+        w = download_image(url, dest, dry)
+        if w == 'resized':
+            resized += 1
+        elif w:
+            warn.append(w)
+    if resized:
+        warn.append(f'resized {resized}')
+    return warn
+
+
 def write(path, text, dry):
     if dry:
         print(f'--- would write {path.relative_to(ROOT)}')
@@ -354,30 +478,57 @@ def import_works(chrome, dry):
         print(f'works/{slug:10s} imgs={len(imgs) + 1:2d} body_lines={body.count(chr(10)):3d} {" | ".join(warn)}')
 
 
-def import_activities(chrome, dry):
-    covers, texts = parse_cards((IMPORT / 'raw/activities.html').read_text(encoding='utf-8'), chrome, 'ACTIVITIES')
-    cards = [texts[i:i + 3] for i in range(0, len(ACT_ORDER) * 3, 3)]
-    assert len(cards) == len(ACT_ORDER) and len(covers) == len(ACT_ORDER), f'activity cards {len(cards)}/{len(covers)}'
+def import_activities(dry):
+    """activities는 더 이상 공개 HTML(raw/activities__*.html)을 파싱하지 않는다 — 공개 페이지가
+    비어 있던 템플릿 문제 때문에 본문·기간·링크·영상이 담긴 프레이머 CMS(activities.json)에서 바로 읽는다."""
+    items = {i['slug']: i for i in json.loads(ACTS_CMS.read_text(encoding='utf-8'))['items']}
+    missing = [s for s in ACT_ORDER if s not in items]
+    assert not missing, f'activities.json에 없는 slug: {missing}'
     for order, slug in enumerate(ACT_ORDER, 1):
-        title, subtitle, role = cards[order - 1]
-        raw = (IMPORT / f'raw/activities__{slug}.html').read_text(encoding='utf-8')
-        page = parse_page(raw, chrome)
-        cover, out, warn = covers[order - 1], ACTS_OUT / slug, []
-        if page:
-            m = page['meta']
-            body, imgs = render_body(page['body'], skip_url=cover)
-            links = split_links(m.get('links', ''))
-            period, draft = m.get('year', ''), False
-        else:
-            body, imgs, links, period, draft = '', [], [], PERIODS.get(slug, '—'), False
-            warn.append('empty page → meta only')
+        item = items[slug]
+        fd = item['fieldData']
+        fv = lambda fid: (fd.get(fid) or {}).get('value')  # noqa: E731
+
+        title, subtitle = fv(ACT_FIELD['title']), fv(ACT_FIELD['subtitle'])
+        role, period = fv(ACT_FIELD['role']), fv(ACT_FIELD['period'])
+        links = links_from_html(fv(ACT_FIELD['links']) or '')
+        cover_url, out, warn, pairs = fv(ACT_FIELD['cover']), ACTS_OUT / slug, [], []
+
+        fm_cover = ''
+        if cover_url:
+            cover_ext = Path(cover_url.split('?')[0]).suffix.lower()
+            pairs.append((cover_url, out / f'cover{cover_ext}'))
+            fm_cover = f'cover: ./cover{cover_ext}'
+
+        body = html_to_md(fv(ACT_FIELD['body']) or '')
+
+        names = []
+        for fid in ACT_IMAGE_FIELDS:
+            url = fv(fid)
+            if not url:
+                continue
+            name = f'{len(names) + 1:02d}{Path(url.split("?")[0]).suffix.lower()}'
+            pairs.append((url, out / name))
+            names.append(name)
+        gallery = '\n\n'.join(' '.join(f'![](./{n})' for n in names[i:i + 3]) for i in range(0, len(names), 3))
+
+        embeds = []
+        for fid in ACT_VIDEO_FIELDS:
+            vid = youtube_id(fv(fid))
+            if vid:
+                embeds.append(f'<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/{vid}?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>')
+
+        body_full = '\n\n'.join(part for part in (body, gallery, '\n\n'.join(embeds)) if part).strip() + '\n'
+
         fm = [f'title: {ys(title)}', f'subtitle: {ys(subtitle)}', f'role: {ys(role)}', f'period: {ys(period)}',
-              'links: [' + ', '.join(f'{{ label: {ys(l)}, url: {ys(u)} }}' for l, u in links) + ']',
-              f'cover: ./cover{Path(cover).suffix.lower()}', f'order: {order}', f'draft: {"true" if draft else "false"}']
-        pairs = [(cover, out / f'cover{Path(cover).suffix.lower()}')] + [(u, out / n) for u, n in imgs]
-        warn += copy_images(pairs, dry)
-        write(out / 'index.md', '---\n' + '\n'.join(fm) + '\n---\n\n' + body, dry)
-        print(f'activities/{slug:10s} imgs={len(imgs) + 1:2d} {" | ".join(warn)}')
+              'links: [' + ', '.join(f'{{ label: {ys(l)}, url: {ys(u)} }}' for l, u in links) + ']']
+        if fm_cover:
+            fm.append(fm_cover)
+        fm += [f'order: {order}', f'draft: {"true" if item.get("draft") else "false"}']
+
+        warn += download_images(pairs, dry)
+        write(out / 'index.md', '---\n' + '\n'.join(fm) + '\n---\n\n' + body_full, dry)
+        print(f'activities/{slug:10s} imgs={len(pairs):2d} {" | ".join(warn)}')
 
 
 if __name__ == '__main__':
@@ -386,4 +537,4 @@ if __name__ == '__main__':
     chrome = chrome_images(manifest)
     print(f'chrome images skipped: {len(chrome)}')
     import_works(chrome, dry)
-    import_activities(chrome, dry)
+    import_activities(dry)

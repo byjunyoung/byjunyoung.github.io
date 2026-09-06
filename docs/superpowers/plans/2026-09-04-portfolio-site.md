@@ -1811,3 +1811,59 @@ const d = entry.data;
 ```bash
 git add -A && git commit -m "content: restore original image grids from framer sizes; activities as photo cards"
 ```
+
+---
+
+### Task 16: 프레이머 CMS로 활동 본문·기간·링크·사진·영상 복원, 본문 링크 마크다운화 (Task 4 실행)
+
+사실(확인됨, 2026-09-06 프레이머 MCP 연결 후): activities 컬렉션(id `E_ju10rBl`) 5개 항목 모두 `draft: false`이고 Description(HTML)·Period·Role·LINKS(HTML 앵커)·Main Image·Image 1~5·VIDEO URL 1~3 이 채워져 있다. 공개 페이지가 비어 있던 것은 템플릿 문제였다. CMS 기간: hux "2024 - 2025 (2y)", uxeed "2021 - 2023 (3y)", dino "2021 (1y)", svip "2018 (1y)", internview "2018 (6m)". 영상: dino 1개(youtu.be/RleQdT6vg3w), internview 3개(cbzAvICNlKA, aZA-at74w2c, 2YyVip9VeS4). 필드 id: Main Image `A4TAvjUiL`, Title `xQgMccVzV`, Subtitle `NG0B_paBD`, Period `VXuQBHODd`, Role `r654WdnKz`, Description `FGtWtwN8l`, LINKS `hYCcXEbYm`, VIDEO URL 1~3 `qVOdHx9fc`/`vrpP0BfX9`/`vWo1Vl6ep`, Image 1~5 `kC9O0vHO8`/`VUNIVtyBq`/`ytOV0971V`/`HlVBwh2Z6`/`IwhondQmL`. works 컬렉션 JSON은 `~/Documents/Claude/portfolio-import/cms/works.json.txt`에 저장돼 있다(8개 모두 draft false, Featured true; 본문은 HTML 임포트 유지).
+또한 현재 md 본문에 앵커가 ` <https://…>` 마커로 남아 있다(hux, svip, adio, zibot 각 1곳) — 원본 앵커는 마크다운 링크로 옮겨야 한다.
+
+**Files:**
+- Create: `~/Documents/Claude/portfolio-import/cms/activities.json` (MCP로 받아 저장), `tests/` 테스트 추가
+- Modify: `scripts/import_framer.py`, `tests/test_import.py`, `AGENTS.md`
+- Regenerate: `src/content/activities/*/index.md` + 이미지, `src/content/works/{adio,zibot}/index.md` 등 링크 마커가 있던 본문
+
+- [ ] **Step 1: CMS JSON 저장** — MCP 도구 `mcp__framer__getCMSItems`(collectionId `E_ju10rBl`)를 호출해 결과 JSON을 `~/Documents/Claude/portfolio-import/cms/activities.json`에 그대로 저장한다(응답의 `items` 배열 포함 전체). 5개 항목 확인.
+
+- [ ] **Step 2: 실패하는 테스트**
+```python
+    def test_anchor_becomes_markdown_link(self):
+        html = '<h1>T</h1><p>부제</p><h6>ROLE</h6><p>R</p><p>Note</p><p>앞 <a href="https://x.y/">링크</a> 뒤</p><p>junyoung735@gmail.com</p>'
+        body, _ = imp.render_body(imp.parse_page(html, set())['body'])
+        self.assertIn('앞 [링크](https://x.y/) 뒤', body)
+        self.assertNotIn('<https://', body)
+
+    def test_html_to_md_description(self):
+        html = '<p dir="auto"><a href="https://a.b/" target="_blank"><strong>설계자들</strong></a>은 <a href="/activities/uxeed">UXeed</a>의 모임입니다.</p><p>둘째 문단<br>줄바꿈</p>'
+        self.assertEqual(imp.html_to_md(html), '[**설계자들**](https://a.b/)은 [UXeed](/activities/uxeed)의 모임입니다.\n\n둘째 문단 줄바꿈')
+
+    def test_links_from_html(self):
+        self.assertEqual(imp.links_from_html('<p><a href="https://h/">Home</a> / <a href="https://i/">Instagram</a></p>'), [('Home', 'https://h/'), ('Instagram', 'https://i/')])
+        self.assertEqual(imp.links_from_html('<p dir="auto"><br><br class="trailing-break"></p>'), [])
+```
+Run → 3 FAIL.
+
+- [ ] **Step 3: 임포터**
+1. `Walker`: `<a href>` 시작 시 버퍼에 `[`를, 종료 시 `](url)`를 넣어 마크다운 링크를 만든다(외부 `http` 링크와 사이트 내부 `/works/…`·`/activities/…` 링크 모두). 기존 ` <url>` 마커 방식과 `split_links`는 메타(LINK/LINKS 라벨 값)용으로만 남긴다 — 메타 값에서 `[label](url)` 형식도 파싱하도록 `split_links`를 확장한다(정규식 `\[([^\]]+)\]\(([^)]+)\)`도 인식).
+2. 새 함수 `html_to_md(html)`: `<p>`→문단(빈 줄), `<br>`→공백, `<strong>`→`**`, `<a href>`→`[text](href)`, 나머지 태그 제거, 엔티티 해제, 앞뒤 공백 정리. stdlib `html.parser`로 구현.
+3. 새 함수 `links_from_html(html)` → `[(label, url)]`.
+4. `import_activities`를 CMS JSON 기반으로 바꾼다: `~/Documents/Claude/portfolio-import/cms/activities.json`을 읽어 `ACT_ORDER` 순서로, 각 항목에 대해 frontmatter(title, subtitle, role, period=CMS Period, links=links_from_html(LINKS), cover=Main Image 다운로드→`cover.<ext>`, order, draft=CMS draft) + 본문 = `html_to_md(Description)` + (Image 1~5 중 값 있는 것을 순서대로 다운로드해 `01.<ext>`… 로 저장하고 3열 묶음 `![](./01.jpg) ![](./02.jpg) ![](./03.jpg)` 줄) + (VIDEO URL 1~3 중 값 있는 것을 유튜브 임베드 div로; `youtu.be/<ID>?…`·`watch?v=<ID>` 모두에서 ID 추출). 이미지 다운로드는 `urllib.request`로 `framerusercontent.com` 원본 URL(쿼리 제거)에서 받고 기존 `downscale_if_needed`를 적용. 이미 같은 파일명이 있으면 재다운로드하지 않는다.
+5. 활동 페이지의 HTML 파싱 경로(`raw/activities__*.html`)는 더 이상 쓰지 않는다 — 함수는 지우고 `PERIODS` 상수도 제거.
+
+Run: `python3 -m unittest tests/test_import.py -v` → 전부 OK (기존 테스트 중 활동 HTML 경로에 의존한 것이 있으면 CMS 기반으로 고친다).
+
+- [ ] **Step 4: 재실행·확인** — `npm run import:framer`(포그라운드, 600000ms). 확인:
+- `grep -c '<https\?://' src/content/*/*/index.md | grep -v ':0'` → 없음.
+- `grep -h '^period' src/content/activities/*/index.md` → hux "2024 - 2025 (2y)", uxeed "2021 - 2023 (3y)", dino "2021 (1y)", svip "2018 (1y)", internview "2018 (6m)".
+- `grep -c 'class="embed"' src/content/activities/*/index.md` → dino 1, internview 3, 나머지 0.
+- `grep -c '^!\[\]' src/content/activities/*/index.md` → hux·uxeed·dino·svip 각 2줄(3+2), internview 0.
+- 활동 본문 첫 문단이 CMS Description과 같은지 uxeed로 눈으로 확인(3문단).
+- works md의 변경은 링크 마커 → 마크다운 링크 치환뿐: `git diff -- 'src/content/works/*/index.md' | grep '^[-+]' | grep -v '^[-+][-+]'` 출력이 adio·zibot의 해당 줄 쌍뿐이어야 한다.
+
+- [ ] **Step 5: AGENTS.md** — "## 콘텐츠가 유일한 소스" 아래에 한 줄: `- 활동은 프레이머 CMS 내보내기(~/Documents/Claude/portfolio-import/cms/activities.json)에서 임포트했다. 이후 수정은 md에서 직접.`
+
+- [ ] **Step 6: 커밋** — `node --test tests/scripts.test.mjs` OK 후
+```bash
+git add -A && git commit -m "content: activities from framer cms (descriptions, periods, links, galleries, videos); anchors as markdown links"
+```
