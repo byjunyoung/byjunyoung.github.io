@@ -13,7 +13,7 @@
 ## Global Constraints
 
 - 레포: `byjunyoung/byjunyoung.github.io` (public). 로컬 `~/Documents/Claude/byjunyoung.github.io`. `base` 설정 없음, `site: 'https://byjunyoung.github.io'`.
-- 언어: 한국어만. `<html lang="ko">`. 영어 컬렉션은 만들지 않는다.
+- 언어: 한국어 루트 + 영어 `/en/` (Task 17~19, 스펙 §11). `<html lang>`은 언어별. 영어는 별도 컬렉션이 아니라 같은 폴더의 `index.en.md`.
 - 문구: 담백하고 사실만. 프레이머에 없던 사실·수치를 추가하지 않는다. 임포터가 만든 문장을 "개선"하지 않는다.
 - 스타일: 색·크기·간격은 `src/styles/global.css`의 토큰만 쓴다. 컴포넌트에 hex·px 하드코딩 금지. 폰트는 Pretendard Variable 하나.
 - 모션: 루프 영상만. 스크롤 애니메이션·트랜지션 라이브러리 금지.
