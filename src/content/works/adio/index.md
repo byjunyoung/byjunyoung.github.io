@@ -9,16 +9,13 @@ with: "이경룡 (리드 연구원), 김범 (보조 연구원)"
 keywords: ["hci", "audiobook", "tangible interaction", "product design"]
 link: { label: "Research Article", url: "https://dl.acm.org/doi/10.1145/3411764.3445440" }
 tags: ["User Study", "Data Analysis & Visualization", "Prototyping - Book Lever"]
-kind: case-study
+kind: note
 cover: ./cover.jpg
 loop: "/media/works/adio/loop.mp4"
-order: 5
+order: 8
 draft: false
 ---
 
 <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/7O4_Z_1cJk8?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
-
-## NOTE
-
-이 프로젝트는 CHI 2021에 공개된 논문 프로젝트입니다. 저는 이 프로젝트에서 3저자로서 프로토타이핑 및 리서치 보조를 맡았습니다. 비록 이 프로젝트에 대한 제 기여도는 크지 않지만, 개인적으로 배운 점이 많고 좋아하는 제품 중의 하나입니다. ADIO의 자세한 내용은 대표 연구자 [**이경룡님의 논문과 영상**](https://dl.acm.org/doi/10.1145/3411764.3445440)을 참고해주세요.
+ACM CHI 2021에 발표된 논문 프로젝트입니다. 저는 3저자로 Book Lever 프로토타이핑과 사용자 스터디를 맡았습니다. 자세한 내용은 대표 연구자 [**이경룡님의 논문과 영상**](https://dl.acm.org/doi/10.1145/3411764.3445440)을 참고해주세요.
