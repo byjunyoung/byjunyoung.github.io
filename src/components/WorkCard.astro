@@ -9,7 +9,7 @@ const d = entry.data;
 const idx = String(index).padStart(2, '0');
 const poster = d.loop ? (await getImage({ src: d.cover, width: 960, format: 'jpg' })).src : undefined;
 ---
-<a class="card wide" href={localePath(langOf(entry.id), `/works/${slugOf(entry.id)}/`)}>
+<a class="card" href={localePath(langOf(entry.id), `/works/${slugOf(entry.id)}/`)}>
   <div class="media">
     {d.loop
       ? <video src={d.loop} poster={poster} autoplay muted loop playsinline preload="metadata"></video>
