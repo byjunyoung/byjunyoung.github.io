@@ -10,7 +10,7 @@ const posts = (await getCollection('writing')).filter((e) => langOf(e.id) === la
 ---
 <Base title="Writing" lang={lang} altPath="/writing/">
   <h1 class="label">Writing</h1>
-  <p class="intro">Posts and articles on hardware UX, robots, and the craft of designing what lives beyond the screen.</p>
+  <p class="intro">Posts, talks, and press — mostly on hardware UX and robots.</p>
   <ul class="posts">
     {posts.map((p) => (
       <li>

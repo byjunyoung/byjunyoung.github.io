@@ -10,6 +10,6 @@ const acts = byLang(await getCollection('activities'), lang);
 ---
 <Base title="Activities" lang={lang} altPath="/activities/">
   <h1 class="label">Activities</h1>
-  <p class="intro">Discover my journey beyond design projects, where community events, interviews, and hands-on projects come together. Each activity reflects my drive to connect, share knowledge, and contribute to a thriving, collaborative design community.</p>
+  <p class="intro">Communities and side projects outside of product work — a hardware UX community, a UX study group, a prototyping club, an internship program, and a short YouTube series.</p>
   <section class="grid">{acts.map((a, i) => <ActivityCard entry={a} eager={i < 2} />)}</section>
 </Base>
