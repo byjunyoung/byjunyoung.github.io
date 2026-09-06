@@ -19,56 +19,62 @@ draft: false
 
 ## PROBLEM
 
-Baris Brew, a barista robot café, meets its customers at several touchpoints. They order at a kiosk or in the mobile app, follow the brewing status on the front display, and collect their drink at the pickup zone. Operators manage menus, stock, and device status in the back office, BarisON. Each touchpoint had been built with its own screens and rules, so a single order did not always read as one continuous flow.
+At Baris Brew, a barista robot café, a single order passes through five screens. Customers order at a kiosk or in the app, follow the brewing status on the store display (DID), and collect their drink at the pickup zone. Operators run the store remotely from the back office, BarisON. Each screen had been built at a different time by a different team, so the same state went by different names and an order never read as one flow.
 
-The problems found on site were concrete. Coupons were hard to find, and the coupon confirmation covered the pay button. When orders queued up, order numbers rotated on screen, so customers could not judge their wait. The QR reader was not obviously placed, and some customers had to look for it. In the back office, screen drafts and part of the development had run ahead of planning, leaving gaps in the information architecture and the permission model.
+The problems found on site were concrete. Coupons were hard to find, and the coupon confirmation covered the pay button. When orders queued up, order numbers rotated on screen and customers could not judge their wait. In the back office, screen drafts and development had run ahead of planning, leaving the information architecture and permission model undefined.
 
 ![](./01.jpg) ![](./02.jpg)
 
 
 ## APPROACH
 
-When I joined in August 2025, I took on the role of tying the customer channels and the operator back office together as one system UX.
+I joined in August 2025 to tie the customer channels and the operations console together as one system UX, working from three principles.
 
-**Start from the field:** I gathered problems from an operations debrief after a trade show and from an interview with the retail operations lead. In the summer of 2026 I ran field observations across stores and shared a report of usage patterns and insights by store with the whole company.
+**Field first.** I gathered problems from a trade show operations debrief and an interview with the retail operations lead. In the summer of 2026 I ran field observations across stores and shared a report of usage patterns by store with the whole company.
 
-**Design the flow across touchpoints:** I defined the states of a single order from ordering and payment through brewing status, pickup, and retrieval, and aligned the app, kiosk, and displays to show the same state in the same words.
+**One order, one flow.** I defined the states of an order first, from ordering and payment through brewing, pickup, and retrieval, then aligned the kiosk, app, and displays to show the same state in the same words.
 
-**Run the UX track:** I kept the specs and the Figma files separately managed, and used phased handoff milestones and weekly meetings to stay in step with the development and AI teams. From October 2025 the UX part also took on the PM role.
+**The document is the source of truth.** Each product got a PRD whose features and policies map one-to-one to the Figma screen pages. When a screen and a rule disagree, the document is fixed first.
 
 
 ## SOLUTION
 
-### Customer channels
+### Kiosk
 
-**Kiosk:** I shortened the coupon flow to QR scan, items added automatically, edit the menu, pay, and merged the payment method selection and guidance screens. For the barrier-free kiosk I kept the existing form factor and, to meet the accessibility standard for unattended terminals, added a physical keypad, voice guidance, high contrast, and magnification, then reviewed TTS timing, focus order, and screen reader behavior.
+I organized the flow from the start screen through menu browsing, item detail, order review, and payment. Coupons are applied on the order review screen by scanning a QR code or entering a code, and payment finishes in two screens: choosing a method and following the terminal guidance. To meet the accessibility standard for unattended terminals, the kiosk gained a physical keypad, voice guidance, high contrast, and magnification, and the start screen carries the entry point for voice ordering.
 
-![](./07.jpg)
+![](./03.jpg)
 
-**Mobile app:** I managed app updates centered on pre-ordering and pickup notifications, and added a temperature-based price option.
+![](./04.jpg)
 
-**Pickup zone and front display:** I designed the brewing status guidance and the feedback right after pickup, and unified the wording for retrieval and disposal situations across the app and the displays. The pickup zone screen stays simple, with motion and labels kept to a minimum.
+### Mobile app
 
-![](./03.jpg) ![](./04.jpg)
+Customers order before they arrive and see their queue position and expected completion time in the app. The brewing status screen uses one structure for the waiting, brewing, done, and error states, and guides them to pickup when the drink is ready.
 
 ![](./05.jpg)
 
-### Operator back office, BarisON
+### Store display and pickup zone
 
-I defined BarisON as the console from which headquarters runs and monitors unmanned stores remotely. Building on the operations interview, I planned remote store and robot control (power, status, cameras), unified management of the headquarters master catalog and each store's products and stock, payment and sales analysis, an alarm system organized by operational severity, and a three-tier account model for headquarters admins, operations staff, and store owners. I also set common policies such as input form validation and button label conventions.
+In a store with no staff, the display does the calling. It splits orders being brewed from orders waiting for pickup, by order number, and announces completion on screen. The pickup zone shows each order as a card and clears cards as a camera detects pickups. The wording for retrieval and disposal situations was aligned across the app and the displays.
 
 ![](./06.jpg)
 
-### VoiceOrder
+### Operations console, BarisON
 
-I designed the prompts and conversation flow for an LLM-based voice ordering service: a prompt defining personality, environment, tone, goals, guardrails, and tools; the wake words ("Baris", "Hi, Baris"); barge-in; and the session-end rules and completion screen. Issues found in the store pilot, such as the TTS audio feeding back into the microphone and triggering false barge-ins, were tracked in a checklist and fixed in updates.
+BarisON is the console from which headquarters runs unmanned stores remotely. I planned store and robot control (power, status, cameras), unified management of the headquarters master catalog and each store's products and stock, an alarm system organized by operational severity, and a three-tier account model for headquarters admins, operations staff, and store owners. I also set common policies such as input form validation and button label conventions.
+
+![](./07.jpg)
+
+### Voice ordering, VoiceOrder
+
+I designed the prompts and conversation flow for LLM-based voice ordering: a prompt defining personality, environment, tone, goals, guardrails, and tools; the wake word ("Baris"); barge-in; and the session-end rules and completion screen. The kiosk carries the entry point and distinguishes the listening, thinking, responding, and error states with an animation along the screen edge. Issues found in the store pilot, such as TTS audio feeding back into the microphone, were tracked in a checklist and fixed in updates.
 
 
 ## IMPLEMENTATION
 
-**Documentation and handoff:** From 2026 I set up a PRD per product (kiosk, BarisON) that maps features and policies one-to-one to Figma pages, with a change log. Work was handed to development in phases, and I chaired the BarisON project meetings to set priorities with the development team.
+**Documents and handoff.** PRDs for the kiosk, app, DID, pickup zone, and BarisON link every feature and policy to its Figma screen and keep a change log. Work goes to development in phases, and I chair the BarisON project meetings to set priorities.
 
-**Validation:** I validated the designs with a store pilot checklist, barrier-free kiosk QA, and analysis of voice order logs. The logs showed people using it like a voice assistant, which I reframed as a UI problem rather than an AI capability problem.
+**Validation.** I validated the designs with a store pilot checklist, barrier-free kiosk QA, and analysis of voice order logs. The logs showed people using it like a voice assistant, which I reframed as a UI problem rather than an AI capability problem.
 
 
 ## IMPACT

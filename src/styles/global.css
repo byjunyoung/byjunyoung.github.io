@@ -79,12 +79,16 @@ img, video { display: block; max-width: 100%; height: auto; }
 .metacard a { text-decoration: underline; }
 @media (max-width: 860px) { .metacard { float: none; width: auto; margin: 0 0 32px; } }
 
-.prose > :not(img):not(video):not(.embed):not(p:has(> img)) { max-width: 640px; }
+.prose > :not(img):not(video):not(.embed):not(p:has(> img)) { max-width: calc(50% - var(--gap) / 2); }
+@media (max-width: 720px) { .prose > :not(img):not(video):not(.embed):not(p:has(> img)) { max-width: none; } }
 .prose h2 { font-size: var(--fs-sm); font-weight: 600; letter-spacing: 0.06em; margin: 48px 0 16px; }
 .prose h2::after { content: ""; display: block; width: 28px; height: 2px; background: var(--fg); margin-top: 8px; }
 .prose h3 { font-size: var(--fs-md); font-weight: 600; margin: 28px 0 8px; }
 .prose p { margin: 0 0 14px; }
-.prose li { margin: 0 0 8px; }
+.prose ul, .prose ol { margin: 0 0 14px; padding-left: 1.25em; }
+.prose li { margin: 0 0 6px; padding-left: 0.25em; }
+.prose li > p { margin: 0; }
+.prose li > p + p { margin-top: 6px; }
 .prose img, .prose video { width: 100%; margin: 28px 0; border: 1px solid var(--line); clear: both; }
 .prose p:has(> img) { max-width: none; clear: both; }
 .prose p:has(> img + img) { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
