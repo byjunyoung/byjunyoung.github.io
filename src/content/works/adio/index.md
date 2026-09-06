@@ -11,6 +11,7 @@ link: { label: "Research Article", url: "https://dl.acm.org/doi/10.1145/3411764.
 tags: ["User Study", "Data Analysis & Visualization", "Prototyping - Book Lever"]
 kind: case-study
 cover: ./cover.jpg
+loop: "/media/works/adio/loop.mp4"
 order: 5
 draft: false
 ---

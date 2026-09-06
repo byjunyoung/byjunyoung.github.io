@@ -10,6 +10,7 @@ link: { label: "Dot Pad Website", url: "https://pad.dotincorp.com/" }
 tags: ["UX Research", "Hardware UX Design"]
 kind: note
 cover: ./cover.jpg
+loop: "/media/works/dotpad/loop.mp4"
 order: 8
 draft: false
 ---

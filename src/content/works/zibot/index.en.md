@@ -10,6 +10,7 @@ keywords: ["stem education", "kids robot", "product design", "silicon valley"]
 tags: ["Market Research", "Concept Development", "Prototyping"]
 kind: case-study
 cover: ./cover.png
+loop: "/media/works/zibot/loop.mp4"
 order: 3
 draft: false
 ---

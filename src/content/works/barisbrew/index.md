@@ -10,6 +10,7 @@ link: { label: "바리스브루 홈페이지", url: "https://xyzcorp.io/baris" }
 tags: ["System UX", "Voice UX", "UX Design Ops"]
 kind: note
 cover: ./cover.jpg
+loop: "/media/works/barisbrew/loop.mp4"
 order: 6
 draft: false
 ---

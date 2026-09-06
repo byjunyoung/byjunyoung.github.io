@@ -11,6 +11,7 @@ link: { label: "Dot Canvas Web", url: "https://apps.dotincorp.com/" }
 tags: ["Wireframe", "GUI Design", "UX Research"]
 kind: case-study
 cover: ./cover.jpg
+loop: "/media/works/dotcanvas/loop.mp4"
 order: 4
 draft: false
 ---

@@ -11,6 +11,7 @@ link: { label: "Master's Thesis", url: "https://drive.google.com/file/d/1Ys_DDoI
 tags: ["Research", "Product Design", "Prototyping", "Project Management"]
 kind: case-study
 cover: ./cover.jpg
+loop: "/media/works/birdy/loop.mp4"
 order: 1
 draft: false
 ---

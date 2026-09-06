@@ -10,6 +10,7 @@ link: { label: "HCI Korea 2021 Journal", url: "https://www.dbpia.co.kr/journal/a
 tags: ["Product Design", "Prototyping"]
 kind: case-study
 cover: ./cover.jpg
+loop: "/media/works/meemo/loop.mp4"
 order: 2
 draft: false
 ---
