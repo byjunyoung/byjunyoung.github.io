@@ -36,8 +36,6 @@ On the web platform you can create tactile graphics and store and share them in 
 
 With these features, Dot Canvas aimed to lower the barrier to making tactile materials and to build a sustainable environment for tactile education.
 
-![](./16.jpg)
-
 ![](./04.jpg)
 
 <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/N_L3hR81nik?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
@@ -81,9 +79,9 @@ With these features, Dot Canvas aimed to lower the barrier to making tactile mat
 
 ## IMPACT
 
-<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/AHK3VnjvA5Y?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-
 Dot Canvas won the CES 2024 Innovation Award and was shown at CSUN 2024.
+
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/AHK3VnjvA5Y?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 ![](./15.jpg) ![](./14.jpeg)
 

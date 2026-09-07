@@ -36,8 +36,6 @@ draft: false
 
 닷 캔버스는 이런 기능으로 촉각 자료 제작의 진입 장벽을 낮추고, 지속 가능한 촉각 교육 환경을 만드는 것을 목표로 했습니다.
 
-![](./16.jpg)
-
 ![](./04.jpg)
 
 <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/N_L3hR81nik?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
@@ -81,9 +79,9 @@ draft: false
 
 ## IMPACT
 
-<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/AHK3VnjvA5Y?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-
 닷 캔버스로 CES 2024 Innovation Award를 수상하고, CSUN 2024에 출품했습니다.
+
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/AHK3VnjvA5Y?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 ![](./15.jpg) ![](./14.jpeg)
 
