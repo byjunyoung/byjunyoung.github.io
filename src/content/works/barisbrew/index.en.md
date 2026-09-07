@@ -88,7 +88,7 @@ With the engineering team, I designed the prompts and conversation flow for LLM-
 
 ## IMPLEMENTATION
 
-**Documents and handoff.** PRDs for the kiosk, app, DID, pickup zone, and BarisON link every feature and policy to its Figma screen and keep a change log. Work goes to development in phases, and I chair the BarisON project meetings to set priorities.
+**Documents and handoff.** PRDs for the kiosk, app, DID, pickup zone, and BarisON link every feature and policy to its Figma screen and keep a change log. Work goes to development in phases.
 
 **Validation.** We validated the designs with a store pilot checklist, barrier-free kiosk QA, and analysis of voice order logs. The logs showed people using it like a voice assistant, which we reframed as a UI problem rather than an AI capability problem.
 

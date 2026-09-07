@@ -47,7 +47,9 @@ Sound is kept to short cues at moments of transition, such as power on, power of
 
 ### DEUX ON
 
-DEUX ON is the operations console that handles the robot's posture, movement, and expression on one screen. Run state, connections, battery, lift height, the system log, and the emergency stop stay visible on the left, and three control modes are chosen at the top: on-screen, VR, and leader arm. The posture tab moves the fourteen arm joints and the hands with sliders, holds compliance settings and pose presets, and shows the robot's pose in 2D and 3D. The drive tab covers the joystick, wheel steering, and lift height; the expression tab covers faces, sounds, and volume.
+DEUX ON is the operations console that handles the robot's posture, movement, and expression on one screen. Its users are the engineers bringing the robot up, on-site operators, and remote pilots. Run state, connections, battery, lift height, the system log, and the emergency stop stay visible on the left, and three control modes are chosen at the top: on-screen, VR, and leader arm. The posture tab moves the fourteen arm joints and the hands with sliders, holds compliance settings and pose presets, and shows the robot's pose in 2D and 3D. The drive tab covers the joystick, wheel steering, and lift height; the expression tab covers faces, sounds, and volume.
+
+A few rules were set in moving it from a developer tool to a product screen. While VR or the leader arm has the robot, on-screen control is locked, but stop and mode switching stay open at all times: this screen must never lose its way to stop the robot. The lock is announced by the robot status badge in the left panel, and the button that clears it sits there too. An in-body notice banner was tried twice and removed twice, because every time a lock engaged it pushed the tabs and the whole screen down. Color carries safety meaning: red is reserved for the emergency stop alone, faults and input errors are orange, normal is green. The developer screen's own color coding was deliberately not followed. Start and stop apply to the whole robot, not to the tab in view.
 
 ![](./01.jpg)
 
@@ -63,4 +65,4 @@ DEUX ON is the operations console that handles the robot's posture, movement, an
 
 ## IMPACT
 
-In the July 2026 product film and the August Robot Building Solution demos and press interviews, DEUX greeted people with these faces, sounds, and voice, and it is heading into store deployment in September. The control screen that began as a developer tool is now a product screen managed by the UX part.
+In the July 2026 product film and the August Robot Building Solution demos and press interviews, DEUX greeted people with these faces, sounds, and voice. The control screen that began as a developer tool is now a product screen managed by the UX part.

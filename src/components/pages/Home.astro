@@ -10,6 +10,8 @@ const works = byLang(await getCollection('works'), lang);
 ---
 <Base lang={lang} altPath="/">
   <h1 class="label">Works</h1>
-  <p class="intro">Hardware UX designer. I design the part of products that lives beyond the screen — form, touch, space, feedback. UX Lead in the Robot Design Team at XYZ Inc.; previously three years at Dot Inc. on the Dot Pad tactile display and Dot Canvas, a CES 2024 Innovation Award winner.</p>
+  {lang === 'ko'
+    ? <p class="intro">하드웨어 UX 디자이너. 화면 밖에 있는 제품의 경험, 형태·촉각·공간·피드백을 설계합니다. XYZ 로봇디자인팀 UX 리드이고, 그 전 3년은 닷에서 촉각 디스플레이 닷패드와 CES 2024 Innovation Award를 받은 닷 캔버스를 맡았습니다.</p>
+    : <p class="intro">Hardware UX designer. I design the part of products that lives beyond the screen — form, touch, space, feedback. UX Lead in the Robot Design Team at XYZ Inc.; previously three years at Dot Inc. on the Dot Pad tactile display and Dot Canvas, a CES 2024 Innovation Award winner.</p>}
   <section class="grid">{works.map((w, i) => <WorkCard entry={w} index={i + 1} eager={i < 2} />)}</section>
 </Base>

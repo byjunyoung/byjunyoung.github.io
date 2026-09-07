@@ -10,6 +10,8 @@ const acts = byLang(await getCollection('activities'), lang);
 ---
 <Base title="Activities" lang={lang} altPath="/activities/">
   <h1 class="label">Activities</h1>
-  <p class="intro">Communities and side projects outside of product work — a hardware UX community, a UX study group, a prototyping club, an internship program, and a short YouTube series.</p>
+  {lang === 'ko'
+    ? <p class="intro">제품 일 밖의 커뮤니티와 사이드 프로젝트입니다. 하드웨어 UX 커뮤니티, UX 스터디 그룹, 프로토타이핑 동아리, 인턴십 프로그램, 그리고 짧은 유튜브 시리즈.</p>
+    : <p class="intro">Communities and side projects outside of product work — a hardware UX community, a UX study group, a prototyping club, an internship program, and a short YouTube series.</p>}
   <section class="grid">{acts.map((a, i) => <ActivityCard entry={a} eager={i < 2} />)}</section>
 </Base>

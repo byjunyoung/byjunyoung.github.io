@@ -11,7 +11,7 @@ tags: ["HRI Design", "LED & Sound Feedback", "Expressive Display"]
 kind: case-study
 cover: ./cover.png
 loop: "/media/works/storagy/loop.mp4"
-order: 2
+order: 3
 draft: false
 ---
 
@@ -24,7 +24,7 @@ STORAGY, an indoor delivery robot, shares hallways, elevators, and offices with 
 
 ## APPROACH
 
-We defined the robot's states first, then split the channels. System states are shown by LED and sound, driving states by the front display and sound. Display and LED feedback were mapped state by state, with sound added afterward. We put it on the real robot with the engineering team and revised as we went.
+We defined the robot's states first, then split the channels. The robot reports two kinds of state: system state, such as booting, normal, warning, error, and battery, and operation state, such as idle, driving, docked, and the task at hand. System state has to be readable by an operator from anywhere at a glance, so it went to the LED under the body, with sound. Driving state has to be read by the person in front of the robot, so it went to the face on the front display, with sound. Display and LED feedback were mapped state by state and that table became the source of truth, with sound added afterward. Engineering built to the states as defined, and we put it on the real robot and revised as we went.
 
 
 ## SOLUTION
@@ -37,7 +37,7 @@ I made the representative face and animation for six states: booting, idle, movi
 
 ### LED and display
 
-The front display carries the face; the LED under the body shows the system state.
+The front display carries the face; the LED under the body shows the system state. The face tells the person in front of the robot what it is doing now, and the LED shows booting, normal, warning, error, and charging through the color and pattern of the light. One mapping table keeps the two channels from saying different things about the same state.
 
 ![](./01.jpg) ![](./02.jpg)
 
@@ -45,7 +45,7 @@ The front display carries the face; the LED under the body shows the system stat
 
 ### Multi-floor delivery
 
-STORAGY takes the drinks Barisbrew makes, rides the elevator, and delivers them to the desk. I defined the scenarios and states for this multi-floor delivery and planned the features and screens of MobileON, the console that controls the robot remotely.
+STORAGY takes the drinks Barisbrew makes, rides the elevator, and delivers them to the desk. I defined the scenarios and states for this multi-floor delivery and planned the features and screens of MobileON, the console that controls the robot remotely. A face was added for each step of the elevator ride, calling, boarding, choosing the floor, and getting off, along with faces for a blocked path and for error and emergency stop.
 
 <video src="/media/works/storagy/delivery.mp4" autoplay muted loop playsinline></video>
 
