@@ -33,7 +33,7 @@ We defined the robot's states first, then split the channels. The robot reports 
 
 I made the representative face and animation for six states: booting, idle, moving, obstacle, charging, and delivery complete. The position, size, and motion of two eyes are all that separate the states.
 
-<video src="/media/works/storagy/faces.mp4" aria-label="The faces for booting, idle, moving, obstacle, charging, and delivery complete, playing in sequence" autoplay muted loop playsinline></video>
+<video src="/media/works/storagy/faces.mp4" aria-label="The six state faces, each labelled: obstacle, booting, idle, charging, moving, and delivered" autoplay muted loop playsinline></video>
 
 ### LED and display
 
@@ -53,6 +53,8 @@ STORAGY takes the drinks Barisbrew makes, rides the elevator, and delivers them 
 ## IMPACT
 
 It runs floor-to-floor delivery with Barisbrew in the Robot Building Solution at the XYZ headquarters in Seongsu, Seoul.
+
+The states and faces defined at the start became the frame everything else hung on. When multi-floor delivery arrived, four elevator steps, calling, boarding, choosing the floor, and getting off, plus a blocked path and an error and emergency stop, were added under the same rules. Impact detection has its key reserved, to be filled in when the detection logic exists.
 
 
 ## REFLECTION

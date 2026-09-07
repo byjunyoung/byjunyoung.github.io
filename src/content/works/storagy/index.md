@@ -33,7 +33,7 @@ draft: false
 
 부팅·대기·이동·장애물·충전·배송 완료 여섯 상태의 대표 표정과 애니메이션을 만들었습니다. 눈 두 개의 위치와 크기, 움직임만으로 상태를 구분합니다.
 
-<video src="/media/works/storagy/faces.mp4" aria-label="부팅·대기·이동·장애물·충전·배송 완료 여섯 상태의 표정이 차례로 재생되는 영상" autoplay muted loop playsinline></video>
+<video src="/media/works/storagy/faces.mp4" aria-label="장애물·부팅·대기·충전·이동·배송 완료 여섯 상태의 표정을 라벨과 함께 보여 주는 영상" autoplay muted loop playsinline></video>
 
 ### LED와 디스플레이
 
@@ -53,6 +53,8 @@ draft: false
 ## IMPACT
 
 서울 성수 XYZ 사옥의 로봇 빌딩 솔루션에서 바리스브루와 연동해 층간 배송을 운영 중입니다.
+
+처음 정의한 상태와 표정은 그 뒤 확장의 뼈대가 됐습니다. 다층 배송이 붙으면서 엘리베이터 호출·승차·목적층 선택·하차 네 단계와 경로 막힘, 오류·비상정지 표정이 같은 규칙으로 더해졌습니다. 충격 감지는 키만 잡아 두고 감지 로직이 생기면 붙이기로 남겼습니다.
 
 
 ## REFLECTION

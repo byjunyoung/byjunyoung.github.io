@@ -107,3 +107,6 @@ img, video { display: block; max-width: 100%; height: auto; }
 .footer { display: flex; justify-content: space-between; padding-top: 24px; padding-bottom: 48px; border-top: 1px solid var(--line); font-size: var(--fs-sm); color: var(--muted); }
 .footer .n { color: var(--fg); }
 .footer-links { display: flex; gap: 16px; }
+.posts.compact { margin-top: 0; }
+.posts.compact a { gap: 0; padding: 20px 0; }
+.posts.compact .t { font-size: var(--fs-md); }

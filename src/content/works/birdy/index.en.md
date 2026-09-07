@@ -12,7 +12,7 @@ tags: ["Research", "Product Design", "Prototyping", "Project Management"]
 kind: case-study
 cover: ./cover.jpg
 loop: "/media/works/birdy/loop.mp4"
-order: 5
+order: 4
 draft: false
 ---
 
@@ -31,6 +31,16 @@ We designed Birdy, a dedicated device used in place of a smartphone. As lead res
 1. **Product design:** Building on the research, we worked out a design that brought together analog elements and physical interaction, and visualized the early concept.
 1. **Prototype build and testing:** We built three working mockups and ran a three-week field test with six family pairs.
 1. **Data analysis:** Using the qualitative and quantitative data, we analyzed user behavior and experience and evaluated Birdy's effect.
+
+We started with three forms. The stand type could come close to the mailbox the older generation grew up with, but it was awkward to live with day to day, so we dropped it. The wall-mounted type could use a large display but left nowhere to write, so we dropped that too. The desk type remained. It shares the desk with the paper and the pen, and it is easy to move.
+
+![Initial sketches of the three forms: stand, wall-mounted, and desk type](./26.jpg)
+
+For showing the message we also considered a thermal printer. Receiving the message on paper would have been the more analog experience, but we chose a display. In a conversation where short messages come and go quickly, a screen is better for taking in the order and the context, and reloading paper would have been one more barrier for older users.
+
+The paper itself took work. A round card is easy to feed into the device but leaves little room to write; a square one is the opposite. So we made it a square with rounded corners, at 66mm, a little smaller than a sticky note, so that messages stay short by themselves.
+
+![From sketches through body and button variants and prototypes to the final design](./25.jpg)
 
 ![A hand writing a message on a round paper card](./02.jpg) ![Inserting the written card into the slot on top of Birdy, with the emoji card box beside it](./03.jpg) ![Pushing a card into the Birdy body](./04.jpg)
 

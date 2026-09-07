@@ -43,7 +43,7 @@ Every face is made from the position, size, motion, and color of two eyes alone.
 
 ### Sound and voice
 
-Sound is kept to short cues at moments of transition, such as power on, power off, and alerts; the eyes carry the emotion. For demos I made a mapping table so that one button plays a face and its sound in sequence. The voice was chosen by listening to candidates read the same lines, and I wrote a persona brief for a bright, curious tone that sets it apart from Barisbrew's calm one. Each demo line got a matching face.
+Sound is kept to short cues at moments of transition, such as power on, power off, and alerts; the eyes carry the emotion. For demos I made a mapping table so that one button plays a face and its sound in sequence. We went as far as a standard for six system earcons built from one timbre family, then stopped short of producing them; what is on the device today is the set of representative sounds made for demos. The standard stays on file for when that work resumes. The rule that emotion is never made into sound also has one exception: three emotion sounds, joy, sadness, and surprise, are in use for filming and demos, to be revisited once the conversational voice runs in earnest. The voice was chosen by listening to candidates read the same lines, and I wrote a persona brief for a bright, curious tone that sets it apart from Barisbrew's calm one. Each demo line got a matching face.
 
 ### DEUX ON
 
@@ -65,4 +65,4 @@ A few rules were set in moving it from a developer tool to a product screen. Whi
 
 ## IMPACT
 
-In the July 2026 product film and the August Robot Building Solution demos and press interviews, DEUX greeted people with these faces, sounds, and voice. The control screen that began as a developer tool is now a product screen managed by the UX part.
+In the July 2026 product film and the August Robot Building Solution demos and press interviews, DEUX greeted people with these faces, sounds, and voice. The control screen that began as a developer tool is now a product screen managed by the UX part. Where code had been the only definition there is now a document baseline, and with it a working arrangement where the UX part commits to the front-end repository and takes review.

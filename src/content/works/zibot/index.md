@@ -11,7 +11,7 @@ tags: ["Market Research", "Concept Development", "Prototyping"]
 kind: case-study
 cover: ./cover.png
 loop: "/media/works/zibot/loop.mp4"
-order: 7
+order: 6
 draft: false
 ---
 

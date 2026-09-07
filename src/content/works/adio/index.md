@@ -12,7 +12,7 @@ tags: ["User Study", "Data Analysis & Visualization", "Prototyping - Book Lever"
 kind: note
 cover: ./cover.jpg
 loop: "/media/works/adio/loop.mp4"
-order: 8
+order: 7
 draft: false
 ---
 
