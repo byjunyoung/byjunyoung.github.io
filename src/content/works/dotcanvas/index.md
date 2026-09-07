@@ -51,10 +51,6 @@ draft: false
 
 <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/iSmRM2PUBzA?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
-![](./17.jpg) ![](./18.jpg)
-
-![](./19.jpg)
-
 ### Dot Canvas 웹
 
 **웹 기반 촉각 그래픽 제작 도구:** 비전문가도 촉각 그래픽을 만들 수 있는 웹 최적화 도구입니다. 편집 기능과 함께 PDF·이미지 삽입 등의 제작 옵션을 제공합니다.

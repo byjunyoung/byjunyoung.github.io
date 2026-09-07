@@ -51,10 +51,6 @@ I designed the tactile interface of the Dot Pad display, its PUI, haptics, and L
 
 <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/iSmRM2PUBzA?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
-![](./17.jpg) ![](./18.jpg)
-
-![](./19.jpg)
-
 ### Dot Canvas Web
 
 **A web-based tool for making tactile graphics:** A web-optimized tool that lets non-specialists make tactile graphics. Along with editing features, it offers authoring options such as PDF and image import.
