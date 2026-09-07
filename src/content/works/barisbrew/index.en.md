@@ -7,6 +7,7 @@ role: "UX Designer"
 responsibilities: ["System UX", "Voice UX", "UX Design Ops"]
 keywords: ["barista robot", "kiosk", "voice order", "llm"]
 link: { label: "Baris Brew Website", url: "https://xyzcorp.io/baris" }
+with: "Two UX designers (app, web), engineering team"
 tags: ["System UX", "Voice UX", "UX Design Ops"]
 kind: case-study
 cover: ./cover.jpg
@@ -28,7 +29,7 @@ The problems found on site were concrete. Coupons were hard to find, and the cou
 
 ## APPROACH
 
-I joined in August 2025 to tie the customer channels and the operations console together as one system UX, working from three principles.
+I joined in August 2025 to tie the customer channels and the operations console together as one system UX. I worked as one team with two designers, one on the app and one on the web, and my part as planner and UX lead was to keep the flows and policies consistent across the products. We worked from three principles.
 
 **Field first.** I gathered problems from a trade show operations debrief and an interview with the retail operations lead. In the summer of 2026 I ran field observations across stores and shared a report of usage patterns by store with the whole company.
 
@@ -39,9 +40,11 @@ I joined in August 2025 to tie the customer channels and the operations console 
 
 ## SOLUTION
 
+The five products were split across the UX team and built together. What follows is the structure and the policies we settled on.
+
 ### Kiosk
 
-I organized the flow from the start screen through menu browsing, item detail, order review, and payment. Coupons are applied on the order review screen by scanning a QR code or entering a code, and payment finishes in two screens: choosing a method and following the terminal guidance. To meet the accessibility standard for unattended terminals, the kiosk gained a physical keypad, voice guidance, high contrast, and magnification, and the start screen carries the entry point for voice ordering.
+We organized the flow from the start screen through menu browsing, item detail, order review, and payment. Coupons are applied on the order review screen by scanning a QR code or entering a code, and payment finishes in two screens: choosing a method and following the terminal guidance. To meet the accessibility standard for unattended terminals, the kiosk gained a physical keypad, voice guidance, high contrast, and magnification, and the start screen carries the entry point for voice ordering.
 
 ![](./03.jpg)
 
@@ -63,13 +66,13 @@ In a store with no staff, the display does the calling. It splits orders being b
 
 ### Operations console, BarisON
 
-BarisON is the console from which headquarters runs unmanned stores remotely. I planned store and robot control (power, status, cameras), unified management of the headquarters master catalog and each store's products and stock, an alarm system organized by operational severity, and a three-tier account model for headquarters admins, operations staff, and store owners. I also set common policies such as input form validation and button label conventions.
+BarisON is the console from which headquarters runs unmanned stores remotely. We planned store and robot control (power, status, cameras), unified management of the headquarters master catalog and each store's products and stock, an alarm system organized by operational severity, and a three-tier account model for headquarters admins, operations staff, and store owners. We also set common policies such as input form validation and button label conventions.
 
 ![](./07.jpg)
 
 ### Voice ordering, VoiceOrder
 
-I designed the prompts and conversation flow for LLM-based voice ordering: a prompt defining personality, environment, tone, goals, guardrails, and tools; the wake word ("Baris"); barge-in; and the session-end rules and completion screen. The conversation was validated against twelve scenarios, from a basic order to multi-item commands, small-talk interruptions, and budget-based recommendations, and the TTS voice was chosen by listening to the candidates side by side. The kiosk carries the entry point and distinguishes the listening, thinking, responding, and error states with an animation along the screen edge. It was [first demonstrated](https://www.linkedin.com/posts/xyzcorporation_ai-robotcafe-agenticai-activity-7378711064454205440-h9Wl) at the Seoul AI Robot Show in September 2025, [unveiled at RoboWorld 2025](https://www.mt.co.kr/future/2025/11/03/2025110314103736602) in November, and then went into a store pilot; issues from the logs, such as TTS audio feeding back into the microphone, were tracked in a checklist and fixed in updates. The clip below, from the Lounge'X 24h store film, runs from the greeting and a menu question through an order, its confirmation, and pickup.
+With the engineering team, I designed the prompts and conversation flow for LLM-based voice ordering: a prompt defining personality, environment, tone, goals, guardrails, and tools; the wake word ("Baris"); barge-in; and the session-end rules and completion screen. The conversation was validated against twelve scenarios, from a basic order to multi-item commands, small-talk interruptions, and budget-based recommendations, and the TTS voice was chosen by listening to the candidates side by side. The kiosk carries the entry point and distinguishes the listening, thinking, responding, and error states with an animation along the screen edge. It was [first demonstrated](https://www.linkedin.com/posts/xyzcorporation_ai-robotcafe-agenticai-activity-7378711064454205440-h9Wl) at the Seoul AI Robot Show in September 2025, [unveiled at RoboWorld 2025](https://www.mt.co.kr/future/2025/11/03/2025110314103736602) in November, and then went into a store pilot; issues from the logs, such as TTS audio feeding back into the microphone, were tracked in a checklist and fixed in updates. The clip below, from the Lounge'X 24h store film, runs from the greeting and a menu question through an order, its confirmation, and pickup.
 
 <video src="/media/works/barisbrew/voice.mp4" autoplay muted loop playsinline></video>
 
@@ -78,10 +81,12 @@ I designed the prompts and conversation flow for LLM-based voice ordering: a pro
 
 **Documents and handoff.** PRDs for the kiosk, app, DID, pickup zone, and BarisON link every feature and policy to its Figma screen and keep a change log. Work goes to development in phases, and I chair the BarisON project meetings to set priorities.
 
-**Validation.** I validated the designs with a store pilot checklist, barrier-free kiosk QA, and analysis of voice order logs. The logs showed people using it like a voice assistant, which I reframed as a UI problem rather than an AI capability problem.
+**Validation.** We validated the designs with a store pilot checklist, barrier-free kiosk QA, and analysis of voice order logs. The logs showed people using it like a voice assistant, which we reframed as a UI problem rather than an AI capability problem.
 
 
 ## IMPACT
+
+Results the team delivered together.
 
 - Shipped a mobile app update timed to a new store opening.
 - Put the VoiceOrder MVP into a store pilot in December 2025 and released an update that improved wake word recognition and TTS.
