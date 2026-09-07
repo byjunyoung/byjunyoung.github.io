@@ -68,6 +68,8 @@ In a store with no staff, the display does the calling. It splits orders being b
 
 The pickup zone shows each order on a display beneath the spot where the cup is placed. It is a tangible interaction: instead of touching a screen, picking up the drink is the input. A camera detects the pickup and clears the card, and exceptions such as retrieval and disposal are worded the same way in the app and on the display. People stand here only for a moment, so the UI elements on that display had to work within that brief dwell time while still conveying exactly which drink it is. That was the UX point I enjoyed most in this project.
 
+![](./08.jpg)
+
 ### Operations console, BarisON
 
 BarisON is the console from which headquarters runs unmanned stores remotely. We planned store and robot control (power, status, cameras), unified management of the headquarters master catalog and each store's products and stock, an alarm system organized by operational severity, and a three-tier account model for headquarters admins, operations staff, and store owners. We also set common policies such as input form validation and button label conventions.
