@@ -90,3 +90,14 @@ I designed the prompts and conversation flow for LLM-based voice ordering: a pro
 - The system runs in stores of many kinds, including public cultural spaces, apartment community centers, corporate retreats, and unmanned laundromats.
 
 <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/tAH6xt0qpqk?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
+
+## REFLECTION
+
+**A robot service in live operation has to be designed as a system, not as screens.**
+
+Baris Brew runs in real stores, so feedback from the field went straight back into the design. I came to plan and design at the level of the system rather than a single screen, and every change had to be weighed against its effect on operations. The users had different stakes: administrators, café operators, and café customers. I split the work with two designers, one on the app and one on the web, and learned to lead while moving as one team.
+
+VoiceOrder was one technical issue after another. Store noise, microphone pickup, and wake word recognition only showed their problems once the feature was in operation, and early on we collected logs, monitored, and fixed things often. What was fun was that people treated the feature as entertainment, asking it to speak in dialect. If I did it again, I would cut features. I joined after version 1.0 was largely done, and there were too many features; I would keep the core, then put its usability and stability first.
+
+Robots often stop at development, never reach users, or never make money. This project mattered because there was a robot café in real operation, so I could design the user experience of a robot service directly and get feedback on it. Along the way I grew by taking on the roles of PM, planner, and UX lead.
