@@ -36,6 +36,8 @@ draft: false
 
 닷 캔버스는 이런 기능으로 촉각 자료 제작의 진입 장벽을 낮추고, 지속 가능한 촉각 교육 환경을 만드는 것을 목표로 했습니다.
 
+![](./16.jpg)
+
 ![](./04.jpg)
 
 <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/N_L3hR81nik?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
