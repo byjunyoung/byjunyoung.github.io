@@ -37,6 +37,10 @@ I joined in August 2025 to tie the customer channels and the operations console 
 
 **The document is the source of truth.** Each product got a PRD whose features and policies map one-to-one to the Figma screen pages. When a screen and a rule disagree, the document is fixed first.
 
+Put the order states on one axis and it becomes clear which stretch each of the five touchpoints, the robot, and the operations console covers.
+
+![](./09.jpg)
+
 
 ## SOLUTION
 
