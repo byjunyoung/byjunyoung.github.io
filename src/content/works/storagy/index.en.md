@@ -58,10 +58,10 @@ It runs floor-to-floor delivery with Barisbrew in the Robot Building Solution at
 
 ## REFLECTION
 
-**The ideal scenario is easy. The exceptions are the work.**
+**Feedback for a moving robot begins with defining its states and continues with handling the exceptions.**
 
-The hardest part was defining the robot's feedback state by state. I had to understand how the robot actually operates before any feedback could be attached, and this project taught me at what granularity to define it and in what format to hand it to engineering.
+STORAGY was not a product on a screen but a robot running down hallways. To define feedback state by state, I first had to understand in what order the robot moves and where it stops, what it senses and what it cannot know. Half the work, then, was learning how the robot operates; the other half was translating the states and feedback I had defined into units and formats the engineering team could implement as written. Splitting the channels into face, LED, and sound, and treating the state-by-state mapping table as the source of truth, both came out of that process.
 
-The ideal scenario was actually fine. What was hard were the unexpected situations and exception cases, and that work is still going on. It is not something finished in one pass; it needs repeated rounds of improvement. What I would do differently next time, I do not yet know.
+The ideal scenario was not the hard part. Waiting, moving, and arriving are covered by six faces. What is hard is everything else: what the robot should show when it meets an obstacle, when nobody picks up what it delivered, when it has to turn back. None of that was defined in one pass, and it is still being filled in on site. This project taught me that a robot's HRI is not a design that ends at launch but one that is revised repeatedly in operation. So it is too early to say what I would do differently next time.
 
-For my career, it meant working on a robot that moves, and on the scenario of indoor delivery.
+For my career, it meant working on a robot that moves rather than a device that sits still, and taking on the whole service scenario of indoor delivery.
