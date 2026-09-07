@@ -1,15 +1,15 @@
 ---
-title: "Dot Canvas"
-subtitle: "Designing a tactile-graphics authoring tool for Dot Pad"
+title: "Dot Pad & Dot Canvas"
+subtitle: "UX of a tactile display and its tactile-graphics authoring tool"
 org: "Dot Inc."
-year: "2023 – 2024"
+year: "2022 – 2024"
 role: "UX Designer"
-responsibilities: ["Wireframe", "GUI Design", "UX Research"]
+responsibilities: ["Hardware UX Design", "UX Research", "Wireframe", "GUI Design"]
 with: "김승환 (Service Planner), 주백준 (GUI Designer)"
-keywords: ["tactile graphic", "design tool", "gui design", "accessibility"]
+keywords: ["tactile display", "braille", "haptic", "tactile graphic", "design tool", "accessibility"]
 awards: ["CES 2024 Innovation Award"]
 link: { label: "Dot Canvas Web", url: "https://apps.dotincorp.com/" }
-tags: ["Wireframe", "GUI Design", "UX Research"]
+tags: ["Hardware UX Design", "UX Research", "Wireframe", "GUI Design"]
 kind: case-study
 cover: ./cover.jpg
 loop: "/media/works/dotcanvas/loop.mp4"
@@ -30,6 +30,8 @@ These constraints limit what visually impaired students have the chance to learn
 
 ## APPROACH
 
+At Dot I first took on the hardware UX of the tactile display Dot Pad. I compared more than 20 braille devices to define its tactile notation and the specs and requirements for the next model, and designed the key functions and the haptic and LED feedback that went into the production model. The next job was the tool for making the tactile graphics that go on Dot Pad: Dot Canvas.
+
 I took on the UX of Dot Canvas, an authoring tool that works with Dot Pad. Dot Canvas is a web and mobile app platform, designed so that non-specialists can create and share tactile graphics.
 
 On the web platform you can create tactile graphics and store and share them in the cloud. The mobile app uses iPad touch and the Apple Pencil. It supports VoiceOver and live drawing, so visually impaired users can create tactile graphics themselves.
@@ -43,7 +45,17 @@ With these features, Dot Canvas aimed to lower the barrier to making tactile mat
 
 ## SOLUTION
 
-### Web
+### Dot Pad
+
+I designed the tactile interface of the Dot Pad display, its PUI, haptics, and LED feedback, and it went into the production model. UX improvements such as consistent key functions and physical markings were reviewed and applied. Comparing more than 20 braille devices set Dot Pad's tactile notation and the specs and requirements for the next model, and user evaluations gathered the feedback to carry into it.
+
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/iSmRM2PUBzA?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
+![](./17.jpg) ![](./18.jpg)
+
+![](./19.jpg)
+
+### Dot Canvas Web
 
 **A web-based tool for making tactile graphics:** A web-optimized tool that lets non-specialists make tactile graphics. Along with editing features, it offers authoring options such as PDF and image import.
 
@@ -53,7 +65,7 @@ With these features, Dot Canvas aimed to lower the barrier to making tactile mat
 
 ![](./09.jpg)
 
-### App
+### Dot Canvas App
 
 **Making with touch and the Apple Pencil:** A tactile-graphics tool optimized for iPad. Graphics are drawn with touch and the Apple Pencil, and the files are shared with the web through Dot Cloud.
 
@@ -79,7 +91,7 @@ With these features, Dot Canvas aimed to lower the barrier to making tactile mat
 
 ## IMPACT
 
-Dot Canvas won the CES 2024 Innovation Award and was shown at CSUN 2024.
+Dot Pad's tactile interface went into the production model, and Dot Canvas won the CES 2024 Innovation Award and was shown at CSUN 2024.
 
 <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/AHK3VnjvA5Y?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 

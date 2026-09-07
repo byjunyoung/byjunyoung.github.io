@@ -1,15 +1,15 @@
 ---
-title: "Dot Canvas"
-subtitle: "닷패드를 위한 촉각 그래픽 저작 툴 디자인"
+title: "Dot Pad & Dot Canvas"
+subtitle: "촉각 디스플레이와 촉각 그래픽 저작 툴의 UX"
 org: "Dot Inc."
-year: "2023 – 2024"
+year: "2022 – 2024"
 role: "UX 디자이너"
-responsibilities: ["Wireframe", "GUI Design", "UX Research"]
+responsibilities: ["Hardware UX Design", "UX Research", "Wireframe", "GUI Design"]
 with: "김승환 (서비스 기획자), 주백준 (GUI 디자이너)"
-keywords: ["tactile graphic", "design tool", "gui design", "accessibility"]
+keywords: ["tactile display", "braille", "haptic", "tactile graphic", "design tool", "accessibility"]
 awards: ["CES 2024 Innovation Award"]
 link: { label: "Dot Canvas Web", url: "https://apps.dotincorp.com/" }
-tags: ["Wireframe", "GUI Design", "UX Research"]
+tags: ["Hardware UX Design", "UX Research", "Wireframe", "GUI Design"]
 kind: case-study
 cover: ./cover.jpg
 loop: "/media/works/dotcanvas/loop.mp4"
@@ -30,6 +30,8 @@ draft: false
 
 ## APPROACH
 
+닷에서는 촉각 디스플레이 닷패드의 하드웨어 UX를 먼저 맡았습니다. 점자 디바이스 20종 이상을 비교해 촉각 표기 방식과 차기 모델의 스펙·요구사항을 정의하고, 키 기능과 햅틱·LED 피드백을 설계해 양산 모델에 적용했습니다. 그다음 일이 닷패드에 올릴 촉각 그래픽을 만드는 도구, 닷 캔버스였습니다.
+
 닷패드와 연동되는 저작 도구 '닷 캔버스'의 UX를 맡았습니다. 닷 캔버스는 웹과 모바일 앱 기반의 플랫폼으로, 비전문가도 촉각 그래픽을 만들고 공유할 수 있도록 설계했습니다.
 
 웹 플랫폼에서는 촉각 그래픽을 만들고 클라우드에 저장·공유할 수 있습니다. 모바일 앱은 아이패드의 터치 조작과 애플 펜슬을 활용합니다. 보이스 오버와 라이브 드로잉을 지원해 시각장애인 사용자도 촉각 그래픽을 직접 만들 수 있습니다.
@@ -43,7 +45,17 @@ draft: false
 
 ## SOLUTION
 
-### Web
+### Dot Pad
+
+촉각 디스플레이 닷패드의 촉각 인터페이스(PUI·햅틱·LED 피드백)를 설계해 양산 모델에 적용했습니다. 일관된 키 기능 정의, 물리적 표기 제공 등 UX 개선 방안을 검토해 반영했습니다. 점자 디바이스 20종 이상을 비교 분석해 닷패드의 촉각 표기 방식과 차기 모델의 스펙·요구사항을 정의했고, 사용자 경험을 평가해 차기 모델에 반영할 피드백을 모았습니다.
+
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/iSmRM2PUBzA?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
+![](./17.jpg) ![](./18.jpg)
+
+![](./19.jpg)
+
+### Dot Canvas 웹
 
 **웹 기반 촉각 그래픽 제작 도구:** 비전문가도 촉각 그래픽을 만들 수 있는 웹 최적화 도구입니다. 편집 기능과 함께 PDF·이미지 삽입 등의 제작 옵션을 제공합니다.
 
@@ -53,7 +65,7 @@ draft: false
 
 ![](./09.jpg)
 
-### App
+### Dot Canvas 앱
 
 **터치와 애플 펜슬로 제작:** 아이패드에 최적화한 촉각 그래픽 제작 도구입니다. 터치 조작과 애플 펜슬로 그래픽을 그리고, 만든 파일은 닷 클라우드로 웹과 공유합니다.
 
@@ -79,7 +91,7 @@ draft: false
 
 ## IMPACT
 
-닷 캔버스로 CES 2024 Innovation Award를 수상하고, CSUN 2024에 출품했습니다.
+닷패드의 촉각 인터페이스는 양산 모델에 들어갔고, 닷 캔버스는 CES 2024 Innovation Award를 받고 CSUN 2024에 출품했습니다.
 
 <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/AHK3VnjvA5Y?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
