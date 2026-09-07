@@ -5,7 +5,6 @@ org: "XYZ Inc."
 year: "2026 – Present"
 role: "UX Designer"
 responsibilities: ["HRI Design", "Expression & Sound", "Product Design", "Front-end"]
-with: "Robot Design, Robot Intelligence, and Robot Automation teams"
 keywords: ["humanoid", "hri", "expressive display", "teleoperation", "react"]
 link: { label: "DEUX Website", url: "https://xyzcorp.io/DEUX" }
 tags: ["HRI Design", "Expression & Sound", "Product Design", "Front-end"]

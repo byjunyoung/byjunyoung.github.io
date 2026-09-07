@@ -5,7 +5,6 @@ org: "XYZ Inc."
 year: "2025 – 현재"
 role: "UX 디자이너"
 responsibilities: ["HRI Design", "LED & Sound Feedback", "Expressive Display"]
-with: "로봇 개발팀"
 keywords: ["hri", "delivery robot", "nonverbal interaction"]
 link: { label: "스토리지 홈페이지", url: "https://xyzcorp.io/STORAGY" }
 tags: ["HRI Design", "LED & Sound Feedback", "Expressive Display"]

@@ -5,7 +5,6 @@ org: "XYZ Inc."
 year: "2025 – Present"
 role: "UX Designer"
 responsibilities: ["HRI Design", "LED & Sound Feedback", "Expressive Display"]
-with: "Robot engineering team"
 keywords: ["hri", "delivery robot", "nonverbal interaction"]
 link: { label: "STORAGY Website", url: "https://xyzcorp.io/STORAGY" }
 tags: ["HRI Design", "LED & Sound Feedback", "Expressive Display"]

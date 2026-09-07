@@ -7,7 +7,6 @@ role: "UX Designer"
 responsibilities: ["System UX", "Voice UX", "UX Design Ops"]
 keywords: ["barista robot", "kiosk", "voice order", "llm"]
 link: { label: "Baris Brew Website", url: "https://xyzcorp.io/baris" }
-with: "Two UX designers (app, web), engineering team"
 tags: ["System UX", "Voice UX", "UX Design Ops"]
 kind: case-study
 cover: ./cover.jpg

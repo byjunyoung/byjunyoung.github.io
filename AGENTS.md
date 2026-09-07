@@ -33,6 +33,7 @@ Junyoung Kim 포트폴리오. Astro 정적 사이트, GitHub Pages(main 푸시 �
 - 구조·흐름·상태처럼 시각 자료가 도움이 되는데 쓸 자산이 없으면 **직접 그린다**: SVG를 HTML에 넣고 헤드리스 크롬(scale 2)으로 렌더 → 긴 변 2000px JPG. 흰 배경, Pretendard, 글자 #161616·보조 #6b6b6b·선 #d6d6d2·면 #efefec/#f7f7f5만, 사방 40px 패딩, 한/영 병기(두 페이지가 한 파일을 쓴다). 그림의 모든 사실은 본문·PRD에 있는 것만. SVG 원본은 ~/Documents/Claude/portfolio-import/<slug>-*-diagram.html 에 보관.
 - 미디어 블록(이미지·그리드·영상·임베드) 사이에 문장을 끼우지 않는다. 절의 글은 앞에 모으고, 미디어는 뒤에 연달아 둔다(2026-09-07 지시).
 - 본문 텍스트 블록은 그리드의 절반 폭(`calc(50% - var(--gap)/2)`)이 상한이다. 픽셀 고정 폭으로 바꾸지 않는다.
+- 프런트매터 `with:`는 이름을 밝힐 수 있는 개인 협업자만 적는다(팀·부서명은 쓰지 않는다). 본인 담당은 `responsibilities:`로 명시하고 메타 카드에 Responsibilities 행으로 보인다(2026-09-07 지시).
 - 본문 이미지의 alt 는 현재 전부 비어 있다(장식 취급). 채울 때는 사진에 실제로 보이는 것만 한 줄로 — 지어내지 않는다.
 - 본문 영상: `<video src="/media/works/<slug>/02.mp4" autoplay muted loop playsinline></video>`
 - 인용: `>` 블록 = 연한 배경 박스

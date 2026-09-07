@@ -16,6 +16,7 @@ const rows = [
   { label: 'Organization', value: d.org },
   { label: 'Year', value: d.year },
   { label: 'Role', value: d.role },
+  { label: 'Responsibilities', value: d.responsibilities.join(', ') || undefined },
   { label: 'With', value: d.with },
   { label: 'Keywords', value: d.keywords.join(', ') || undefined },
   { label: 'Link', value: d.link?.label, href: d.link?.url },
