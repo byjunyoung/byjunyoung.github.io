@@ -25,11 +25,7 @@ draft: false
 
 이 제약은 시각장애 학생의 학습 기회를 제한하고 교사에게도 부담이 됩니다. 촉각 자료를 만드는 다른 방법이 필요합니다.
 
-![](./01.png)
-
-![](./02.jpg)
-
-![](./03.jpg)
+![](./01.png) ![](./02.jpg) ![](./03.jpg)
 
 
 ## APPROACH
@@ -65,8 +61,6 @@ draft: false
 
 ![](./10.jpg)
 
-![](./13.jpeg)
-
 
 ## IMPLEMENTATION
 
@@ -78,7 +72,9 @@ draft: false
 
 ![](./05.jpg)
 
-![](./06.jpeg) ![](./07.jpeg) ![](./08.jpeg)
+![](./06.jpeg) ![](./07.jpeg)
+
+![](./08.jpeg) ![](./13.jpeg)
 
 
 ## IMPACT
@@ -87,9 +83,7 @@ draft: false
 
 닷 캔버스로 CES 2024 Innovation Award를 수상하고, CSUN 2024에 출품했습니다.
 
-![](./11.jpeg)
-
-![](./14.jpeg)
+![](./15.jpg) ![](./14.jpeg)
 
 
 ## REFLECTION

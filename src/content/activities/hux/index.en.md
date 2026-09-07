@@ -15,6 +15,4 @@ I co-founded and ran the hardware experience group.
 
 With about 20 practitioners and researchers, we held a regular book study and networking meetups.
 
-![](./01.jpeg) ![](./04.jpeg)
-
-![](./05.jpeg)
+![](./01.jpeg) ![](./04.jpeg) ![](./05.jpeg)

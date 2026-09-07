@@ -32,9 +32,7 @@ draft: false
 1. **프로토타입 제작 및 테스트:** 워킹 목업 3대를 만들고, 6쌍의 가족 사용자와 3주간 필드 테스트를 진행했습니다.
 1. **데이터 분석:** 수집한 정성·정량 데이터로 사용자의 행동과 경험을 분석해 Birdy의 효과를 평가하고 인사이트를 도출했습니다.
 
-![](./02.jpg)
-
-![](./03.jpg) ![](./04.jpg)
+![](./02.jpg) ![](./03.jpg) ![](./04.jpg)
 
 <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/YvDX9E_5jvk?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
@@ -51,9 +49,7 @@ Birdy는 노년층 사용자를 대상으로 설계한 탁상형 메시징 디�
 
 **간결한 조작:** 탐색용 물리 버튼과 단순한 인터페이스로 조작 단계를 줄였습니다. 수신한 메시지는 디스플레이에 크게 표시되고, LED 피드백으로 현재 상태를 확인할 수 있습니다.
 
-![](./06.jpg)
-
-![](./05.jpg) ![](./07.jpg)
+![](./06.jpg) ![](./05.jpg) ![](./07.jpg)
 
 
 ## IMPLEMENTATION
@@ -87,11 +83,13 @@ Birdy는 하드웨어, 소프트웨어, 제품 디자인 세 갈래로 개발했
 
 **종이를 통한 정서적 연결:** 종이 메시지는 디지털 소통에 대한 심리적 장벽을 낮췄습니다. 참가자의 83%가 받은 종이 메시지를 보관하고 있었고, F5-GP는 손자의 메시지를 서랍에 간직했습니다.
 
-![](./14.jpg)
+![](./18.jpg) ![](./19.jpg) ![](./20.jpg)
+
+![](./21.jpg) ![](./22.jpg) ![](./23.jpg)
 
 ![](./15.jpg)
 
-![](./17.jpeg)
+![](./24.jpg)
 
 
 ## REFLECTION

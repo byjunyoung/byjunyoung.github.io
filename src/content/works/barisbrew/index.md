@@ -15,7 +15,7 @@ order: 1
 draft: false
 ---
 
-<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/Y1_9bq1jhkE?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/9Q0Kv-1m2nQ?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 ## PROBLEM
 
@@ -69,7 +69,7 @@ draft: false
 
 ### 음성 주문 VoiceOrder
 
-LLM 기반 음성 주문의 프롬프트와 대화 흐름을 설계했습니다. 성격·환경·말투·목표·가드레일·도구를 정의한 프롬프트, 호출어("바리스"), 말 끼어들기, 세션 종료 규칙과 완료 화면까지 다뤘습니다. 기본 주문부터 다중 명령, 잡담 끼어들기, 예산 기반 추천까지 12개 시나리오로 대화를 검증하고, TTS 음성은 후보를 비교 청취해 골랐습니다. 키오스크에는 음성 주문 진입점을 두고, 듣는 중·생각 중·응답·오류 상태를 화면 가장자리 애니메이션으로 구분합니다. 2025년 9월 서울 AI 로봇쇼에서 [첫 데모를 시연](https://www.linkedin.com/posts/xyzcorporation_ai-robotcafe-agenticai-activity-7378711064454205440-h9Wl)하고 11월 [로보월드 2025에서 공개](https://www.mt.co.kr/future/2025/11/03/2025110314103736602)한 뒤 매장 시범 운영에 들어갔고, 로그에서 나온 문제(TTS 소리가 마이크로 되돌아가는 현상 등)는 체크리스트로 관리하며 업데이트했습니다.
+LLM 기반 음성 주문의 프롬프트와 대화 흐름을 설계했습니다. 성격·환경·말투·목표·가드레일·도구를 정의한 프롬프트, 호출어("바리스"), 말 끼어들기, 세션 종료 규칙과 완료 화면까지 다뤘습니다. 기본 주문부터 다중 명령, 잡담 끼어들기, 예산 기반 추천까지 12개 시나리오로 대화를 검증하고, TTS 음성은 후보를 비교 청취해 골랐습니다. 키오스크에는 음성 주문 진입점을 두고, 듣는 중·생각 중·응답·오류 상태를 화면 가장자리 애니메이션으로 구분합니다. 2025년 9월 서울 AI 로봇쇼에서 [첫 데모를 시연](https://www.linkedin.com/posts/xyzcorporation_ai-robotcafe-agenticai-activity-7378711064454205440-h9Wl)하고 11월 [로보월드 2025에서 공개](https://www.mt.co.kr/future/2025/11/03/2025110314103736602)한 뒤 매장 시범 운영에 들어갔고, 로그에서 나온 문제(TTS 소리가 마이크로 되돌아가는 현상 등)는 체크리스트로 관리하며 업데이트했습니다. 아래 장면은 라운지엑스 24h 매장 영상의 시연으로, 인사와 메뉴 질문에서 주문·확인·픽업까지 이어집니다.
 
 <video src="/media/works/barisbrew/voice.mp4" autoplay muted loop playsinline></video>
 

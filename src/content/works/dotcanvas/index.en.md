@@ -25,11 +25,7 @@ Tactile graphics in braille textbooks are hard to produce and to maintain, and t
 
 These constraints limit what visually impaired students have the chance to learn, and they put a load on teachers. Another way of making tactile materials is needed.
 
-![](./01.png)
-
-![](./02.jpg)
-
-![](./03.jpg)
+![](./01.png) ![](./02.jpg) ![](./03.jpg)
 
 
 ## APPROACH
@@ -65,8 +61,6 @@ With these features, Dot Canvas aimed to lower the barrier to making tactile mat
 
 ![](./10.jpg)
 
-![](./13.jpeg)
-
 
 ## IMPLEMENTATION
 
@@ -78,7 +72,9 @@ With these features, Dot Canvas aimed to lower the barrier to making tactile mat
 
 ![](./05.jpg)
 
-![](./06.jpeg) ![](./07.jpeg) ![](./08.jpeg)
+![](./06.jpeg) ![](./07.jpeg)
+
+![](./08.jpeg) ![](./13.jpeg)
 
 
 ## IMPACT
@@ -87,9 +83,7 @@ With these features, Dot Canvas aimed to lower the barrier to making tactile mat
 
 Dot Canvas won the CES 2024 Innovation Award and was shown at CSUN 2024.
 
-![](./11.jpeg)
-
-![](./14.jpeg)
+![](./15.jpg) ![](./14.jpeg)
 
 
 ## REFLECTION

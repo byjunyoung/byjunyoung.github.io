@@ -32,9 +32,7 @@ To make messengers usable for people with low digital literacy, we designed Bird
 1. **Prototype build and testing:** We built three working mockups and ran a three-week field test with six family pairs.
 1. **Data analysis:** Using the qualitative and quantitative data we collected, we analyzed user behavior and experience, evaluated Birdy's effect, and drew out insights.
 
-![](./02.jpg)
-
-![](./03.jpg) ![](./04.jpg)
+![](./02.jpg) ![](./03.jpg) ![](./04.jpg)
 
 <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/YvDX9E_5jvk?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
@@ -51,9 +49,7 @@ Birdy is a desktop messaging device designed for older users. It takes handwriti
 
 **Simple controls:** Physical buttons for navigation and a simple interface cut down the steps it takes to operate. Received messages appear large on the display, and LED feedback shows the current state.
 
-![](./06.jpg)
-
-![](./05.jpg) ![](./07.jpg)
+![](./06.jpg) ![](./05.jpg) ![](./07.jpg)
 
 
 ## IMPLEMENTATION
@@ -87,11 +83,13 @@ Over the three-week field test, how much the older participants messaged and wha
 
 **Emotional connection through paper:** Paper messages lowered the psychological barrier to digital communication. 83% of participants kept the paper messages they received, and F5-GP held on to a grandchild's notes in a drawer.
 
-![](./14.jpg)
+![](./18.jpg) ![](./19.jpg) ![](./20.jpg)
+
+![](./21.jpg) ![](./22.jpg) ![](./23.jpg)
 
 ![](./15.jpg)
 
-![](./17.jpeg)
+![](./24.jpg)
 
 
 ## REFLECTION

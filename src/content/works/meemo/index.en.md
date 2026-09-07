@@ -63,9 +63,7 @@ To get past the limits of the analog system and the digital one, I designed an i
 
 **Product design and mockup fabrication:** The exterior and structure were modeled in 3D with Fusion 360. The outer shell was CNC machined and the internal structural parts were 3D printed, designed for easy assembly and maintenance. Meemo came together as a prototype with a physical interface and a working structure.
 
-![](./12.jpg)
-
-![](./13.jpg)
+![](./17.jpg)
 
 ![](./09.jpg) ![](./10.jpg) ![](./11.jpg)
 
@@ -76,9 +74,7 @@ Meemo received the Excellence Award at the HCI Korea Creative Award.
 
 It was presented at the HCI Korea 2021 conference and published in the proceedings. The paper covers physical computing techniques such as infrared sensors and motor systems, along with the design of a user-centered note management interface.
 
-![](./14.jpeg)
-
-![](./16.jpg)
+![](./14.jpeg) ![](./16.jpg)
 
 
 ## REFLECTION

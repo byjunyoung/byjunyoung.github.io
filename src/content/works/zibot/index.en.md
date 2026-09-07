@@ -47,9 +47,7 @@ draft: false
 
 **Size:** We set the size so that a child can hold it in one hand, and used prototypes to confirm the smallest dimensions that were feasible.
 
-![](./05.png)
-
-![](./06.png)
+![](./05.png) ![](./06.png)
 
 ![](./07.png) ![](./09.png)
 
@@ -62,26 +60,18 @@ draft: false
 
 **Building the CES 2019 exhibition mockup:** Working from what prototyping and testing had shown, I collaborated with Frank, the design team lead at the Chinese headquarters, to settle the final product design concept. From that concept we produced a mockup for the CES 2019 exhibition.
 
-![](./10.jpg)
+![](./10.jpg) ![](./11.jpg)
 
-![](./11.jpg) ![](./13.jpg)
+![](./13.jpg) ![](./12.jpg)
 
-![](./12.jpg)
-
-![](./14.jpg)
-
-![](./15.jpg)
-
-![](./16.jpg)
+![](./20.jpg)
 
 
 ## IMPACT
 
 The final ZIBOT KK mockup was shown at ZIBOT's booth at CES 2019. It was the first project the U.S. product team completed, and the starting point for the company's entry into the U.S. market.
 
-![](./17.jpg)
-
-![](./18.jpeg)
+![](./16.jpg) ![](./17.jpg) ![](./18.jpeg)
 
 
 ## REFLECTION
