@@ -54,3 +54,14 @@ STORAGY takes the drinks Barisbrew makes, rides the elevator, and delivers them 
 ## IMPACT
 
 It runs floor-to-floor delivery with Barisbrew in the Robot Building Solution at the XYZ headquarters in Seongsu, Seoul.
+
+
+## REFLECTION
+
+**The ideal scenario is easy. The exceptions are the work.**
+
+The hardest part was defining the robot's feedback state by state. I had to understand how the robot actually operates before any feedback could be attached, and this project taught me at what granularity to define it and in what format to hand it to engineering.
+
+The ideal scenario was actually fine. What was hard were the unexpected situations and exception cases, and that work is still going on. It is not something finished in one pass; it needs repeated rounds of improvement. What I would do differently next time, I do not yet know.
+
+For my career, it meant working on a robot that moves, and on the scenario of indoor delivery.
