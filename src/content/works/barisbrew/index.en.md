@@ -15,7 +15,7 @@ order: 1
 draft: false
 ---
 
-<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/GnPiB19v5kQ?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/Y1_9bq1jhkE?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 ## PROBLEM
 
@@ -59,6 +59,8 @@ In a store with no staff, the display does the calling. It splits orders being b
 
 ![](./06.jpg)
 
+<video src="/media/works/barisbrew/did.mp4" autoplay muted loop playsinline></video>
+
 ### Operations console, BarisON
 
 BarisON is the console from which headquarters runs unmanned stores remotely. I planned store and robot control (power, status, cameras), unified management of the headquarters master catalog and each store's products and stock, an alarm system organized by operational severity, and a three-tier account model for headquarters admins, operations staff, and store owners. I also set common policies such as input form validation and button label conventions.
@@ -83,3 +85,6 @@ I designed the prompts and conversation flow for LLM-based voice ordering: a pro
 - Put the VoiceOrder MVP into a store pilot in December 2025 and released an update that improved wake word recognition and TTS.
 - Applied the stock and payment management improvements in BarisON and finalized the barrier-free kiosk spec.
 - Shared the field observation research results with the whole company.
+- The system runs in stores of many kinds, including public cultural spaces, apartment community centers, corporate retreats, and unmanned laundromats.
+
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/tAH6xt0qpqk?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>

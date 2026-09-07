@@ -15,7 +15,7 @@ order: 1
 draft: false
 ---
 
-<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/GnPiB19v5kQ?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/Y1_9bq1jhkE?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 ## PROBLEM
 
@@ -59,6 +59,8 @@ draft: false
 
 ![](./06.jpg)
 
+<video src="/media/works/barisbrew/did.mp4" autoplay muted loop playsinline></video>
+
 ### 운영 콘솔 BarisON
 
 본사가 무인 매장을 원격으로 운영하는 콘솔입니다. 매장·로봇 제어(전원·상태·카메라), 본사 마스터와 지점 판매 상품·재고의 일원 관리, 운영 관점의 중요도로 정리한 알람 체계, 본사 관리자·운영 담당자·매장 점주의 3단계 계정을 기획했습니다. 입력 폼 검증과 버튼 라벨 표기 기준 같은 공통 정책도 세웠습니다.
@@ -83,3 +85,6 @@ LLM 기반 음성 주문의 프롬프트와 대화 흐름을 설계했습니다.
 - VoiceOrder MVP를 2025년 12월 매장 시범 운영에 적용하고, 호출어 인식과 TTS를 개선한 업데이트를 냈습니다.
 - BarisON의 재고·결제 관리 개선을 적용했고, 배리어프리 키오스크 스펙을 확정했습니다.
 - 매장 현장 관찰 리서치 결과를 전사에 공유했습니다.
+- 설계한 시스템은 공공문화공간, 아파트 커뮤니티, 휴양시설, 무인 빨래방 등 여러 유형의 매장에서 운영 중입니다.
+
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/tAH6xt0qpqk?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
