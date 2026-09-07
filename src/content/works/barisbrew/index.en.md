@@ -49,7 +49,7 @@ I organized the flow from the start screen through menu browsing, item detail, o
 
 ### Mobile app
 
-Customers order before they arrive and see their queue position and expected completion time in the app. The brewing status screen uses one structure for the waiting, brewing, done, and error states, and guides them to pickup when the drink is ready.
+Customers order before they arrive and see their queue position and expected completion time in the app. The brewing status screen uses one structure for the waiting, brewing, done, and error states, and guides them to pickup when the drink is ready. The [expected wait time](https://www.venturesquare.net/1102926) follows a single rule and is shown the same way on the kiosk and in the app.
 
 ![](./05.jpg)
 
@@ -69,7 +69,7 @@ BarisON is the console from which headquarters runs unmanned stores remotely. I 
 
 ### Voice ordering, VoiceOrder
 
-I designed the prompts and conversation flow for LLM-based voice ordering: a prompt defining personality, environment, tone, goals, guardrails, and tools; the wake word ("Baris"); barge-in; and the session-end rules and completion screen. The kiosk carries the entry point and distinguishes the listening, thinking, responding, and error states with an animation along the screen edge. Issues found in the store pilot, such as TTS audio feeding back into the microphone, were tracked in a checklist and fixed in updates.
+I designed the prompts and conversation flow for LLM-based voice ordering: a prompt defining personality, environment, tone, goals, guardrails, and tools; the wake word ("Baris"); barge-in; and the session-end rules and completion screen. The conversation was validated against twelve scenarios, from a basic order to multi-item commands, small-talk interruptions, and budget-based recommendations, and the TTS voice was chosen by listening to the candidates side by side. The kiosk carries the entry point and distinguishes the listening, thinking, responding, and error states with an animation along the screen edge. It was [unveiled at RoboWorld 2025](https://www.mt.co.kr/future/2025/11/03/2025110314103736602) in November 2025 and then went into a store pilot; issues from the logs, such as TTS audio feeding back into the microphone, were tracked in a checklist and fixed in updates.
 
 
 ## IMPLEMENTATION
