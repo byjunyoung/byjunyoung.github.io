@@ -8,7 +8,7 @@ interface Props { lang: Lang }
 const { lang } = Astro.props;
 const posts = (await getCollection('writing')).filter((e) => langOf(e.id) === lang && !e.data.draft).sort((a, b) => b.data.date.localeCompare(a.data.date));
 ---
-<Base title="Writing" lang={lang} altPath="/writing/">
+<Base title="Writing" lang={lang} description={lang === 'ko' ? '하드웨어 UX와 로봇에 대해 쓴 글, 발표, 그리고 관련 기사.' : 'Posts, talks, and press — mostly on hardware UX and robots.'} altPath="/writing/">
   <h1 class="label">Writing</h1>
   {lang === 'ko'
     ? <p class="intro">글, 발표, 기사. 대부분 하드웨어 UX와 로봇 이야기입니다.</p>

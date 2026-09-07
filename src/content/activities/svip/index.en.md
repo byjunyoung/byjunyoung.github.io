@@ -15,4 +15,4 @@ After two months of entrepreneurship training and a selection process, I was cho
 
 I wrote up the experience at the time on a [**blog**](https://silinsta.wordpress.com/).
 
-![](./02.jpg) ![](./05.jpeg)
+![In front of the poster for the second Silicon Valley Internship Program cohort](./02.jpg) ![Talking with a visitor at the CES booth](./05.jpeg)

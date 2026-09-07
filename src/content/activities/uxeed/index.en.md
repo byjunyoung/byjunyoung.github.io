@@ -15,4 +15,4 @@ As lead manager for two years, I ran the online book study and held occasional b
 
 Most of the early members were students, and they now work as practitioners at a range of companies. Practitioners from other fields joined later, and since I handed it over, a later team of organizers has kept it going as a networking group.
 
-![](./01.jpeg) ![](./04.jpeg) ![](./05.jpeg)
+![A UXeed session in progress](./01.jpeg) ![Members gathered at a book talk](./04.jpeg) ![The UXeed book talk poster](./05.jpeg)

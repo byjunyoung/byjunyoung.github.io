@@ -4,11 +4,17 @@ import Base from '../../layouts/Base.astro';
 import WorkCard from '../WorkCard.astro';
 import { getCollection } from 'astro:content';
 import { byLang, type Lang } from '../../lib/i18n';
+import { getImage } from 'astro:assets';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const works = byLang(await getCollection('works'), lang);
+const description =
+  lang === 'ko'
+    ? '하드웨어 UX 디자이너 김준영의 포트폴리오. 로봇과 촉각 디스플레이처럼 화면 밖에 있는 제품의 경험을 설계합니다.'
+    : 'Portfolio of Junyoung Kim, a hardware UX designer working on robots and tactile displays — the part of products that lives beyond the screen.';
+const og = works[0] ? await getImage({ src: works[0].data.cover, width: 1200, format: 'jpg' }) : undefined;
 ---
-<Base lang={lang} altPath="/">
+<Base lang={lang} description={description} ogImage={og?.src} altPath="/">
   <h1 class="label">Works</h1>
   {lang === 'ko'
     ? <p class="intro">하드웨어 UX 디자이너. 화면 밖에 있는 제품의 경험, 형태·촉각·공간·피드백을 설계합니다. XYZ 로봇디자인팀 UX 리드이고, 그 전 3년은 닷에서 촉각 디스플레이 닷패드와 CES 2024 Innovation Award를 받은 닷 캔버스를 맡았습니다.</p>

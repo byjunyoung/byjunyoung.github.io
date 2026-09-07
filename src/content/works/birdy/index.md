@@ -20,7 +20,7 @@ draft: false
 
 노년층을 비롯해 디지털 리터러시가 낮은 사용자는 복잡한 UI, 작은 버튼, 여러 단계의 메뉴 탐색 때문에 메신저를 쓰기 어렵습니다. 그래서 가족·사회와의 소통이 끊기거나 꼭 필요한 정보에 닿지 못합니다.
 
-![](./01.jpg)
+![Birdy가 노년층과 손주 세대를 잇는 구조도. 손글씨 카드가 메신저를 거쳐 스마트폰으로 전달된다](./01.jpg)
 
 
 ## APPROACH
@@ -32,9 +32,9 @@ draft: false
 1. **프로토타입 제작 및 테스트:** 워킹 목업 3대를 만들고, 6쌍의 가족 사용자와 3주간 필드 테스트를 진행했습니다.
 1. **데이터 분석:** 수집한 정성·정량 데이터로 사용자의 행동과 경험을 분석해 Birdy의 효과를 평가했습니다.
 
-![](./02.jpg) ![](./03.jpg) ![](./04.jpg)
+![원형 종이 카드에 펜으로 메시지를 쓰는 손](./02.jpg) ![쓴 카드를 Birdy 상단 슬롯에 넣는 손. 옆에는 이모지 카드 보관함](./03.jpg) ![Birdy 본체에 카드를 밀어 넣는 모습](./04.jpg)
 
-<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/YvDX9E_5jvk?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/YvDX9E_5jvk?rel=0&modestbranding=1" title="Birdy 사용 시나리오를 담은 영상" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 
 ## SOLUTION
@@ -47,7 +47,7 @@ Birdy는 노년층을 위한 탁상형 메시징 디바이스입니다. 종이�
 
 **조작은 버튼 몇 개로 끝납니다.** 탐색용 물리 버튼과 단순한 인터페이스로 조작 단계를 줄였고, 받은 메시지는 화면에 크게 뜹니다.
 
-![](./06.jpg) ![](./05.jpg) ![](./07.jpg)
+![카드가 들어가는 둥근 모서리 슬롯 클로즈업](./06.jpg) ![하트와 표정이 그려진 이모지 카드를 넘겨 보는 손](./05.jpg) ![손주의 스마트폰 대화창에 손글씨 메시지가 사진으로 도착한 화면](./07.jpg)
 
 
 ## IMPLEMENTATION
@@ -56,13 +56,13 @@ Birdy는 노년층을 위한 탁상형 메시징 디바이스입니다. 종이�
 
 부품은 Fusion 360으로 모델링해 3D 프린팅과 CNC 가공으로 만들었고, 반복 프로토타이핑으로 구조를 확정했습니다. 유지보수와 제작을 고려해 모듈 구조로 설계했습니다.
 
-![](./12.jpg)
+![Birdy 내부 부품 사진과 분해 도면. 고휘도 LED, 링 LED를 단 카메라, 적외선 센서, 리니어 스테핑 모터, 제어 보드](./12.jpg)
 
-![](./13.jpg)
+![Birdy 시스템 구성도. 모터와 센서가 아두이노에, 카메라와 디스플레이가 라즈베리파이에 연결되고 메신저 서버와 인식 모델을 거친다](./13.jpg)
 
-![](./08.jpg) ![](./09.jpg)
+![폼보드로 만든 초기 목업. 화면에 메시지가 떠 있다](./08.jpg) ![모니터 앞에서 프로토타입을 시험하는 모습. 기기 화면에 인식된 글씨가 보인다](./09.jpg)
 
-![](./10.jpeg) ![](./11.jpg)
+![작업대에 펼쳐 놓은 부품들. 링 LED, 기판, 케이스와 공구](./10.jpeg) ![여러 색으로 만든 케이스와 손잡이 부품들](./11.jpg)
 
 
 ## IMPACT
@@ -75,13 +75,13 @@ Birdy는 노년층을 위한 탁상형 메시징 디바이스입니다. 종이�
 
 **손글씨와 종이가 담은 것.** 참가자의 70%가 손글씨가 감정 표현에 도움이 됐다고 답했고, 꽃을 그리거나 글씨 크기를 바꿔 마음을 전한 참가자도 있었습니다. 83%는 받은 종이 메시지를 보관하고 있었습니다. 손자의 메시지를 서랍에 간직한 조부모도 있었습니다.
 
-![](./18.jpg) ![](./19.jpg) ![](./20.jpg)
+![필드 테스트 참가자가 책상에서 카드에 메시지를 쓰는 모습](./18.jpg) ![거실 창가 테이블에 놓인 Birdy](./19.jpg) ![참가자 집 선반에 설치한 Birdy와 카드 보관함](./20.jpg)
 
-![](./21.jpg) ![](./22.jpg) ![](./23.jpg)
+![서랍장 위에 놓인 Birdy와 이모지 보관함](./21.jpg) ![참가자가 툇마루에서 Birdy를 사용하는 모습](./22.jpg) ![침실 서랍장 위에 놓인 Birdy](./23.jpg)
 
-![](./15.jpg)
+![3주 필드 테스트의 주차별 메시지 수 그래프. 여섯 가족의 추이](./15.jpg)
 
-![](./24.jpg)
+![연구 결과를 발표하는 장면](./24.jpg)
 
 
 ## REFLECTION

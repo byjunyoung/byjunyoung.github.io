@@ -15,7 +15,7 @@ order: 3
 draft: false
 ---
 
-<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/TPq3F_mAeP8?start=28&rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/TPq3F_mAeP8?start=28&rel=0&modestbranding=1" title="로봇 빌딩 솔루션 소개 영상. 28초부터 STORAGY 구간" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 ## PROBLEM
 
@@ -33,21 +33,21 @@ draft: false
 
 부팅·대기·이동·장애물·충전·배송 완료 여섯 상태의 대표 표정과 애니메이션을 만들었습니다. 눈 두 개의 위치와 크기, 움직임만으로 상태를 구분합니다.
 
-<video src="/media/works/storagy/faces.mp4" autoplay muted loop playsinline></video>
+<video src="/media/works/storagy/faces.mp4" aria-label="부팅·대기·이동·장애물·충전·배송 완료 여섯 상태의 표정이 차례로 재생되는 영상" autoplay muted loop playsinline></video>
 
 ### LED와 디스플레이
 
 전면 디스플레이가 표정을, 몸체 아래 LED가 시스템 상태를 보여 줍니다. 표정은 로봇 앞에 선 사람에게 지금 무엇을 하는지 말하고, LED는 부팅·정상·경고·오류와 충전을 빛의 색과 패턴으로 알립니다. 같은 상태가 두 채널에서 다른 말을 하지 않도록 매핑 표 하나로 관리합니다.
 
-![](./01.jpg) ![](./02.jpg)
+![사무실 복도에서 짐을 싣고 대기 중인 STORAGY](./01.jpg) ![로봇 전면 디스플레이의 두 눈 표정과 몸체 아래 LED](./02.jpg)
 
-<video src="/media/works/storagy/led.mp4" autoplay muted loop playsinline></video>
+<video src="/media/works/storagy/led.mp4" aria-label="로봇 전면의 눈 표정과 몸체 아래 LED가 함께 켜지는 클로즈업 영상" autoplay muted loop playsinline></video>
 
 ### 다층 배송
 
 바리스브루가 만든 음료를 STORAGY가 받아 엘리베이터로 층을 옮겨 자리까지 배송합니다. 이 다층 배송의 시나리오와 상태를 정의하고, 로봇을 원격으로 제어하는 운영 콘솔 MobileON의 기능과 화면을 기획했습니다. 엘리베이터를 호출하고, 타고, 목적층을 고르고, 내리는 단계마다 표정을 더했고, 경로가 막혔을 때와 오류·비상정지 표정도 추가했습니다.
 
-<video src="/media/works/storagy/delivery.mp4" autoplay muted loop playsinline></video>
+<video src="/media/works/storagy/delivery.mp4" aria-label="STORAGY가 복도를 지나 엘리베이터를 타고 사무실까지 배송하는 영상" autoplay muted loop playsinline></video>
 
 
 ## IMPACT

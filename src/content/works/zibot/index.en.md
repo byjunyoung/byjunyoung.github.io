@@ -21,7 +21,7 @@ draft: false
 
 [**ZIBOT Inc.**](https://www.zhibankeji.com/) is a China-based startup that builds educational robots for children using natural language analysis. In 2018, having validated its product in the Chinese market, the company set up a Silicon Valley office to enter the U.S. market, but it had little data or insight about that market at the time. The U.S. product team's task was to gather data and insight on the U.S. market and find the opportunity areas that fit it.
 
-![](./01.png)
+![ZIBOT's existing educational robot](./01.png)
 
 
 ## APPROACH
@@ -32,9 +32,9 @@ draft: false
 
 **Product concept design and development:** We picked one of those ideas and defined the final product's form and functions through early sketches, 3D modeling, and a physical prototype.
 
-![](./04.png)
+![Render of the robot on the color-coding board with the companion app](./04.png)
 
-<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/irJ2ge-0ZDw?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/irJ2ge-0ZDw?rel=0&modestbranding=1" title="The ZIBOT KK concept film" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 
 ## SOLUTION
@@ -47,9 +47,9 @@ draft: false
 
 **Size:** We set the size so that a child can hold it in one hand, and used prototypes to confirm the smallest dimensions that were feasible.
 
-![](./05.png) ![](./06.png)
+![Render of the yellow cube robot, marking the dot-matrix face and the magnetic attachment point](./05.png) ![Render marking the modular handle that accessories attach to](./06.png)
 
-![](./07.png) ![](./09.png)
+![Render of two robots moving across the grid of colored tiles](./07.png) ![Render of the robot tracing a Z along a line](./09.png)
 
 
 ## IMPLEMENTATION
@@ -60,18 +60,18 @@ draft: false
 
 **Building the CES 2019 exhibition mockup:** Working from what prototyping and testing had shown, I collaborated with Frank, the design team lead at the Chinese headquarters, to settle the final product design concept. From that concept we produced a mockup for the CES 2019 exhibition.
 
-![](./10.jpg) ![](./11.jpg)
+![A paper mockup made to check size](./10.jpg) ![The prototype testing color recognition on a colored tile](./11.jpg)
 
-![](./13.jpg) ![](./12.jpg)
+![The working prototype with its wiring exposed](./13.jpg) ![The control board and motor inside the mockup](./12.jpg)
 
-![](./20.jpg)
+![Block code built in MIT App Inventor to validate the function](./20.jpg)
 
 
 ## IMPACT
 
 The final ZIBOT KK mockup was shown at ZIBOT's booth at CES 2019. It was the first project the U.S. product team completed, and the starting point for the company's entry into the U.S. market.
 
-![](./16.jpg) ![](./17.jpg) ![](./18.jpeg)
+![The ZIBOT booth at CES 2019](./16.jpg) ![The ZIBOT KK concept mockup on show at the CES 2019 booth](./17.jpg) ![Talking with a visitor at the CES 2019 booth](./18.jpeg)
 
 
 ## REFLECTION

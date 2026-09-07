@@ -15,4 +15,4 @@ I co-founded and ran the hardware experience group.
 
 With about 20 practitioners and researchers, we held a regular book study and networking meetups.
 
-![](./01.jpeg) ![](./04.jpeg) ![](./05.jpeg)
+![Cards and notes on the table at a book study](./01.jpeg) ![Copies of the book the group read together](./04.jpeg) ![Members holding their cards at a meetup](./05.jpeg)

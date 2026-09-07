@@ -22,7 +22,7 @@ Analog notes are good for capturing ideas because you can write without being ti
 
 Many people use both at once, which weakens the consistency of how information is kept and makes search harder. What is needed is a way to have the freedom of analog notes and the order of digital ones together.
 
-![](./01.png)
+![A Venn diagram overlapping the advantages of paper notes and digital notes](./01.png)
 
 
 ## APPROACH
@@ -33,9 +33,9 @@ To get past the limits of the analog system and the digital one, I designed an i
 
 **Building Meemo:** On that design I built Meemo. Real-time conversion of paper notes into digital sits at the center, so the writing environment of paper stays as it is while the search and management convenience of digital notes comes with it.
 
-![](./03.jpg) ![](./04.jpg)
+![The Meemo body with the input slot on top](./03.jpg) ![Close-up of a round note being ejected from the device](./04.jpg)
 
-<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/nXMv4ztNLbA?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/nXMv4ztNLbA?rel=0&modestbranding=1" title="Film showing Meemo in operation" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 
 ## SOLUTION
@@ -48,11 +48,11 @@ To get past the limits of the analog system and the digital one, I designed an i
 
 **Input and output that bridge analog and digital:** Insert a note and it is digitized; when the work is done the note comes back out to be used again or filed away. The process moves a note into the digital environment without breaking the analog workflow.
 
-![](./02.jpg)
+![Meemo on a desk with round notes in several colors](./02.jpg)
 
-![](./05.png) ![](./06.png)
+![A yellow round note with handwriting on it, held in a hand](./05.png) ![Checking the digitized note on a phone](./06.png)
 
-![](./07.png) ![](./08.jpg)
+![The paper note going back onto a calendar after being digitized](./07.png) ![Meemo on a desk beside a monitor](./08.jpg)
 
 
 ## IMPLEMENTATION
@@ -63,11 +63,11 @@ To get past the limits of the analog system and the digital one, I designed an i
 
 **Product design and mockup fabrication:** The exterior and structure were modeled in 3D with Fusion 360. The outer shell was CNC machined and the internal structural parts were 3D printed, designed for easy assembly and maintenance. Meemo came together as a prototype with a physical interface and a working structure.
 
-![](./18.jpg)
+![The six steps one note passes through: insertion, IR detection, servo feed, camera capture, cloud upload, and ejection](./18.jpg)
 
-![](./12.jpg)
+![Meemo's internal structure: gears, Neopixel ring, camera, proximity sensor, step motor, and servo motor](./12.jpg)
 
-![](./09.jpg) ![](./10.jpg) ![](./11.jpg)
+![The camera and sensor seated inside the mockup](./09.jpg) ![The wiring inside, with a blue note fed in](./10.jpg) ![A machined exterior part held in hand](./11.jpg)
 
 
 ## IMPACT
@@ -76,7 +76,7 @@ Meemo received the Excellence Award at the HCI Korea Creative Award.
 
 It was presented at the HCI Korea 2021 conference and published in the proceedings. The paper covers physical computing techniques such as infrared sensors and motor systems, along with the design of a user-centered note management interface.
 
-![](./14.jpeg) ![](./16.jpg)
+![The HCI Korea 2021 Creative Award certificate](./14.jpeg) ![Meemo on a display shelf](./16.jpg)
 
 
 ## REFLECTION

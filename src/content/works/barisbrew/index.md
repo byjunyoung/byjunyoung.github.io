@@ -15,7 +15,7 @@ order: 1
 draft: false
 ---
 
-<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/9Q0Kv-1m2nQ?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/9Q0Kv-1m2nQ?rel=0&modestbranding=1" title="라운지엑스 24시간 무인 매장 소개 영상" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 ## PROBLEM
 
@@ -23,7 +23,7 @@ draft: false
 
 현장에서 확인한 문제는 구체적이었습니다. 쿠폰을 찾기 어렵고, 쿠폰 적용 안내가 결제 버튼을 가렸습니다. 대기 주문이 많아지면 주문번호가 돌아가며 표시돼 대기 시간을 가늠하기 어려웠습니다. 백오피스는 화면 초안과 개발이 기획보다 앞서 나가, 정보 구조와 권한 체계가 비어 있었습니다.
 
-![](./01.jpg) ![](./02.jpg)
+![매장에서 사람들이 키오스크 앞에 줄지어 주문하는 모습](./01.jpg) ![로봇 팔이 내민 컵을 손으로 받는 픽업 장면](./02.jpg)
 
 
 ## APPROACH
@@ -38,7 +38,7 @@ draft: false
 
 주문의 상태를 축으로 두면 다섯 접점과 로봇, 운영 콘솔이 각각 어느 구간을 맡는지가 드러납니다.
 
-![](./09.jpg)
+![주문 상태를 가로축에 두고 키오스크·모바일 앱·매장 디스플레이·픽업존·바리스타 로봇·운영 콘솔이 각각 맡는 구간을 표시한 시스템 도식](./09.jpg)
 
 
 ## SOLUTION
@@ -49,41 +49,41 @@ draft: false
 
 시작 화면, 메뉴 탐색, 상세, 주문 확인, 결제로 이어지는 흐름을 정리했습니다. 쿠폰은 QR 스캔이나 코드 입력으로 주문 확인 화면에서 바로 적용하고, 결제는 수단 선택과 단말 사용 안내 두 화면으로 끝납니다. 무인단말기 접근성 기준에 맞춰 물리 키패드·음성 안내·고대비·확대를 더했고, 시작 화면에는 음성 주문 진입점을 두었습니다.
 
-![](./03.jpg)
+![키오스크 시작 화면과 메뉴 목록 화면](./03.jpg)
 
-![](./04.jpg)
+![키오스크 옵션 선택 화면과 결제 화면](./04.jpg)
 
 ### 모바일 앱
 
 매장에 도착하기 전에 주문하고, 대기 순번과 예상 완성 시간을 앱에서 봅니다. 제조 현황은 대기·제조 중·완료·오류 상태를 같은 화면 구조로 보여 주고, 완료되면 픽업을 안내합니다. [예상 대기 시간](https://www.venturesquare.net/1102926)은 기준을 하나로 정해 키오스크와 앱에 같은 방식으로 표시합니다.
 
-![](./05.jpg)
+![모바일 앱의 제조 현황 화면 세 가지. 대기 순번, 완성 예정 시간, 완성 알림](./05.jpg)
 
 ### 매장 디스플레이 DID
 
 직원이 없는 매장에서 디스플레이가 호출을 대신합니다. 제조 중인 주문과 픽업 대기 주문을 주문번호 단위로 나눠 보여 주고, 완료되면 화면으로 알립니다.
 
-![](./06.jpg)
+![매장 디스플레이. 왼쪽에 제조 중인 주문, 오른쪽에 픽업 대기 주문을 번호로 나눠 표시](./06.jpg)
 
-<video src="/media/works/barisbrew/did.mp4" autoplay muted loop playsinline></video>
+<video src="/media/works/barisbrew/did.mp4" aria-label="매장 디스플레이가 제조 중인 주문과 픽업 대기 주문을 갱신하는 영상" autoplay muted loop playsinline></video>
 
 ### 픽업존
 
 픽업존은 컵이 놓이는 자리 아래 디스플레이에 주문 정보를 띄웁니다. 화면을 누르는 대신 음료를 집어 드는 행위가 입력이 되는 탠저블 인터랙션이라, 카메라가 픽업을 감지하면 카드가 정리되고 회수·폐기 같은 예외 상황은 앱과 디스플레이가 같은 말로 안내합니다. 사람이 이 앞에 머무는 시간은 찰나라, 컵 아래 디스플레이의 UI 요소는 그 짧은 체류 시간을 고려하면서도 어떤 음료인지가 정확히 전달되도록 디자인해야 했습니다. 이 프로젝트에서 가장 재미있었던 UX 포인트였습니다.
 
-![](./08.jpg)
+![픽업존 디스플레이. 컵이 놓이는 자리마다 주문 번호와 음료 이름을 표시](./08.jpg)
 
 ### 운영 콘솔 BarisON
 
 본사가 무인 매장을 원격으로 운영하는 콘솔입니다. 매장·로봇 제어(전원·상태·카메라), 본사 마스터와 지점 판매 상품·재고의 일원 관리, 운영 관점의 중요도로 정리한 알람 체계, 본사 관리자·운영 담당자·매장 점주의 3단계 계정을 기획했습니다. 입력 폼 검증과 버튼 라벨 표기 기준 같은 공통 정책도 세웠습니다.
 
-![](./07.jpg)
+![운영 콘솔 BarisON의 대시보드와 재고 관리 화면](./07.jpg)
 
 ### 음성 주문 VoiceOrder
 
 LLM 기반 음성 주문의 프롬프트와 대화 흐름을 개발팀과 함께 설계했습니다. 성격·환경·말투·목표·가드레일·도구를 정의한 프롬프트, 호출어("바리스"), 말 끼어들기, 세션 종료 규칙과 완료 화면까지 다뤘습니다. 기본 주문부터 다중 명령, 잡담 끼어들기, 예산 기반 추천까지 12개 시나리오로 대화를 검증하고, TTS 음성은 후보를 비교 청취해 골랐습니다. 키오스크에는 음성 주문 진입점을 두고, 듣는 중·생각 중·응답·오류 상태를 화면 가장자리 애니메이션으로 구분합니다. 2025년 9월 서울 AI 로봇쇼에서 [첫 데모를 시연](https://www.linkedin.com/posts/xyzcorporation_ai-robotcafe-agenticai-activity-7378711064454205440-h9Wl)하고 11월 [로보월드 2025에서 공개](https://www.mt.co.kr/future/2025/11/03/2025110314103736602)한 뒤 매장 시범 운영에 들어갔고, 운영에서 드러난 소음·수음·호출어 인식 문제는 로그를 보며 고쳐 나갔습니다. 아래 장면은 라운지엑스 24h 매장 영상의 시연으로, 인사와 메뉴 질문에서 주문·확인·픽업까지 이어집니다.
 
-<video src="/media/works/barisbrew/voice.mp4" autoplay muted loop playsinline></video>
+<video src="/media/works/barisbrew/voice.mp4" aria-label="음성 주문 시연 영상. 인사와 메뉴 질문에서 주문과 확인, 픽업까지 이어진다" autoplay muted loop playsinline></video>
 
 
 ## IMPLEMENTATION
@@ -97,7 +97,7 @@ LLM 기반 음성 주문의 프롬프트와 대화 흐름을 개발팀과 함께
 
 팀이 함께 낸 결과입니다. 설계한 시스템은 공공문화공간, 아파트 커뮤니티, 휴양시설, 무인 빨래방 등 여러 유형의 매장에서 운영 중이고, 음성 주문은 첫 데모 석 달 뒤 매장 시범 운영에 들어갔습니다.
 
-<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/tAH6xt0qpqk?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/tAH6xt0qpqk?rel=0&modestbranding=1" title="바리스브루가 운영 중인 매장을 소개하는 영상" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 
 ## REFLECTION

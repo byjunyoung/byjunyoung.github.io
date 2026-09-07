@@ -15,7 +15,7 @@ order: 0
 draft: false
 ---
 
-<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/tqhQTiX0NPw?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/tqhQTiX0NPw?rel=0&modestbranding=1" title="The DEUX product film" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 ## PROBLEM
 
@@ -39,7 +39,7 @@ The Robot Design team shaped the robot, the Robot Intelligence team put the face
 
 Every face is made from the position, size, motion, and color of two eyes alone. I defined twenty: emotions such as happiness, laughing, heart, sparkle, surprise, fear, sadness, and anger; four gaze directions for following a person; blinking and looking around; and state faces for booting, loading, sleep, charging, and error. Booting was designed as one sequence of eye motion, sound, and movement.
 
-<video src="/media/works/deux/faces.mp4" autoplay muted loop playsinline></video>
+<video src="/media/works/deux/faces.mp4" aria-label="DEUX's eight emotion faces and its blink, playing together in a 3x3 grid" autoplay muted loop playsinline></video>
 
 ### Sound and voice
 
@@ -51,9 +51,9 @@ DEUX ON is the operations console that handles the robot's posture, movement, an
 
 A few rules were set in moving it from a developer tool to a product screen. While VR or the leader arm has the robot, on-screen control is locked, but stop and mode switching stay open at all times: this screen must never lose its way to stop the robot. The lock is announced by the robot status badge in the left panel, and the button that clears it sits there too. An in-body notice banner was tried twice and removed twice, because every time a lock engaged it pushed the tabs and the whole screen down. Color carries safety meaning: red is reserved for the emergency stop alone, faults and input errors are orange, normal is green. The developer screen's own color coding was deliberately not followed. Start and stop apply to the whole robot, not to the tab in view.
 
-![](./01.jpg)
+![The DEUX ON posture tab: joint sliders for both arms, the pose view, and status and system log on the left](./01.jpg)
 
-![](./02.jpg)
+![The DEUX ON drive tab and expression tab](./02.jpg)
 
 
 ## IMPLEMENTATION

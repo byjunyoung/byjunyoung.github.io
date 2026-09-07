@@ -22,7 +22,7 @@ draft: false
 
 많은 사용자가 두 방식을 함께 쓰고 있지만, 그만큼 정보 관리의 일관성이 약해지고 검색도 어려워집니다. 아날로그 메모의 자유로움과 디지털 메모의 체계성을 함께 쓸 수 있는 방법이 필요합니다.
 
-![](./01.png)
+![종이 메모와 디지털 메모의 장점을 겹쳐 놓은 벤 다이어그램](./01.png)
 
 
 ## APPROACH
@@ -33,9 +33,9 @@ draft: false
 
 **Meemo 제품 개발:** 이 설계를 바탕으로 Meemo를 개발했습니다. 종이 메모를 실시간으로 디지털로 전환하는 기능을 중심에 두고, 종이 메모의 작성 환경을 유지하면서 디지털 메모의 검색·관리 편의를 함께 쓰도록 설계했습니다.
 
-![](./03.jpg) ![](./04.jpg)
+![상단에 투입 슬롯이 있는 Meemo 본체](./03.jpg) ![기기에서 원형 메모가 배출되는 클로즈업](./04.jpg)
 
-<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/nXMv4ztNLbA?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/nXMv4ztNLbA?rel=0&modestbranding=1" title="Meemo 동작을 담은 영상" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 
 ## SOLUTION
@@ -48,11 +48,11 @@ draft: false
 
 **아날로그와 디지털을 잇는 입출력:** 메모를 기기에 넣으면 디지털화되고, 작업이 끝나면 메모가 배출되어 다시 쓰거나 보관할 수 있습니다. 아날로그 작업 흐름을 끊지 않으면서 디지털 환경으로 옮기는 과정입니다.
 
-![](./02.jpg)
+![책상 위 Meemo와 색색의 원형 메모지](./02.jpg)
 
-![](./05.png) ![](./06.png)
+![손글씨를 쓴 노란 원형 메모를 손에 든 모습](./05.png) ![스마트폰으로 디지털화된 메모를 확인하는 화면](./06.png)
 
-![](./07.png) ![](./08.jpg)
+![디지털로 옮긴 뒤 다시 달력에 붙이는 종이 메모](./07.png) ![모니터 옆 책상에 놓인 Meemo](./08.jpg)
 
 
 ## IMPLEMENTATION
@@ -63,11 +63,11 @@ draft: false
 
 **제품 디자인 및 목업 제작:** Fusion 360으로 제품 외관과 구조를 3D 모델링했습니다. 외관은 CNC 가공으로, 내부 구조 부품은 3D 프린팅으로 제작해 조립과 유지보수가 쉽도록 설계했습니다. 이를 통해 Meemo는 물리적 인터페이스와 기능 구조를 갖춘 프로토타입으로 완성됐습니다.
 
-![](./18.jpg)
+![메모 한 장이 지나는 여섯 단계 도식. 종이 투입, 적외선 센서 감지, 서보 모터 이송, 카메라 촬영, 클라우드 업로드, 메모 배출](./18.jpg)
 
-![](./12.jpg)
+![Meemo 내부 구조 도면. 기어, 네오픽셀 링, 카메라, 근접 센서, 스텝 모터, 서보 모터](./12.jpg)
 
-![](./09.jpg) ![](./10.jpg) ![](./11.jpg)
+![목업 내부에 자리 잡은 카메라와 센서](./09.jpg) ![배선이 드러난 내부와 투입된 파란 메모](./10.jpg) ![가공한 외관 부품을 손에 든 모습](./11.jpg)
 
 
 ## IMPACT
@@ -76,7 +76,7 @@ HCI Korea Creative Award 우수상을 받았습니다.
 
 HCI Korea 2021 학술대회에서 발표하고 논문집에 게재됐습니다. 논문은 적외선 센서와 모터 시스템 등 피지컬 컴퓨팅 기술과 사용자 중심의 메모 관리 인터페이스 설계를 다뤘습니다.
 
-![](./14.jpeg) ![](./16.jpg)
+![HCI Korea 2021 Creative Award 우수상 상장](./14.jpeg) ![전시 선반에 놓인 Meemo](./16.jpg)
 
 
 ## REFLECTION

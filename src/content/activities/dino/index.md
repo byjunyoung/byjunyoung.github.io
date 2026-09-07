@@ -15,8 +15,8 @@ DINO는 [**UNIST**](https://www.unist.ac.kr/) 디자인학과의 메이킹 동�
 
 약 1년간 동아리의 메이킹 프로젝트에 참여했습니다.
 
-![](./01.jpg) ![](./02.jpeg) ![](./03.jpeg)
+![레고 브릭으로 조형물을 만드는 동아리 활동](./01.jpg) ![완성한 조형물을 촬영하는 모습](./02.jpeg) ![레고로 만든 캠퍼스 조형물](./03.jpeg)
 
-![](./04.jpeg) ![](./05.jpg)
+![작업 중인 동아리원들](./04.jpeg) ![완성한 캠퍼스 조형물과 함께 만든 카드](./05.jpg)
 
-<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/RleQdT6vg3w?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/RleQdT6vg3w?rel=0&modestbranding=1" title="DINO 동아리 프로젝트 영상" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>

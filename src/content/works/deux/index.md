@@ -15,7 +15,7 @@ order: 0
 draft: false
 ---
 
-<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/tqhQTiX0NPw?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/tqhQTiX0NPw?rel=0&modestbranding=1" title="DEUX 제품 소개 영상" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 ## PROBLEM
 
@@ -39,7 +39,7 @@ DEUX는 매장에서 사람 옆에서 일하는 양팔 휴머노이드 로봇입
 
 두 눈의 위치·크기·움직임과 색만으로 표정을 만듭니다. 기쁨·웃음·하트·반짝·놀람·두려움·슬픔·화남 같은 감정 표현, 사람을 따라가는 시선 네 방향, 깜빡임과 두리번거림, 부팅·로딩·대기·충전·오류 같은 상태 표정까지 20종을 정의했습니다. 부팅은 눈 표정과 소리, 동작을 한 흐름으로 설계했습니다.
 
-<video src="/media/works/deux/faces.mp4" autoplay muted loop playsinline></video>
+<video src="/media/works/deux/faces.mp4" aria-label="DEUX의 감정 표정 여덟 가지와 깜빡임이 3×3 격자로 함께 재생되는 영상" autoplay muted loop playsinline></video>
 
 ### 소리와 목소리
 
@@ -51,9 +51,9 @@ DEUX는 매장에서 사람 옆에서 일하는 양팔 휴머노이드 로봇입
 
 개발자 도구에서 제품 화면으로 옮기며 정한 규칙이 몇 가지 있습니다. VR이나 리더암이 로봇을 잡고 있는 동안 화면 조작은 잠기지만, 정지와 모드 전환은 언제나 열려 있습니다. 이 화면에서 로봇을 멈출 수단이 사라지면 안 되기 때문입니다. 잠금은 왼쪽 패널의 로봇 상태 배지가 알리고, 푸는 버튼도 그 자리에 둡니다. 본문에 안내 배너를 띄우는 안을 두 번 시도했지만 잠길 때마다 탭과 화면 전체가 밀려 내려가 두 번 다 걷어냈습니다. 색은 안전의 의미를 갖습니다. 빨강은 비상 정지에만 쓰고, 고장과 입력 오류는 주황, 정상은 초록입니다. 개발용 화면의 색 구분은 따르지 않았습니다. 시작과 정지는 보고 있는 탭이 아니라 로봇 전체에 적용됩니다.
 
-![](./01.jpg)
+![DEUX ON 자세 탭. 양팔 관절 슬라이더와 로봇 자세 뷰, 왼쪽에 상태와 시스템 로그](./01.jpg)
 
-![](./02.jpg)
+![DEUX ON 이동 탭과 표현 탭 화면](./02.jpg)
 
 
 ## IMPLEMENTATION

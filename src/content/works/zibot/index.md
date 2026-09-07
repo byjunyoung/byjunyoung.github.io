@@ -21,7 +21,7 @@ draft: false
 
 [**ZIBOT Inc.**](https://www.zhibankeji.com/)은 자연어 분석 기술을 활용한 어린이 교육용 로봇을 개발하는 중국 기반의 스타트업입니다. 2018년 중국 시장에서 제품을 검증한 뒤 미국 시장에 진출하기 위해 실리콘밸리에 지사를 세웠지만, 당시 미국 시장에 대한 데이터나 인사이트가 부족했습니다. 미국 제품 팀의 과제는 미국 시장의 데이터와 인사이트를 확보하고, 그에 맞는 기회 영역을 찾는 것이었습니다.
 
-![](./01.png)
+![ZIBOT의 기존 교육용 로봇 제품](./01.png)
 
 
 ## APPROACH
@@ -32,9 +32,9 @@ draft: false
 
 **제품 컨셉 디자인 및 개발:** 도출한 아이디어 중 하나를 골라 초기 스케치, 3D 모델링, 물리 프로토타입 제작을 거쳐 최종 제품의 형태와 기능을 정의했습니다.
 
-![](./04.png)
+![컬러 코딩 보드 위의 로봇과 연결 앱 화면 렌더](./04.png)
 
-<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/irJ2ge-0ZDw?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/irJ2ge-0ZDw?rel=0&modestbranding=1" title="ZIBOT KK 컨셉 영상" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 
 ## SOLUTION
@@ -47,9 +47,9 @@ draft: false
 
 **크기:** 아이가 한 손으로 들 수 있는 크기로 잡고, 프로토타입으로 실현 가능한 최소 치수를 확인했습니다.
 
-![](./05.png) ![](./06.png)
+![노란 큐브 로봇 렌더. 점 매트릭스 표정과 자석 부착부를 표시](./05.png) ![모듈형 핸들에 액세서리를 붙일 수 있는 구조를 표시한 렌더](./06.png)
 
-![](./07.png) ![](./09.png)
+![컬러 타일 격자 위에서 두 대가 움직이는 사용 장면 렌더](./07.png) ![선을 따라 Z 모양을 그리며 주행하는 렌더](./09.png)
 
 
 ## IMPLEMENTATION
@@ -60,18 +60,18 @@ draft: false
 
 **CES 2019 전시용 목업 제작:** 프로토타이핑과 테스트에서 얻은 결과를 바탕으로, 중국 본사 디자인 팀 리드인 Frank와 협업해 최종 제품 디자인 컨셉을 확정했습니다. 이 컨셉으로 CES 2019 전시용 목업을 제작했습니다.
 
-![](./10.jpg) ![](./11.jpg)
+![종이로 만든 초기 크기 검증 목업](./10.jpg) ![색 타일 위에서 색 인식을 시험하는 프로토타입](./11.jpg)
 
-![](./13.jpg) ![](./12.jpg)
+![배선이 드러난 동작 프로토타입](./13.jpg) ![목업 내부에 넣은 제어 보드와 모터](./12.jpg)
 
-![](./20.jpg)
+![MIT 앱 인벤터로 만든 기능 검증용 블록 코드](./20.jpg)
 
 
 ## IMPACT
 
 ZIBOT KK의 최종 목업은 CES 2019의 ZIBOT 부스에 전시됐습니다. ZIBOT 미국 제품 팀이 처음으로 완수한 프로젝트로, 회사의 미국 시장 진출 시작점이 되었습니다.
 
-![](./16.jpg) ![](./17.jpg) ![](./18.jpeg)
+![CES 2019의 ZIBOT 부스](./16.jpg) ![CES 2019 부스에 전시된 ZIBOT KK 컨셉 목업](./17.jpg) ![CES 2019 부스에서 방문자와 이야기하는 모습](./18.jpeg)
 
 
 ## REFLECTION

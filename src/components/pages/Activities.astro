@@ -8,7 +8,7 @@ interface Props { lang: Lang }
 const { lang } = Astro.props;
 const acts = byLang(await getCollection('activities'), lang);
 ---
-<Base title="Activities" lang={lang} altPath="/activities/">
+<Base title="Activities" lang={lang} description={lang === 'ko' ? '하드웨어 UX 커뮤니티, UX 스터디 그룹, 프로토타이핑 동아리 등 제품 일 밖의 활동.' : 'Communities and side projects outside of product work — a hardware UX community, a UX study group, and a prototyping club.'} altPath="/activities/">
   <h1 class="label">Activities</h1>
   {lang === 'ko'
     ? <p class="intro">제품 일 밖의 커뮤니티와 사이드 프로젝트입니다. 하드웨어 UX 커뮤니티, UX 스터디 그룹, 프로토타이핑 동아리, 인턴십 프로그램, 그리고 짧은 유튜브 시리즈.</p>

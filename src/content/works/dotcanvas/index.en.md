@@ -23,7 +23,7 @@ Visually impaired students cannot take in graphic information by sight, so they 
 
 These constraints narrow what students get to learn and put a load on teachers. Another way of making tactile materials was needed.
 
-![](./01.png) ![](./02.jpg) ![](./03.jpg)
+![A student reading tactile learning materials and a molecular model by hand](./01.png) ![Hands placing colored blocks on a Dot Pad while reading a tactile graphic](./02.jpg) ![A Dot Pad showing a tactile graphic, with a hand resting beside it](./03.jpg)
 
 
 ## APPROACH
@@ -34,9 +34,9 @@ I joined Dot in July 2022 as a hardware UX designer, but the first job was not h
 
 **Then the hardware.** Once Canvas had shipped, I moved to Dot Pad itself. I compared more than 20 braille devices to define its tactile notation and the specs and requirements for the next model, and designed the key functions and the haptic and LED feedback that went into the production model.
 
-![](./04.jpg)
+![Dot Canvas across the product line: Dot Pad, iPad, and laptop](./04.jpg)
 
-<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/N_L3hR81nik?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/N_L3hR81nik?rel=0&modestbranding=1" title="Introduction to Dot Canvas" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 
 ## SOLUTION
@@ -45,19 +45,19 @@ I joined Dot in July 2022 as a hardware UX designer, but the first job was not h
 
 Teachers draw tactile graphics in the browser or import a PDF or image and convert it. The result is stored in Dot Cloud and shared with other teachers through a shared drive. In class, the same graphic can be sent to up to 10 Dot Pads at once, so students touch the same picture and talk about it.
 
-![](./09.jpg)
+![The Dot Canvas web editor: tool bar on the left, the grid canvas in the middle, page description on the right](./09.jpg)
 
 ### Dot Canvas App
 
 Drawing happens with iPad touch and the Apple Pencil. With VoiceOver and live drawing, visually impaired users draw for themselves and feel what they drew on Dot Pad right away. Files sync to the web through Dot Cloud.
 
-![](./10.jpg)
+![The Dot Canvas app editor open on an iPad](./10.jpg)
 
 ### Dot Pad
 
 Dot Pad is a multi-line tactile area for graphics, a single line of braille beneath it, and physical keys. A visually impaired user cannot pick a key by looking at it. The same key has to do the same thing every time, and keys have to be told apart by touch. So I defined the key functions consistently, added physical markings, and designed the haptic and LED feedback that confirms an input and shows the device's state; all of it went into the production model. A comparative analysis of more than 20 braille devices set the tactile notation and defined the specs and requirements for the next model, and user evaluations gathered the feedback to carry into it.
 
-<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/iSmRM2PUBzA?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/iSmRM2PUBzA?rel=0&modestbranding=1" title="Introduction to Dot Pad" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 
 ## IMPLEMENTATION
@@ -66,20 +66,20 @@ Dot Pad is a multi-line tactile area for graphics, a single line of braille bene
 
 **Documents and collaboration.** I documented screen specs and functional specifications and tracked issues in JIRA, working with the development team to absorb technical changes and keep the schedule for improvements and release.
 
-![](./05.jpg)
+![Screen printouts pinned to a whiteboard and connected into a flow](./05.jpg)
 
-![](./06.jpeg) ![](./07.jpeg)
+![The team setting up a demo with laptops and Dot Pads at a conference](./06.jpeg) ![A classroom where students each work with a Dot Pad at their desk](./07.jpeg)
 
-![](./08.jpeg) ![](./13.jpeg)
+![A workshop with users abroad, participants using Dot Canvas on laptops](./08.jpeg) ![A classroom monitor showing Dot Canvas with a tactile graphic on the canvas](./13.jpeg)
 
 
 ## IMPACT
 
 Dot Canvas won the CES 2024 Innovation Award and was shown at CSUN 2024. Dot Pad's tactile interface went into the production model. In a science class I observed at a school for the blind in 2024, the picture materials once made from tape and stickers had been replaced by Dot Pad.
 
-<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/AHK3VnjvA5Y?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/AHK3VnjvA5Y?rel=0&modestbranding=1" title="Dot Canvas shown at CES 2024" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
-![](./15.jpg) ![](./14.jpeg)
+![A visitor reading a tactile graphic on Dot Pad at the CSUN 2024 booth](./15.jpg) ![The Dot booth during setup](./14.jpeg)
 
 
 ## REFLECTION

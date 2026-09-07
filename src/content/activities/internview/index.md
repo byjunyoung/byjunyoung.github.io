@@ -15,7 +15,7 @@ draft: false
 
 결과물은 [인턴뷰 유튜브 채널](https://youtube.com/channel/UC97ypfun0Tm-McZTefrvyDQ?si=IxVxEQSbrXfjh5bK)에 업로드했습니다.
 
-<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/cbzAvICNlKA?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/cbzAvICNlKA?rel=0&modestbranding=1" title="인턴뷰 1화 영상" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 - [EP2 · 실리콘밸리 스타트업 COO와 AI 개발자가 취준생들에게 하고 싶은 이야기](https://www.youtube.com/watch?v=aZA-at74w2c)
 - [EP3 · 실리콘밸리 스타트업 Troolr의 공동 창업자들이 말하는 한국과 미국의 채용 프로세스](https://www.youtube.com/watch?v=2YyVip9VeS4)

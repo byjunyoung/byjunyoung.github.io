@@ -15,7 +15,7 @@ We introduced Korea's 'jasoseo' (personal statement) culture to the CEOs and dev
 
 The results were uploaded to the [InternView YouTube channel](https://youtube.com/channel/UC97ypfun0Tm-McZTefrvyDQ?si=IxVxEQSbrXfjh5bK).
 
-<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/cbzAvICNlKA?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/cbzAvICNlKA?rel=0&modestbranding=1" title="Internview, episode 1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 - [EP2 · What a Silicon Valley startup COO and an AI developer want job seekers to know](https://www.youtube.com/watch?v=aZA-at74w2c)
 - [EP3 · Troolr's co-founders on hiring in Korea and the U.S.](https://www.youtube.com/watch?v=2YyVip9VeS4)

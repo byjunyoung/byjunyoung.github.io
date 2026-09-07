@@ -15,7 +15,7 @@ order: 3
 draft: false
 ---
 
-<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/TPq3F_mAeP8?start=28&rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/TPq3F_mAeP8?start=28&rel=0&modestbranding=1" title="The Robot Building Solution film, starting at the STORAGY segment" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 ## PROBLEM
 
@@ -33,21 +33,21 @@ We defined the robot's states first, then split the channels. The robot reports 
 
 I made the representative face and animation for six states: booting, idle, moving, obstacle, charging, and delivery complete. The position, size, and motion of two eyes are all that separate the states.
 
-<video src="/media/works/storagy/faces.mp4" autoplay muted loop playsinline></video>
+<video src="/media/works/storagy/faces.mp4" aria-label="The faces for booting, idle, moving, obstacle, charging, and delivery complete, playing in sequence" autoplay muted loop playsinline></video>
 
 ### LED and display
 
 The front display carries the face; the LED under the body shows the system state. The face tells the person in front of the robot what it is doing now, and the LED shows booting, normal, warning, error, and charging through the color and pattern of the light. One mapping table keeps the two channels from saying different things about the same state.
 
-![](./01.jpg) ![](./02.jpg)
+![STORAGY waiting in an office corridor with a load on board](./01.jpg) ![The two-eye face on the robot's front display and the LED under the body](./02.jpg)
 
-<video src="/media/works/storagy/led.mp4" autoplay muted loop playsinline></video>
+<video src="/media/works/storagy/led.mp4" aria-label="Close-up of the eyes on the front display and the LED under the body lit together" autoplay muted loop playsinline></video>
 
 ### Multi-floor delivery
 
 STORAGY takes the drinks Barisbrew makes, rides the elevator, and delivers them to the desk. I defined the scenarios and states for this multi-floor delivery and planned the features and screens of MobileON, the console that controls the robot remotely. A face was added for each step of the elevator ride, calling, boarding, choosing the floor, and getting off, along with faces for a blocked path and for error and emergency stop.
 
-<video src="/media/works/storagy/delivery.mp4" autoplay muted loop playsinline></video>
+<video src="/media/works/storagy/delivery.mp4" aria-label="STORAGY moving down a corridor, riding the elevator, and delivering to an office" autoplay muted loop playsinline></video>
 
 
 ## IMPACT

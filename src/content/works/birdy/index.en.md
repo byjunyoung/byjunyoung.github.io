@@ -20,7 +20,7 @@ draft: false
 
 Older adults and other users with low digital literacy struggle with messengers because of complex UI layouts, small buttons, and multi-level menus. Contact with family and society thins out, or they miss information they need.
 
-![](./01.jpg)
+![Diagram of how Birdy links older adults and grandchildren: a handwritten card travels through a messenger to a smartphone](./01.jpg)
 
 
 ## APPROACH
@@ -32,9 +32,9 @@ We designed Birdy, a dedicated device used in place of a smartphone. As lead res
 1. **Prototype build and testing:** We built three working mockups and ran a three-week field test with six family pairs.
 1. **Data analysis:** Using the qualitative and quantitative data, we analyzed user behavior and experience and evaluated Birdy's effect.
 
-![](./02.jpg) ![](./03.jpg) ![](./04.jpg)
+![A hand writing a message on a round paper card](./02.jpg) ![Inserting the written card into the slot on top of Birdy, with the emoji card box beside it](./03.jpg) ![Pushing a card into the Birdy body](./04.jpg)
 
-<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/YvDX9E_5jvk?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/YvDX9E_5jvk?rel=0&modestbranding=1" title="Film showing how Birdy is used" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 
 ## SOLUTION
@@ -47,7 +47,7 @@ Birdy is a desktop messaging device for older adults. Handwriting on paper with 
 
 **A few buttons do everything.** Physical buttons for navigation and a simple interface cut the steps down, and received messages appear large on the display.
 
-![](./06.jpg) ![](./05.jpg) ![](./07.jpg)
+![Close-up of the round-cornered slot the card goes into](./06.jpg) ![Hands leafing through emoji cards printed with a heart and faces](./05.jpg) ![The grandchild's phone thread, where the handwritten message arrives as an image](./07.jpg)
 
 
 ## IMPLEMENTATION
@@ -56,13 +56,13 @@ Development ran along three tracks: hardware, software, and product design. When
 
 Parts were modeled in Fusion 360 and made by 3D printing and CNC machining, with the structure settled through repeated prototyping. The design is modular for maintenance and fabrication.
 
-![](./12.jpg)
+![Birdy's internal parts and exploded drawing: high-luminance LED, camera with a ring LED, IR sensor, linear stepping motor, and the control boards](./12.jpg)
 
-![](./13.jpg)
+![Birdy's system diagram: motors and sensors on the Arduino, camera and display on the Raspberry Pi, connected through the messenger server and the recognition model](./13.jpg)
 
-![](./08.jpg) ![](./09.jpg)
+![An early foam-board mockup with a message on the display](./08.jpg) ![Testing the prototype at a monitor, the recognized handwriting showing on the device](./09.jpg)
 
-![](./10.jpeg) ![](./11.jpg)
+![Parts laid out on the workbench: ring LED, boards, housings, and tools](./10.jpeg) ![Housing and handle parts made in several colors](./11.jpg)
 
 
 ## IMPACT
@@ -75,13 +75,13 @@ Over the three-week field test, how much the older participants messaged and wha
 
 **What handwriting and paper carried.** 70% of participants said handwriting helped them express feeling, and some drew flowers or changed the size of their letters to do it. 83% kept the paper messages they received; one grandparent kept a grandchild's notes in a drawer.
 
-![](./18.jpg) ![](./19.jpg) ![](./20.jpg)
+![A field-test participant writing a message on a card at a desk](./18.jpg) ![Birdy on a table by the living-room window](./19.jpg) ![Birdy and its card box installed on a shelf in a participant's home](./20.jpg)
 
-![](./21.jpg) ![](./22.jpg) ![](./23.jpg)
+![Birdy and the emoji box on a chest of drawers](./21.jpg) ![A participant using Birdy on a wooden porch](./22.jpg) ![Birdy on a bedroom dresser](./23.jpg)
 
-![](./15.jpg)
+![Messages per week over the three-week field test, one line per family](./15.jpg)
 
-![](./24.jpg)
+![Presenting the study results](./24.jpg)
 
 
 ## REFLECTION

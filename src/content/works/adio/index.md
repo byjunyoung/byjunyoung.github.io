@@ -16,6 +16,6 @@ order: 8
 draft: false
 ---
 
-<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/7O4_Z_1cJk8?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/7O4_Z_1cJk8?rel=0&modestbranding=1" title="ADIO 연구 영상" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 ACM CHI 2021에 발표된 논문 프로젝트입니다. 저는 3저자로 Book Lever 프로토타이핑과 사용자 스터디를 맡았습니다. 자세한 내용은 대표 연구자 [**이경룡님의 논문과 영상**](https://dl.acm.org/doi/10.1145/3411764.3445440)을 참고해주세요.
