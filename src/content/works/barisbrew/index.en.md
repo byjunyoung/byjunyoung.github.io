@@ -56,13 +56,17 @@ Customers order before they arrive and see their queue position and expected com
 
 ![](./05.jpg)
 
-### Store display and pickup zone
+### Store display, DID
 
-In a store with no staff, the display does the calling. It splits orders being brewed from orders waiting for pickup, by order number, and announces completion on screen. The pickup zone shows each order as a card and clears cards as a camera detects pickups. The wording for retrieval and disposal situations was aligned across the app and the displays.
+In a store with no staff, the display does the calling. It splits orders being brewed from orders waiting for pickup, by order number, and announces completion on screen.
 
 ![](./06.jpg)
 
 <video src="/media/works/barisbrew/did.mp4" autoplay muted loop playsinline></video>
+
+### Pickup zone
+
+The pickup zone shows each order on a display beneath the spot where the cup is placed. It is a tangible interaction: instead of touching a screen, picking up the drink is the input. A camera detects the pickup and clears the card, and exceptions such as retrieval and disposal are worded the same way in the app and on the display. People stand here only for a moment, so the UI elements on that display had to work within that brief dwell time while still conveying exactly which drink it is. That was the UX point I enjoyed most in this project.
 
 ### Operations console, BarisON
 
