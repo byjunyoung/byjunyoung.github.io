@@ -48,6 +48,8 @@ Robot positions sit on the building plan, and the status of robots and facilitie
 
 The same data, rearranged for visitors. A vertical section of the building carries a robot on each floor, so what is moving where reads from across the room. Beside it sit the facility status, the robot roster, and the building's notices.
 
+<video src="/media/works/rbms/signage.mp4" aria-label="The same signage screen at three moments, robots moving between floors as the readings change" autoplay muted loop playsinline></video>
+
 ### AI agent
 
 A conversation panel sits next to the control view. You ask in plain words, and the answers and the robot event alerts stack up in one timeline. Rules that let the building act on its own are handled here too, written as a single line: at this time, in this place, on this event, do this.
