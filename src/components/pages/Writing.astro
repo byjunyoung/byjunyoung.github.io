@@ -3,7 +3,6 @@
 import Base from '../../layouts/Base.astro';
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
-import defaultCover from '../../assets/writing-default.jpg';
 import { langOf, type Lang } from '../../lib/i18n';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
@@ -18,7 +17,9 @@ const posts = (await getCollection('writing')).filter((e) => langOf(e.id) === la
     {posts.map((p) => (
       <li>
         <a href={p.data.url} target="_blank" rel="noopener">
-          <span class="thumb"><Image src={p.data.cover ?? defaultCover} alt="" width={480} height={270} loading="lazy" /></span>
+          {p.data.cover
+            ? <span class="thumb"><Image src={p.data.cover} alt="" width={480} height={270} loading="lazy" /></span>
+            : <span class="thumb card" aria-hidden="true"><i></i><span>{p.data.title}</span></span>}
           <span class="body">
             <span class="when">{p.data.date} · {p.data.source}</span>
             <span class="t">{p.data.title}</span>
