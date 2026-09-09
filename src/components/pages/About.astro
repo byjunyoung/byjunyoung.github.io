@@ -1,0 +1,301 @@
+---
+// src/components/pages/About.astro
+import Base from '../../layouts/Base.astro';
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import { localePath, type Lang } from '../../lib/i18n';
+import futsal from '../../assets/about/futsal.jpg';
+import touch from '../../content/works/dotcanvas/12.jpeg';
+import controls from '../../assets/about/controls.jpg';
+import study from '../../content/activities/hux/01.jpeg';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const ko = lang === 'ko';
+
+type Link = { ko: string; en: string; to: string };  // to: '/path', 'w:<writing slug>', or a full URL
+type Row = {
+  x: number;           // % indent in the list — further right is further off course
+  year?: string;
+  ko: string;          // short label in the list
+  en: string;
+  bodyKo: string;
+  bodyEn: string;
+  note?: boolean;      // a doubt written down at the time, not a milestone
+  work?: string;
+  links?: Link[];
+};
+
+const search1: Row[] = [
+  { x: 2, year: '2013', ko: '홍익대 기계시스템디자인공학', en: 'Mechanical system design engineering, Hongik',
+    bodyKo: '기계공학으로 시작했습니다. 디자인이 아니라 기계였습니다.',
+    bodyEn: 'I started in mechanical engineering. Machines, not design.',
+    links: [{ to: 'w:2026-06-hongik-hri-class', ko: '졸업생으로 다시 간 날', en: 'Back as an alum' }] },
+  { x: 24, ko: '군대, 그리고 휴학', en: 'Military service, then time off', note: true,
+    bodyKo: '학부를 마치는 데 7년이 걸렸습니다. 군대에 다녀왔고 휴학도 했습니다. 그 사이 내내 뭘 하고 싶은지 찾고 있었습니다.',
+    bodyEn: 'Seven years to finish the degree — military service, then time off. The whole time I was working out what I wanted to do.' },
+  { x: 10, year: '2017', ko: 'SVIP 선발', en: 'Picked for SVIP',
+    bodyKo: '미래창조과학부와 KAIST가 운영한 실리콘밸리 인턴십 프로그램입니다. 창업 교육 2개월을 거쳐 12명 중 하나로 뽑혔습니다.',
+    bodyEn: 'A Silicon Valley internship program run by the Ministry of Science and KAIST. Two months of training, then one of twelve picked.',
+    links: [
+      { to: '/activities/svip', ko: 'SVIP 활동', en: 'SVIP activity' },
+      { to: '/activities/internview', ko: '인턴뷰', en: 'Internview' },
+    ] },
+];
+
+const search2: Row[] = [
+  { x: 2, year: '2018', ko: 'ZIBOT 캘리포니아', en: 'ZIBOT, California', work: 'zibot',
+    bodyKo: '인턴십으로 갔는데 디자인 엔지니어로 일했습니다. 미국 시장용 교육 로봇 컨셉을 맡아 CES 2019에 전시했습니다.',
+    bodyEn: 'Went as an intern and worked as a design engineer. Took the concept for a US-market educational robot and showed it at CES 2019.',
+    links: [
+      { to: '/works/zibot', ko: 'ZIBOT 케이스', en: 'ZIBOT case' },
+      { to: '/activities/internview', ko: '인턴뷰 영상', en: 'Internview videos' },
+    ] },
+  { x: 22, ko: '“뚜렷한 정의를 얻을 수 없었다”', en: '“No clear definition anywhere”', note: true,
+    bodyKo: '하드웨어 UX가 뭔지 알고 싶어 실리콘밸리의 디자이너들을 찾아다니며 물었습니다. 답을 주는 사람이 없었습니다. 그래서 블로그에 직접 정의를 적었습니다.',
+    bodyEn: 'I went around asking designers in Silicon Valley what hardware UX was. Nobody had an answer, so I wrote a definition on my blog myself.',
+    links: [{ to: 'w:2018-04-hardware-ux-outside-the-screen', ko: '2018.04 블로그 원문', en: 'The April 2018 post' }] },
+  { x: 30, ko: '“많이 늦게 깨달은 것 같다”', en: '“I worked that out late”', note: true,
+    bodyKo: '한 달 뒤, 물어봐야 할 사람이 UX 디자이너가 아니라 제품 디자이너라는 걸 알았습니다. 방향은 잡았는데 구체적인 계단이 안 보이던 때입니다.',
+    bodyEn: 'A month later I realised the people to ask were product designers, not UX designers. I had a direction but no idea what the next step was.',
+    links: [{ to: 'w:2018-05-hardware-ux-and-product-design', ko: '2018.05 블로그 원문', en: 'The May 2018 post' }] },
+  { x: 6, year: '2020', ko: 'UNIST 창의디자인공학 석사', en: 'Master’s at UNIST', work: 'meemo',
+    bodyKo: 'Meemo와 ADIO를 만들고 3주간 실제로 쓰게 한 뒤 관찰했습니다. 만들어서 사람 손에 쥐여 보는 법을 여기서 배웠습니다.',
+    bodyEn: 'Built Meemo and ADIO, then watched three weeks of real use. This is where I learned to make something and put it in someone’s hands.',
+    links: [
+      { to: '/works/meemo', ko: 'Meemo 케이스', en: 'Meemo case' },
+      { to: '/works/adio', ko: 'ADIO 케이스', en: 'ADIO case' },
+      { to: 'w:2022-07-adio-in-the-news', ko: 'ADIO 기사', en: 'ADIO in the news' },
+    ] },
+  { x: 3, year: '2021', ko: 'Birdy · 동아리 DINO', en: 'Birdy · the DINO club', work: 'birdy',
+    bodyKo: '노년층 가족 소통을 위한 종이 기반 메시징 디바이스로 HCI Korea 우수상을 받았습니다. 프로토타이핑 동아리 DINO에서도 활동했습니다.',
+    bodyEn: 'A paper-based messaging device for older adults and their families; it won an HCI Korea Creative Award. I was also in DINO, a prototyping club.',
+    links: [
+      { to: '/works/birdy', ko: 'Birdy 케이스', en: 'Birdy case' },
+      { to: '/activities/dino', ko: 'DINO 활동', en: 'DINO activity' },
+    ] },
+  { x: 26, year: '2022', ko: '“우울했던 대학원 2년”', en: '“Two depressing years of grad school”', note: true,
+    bodyKo: '졸업하며 브런치에 회고를 썼습니다. 남해 여행기 반, 지난 2년 이야기 반입니다.',
+    bodyEn: 'I wrote a retrospective when I graduated — half a trip to the south coast, half the previous two years.',
+    links: [{ to: 'w:2022-07-brunch-grad-school', ko: '브런치 회고', en: 'The Brunch retrospective' }] },
+  { x: 7, year: '2022', ko: '닷 입사', en: 'Joined Dot Inc.', work: 'dotcanvas',
+    bodyKo: '하드웨어 UX를 꼭 해보고 싶어서 직접 연락했습니다. 촉각 디스플레이 Dot Pad와 저작 툴 Dot Canvas를 맡았습니다.',
+    bodyEn: 'I wanted hardware UX badly enough to reach out myself. I took on the Dot Pad tactile display and the Dot Canvas authoring tool.',
+    links: [
+      { to: '/works/dotcanvas', ko: 'Dot Canvas 케이스', en: 'Dot Canvas case' },
+      { to: 'w:2022-06-joining-dot', ko: '입사하며 쓴 글', en: 'Written on joining' },
+      { to: 'w:2022-12-inthiswork-interview', ko: '인디스워크 인터뷰', en: 'IN THIS WORK interview' },
+    ] },
+  { x: 24, ko: '첫 1년은 웹·앱 기획', en: 'The first year was web and app work', note: true,
+    bodyKo: '하드웨어 UX 디자이너로 들어갔는데, 첫 1년은 닷패드에 필요한 웹·앱 서비스 기획과 UX 디자인이었습니다.',
+    bodyEn: 'I joined as a hardware UX designer, but the first year was planning and designing the web and app services Dot Pad needed.',
+    links: [{ to: 'w:2024-02-dot-canvas-ces', ko: '첫 1년을 돌아본 글', en: 'Looking back on that first year' }] },
+  { x: 14, ko: '아티클을 모으고 사람을 모음', en: 'Collected articles, then people',
+    bodyKo: '혼자로는 답이 안 나와서 관련 아티클을 모아 공유했습니다. 그 글에 반응한 분들과 북스터디를 시작했고, UXeed를 2년간 운영했습니다.',
+    bodyEn: 'Alone got me nowhere, so I collected articles and shared them. A book club started from the people who replied, and I ran UXeed for two years.',
+    links: [
+      { to: '/activities/uxeed', ko: 'UXeed 활동', en: 'UXeed activity' },
+      { to: 'w:2022-08-hw-ux-articles', ko: '아티클 공유 글', en: 'The article round-up' },
+      { to: 'w:2022-08-hw-ux-book-study', ko: '북스터디 모집 글', en: 'The book-study call' },
+    ] },
+  { x: 2, year: '2024', ko: 'CES 수상 · 설계자들 설립', en: 'CES award · founded 설계자들',
+    bodyKo: 'Dot Canvas로 CES 2024 접근성 부문 혁신상을 받았습니다. 같은 해 하드웨어 UX 커뮤니티 설계자들을 공동 설립했습니다.',
+    bodyEn: 'Dot Canvas won a CES 2024 Innovation Award in accessibility. The same year I co-founded 설계자들, a hardware UX community.',
+    links: [
+      { to: '/activities/hux', ko: '설계자들 활동', en: '설계자들 activity' },
+      { to: 'w:2024-01-book-study-robot-ux', ko: '로봇 UX 북스터디 모집', en: 'The robot-UX book study' },
+      { to: 'w:2023-04-csun-2023', ko: 'CSUN 2023 참관기', en: 'CSUN 2023' },
+    ] },
+  { x: 18, year: '2025', ko: '“어떤 UX ______ 를 꿈꾸는가”', en: '“Which UX ______ do I want to be?”', note: true,
+    bodyKo: '원티드 온라인 UX 컨퍼런스에서 발표하며 내린 결론입니다. 빈칸을 하드웨어로 채우기로 했습니다.',
+    bodyEn: 'The conclusion of a talk at the Wanted Online UX Conference. I decided to fill the blank with hardware.',
+    links: [
+      { to: 'w:2025-07-which-ux-do-i-dream-of', ko: '발표를 마치고 쓴 글', en: 'Written after the talk' },
+      { to: 'w:2025-06-wanted-ux-conference', ko: '발표 소식', en: 'The talk announcement' },
+    ] },
+  { x: 1, year: '2025', ko: '엑스와이지 입사', en: 'Joined XYZ Inc.', work: 'barisbrew',
+    bodyKo: '로봇 카페 BarisBrew의 고객·운영자 UX를 키오스크·앱·음성 주문·백오피스까지 하나의 시스템으로 설계했고, 자율주행 로봇 Storagy의 상태 피드백을 맡았습니다.',
+    bodyEn: 'Designed BarisBrew’s customer and operator UX as one system — kiosk, app, voice ordering, back office — and the state feedback for the Storagy AMR.',
+    links: [
+      { to: '/works/barisbrew', ko: 'BarisBrew 케이스', en: 'BarisBrew case' },
+      { to: '/works/storagy', ko: 'Storagy 케이스', en: 'Storagy case' },
+      { to: 'w:2025-07-leaving-dot', ko: '닷을 떠나며', en: 'Leaving Dot' },
+    ] },
+  { x: 1, year: '2026', ko: 'DEUX · RBMS · UX 파트 리드', en: 'DEUX · RBMS · UX Lead', work: 'deux',
+    bodyKo: '세미 휴머노이드 DEUX의 HRI와 로봇·설비를 함께 보는 관제 시스템 RBMS를 맡고 있습니다. 지금은 로봇 디자인팀의 UX 파트 리드입니다.',
+    bodyEn: 'HRI for the semi-humanoid DEUX, and RBMS, the system that watches robots and building equipment on one screen. Now UX Lead on the Robot Design Team.',
+    links: [
+      { to: '/works/deux', ko: 'DEUX 케이스', en: 'DEUX case' },
+      { to: '/works/rbms', ko: 'RBMS 케이스', en: 'RBMS case' },
+      { to: 'w:2026-08-one-year-at-xyz', ko: '1년을 돌아본 글', en: 'One year in' },
+    ] },
+];
+
+const writingUrl = new Map(
+  (await getCollection('writing')).filter((e) => !e.id.startsWith('en/')).map((e) => [e.id, e.data.url]),
+);
+const resolve = (to: string) => {
+  if (!to.startsWith('w:')) return to;
+  const url = writingUrl.get(to.slice(2));
+  if (!url) throw new Error(`About: unknown writing slug "${to.slice(2)}"`);
+  return url;
+};
+const rows: Row[] = [...search1, ...search2];
+const LOOP = (slug: string) => `/media/works/${slug}/loop.mp4`;
+const hop = (a: number, b: number) => `M ${a} 0 C ${a} 17, ${b} 17, ${b} 34`;
+---
+<Base
+  title="About"
+  lang={lang}
+  altPath="/about/"
+  description={ko
+    ? '김준영 — 하드웨어 UX 디자이너. 추억으로 남는 제품, 그리고 정의가 없던 자리에서 기준을 만들어 온 과정.'
+    : 'Junyoung Kim — hardware UX designer. Products that stay with people, and how I built my own criteria when none existed.'}
+>
+  <h1 class="label">Junyoung Kim</h1>
+  <p class="intro">
+    {ko ? (
+      <>스크린 밖에서 일어나는 경험을 설계하는 하드웨어 UX 디자이너입니다.<br />지금은 엑스와이지 로봇 디자인팀에서 UX 파트를 맡고 있습니다.</>
+    ) : (
+      <>I’m a hardware UX designer — I work on the part of a product that happens off the screen.<br />Right now I lead the UX part of the Robot Design Team at XYZ Inc.</>
+    )}
+  </p>
+
+  <section class="about">
+    <h2>{ko ? '만들고 싶은 것' : 'What I want to make'}</h2>
+    <Image class="wide" src={touch} alt={ko ? '아이가 촉각 디스플레이 위에 손을 얹고 있다' : 'A child’s hands on a tactile display'} widths={[1080, 2160]} sizes="100vw" loading="lazy" />
+    {ko ? (
+          <>
+            <p>사람에게 추억으로 남는 제품을 만들고 싶습니다.</p>
+            <p>폴라로이드가 그렇습니다. 남는 것은 사진만이 아닙니다. 필름이 밀려 나오는 소리, 상이 떠오를 때까지 기다린 시간, 그동안 손에 쥐고 있던 감각이 함께 남습니다. 제품을 쓰는 동안 몸이 한 일이 기억이 됩니다.</p>
+            <p>그래서 물리적인 인터랙션이 다채로울수록 좋다고 봅니다. 누르는 것과 돌리는 것, 미는 것과 만지는 것은 각각 다르게 기억됩니다. 오감을 많이 쓸수록 남는 것도 많아집니다.</p>
+            <p>스크린 만능주의는 경계합니다. 화면으로 옮기면 기능은 대부분 구현되지만, 사용자가 쓰는 감각은 보는 것과 유리를 문지르는 것 정도로 줄어듭니다. 화면이 답인 경우도 있지만 기본값이어서는 안 된다고 생각합니다.</p>
+            <p>만든 것들이 대체로 그랬습니다. Meemo는 손으로 쓴 종이 메모, ADIO는 촉각을 결합한 오디오북, Birdy는 종이로 주고받는 메시지였습니다.</p>
+          </>
+        ) : (
+          <>
+            <p>I want to make products that stay with people as memories.</p>
+            <p>Polaroids work that way. What remains is not only the photograph. The sound of the film pushing out, the wait for the image to appear, the feel of holding it while you waited — those remain too. What your body did while using the product becomes the memory.</p>
+            <p>So the more varied the physical interaction, the better. Pressing, turning, sliding, and touching are each remembered differently. The more senses in use, the more is left behind.</p>
+            <p>I’m wary of treating screens as the answer to everything. Move it to a screen and most functions still work, but the senses involved shrink to looking and rubbing glass. Sometimes a screen is right; it shouldn’t be the default.</p>
+            <p>Most of what I’ve made has gone this way — Meemo a handwritten paper note, ADIO an audiobook with touch in it, Birdy a message sent on paper.</p>
+      </>
+    )}
+  </section>
+
+  <section class="about">
+    <h2>{ko ? '하드웨어 UX' : 'Hardware UX'}</h2>
+    <Image class="wide" src={controls} alt={ko ? '노브와 토글 스위치, 눌러 넣는 버튼이 늘어선 라디오 조작부' : 'A radio control panel of knobs, toggle switches, and push buttons'} widths={[1080, 1600]} sizes="100vw" loading="lazy" />
+    <p class="credit">Braun T1000CD. {ko ? '사진' : 'Photo'} <a href="https://www.flickr.com/photos/nite_owl/408719246" target="_blank" rel="noopener">Nite_Owl</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0/" target="_blank" rel="noopener">CC BY-SA 2.0</a></p>
+    {ko ? (
+      <>
+        <p>하드웨어 UX가 무엇인지 아직 한 문장으로 정리하지 못했습니다. 대신 계속 고쳐 적고 있습니다.</p>
+            <p>2018년 4월, 실리콘밸리의 디자이너 모임에 다녀와 블로그에 처음 적은 문장은 “Hardware User Experience : Experience from out of screen”, 스크린 밖에서 이루어지는 경험이었습니다. 검색해도 뜻이 나오지 않던 때라 직접 지은 말입니다. 같은 글에 무엇이 아닌지도 적었습니다. 성능을 높이기 위한 공학적 디자인도 아니고, 보기 좋게 만드는 심미적 디자인도 아니라고. 한 달 뒤에는 왜 이 일이 한 사람에게 통째로 맡겨지는지를 적었습니다. 소프트웨어는 출시한 뒤에도 고칠 수 있어서 UX가 여러 직무로 갈라졌지만, 하드웨어는 출시하면 사실상 고칠 수 없고 리서치와 디자인을 따로 떼기도 애매하다고요.</p>
+            <p>여섯 해 동안은 그 문장에서 크게 나아가지 못했습니다. 2024년 2월, <a href={localePath(lang, '/activities/hux/')}>설계자들</a> 북스터디에서 『로봇 UX』를 읽다가 기록장에 이렇게 적었습니다.</p>
+            <blockquote><p>제품은 끊임없이 사용자에게 어떤 메시지를 전달한다. 그 메시지는 스크린이 될 수도 있지만, 진동이 될 수도, LED가 될 수도, 어떤 형태의 변화일 수도 있다.</p></blockquote>
+            <p>이때 “스크린 밖”의 뜻이 바뀌었습니다. 화면을 쓰지 않는다는 말이 아니라, 제품이 말을 거는 통로가 여럿이라는 뜻이었습니다. 그러면 일은 하나로 정리됩니다. 제품이 지금 어떤 상태인지 정하고, 그 상태를 어느 통로로 전할지 나누는 것.</p>
+            <p>실제로 그렇게 일하고 있습니다. <a href={localePath(lang, '/works/storagy/')}>Storagy</a>에서는 로봇의 상태를 시스템과 운영 두 갈래로 나눴습니다. 부팅·경고·배터리 같은 시스템 상태는 운영자가 멀리서 봐야 하니 몸체 아래 LED와 사운드로, 대기·주행·도킹 같은 운영 상태는 로봇 앞에 선 사람이 읽어야 하니 전면 디스플레이의 표정으로 알립니다. <a href={localePath(lang, '/works/deux/')}>DEUX</a>에서는 원칙을 하나로 정했습니다. 감정과 의도는 눈과 목소리가 전하고, 소리는 말로 하기 애매한 시스템 신호에만 씁니다.</p>
+            <p>2018년에 적었던 전제 하나는 흔들리고 있습니다. 하드웨어는 출시하면 고칠 수 없다고 썼는데, 로봇의 HRI는 오히려 운영하면서 계속 고치는 설계였습니다. 이상적인 시나리오는 어렵지 않습니다. 대기하고 이동하고 도착하는 흐름은 표정 여섯 개로 설명됩니다. 어려운 건 그 밖입니다. 장애물을 만났을 때, 배송한 물건을 아무도 찾아가지 않을 때 로봇이 무엇을 보여 줘야 하는지는 한 번에 정의되지 않았고 지금도 현장에서 채우고 있습니다.</p>
+            <p>화면을 고른 적도 있습니다. <a href={localePath(lang, '/works/birdy/')}>Birdy</a>에서는 종이로 출력하는 감열 프린터를 검토했지만 디스플레이를 골랐습니다. 짧은 메시지가 오가는 대화는 순서와 맥락을 훑기에 화면이 낫고, 용지를 갈아 끼우는 일이 노년층에게 또 하나의 장벽이 될 수 있었습니다. 스크린 만능주의를 경계한다는 말이 화면을 쓰지 않는다는 뜻은 아닙니다. 화면이 답일 때를 가려내는 일이 포함됩니다.</p>
+            <p>그래서 2025년 발표에서는 물성이 있는 디지털 제품의 사용자 경험이라고 답했습니다. Physical User Interface, Physical Interaction, 프로토타이핑과 피지컬 컴퓨팅, 산업 디자인. 지금 로봇에서 하는 일이 이 넷입니다. 두 문장 사이에 7년이 있고 답이 조금 단단해졌지만, 여전히 완성된 정의라고 생각하지 않습니다. 제품을 하나씩 만들 때마다 기준이 조금씩 바뀝니다.</p>
+          </>
+        ) : (
+          <>
+            <p>I still can’t put hardware UX into one sentence. What I do instead is keep rewriting it.</p>
+            <p>In April 2018, after a designers’ meetup in Silicon Valley, the first version I wrote on my blog was “Hardware User Experience : Experience from out of screen.” Searching turned up nothing at the time, so I wrote my own. The same post says what it is not — not engineering design for better performance, not aesthetic design for a better look. A month later I wrote down why one person ends up carrying all of it: software can be fixed after launch, which is why UX split into separate roles, while hardware effectively cannot, and its research and design don’t come apart cleanly.</p>
+            <p>For six years I didn’t get much further than that. In February 2024, reading a book on robot UX with the <a href={localePath(lang, '/activities/hux/')}>설계자들</a> book study, I wrote this in my notes.</p>
+            <blockquote><p>A product is constantly sending the user some message. That message can be a screen, but it can also be a vibration, an LED, or a change in form.</p></blockquote>
+            <p>That’s when “off the screen” changed meaning for me. It doesn’t mean avoiding screens; it means a product has many channels for speaking. Which makes the work one thing: decide what state the product is in, then decide which channel carries it.</p>
+            <p>That is what the job actually looks like. On <a href={localePath(lang, '/works/storagy/')}>Storagy</a> I split the robot’s states in two. System states — booting, warning, battery — go to an LED strip under the body and to sound, because an operator reads them from across the room. Operational states — idle, driving, docking — go to the face on the front display, because the person standing in front of the robot reads those. On <a href={localePath(lang, '/works/deux/')}>DEUX</a> the rule is a single line: eyes and voice carry emotion and intent; sound is only for system signals that are awkward to say out loud.</p>
+            <p>One of my 2018 premises is coming loose. I wrote that hardware can’t be fixed after launch, but robot HRI turned out to be a design you keep fixing while it runs. The ideal scenario is the easy part — idle, move, arrive is six facial expressions. The hard part is everything else: what the robot should show when it meets an obstacle, or when nobody collects the delivery. That never got defined in one pass, and we’re still filling it in on site.</p>
+            <p>I have also chosen the screen. On <a href={localePath(lang, '/works/birdy/')}>Birdy</a> we looked at a thermal printer that would put messages on paper, and picked a display instead — short messages need order and context at a glance, and reloading paper would have been one more barrier for older users. Being wary of screens as the default doesn’t mean refusing them. It includes telling when a screen is the right answer.</p>
+            <p>So in the 2025 talk I answered that it is the user experience of digital products with physical presence — physical user interface, physical interaction, prototyping and physical computing, industrial design. Those four are what the robot work is. Seven years between the two sentences, and the answer got firmer; I still don’t think it’s finished. The criteria shift a little with every product I make.</p>
+      </>
+    )}
+  </section>
+
+  <section class="about">
+    <h2>{ko ? '두 번의 탐색' : 'Two searches'}</h2>
+    {ko
+      ? <p>기계공학에서 헤매다 UX를 만났고, UX 안에서 다시 하드웨어를 찾아 헤맸습니다. 합의된 정의가 없는 분야라 기준을 스스로 만드는 것 말고는 방법이 없었습니다. 아래가 그 과정입니다. 왼쪽에 붙어 있으면 제 길로 간 것, 오른쪽으로 밀려나 있으면 헤맨 것입니다. 마디를 누르면 그때 이야기가 옆에 뜹니다.</p>
+      : <p>I wandered out of mechanical engineering into UX, then wandered around UX until I found hardware. The field had no agreed definition, so there was nothing to do but build my own. Here’s how it went — flush left means I was on track, pushed right means I was lost. Pick a node to see what happened.</p>}
+
+    <div class="tlx">
+      {rows.map((r, n) => <input type="radio" name="tlx" id={`tlx-${n}`} checked={n === 0} />)}
+      <div class="tlx-body">
+        <div class="tlx-list">
+          {rows.map((r, n) => (
+            <Fragment>
+              {n > 0 && <span class="hop" aria-hidden="true"><svg viewBox="0 0 100 34" preserveAspectRatio="none"><path d={hop(rows[n - 1].x, r.x)} vector-effect="non-scaling-stroke" /></svg></span>}
+              <label class:list={['tlx-item', r.note && 'is-note']} for={`tlx-${n}`} style={`--x:${r.x}`}>
+                <span class="tlx-dot" aria-hidden="true"></span>
+                <span class="tlx-year">{r.year}</span>
+                <span class="tlx-label">{ko ? r.ko : r.en}</span>
+              </label>
+            </Fragment>
+          ))}
+        </div>
+        <div class="tlx-panels">
+          {rows.map((r, n) => (
+            <figure class:list={['tlx-panel', `p${n}`]}>
+              {r.work && <video src={LOOP(r.work)} autoplay muted loop playsinline preload="metadata"></video>}
+              <figcaption>
+                {r.year && <span class="tlx-when">{r.year}</span>}
+                <p class="tlx-title">{ko ? r.ko : r.en}</p>
+                <p>{ko ? r.bodyKo : r.bodyEn}</p>
+                {r.links && (
+                  <span class="tlx-links">
+                    {r.links.map((l) => {
+                      const href = resolve(l.to);
+                      const ext = !href.startsWith('/');
+                      return <a href={ext ? href : localePath(lang, href + '/')} target={ext ? '_blank' : undefined} rel={ext ? 'noopener' : undefined}>{ko ? l.ko : l.en}</a>;
+                    })}
+                  </span>
+                )}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about">
+    <h2>{ko ? '지금의 기준' : 'The criteria I use now'}</h2>
+    <Image class="wide" src={study} alt={ko ? '북스터디에서 붙인 질문 포스트잇들' : 'Question notes stuck up at a book study'} widths={[1080, 2160]} sizes="100vw" loading="lazy" />
+    <blockquote><p>{ko ? 'UX는 역할이 아니라 관점이자 태도' : 'UX is not a role. It is a perspective and a posture.'}</p></blockquote>
+        {ko ? (
+          <>
+            <p>2025년 원티드 온라인 UX 컨퍼런스에서 발표하며 내린 결론입니다. 사용자의 맥락을 이해하려는 시선, 문제를 발견하고 질문하는 감각, 모든 접점에 UX를 고려하는 자세를 뜻합니다. 그 뒤에 붙는 빈칸은 각자가 경험에 기여할 수 있는 스킬입니다.</p>
+            <p>제 빈칸은 하드웨어입니다. 이것도 지금의 답이고, 계속 물어보는 중입니다.</p>
+            <p><a href={resolve('w:2025-07-which-ux-do-i-dream-of')} target="_blank" rel="noopener">발표 자료 전체</a>를 링크드인에 올려 두었습니다.</p>
+          </>
+        ) : (
+          <>
+            <p>That was the conclusion of a talk I gave at the Wanted Online UX Conference in 2025. It means an eye for the user’s context, a sense for finding problems and asking about them, and the habit of considering UX at every touchpoint. What follows it is a blank — the skill each person contributes with.</p>
+            <p>My blank is hardware. That’s the answer for now, and I’m still asking.</p>
+            <p>The <a href={resolve('w:2025-07-which-ux-do-i-dream-of')} target="_blank" rel="noopener">full slide deck</a> is on LinkedIn.</p>
+      </>
+    )}
+  </section>
+
+  <section class="about">
+    <h2>{ko ? '그 밖에' : 'Also'}</h2>
+    <Image class="wide" src={futsal} alt={ko ? '풋살장에서 웃고 있는 모습' : 'Laughing on a futsal court'} widths={[1080, 1800]} sizes="100vw" loading="lazy" />
+    {ko ? (
+      <dl class="misc">
+          <div><dt>좋아하는 브랜드</dt><dd>틴에이지 엔지니어링, 블랙베리, 발뮤다, 애플. 네 곳 모두 손으로 만지는 부분이 제품의 인상을 결정합니다.</dd></div>
+          <div><dt>인생 영화</dt><dd>아메리칸 셰프, 잉여들의 히치하이킹, 소울.</dd></div>
+          <div><dt>주말</dt><dd>축구를 좋아합니다. 풋살을 하고, 경기 영상을 직접 찍어 편집해 <a href="https://www.youtube.com/@WEEKLYFC2020" target="_blank" rel="noopener">위클리FC</a>에 올립니다.</dd></div>
+          <div><dt>밴드</dt><dd>친구들과 만든 직장인 밴드 <a href="https://www.youtube.com/@%EB%82%B4%EC%A0%81%EC%86%8C%EC%9D%8C" target="_blank" rel="noopener">내적소음</a>에서 베이스를 칩니다.</dd></div>
+        </dl>
+      ) : (
+        <dl class="misc">
+          <div><dt>Brands I like</dt><dd>Teenage Engineering, BlackBerry, Balmuda, Apple. In all four, the part you touch decides the impression the product leaves.</dd></div>
+          <div><dt>Films I keep going back to</dt><dd>Chef, The Hitchhikers, Soul.</dd></div>
+          <div><dt>Weekends</dt><dd>I like football. I play futsal, and I film and edit the matches for <a href="https://www.youtube.com/@WEEKLYFC2020" target="_blank" rel="noopener">Weekly FC</a>.</dd></div>
+          <div><dt>Band</dt><dd>I play bass in <a href="https://www.youtube.com/@%EB%82%B4%EC%A0%81%EC%86%8C%EC%9D%8C" target="_blank" rel="noopener">내적소음</a>, a band I started with friends who all have day jobs.</dd></div>
+        </dl>
+      )}
+  </section>
+</Base>
