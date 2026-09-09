@@ -17,7 +17,9 @@ const posts = (await getCollection('writing')).filter((e) => langOf(e.id) === la
     {posts.map((p) => (
       <li>
         <a href={p.data.url} target="_blank" rel="noopener">
-          <span class="thumb">{p.data.cover && <Image src={p.data.cover} alt="" width={480} height={360} loading="lazy" />}</span>
+          <span class="thumb">{p.data.cover
+            ? <Image src={p.data.cover} alt="" width={480} height={270} loading="lazy" />
+            : <span class="ph">{p.data.source}</span>}</span>
           <span class="body">
             <span class="when">{p.data.date} · {p.data.source}</span>
             <span class="t">{p.data.title}</span>
