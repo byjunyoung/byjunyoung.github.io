@@ -42,6 +42,8 @@ My part began with defining what would be managed, what state each thing reports
 
 Robot positions sit on the building plan, and the status of robots and facilities collects in one panel. Selecting an item opens its battery, location, and current task; the robot detail hands off to that robot's own console. Anything abnormal is announced at one of three levels: information, warning, urgent. Registering and editing devices, and managing floor information and notices, happen on the same screen.
 
+<video src="/media/works/rbms/console.mp4" aria-label="The lobby conversation view and the building-section dashboard side by side" autoplay muted loop playsinline></video>
+
 ### Lobby signage
 
 The same data, rearranged for visitors. A vertical section of the building carries a robot on each floor, so what is moving where reads from across the room. Beside it sit the facility status, the robot roster, and the building's notices.
