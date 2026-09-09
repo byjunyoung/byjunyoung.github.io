@@ -14,6 +14,8 @@ order: 4
 draft: false
 ---
 
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/TPq3F_mAeP8?rel=0&modestbranding=1" title="로봇 빌딩 솔루션 소개 영상" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
 ## PROBLEM
 
 한 건물 안에서 안내·배송·순찰·청소 로봇과 바리스타 로봇이 함께 일합니다. 여기에 CCTV와 온습도 센서, 엘리베이터가 따로 돌아갑니다. 그런데 로봇은 저마다 자기 관제 화면을 갖고 있었고 설비는 또 다른 데서 봤습니다. 건물을 맡은 사람이 "지금 이 건물이 어떤 상태인가"를 한 번에 볼 자리가 없었습니다.

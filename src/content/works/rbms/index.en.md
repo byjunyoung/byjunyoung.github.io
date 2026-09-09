@@ -14,6 +14,8 @@ order: 4
 draft: false
 ---
 
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/TPq3F_mAeP8?rel=0&modestbranding=1" title="The Robot Building Solution film" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
 ## PROBLEM
 
 Inside one building a guide robot, a delivery robot, a patrol robot, a cleaning robot, and a barista robot all work at once. Alongside them run the CCTV cameras, the climate sensors, and the elevators. Each robot had its own control screen, and the facilities were watched somewhere else again. Whoever ran the building had nowhere to see, in one place, what state the building was in.
