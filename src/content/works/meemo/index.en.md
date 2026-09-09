@@ -12,7 +12,7 @@ tags: ["Product Design", "Prototyping"]
 kind: case-study
 cover: ./cover.jpg
 loop: "/media/works/meemo/loop.mp4"
-order: 5
+order: 6
 draft: false
 ---
 

@@ -12,7 +12,7 @@ tags: ["Research", "Product Design", "Prototyping", "Project Management"]
 kind: case-study
 cover: ./cover.jpg
 loop: "/media/works/birdy/loop.mp4"
-order: 4
+order: 5
 draft: false
 ---
 
