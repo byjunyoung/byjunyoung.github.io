@@ -7,6 +7,10 @@ role: "UX 디자이너"
 responsibilities: ["HRI Design", "Expression & Sound", "Product Design", "Front-end"]
 keywords: ["humanoid", "hri", "expressive display", "teleoperation", "react"]
 link: { label: "DEUX 홈페이지", url: "https://xyzcorp.io/DEUX" }
+press:
+  - { label: "전자신문", url: "https://www.etnews.com/20260427000375" }
+  - { label: "머니투데이", url: "https://www.mt.co.kr/future/2026/04/27/2026042714215233568" }
+  - { label: "로봇신문", url: "https://www.irobotnews.com/news/articleView.html?idxno=46089" }
 tags: ["HRI Design", "Expression & Sound", "Product Design", "Front-end"]
 kind: case-study
 cover: ./cover.jpg

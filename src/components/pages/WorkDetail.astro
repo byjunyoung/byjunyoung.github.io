@@ -20,7 +20,7 @@ const rows = [
   { label: 'With', value: d.with },
   { label: 'Keywords', value: d.keywords.join(', ') || undefined },
   { label: 'Link', value: d.link?.label, href: d.link?.url },
-  { label: 'Press', value: d.press.map((p) => p.label).join(', ') || undefined },
+  { label: 'Press', links: d.press },
   { label: 'Awards', value: d.awards.join(', ') || undefined },
 ];
 const counterpart = (await getCollection('works')).find((e) => e.id === counterpartId(entry.id) && !e.data.draft);

@@ -7,6 +7,10 @@ role: "UX Designer"
 responsibilities: ["System UX", "Voice UX", "UX Design Ops"]
 keywords: ["barista robot", "kiosk", "voice order", "llm"]
 link: { label: "Baris Brew Website", url: "https://xyzcorp.io/baris" }
+press:
+  - { label: "VentureSquare", url: "https://www.venturesquare.net/1102926" }
+  - { label: "Money Today", url: "https://www.mt.co.kr/future/2025/11/03/2025110314103736602" }
+  - { label: "Robot News", url: "https://www.irobotnews.com/news/articleView.html?idxno=44250" }
 tags: ["System UX", "Voice UX", "UX Design Ops"]
 kind: case-study
 cover: ./cover.jpg

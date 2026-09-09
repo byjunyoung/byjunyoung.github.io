@@ -1,13 +1,15 @@
 ---
 // src/components/MetaCard.astro
-interface Props { rows: Array<{ label: string; value?: string; href?: string }> }
+interface Props { rows: Array<{ label: string; value?: string; href?: string; links?: Array<{ label: string; url: string }> }> }
 const { rows } = Astro.props;
 ---
 <aside class="metacard">
-  {rows.filter((r) => r.value).map((r) => (
+  {rows.filter((r) => r.value || r.links?.length).map((r) => (
     <dl>
       <dt>{r.label}</dt>
-      <dd>{r.href ? <a href={r.href} target="_blank" rel="noopener">{r.value}</a> : r.value}</dd>
+      <dd>{r.links?.length
+        ? r.links.map((l, i) => <>{i > 0 ? ', ' : ''}<a href={l.url} target="_blank" rel="noopener">{l.label}</a></>)
+        : r.href ? <a href={r.href} target="_blank" rel="noopener">{r.value}</a> : r.value}</dd>
     </dl>
   ))}
 </aside>

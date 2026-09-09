@@ -7,6 +7,10 @@ role: "UX 디자이너"
 responsibilities: ["System UX", "Voice UX", "UX Design Ops"]
 keywords: ["barista robot", "kiosk", "voice order", "llm"]
 link: { label: "바리스브루 홈페이지", url: "https://xyzcorp.io/baris" }
+press:
+  - { label: "벤처스퀘어", url: "https://www.venturesquare.net/1102926" }
+  - { label: "머니투데이", url: "https://www.mt.co.kr/future/2025/11/03/2025110314103736602" }
+  - { label: "로봇신문", url: "https://www.irobotnews.com/news/articleView.html?idxno=44250" }
 tags: ["System UX", "Voice UX", "UX Design Ops"]
 kind: case-study
 cover: ./cover.jpg
