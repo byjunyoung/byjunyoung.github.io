@@ -41,7 +41,7 @@ draft: false
 
 ![Render of the yellow cube robot, marking the dot-matrix face and the magnetic attachment point](./05.png) ![Render marking the modular handle that accessories attach to](./06.png)
 
-![Render of two robots moving across the grid of colored tiles](./07.png) ![Render of the robot tracing a Z along a line](./09.png)
+![Render of two robots moving across the grid of colored tiles](./07.png) ![Render of the yellow robot beside a large box on colored tiles marked with X](./08.png) ![Render of the robot tracing a Z along a line](./09.png)
 
 <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/irJ2ge-0ZDw?rel=0&modestbranding=1" title="The ZIBOT KK concept film" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
@@ -78,6 +78,8 @@ draft: false
 The final ZIBOT KK mockup was shown at ZIBOT's booth at CES 2019. It was the first project the U.S. product team completed, and the starting point for the company's entry into the U.S. market.
 
 ## REFLECTION
+
+![An office desk with a laptop and parts boxes, robot products on the shelves behind](./23.jpg)
 
 **A demanding environment can turn into a chance to learn, once you get through it.**
 

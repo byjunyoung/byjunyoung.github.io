@@ -18,11 +18,11 @@ draft: false
 
 ## PROBLEM
 
-![Diagram of how Birdy links older adults and grandchildren: a handwritten card travels through a messenger to a smartphone](./01.jpg)
-
 Older adults and other users with low digital literacy struggle with messengers because of complex UI layouts, small buttons, and multi-level menus. Contact with family and society thins out, or they miss information they need.
 
 ## APPROACH
+
+![Diagram of how Birdy links older adults and grandchildren: a handwritten card travels through a messenger to a smartphone](./01.jpg)
 
 ![From sketches through body and button variants and prototypes to the final design](./25.jpg)
 
@@ -77,9 +77,11 @@ State is carried by light. A new message blinks blue, sending breathes blue, and
 
 ![Parts laid out on the workbench: ring LED, boards, housings, and tools](./10.jpeg) ![Housing and handle parts made in several colors](./11.jpg)
 
-The first code started in the Meemo repository, and between February and July 2021 I saved 37 dated versions of the program.
+The early mockup was foam board. After that I modeled the parts in Fusion 360, 3D-printed them, and CNC-machined the exterior. The field test used three working mockups that differ only in color.
 
-Parts were modeled in Fusion 360 and made by 3D printing and CNC machining, with the structure settled through repeated prototyping. The design is modular for maintenance and fabrication.
+The center of the camera’s view had to line up exactly with the center of the card, so every part was assembled with bolts and nuts. The cards are thick, weighty paper, and the slot is angled and colored so it is obvious where a card goes. The body is split in half: one side holds the electronics, the other the paper, pen, and emoji book. That ratio was chosen with older users’ wariness of new devices in mind.
+
+The code started in the Meemo repository. Between February and July 2021, 37 dated versions were saved.
 
 ## IMPACT
 

@@ -41,7 +41,7 @@ draft: false
 
 ![노란 큐브 로봇 렌더. 점 매트릭스 표정과 자석 부착부를 표시](./05.png) ![모듈형 핸들에 액세서리를 붙일 수 있는 구조를 표시한 렌더](./06.png)
 
-![컬러 타일 격자 위에서 두 대가 움직이는 사용 장면 렌더](./07.png) ![선을 따라 Z 모양을 그리며 주행하는 렌더](./09.png)
+![컬러 타일 격자 위에서 두 대가 움직이는 사용 장면 렌더](./07.png) ![X 표시가 있는 컬러 타일 위에서 큰 상자 옆에 선 노란 로봇 렌더](./08.png) ![선을 따라 Z 모양을 그리며 주행하는 렌더](./09.png)
 
 <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/irJ2ge-0ZDw?rel=0&modestbranding=1" title="ZIBOT KK 컨셉 영상" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
@@ -78,6 +78,8 @@ draft: false
 ZIBOT KK의 최종 목업은 CES 2019의 ZIBOT 부스에 전시됐습니다. ZIBOT 미국 제품 팀이 처음으로 완수한 프로젝트로, 회사의 미국 시장 진출 시작점이 되었습니다.
 
 ## REFLECTION
+
+![노트북과 부품 상자가 놓인 사무실 책상, 뒤 선반의 로봇 제품들](./23.jpg)
 
 **도전적인 환경은 극복을 통해 배움의 기회로 바뀔 수 있다.**
 

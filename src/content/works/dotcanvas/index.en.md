@@ -19,7 +19,7 @@ draft: false
 
 ## PROBLEM
 
-![A student reading tactile learning materials and a molecular model by hand](./01.png) ![Hands placing colored blocks on a Dot Pad while reading a tactile graphic](./02.jpg) ![A Dot Pad showing a tactile graphic, with a hand resting beside it](./03.jpg)
+![A student reading tactile learning materials and a molecular model by hand](./18.jpg)
 
 Visually impaired students cannot take in graphic information by sight, so they learn from the tactile graphics in braille textbooks or from separate tactile teaching aids. Those materials are always in short supply. Tactile graphics in braille textbooks are hard to produce and maintain, and they never cover every figure in the original, so only some make it in. Tactile aids are mostly made by teachers themselves. Sit in on a class at a school for the blind and you will find picture materials built from tape and stickers. They take time and money to make, and they do not last.
 
@@ -27,9 +27,7 @@ These constraints narrow what students get to learn and put a load on teachers. 
 
 ## APPROACH
 
-![The team setting up a demo with laptops and Dot Pads at a conference](./06.jpeg) ![A classroom where students each work with a Dot Pad at their desk](./07.jpeg)
-
-![A workshop with users abroad, participants using Dot Canvas on laptops](./08.jpeg) ![A classroom monitor showing Dot Canvas with a tactile graphic on the canvas](./13.jpeg)
+![Hands placing colored blocks on a Dot Pad while reading a tactile graphic](./02.jpg) ![A Dot Pad showing a tactile graphic, with a hand resting beside it](./03.jpg)
 
 I joined Dot in July 2022 as a hardware UX designer, but the first job was not hardware. The Dot Pad tactile display is only useful with tactile graphics to show, and there was no tool for making them. Working as one team with a service planner and a GUI designer, the goal was to ship web and app demos of the authoring tool, Dot Canvas, within three months.
 
@@ -65,6 +63,8 @@ Dot Pad is a multi-line tactile area for graphics, a single line of braille bene
 
 ![Screen printouts pinned to a whiteboard and connected into a flow](./05.jpg)
 
+![The team setting up a demo with laptops and Dot Pads at a conference](./06.jpeg) ![A classroom where students each work with a Dot Pad at their desk](./07.jpeg) ![A workshop with users abroad, participants using Dot Canvas on laptops](./08.jpeg)
+
 **Screen design and GUI.** Based on the research, I designed the screens for Dot Canvas Web and App in Figma and did the GUI. Because teachers and visually impaired students share the interface, the UI structure and the placement of functions were organized around those two.
 
 **Documents and collaboration.** I documented screen specs and functional specifications and tracked issues in JIRA, working with the development team to absorb technical changes and keep the schedule for improvements and release.
@@ -73,7 +73,7 @@ Dot Pad is a multi-line tactile area for graphics, a single line of braille bene
 
 <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/AHK3VnjvA5Y?rel=0&modestbranding=1" title="Dot Pad use case at Incheon Hyegwang School for the Blind" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
-![A visitor reading a tactile graphic on Dot Pad at the CSUN 2023 booth](./17.jpg)
+![A visitor reading a tactile graphic on Dot Pad at the CSUN 2023 booth](./17.jpg) ![A classroom monitor showing Dot Canvas with a tactile graphic on the canvas](./13.jpeg)
 
 Dot Canvas was demoed at the CSUN 2023 booth, and after winning the CES 2024 Innovation Award it was shown at CSUN 2024 as well. Dot Pad's tactile interface went into the production model. In a science class I observed at a school for the blind in 2024, the picture materials once made from tape and stickers had been replaced by Dot Pad.
 

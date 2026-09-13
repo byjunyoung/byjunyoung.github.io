@@ -18,13 +18,13 @@ draft: false
 
 ## PROBLEM
 
-![A Venn diagram overlapping the advantages of paper notes and digital notes](./01.png)
-
 Analog notes are good for capturing ideas because you can write without being tied to a format, but they are hard to organize and to keep for the long term. Digital notes, on the other hand, give you storage and search but narrow the range of expression.
 
 Many people use both at once, which weakens the consistency of how information is kept and makes search harder. What is needed is a way to have the freedom of analog notes and the order of digital ones together.
 
 ## APPROACH
+
+![A Venn diagram overlapping the advantages of paper notes and digital notes](./01.png)
 
 To get past the limits of the analog system and the digital one, I designed an integrated system that joins the way analog notes are written to the storage and search of digital ones.
 
@@ -38,7 +38,7 @@ To get past the limits of the analog system and the digital one, I designed an i
 
 ![A yellow round note with handwriting on it, held in a hand](./05.png) ![The Meemo body with the input slot on top](./03.jpg) ![Close-up of a round note being ejected from the device](./04.jpg)
 
-![Checking the digitized note on a phone](./06.png) ![The paper note going back onto a calendar after being digitized](./07.png) ![Meemo on a desk beside a monitor](./08.jpg)
+![Checking the digitized note on a phone](./06.png) ![The paper note going back onto a calendar after being digitized](./07.png)
 
 <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/nXMv4ztNLbA?rel=0&modestbranding=1" title="Film showing Meemo in operation" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
@@ -52,6 +52,8 @@ To get past the limits of the analog system and the digital one, I designed an i
 
 ## IMPLEMENTATION
 
+![Meemo system diagram: camera, image processing, and Dropbox on the Raspberry Pi side; proximity sensor, servo motor, NeoPixel ring, and stepper motor on the Arduino side](./13.jpg)
+
 ![The six steps one note passes through: insertion, IR detection, servo feed, camera capture, cloud upload, and ejection](./18.jpg)
 
 ![The raw photo from inside the device, the image cropped to a circle, and the handwritten memo as uploaded to the cloud](./19.jpg)
@@ -64,13 +66,19 @@ To get past the limits of the analog system and the digital one, I designed an i
 
 ![Meemo's internal structure: gears, Neopixel ring, camera, proximity sensor, step motor, and servo motor](./12.jpg)
 
-![The camera and sensor seated inside the mockup](./09.jpg) ![The wiring inside, with a blue note fed in](./10.jpg) ![A machined exterior part held in hand](./11.jpg)
+![Meemo on a desk beside a monitor](./08.jpg) ![The camera and sensor seated inside the mockup](./09.jpg)
 
-**Product design and mockup fabrication:** The exterior and structure were modeled in 3D with Fusion 360. The outer shell was CNC machined and the internal structural parts were 3D printed, designed for easy assembly and maintenance. Meemo came together as a prototype with a physical interface and a working structure.
+![The wiring inside, with a blue note fed in](./10.jpg) ![A machined exterior part held in hand](./11.jpg)
+
+I modeled the exterior and the internal structure in Fusion 360. The shell was CNC-machined, and the internal parts that hold the camera, sensor, and gears were 3D-printed. The stepper motor drives the disc through two spur gears.
+
+Paper took the most time. Paper that was too thin would not feed, and square corners caught inside the device. After trying different thicknesses, materials, and shapes, I settled on the round memo, and recessed the slot so paper slides in easily.
+
+The camera didn’t work the first time either. I started by trying to find the four corners of the sheet, the way document-scanning examples do, but the wide-angle lens I needed for the cramped interior distorted the image too much to find them. The repository still has separate test code for the camera, cropping, the Dropbox upload, and serial communication. Along the way I burned a PCB and redid work after design mistakes.
 
 ## IMPACT
 
-![The HCI Korea 2021 Creative Award certificate](./14.jpeg) ![Meemo on a display shelf](./16.jpg)
+![The HCI Korea 2021 Creative Award certificate](./14.jpeg) ![Cover of the HCI Korea 2021 conference proceedings](./15.jpg)
 
 Meemo received the Excellence Award at the HCI Korea Creative Award.
 
@@ -78,8 +86,10 @@ It was presented at the HCI Korea 2021 conference and published in the proceedin
 
 ## REFLECTION
 
+![Meemo on a display shelf](./20.jpg)
+
 **Turning imagination into something real is as tangled and unpredictable as untangling a knot of string.**
 
-Meemo was the first time I took an idea of my own all the way to a product. Connecting a paper notebook to digital technology ran into technical obstacles I had not expected. Paper thickness, stiffness, and even corner shape all mattered: paper that was too thin would not feed, and square corners caught inside the device. I burned a PCB and redid the same work because of design mistakes, and it took trial and error to settle the paper's material and shape. I asked specialists for help when I needed it and improved the technology and the structural design, and I handled technical integration with Arduino and Raspberry Pi, internal structural design, and mockup fabrication with 3D printing and CNC machining myself.
+Meemo was the first time I took an idea of my own all the way to a product. Wiring Arduino and Raspberry Pi together, designing the internal structure, 3D printing, and CNC machining were all new to me, and when I got stuck I asked specialists and fixed things one at a time.
 
 I learned that an idea that looks easy in your head turns, once you build it for real, into a long run of complicated and unpredictable problem-solving — much like untangling a knot of string.
