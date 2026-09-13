@@ -40,7 +40,7 @@ To get past the limits of the analog system and the digital one, I designed an i
 
 **Instant cloud upload and digitization:** When a user puts a handwritten paper note into the device, Meemo converts it to a digital image and uploads it to the cloud (Dropbox) right away. Writing stays on paper, while the note becomes searchable in the digital environment and usable on other devices.
 
-**Rotating-disc feedback:** While an upload runs, the disc on the front face rotates, giving visual and physical feedback. The movement lets the user read the upload status, and adds a small pleasure to writing a note.
+**Rotating-disc feedback:** While a note is being scanned, the disc on the front face turns slowly, and it stops when the scan is done. The movement lets the user know the scan is in progress, and adds a small pleasure to writing a note.
 
 **Input and output that bridge analog and digital:** Insert a note and it is digitized; when the work is done the note comes back out to be used again or filed away. The process moves a note into the digital environment without breaking the analog workflow.
 
