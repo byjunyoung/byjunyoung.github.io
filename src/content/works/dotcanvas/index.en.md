@@ -61,11 +61,11 @@ Dot Pad is a multi-line tactile area for graphics, a single line of braille bene
 
 ![Screen printouts pinned to a whiteboard and connected into a flow](./05.jpg)
 
-**Screen design and GUI.** Based on the research, I designed the screens for Dot Canvas Web and App in Figma and did the GUI. Because teachers and visually impaired students share the interface, the UI structure and the placement of functions were organized around those two.
-
 ![The team setting up a demo with laptops and Dot Pads at a conference](./06.jpeg) ![A classroom where students each work with a Dot Pad at their desk](./07.jpeg)
 
 ![A workshop with users abroad, participants using Dot Canvas on laptops](./08.jpeg) ![A classroom monitor showing Dot Canvas with a tactile graphic on the canvas](./13.jpeg)
+
+**Screen design and GUI.** Based on the research, I designed the screens for Dot Canvas Web and App in Figma and did the GUI. Because teachers and visually impaired students share the interface, the UI structure and the placement of functions were organized around those two.
 
 **Documents and collaboration.** I documented screen specs and functional specifications and tracked issues in JIRA, working with the development team to absorb technical changes and keep the schedule for improvements and release.
 

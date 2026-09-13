@@ -37,17 +37,17 @@ draft: false
 
 ## SOLUTION
 
+![Render of the robot on the color-coding board with the companion app](./04.png)
+
+![Render of the yellow cube robot, marking the dot-matrix face and the magnetic attachment point](./05.png) ![Render marking the modular handle that accessories attach to](./06.png)
+
+![Render of two robots moving across the grid of colored tiles](./07.png) ![Render of the robot tracing a Z along a line](./09.png)
+
 <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/irJ2ge-0ZDw?rel=0&modestbranding=1" title="The ZIBOT KK concept film" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 **ZIBOT KK**
 
-![Render of the robot on the color-coding board with the companion app](./04.png)
-
-![Render of two robots moving across the grid of colored tiles](./07.png) ![Render of the robot tracing a Z along a line](./09.png)
-
 **Color coding:** A learning feature in which the robot recognizes colors and performs the matching action. Children pick up coding principles by arranging color patterns.
-
-![Render of the yellow cube robot, marking the dot-matrix face and the magnetic attachment point](./05.png) ![Render marking the modular handle that accessories attach to](./06.png)
 
 **A modular handle:** The handle was designed as a module so that a variety of accessories can attach to it. That extends its use beyond education to play and exploration.
 
@@ -55,17 +55,17 @@ draft: false
 
 ## IMPLEMENTATION
 
-![A paper mockup made to check size](./10.jpg) ![The control board and motor inside the mockup](./12.jpg)
-
-**Validating the design concept through prototyping:** Building a range of sizes and forms showed what product size was feasible and refined the design toward something close to a real product. The prototypes let me check function and usability together.
-
 <video src="/media/works/zibot/proto.mp4" autoplay muted loop playsinline aria-label="Working prototype demo: the app receives the color the robot read, and after the quiz is solved the robot drives across the color tiles"></video>
 
 ![Wiring for the Arduino Nano, color sensor, Bluetooth module, and servos, beside the app screens where a correct quiz answer sets the robot moving](./21.jpg)
 
-![The prototype testing color recognition on a colored tile](./11.jpg) ![The working prototype with its wiring exposed](./13.jpg)
+![A paper mockup made to check size](./10.jpg) ![The prototype testing color recognition on a colored tile](./11.jpg)
+
+![The working prototype with its wiring exposed](./13.jpg) ![The control board and motor inside the mockup](./12.jpg)
 
 ![Block code built in MIT App Inventor to validate the function](./20.jpg)
+
+**Validating the design concept through prototyping:** Building a range of sizes and forms showed what product size was feasible and refined the design toward something close to a real product. The prototypes let me check function and usability together.
 
 **Testing the feature with Arduino and MIT App Inventor:** To check whether color coding would actually work, I built a prototype of the core function. The office had nothing to build with, so I started by ordering parts — five orders in all — and put a color sensor, a Bluetooth module, and two continuous-rotation servos on an Arduino Nano. The app was built in MIT App Inventor. The robot reads the color under it and sends it to the app; solve the quiz in the app, press move, and it goes straight on white, turns right on red, and turns left on blue. The early tests identified functional constraints and room for improvement, and became reference material for later product development.
 
