@@ -21,41 +21,37 @@ draft: false
 
 STORAGY, an indoor delivery robot, shares hallways, elevators, and offices with people. It has to say without words whether it is waiting, moving, stopped by an obstacle, or done delivering, so that people make way and pick up what it brought. At the start there was no defined list of robot states, and no rules for the face and the light that would show them.
 
-
 ## APPROACH
 
 We defined the robot's states first, then split the channels. The robot reports two kinds of state: system state, such as booting, normal, warning, error, and battery, and operation state, such as idle, driving, docked, and the task at hand. System state has to be readable by an operator from anywhere at a glance, so it went to the LED under the body, with sound. Driving state has to be read by the person in front of the robot, so it went to the face on the front display, with sound. Display and LED feedback were mapped state by state and that table became the source of truth, with sound added afterward. Engineering built to the states as defined, and we put it on the real robot and revised as we went.
-
 
 ## SOLUTION
 
 ### Faces
 
-I made the representative face and animation for six states: booting, idle, moving, obstacle, charging, and delivery complete. The position, size, and motion of two eyes are all that separate the states.
-
 <video src="/media/works/storagy/faces.mp4" aria-label="The six state faces, each labelled: obstacle, booting, idle, charging, moving, and delivered" autoplay muted loop playsinline></video>
 
-### LED and display
+I made the representative face and animation for six states: booting, idle, moving, obstacle, charging, and delivery complete. The position, size, and motion of two eyes are all that separate the states.
 
-The front display carries the face; the LED under the body shows the system state. The face tells the person in front of the robot what it is doing now, and the LED shows booting, normal, warning, error, and charging through the color and pattern of the light. One mapping table keeps the two channels from saying different things about the same state.
+### LED and display
 
 ![STORAGY waiting in an office corridor with a load on board](./01.jpg) ![The two-eye face on the robot's front display and the LED under the body](./02.jpg)
 
 <video src="/media/works/storagy/led.mp4" aria-label="Close-up of the eyes on the front display and the LED under the body lit together" autoplay muted loop playsinline></video>
 
-### Multi-floor delivery
+The front display carries the face; the LED under the body shows the system state. The face tells the person in front of the robot what it is doing now, and the LED shows booting, normal, warning, error, and charging through the color and pattern of the light. One mapping table keeps the two channels from saying different things about the same state.
 
-STORAGY takes the drinks Barisbrew makes, rides the elevator, and delivers them to the desk. I defined the scenarios and states for this multi-floor delivery and planned the features and screens of MobileON, the console that controls the robot remotely. A face was added for each step of the elevator ride, calling, boarding, choosing the floor, and getting off, along with faces for a blocked path and for error and emergency stop.
+### Multi-floor delivery
 
 <video src="/media/works/storagy/delivery.mp4" aria-label="STORAGY moving down a corridor, riding the elevator, and delivering to an office" autoplay muted loop playsinline></video>
 
+STORAGY takes the drinks Barisbrew makes, rides the elevator, and delivers them to the desk. I defined the scenarios and states for this multi-floor delivery and planned the features and screens of MobileON, the console that controls the robot remotely. A face was added for each step of the elevator ride, calling, boarding, choosing the floor, and getting off, along with faces for a blocked path and for error and emergency stop.
 
 ## IMPACT
 
 It runs floor-to-floor delivery with Barisbrew in the Robot Building Solution at the XYZ headquarters in Seongsu, Seoul.
 
 The states and faces defined at the start became the frame everything else hung on. When multi-floor delivery arrived, four elevator steps, calling, boarding, choosing the floor, and getting off, plus a blocked path and an error and emergency stop, were added under the same rules. Impact detection has its key reserved, to be filled in when the detection logic exists.
-
 
 ## REFLECTION
 

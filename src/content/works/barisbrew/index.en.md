@@ -23,14 +23,15 @@ draft: false
 
 ## PROBLEM
 
+![People lined up at the kiosks to order in the store](./01.jpg) ![A hand taking the cup the robot arm holds out](./02.jpg)
+
 At Baris Brew, a barista robot café, a single order passes through five screens. Customers order at a kiosk or in the app, follow the brewing status on the store display (DID), and collect their drink at the pickup zone. Operators run the store remotely from the back office, BarisON. Each screen had been built at a different time by a different team, so the same state went by different names and an order never read as one flow.
 
 The problems found on site were concrete. Coupons were hard to find, and the coupon confirmation covered the pay button. When orders queued up, order numbers rotated on screen and customers could not judge their wait. In the back office, screen drafts and development had run ahead of planning, leaving the information architecture and permission model undefined.
 
-![People lined up at the kiosks to order in the store](./01.jpg) ![A hand taking the cup the robot arm holds out](./02.jpg)
-
-
 ## APPROACH
+
+![System diagram with order states along the horizontal axis, showing which stretch the kiosk, app, store display, pickup zone, barista robot, and operations console each cover](./09.jpg)
 
 I joined in August 2025 to tie the customer channels and the operations console together as one system UX. I worked as one team with two designers, one on the app and one on the web, and my part as planner and UX lead was to keep the flows and policies consistent across the products. We worked from three principles.
 
@@ -42,53 +43,49 @@ I joined in August 2025 to tie the customer channels and the operations console 
 
 Put the order states on one axis and it becomes clear which stretch each of the five touchpoints, the robot, and the operations console covers.
 
-![System diagram with order states along the horizontal axis, showing which stretch the kiosk, app, store display, pickup zone, barista robot, and operations console each cover](./09.jpg)
-
-
 ## SOLUTION
 
 The five products were split across the UX team and built together. What follows is the structure and the policies we settled on.
 
 ### Kiosk
 
-We organized the flow from the start screen through menu browsing, item detail, order review, and payment. Coupons are applied on the order review screen by scanning a QR code or entering a code, and payment finishes in two screens: choosing a method and following the terminal guidance. To meet the accessibility standard for unattended terminals, the kiosk gained a physical keypad, voice guidance, high contrast, and magnification, and the start screen carries the entry point for voice ordering.
-
 ![The kiosk start screen and the menu list screen](./03.jpg)
 
 ![The kiosk option screen and the payment screen](./04.jpg)
 
-### Mobile app
+We organized the flow from the start screen through menu browsing, item detail, order review, and payment. Coupons are applied on the order review screen by scanning a QR code or entering a code, and payment finishes in two screens: choosing a method and following the terminal guidance. To meet the accessibility standard for unattended terminals, the kiosk gained a physical keypad, voice guidance, high contrast, and magnification, and the start screen carries the entry point for voice ordering.
 
-Customers order before they arrive and see their queue position and expected completion time in the app. The brewing status screen uses one structure for the waiting, brewing, done, and error states, and guides them to pickup when the drink is ready. The [expected wait time](https://www.venturesquare.net/1102926) follows a single rule and is shown the same way on the kiosk and in the app.
+### Mobile app
 
 ![Three states of the app's brewing screen: queue position, expected completion time, and the ready notice](./05.jpg)
 
-### Store display, DID
+Customers order before they arrive and see their queue position and expected completion time in the app. The brewing status screen uses one structure for the waiting, brewing, done, and error states, and guides them to pickup when the drink is ready. The [expected wait time](https://www.venturesquare.net/1102926) follows a single rule and is shown the same way on the kiosk and in the app.
 
-In a store with no staff, the display does the calling. It splits orders being brewed from orders waiting for pickup, by order number, and announces completion on screen.
+### Store display, DID
 
 ![The store display, splitting orders being brewed on the left from orders waiting for pickup on the right, by number](./06.jpg)
 
 <video src="/media/works/barisbrew/did.mp4" aria-label="The store display updating orders in brewing and orders waiting for pickup" autoplay muted loop playsinline></video>
 
-### Pickup zone
+In a store with no staff, the display does the calling. It splits orders being brewed from orders waiting for pickup, by order number, and announces completion on screen.
 
-The pickup zone shows each order on a display beneath the spot where the cup is placed. It is a tangible interaction: instead of touching a screen, picking up the drink is the input. A camera detects the pickup and clears the card, and exceptions such as retrieval and disposal are worded the same way in the app and on the display. People stand here only for a moment, so the UI elements on that display had to work within that brief dwell time while still conveying exactly which drink it is. That was the UX point I enjoyed most in this project.
+### Pickup zone
 
 ![The pickup zone display, showing an order number and drink name at each spot where a cup is placed](./08.jpg)
 
-### Operations console, BarisON
+The pickup zone shows each order on a display beneath the spot where the cup is placed. It is a tangible interaction: instead of touching a screen, picking up the drink is the input. A camera detects the pickup and clears the card, and exceptions such as retrieval and disposal are worded the same way in the app and on the display. People stand here only for a moment, so the UI elements on that display had to work within that brief dwell time while still conveying exactly which drink it is. That was the UX point I enjoyed most in this project.
 
-BarisON is the console from which headquarters runs unmanned stores remotely. We planned store and robot control (power, status, cameras), unified management of the headquarters master catalog and each store's products and stock, an alarm system organized by operational severity, and a three-tier account model for headquarters admins, operations staff, and store owners. We also set common policies such as input form validation and button label conventions.
+### Operations console, BarisON
 
 ![The BarisON operations console: the dashboard and the stock management screen](./07.jpg)
 
-### Voice ordering, VoiceOrder
+BarisON is the console from which headquarters runs unmanned stores remotely. We planned store and robot control (power, status, cameras), unified management of the headquarters master catalog and each store's products and stock, an alarm system organized by operational severity, and a three-tier account model for headquarters admins, operations staff, and store owners. We also set common policies such as input form validation and button label conventions.
 
-With the engineering team, I designed the prompts and conversation flow for LLM-based voice ordering: a prompt defining personality, environment, tone, goals, guardrails, and tools; the wake word ("Baris"); barge-in; and the session-end rules and completion screen. The conversation was validated against twelve scenarios, from a basic order to multi-item commands, small-talk interruptions, and budget-based recommendations, and the TTS voice was chosen by listening to the candidates side by side. The kiosk carries the entry point and distinguishes the listening, thinking, responding, and error states with an animation along the screen edge. It was [first demonstrated](https://www.linkedin.com/posts/xyzcorporation_ai-robotcafe-agenticai-activity-7378711064454205440-h9Wl) at the Seoul AI Robot Show in September 2025, [unveiled at RoboWorld 2025](https://www.mt.co.kr/future/2025/11/03/2025110314103736602) in November, and then went into a store pilot; store noise, microphone pickup, and wake word recognition problems were fixed as the logs revealed them. The clip below, from the Lounge'X 24h store film, runs from the greeting and a menu question through an order, its confirmation, and pickup.
+### Voice ordering, VoiceOrder
 
 <video src="/media/works/barisbrew/voice.mp4" aria-label="A voice ordering demo, from the greeting and a menu question through the order, its confirmation, and pickup" autoplay muted loop playsinline></video>
 
+With the engineering team, I designed the prompts and conversation flow for LLM-based voice ordering: a prompt defining personality, environment, tone, goals, guardrails, and tools; the wake word ("Baris"); barge-in; and the session-end rules and completion screen. The conversation was validated against twelve scenarios, from a basic order to multi-item commands, small-talk interruptions, and budget-based recommendations, and the TTS voice was chosen by listening to the candidates side by side. The kiosk carries the entry point and distinguishes the listening, thinking, responding, and error states with an animation along the screen edge. It was [first demonstrated](https://www.linkedin.com/posts/xyzcorporation_ai-robotcafe-agenticai-activity-7378711064454205440-h9Wl) at the Seoul AI Robot Show in September 2025, [unveiled at RoboWorld 2025](https://www.mt.co.kr/future/2025/11/03/2025110314103736602) in November, and then went into a store pilot; store noise, microphone pickup, and wake word recognition problems were fixed as the logs revealed them. The clip above, from the Lounge'X 24h store film, runs from the greeting and a menu question through an order, its confirmation, and pickup.
 
 ## IMPLEMENTATION
 
@@ -96,13 +93,11 @@ With the engineering team, I designed the prompts and conversation flow for LLM-
 
 **Validation.** We validated the designs with a store pilot checklist, barrier-free kiosk QA, and analysis of voice order logs. The logs showed people using it like a voice assistant, which we reframed as a UI problem rather than an AI capability problem.
 
-
 ## IMPACT
-
-These are the team's results. The system runs in stores of many kinds, including public cultural spaces, apartment community centers, corporate retreats, and unmanned laundromats, and voice ordering went into a store pilot three months after its first demo.
 
 <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/tAH6xt0qpqk?rel=0&modestbranding=1" title="Film introducing the stores where Baris Brew runs" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
+These are the team's results. The system runs in stores of many kinds, including public cultural spaces, apartment community centers, corporate retreats, and unmanned laundromats, and voice ordering went into a store pilot three months after its first demo.
 
 ## REFLECTION
 
