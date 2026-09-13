@@ -95,10 +95,10 @@ Over the three-week field test, how much the older participants messaged and wha
 
 ![Messages per week over the three-week field test, one line per family](./15.jpg)
 
-![Presenting the study results](./24.jpg)
-
 ## REFLECTION
 
 **Can a hardware product be more than a device, a tool that connects feelings?**
 
 Birdy was the first time I went through every stage of getting a hardware product into a user's hands. From design to prototyping, user training, and feedback collection, I had to secure the stability of an IoT device and the user experience at the same time. Repeated prototype tests and firmware tuning showed me how much it matters to design hardware and software together. It was also the first project that made me think about what it means to design a solution to a social problem with technology.
+
+![Presenting the study results](./24.jpg)

@@ -79,7 +79,7 @@ draft: false
 
 <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/AHK3VnjvA5Y?rel=0&modestbranding=1" title="CES 2024에서 소개된 닷 캔버스 영상" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
-![CSUN 2024 부스에서 방문자가 닷패드의 촉각 그래픽을 만져 보는 모습](./15.jpg) ![전시 준비 중인 닷 부스](./14.jpeg)
+![CSUN 2024 부스에서 방문자가 닷패드의 촉각 그래픽을 만져 보는 모습](./17.jpg)
 
 
 ## REFLECTION
@@ -91,3 +91,5 @@ draft: false
 빠른 실행의 대가도 분명했습니다. 단기 목표는 달성했지만 확장성을 고려하지 못한 설계 탓에 이후 유지보수에서 수정이 많았고, 완성도가 부족한 부분도 있었습니다. 사용자 스터디로 직접 피드백을 받으면서 속도와 완성도 사이의 균형이 UX 설계에서 얼마나 중요한지 확인했습니다.
 
 가장 많이 배운 것은 사용자였습니다. 시각장애인 사용자를 가까이에서 만나며, 접근성은 제품의 마지막 단계에서 덧붙이는 것이 아니라 UX의 첫 챕터에서부터 다뤄야 한다는 것을 배웠습니다.
+
+![전시 준비 중인 닷 부스](./16.jpg)

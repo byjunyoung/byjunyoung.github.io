@@ -79,7 +79,7 @@ Dot Canvas won the CES 2024 Innovation Award and was shown at CSUN 2024. Dot Pad
 
 <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/AHK3VnjvA5Y?rel=0&modestbranding=1" title="Dot Canvas shown at CES 2024" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
-![A visitor reading a tactile graphic on Dot Pad at the CSUN 2024 booth](./15.jpg) ![The Dot booth during setup](./14.jpeg)
+![A visitor reading a tactile graphic on Dot Pad at the CSUN 2024 booth](./17.jpg)
 
 
 ## REFLECTION
@@ -91,3 +91,5 @@ Dot Canvas had to ship web and app demos in a short window. The team had little 
 The price of moving fast was just as clear. We hit the short-term goal, but the design had not accounted for scale, so maintenance later required a lot of rework, and parts of it were rough. Hearing feedback directly in user studies showed me how much the balance between speed and quality matters in UX design.
 
 What I learned most was the users. Meeting visually impaired users up close taught me that accessibility is not something added at the last step of a product, but something to work on from the first chapter of the UX.
+
+![The Dot booth during setup](./16.jpg)
