@@ -33,10 +33,6 @@ draft: false
 
 **Meemo 제품 개발:** 이 설계를 바탕으로 Meemo를 개발했습니다. 종이 메모를 실시간으로 디지털로 전환하는 기능을 중심에 두고, 종이 메모의 작성 환경을 유지하면서 디지털 메모의 검색·관리 편의를 함께 쓰도록 설계했습니다.
 
-![상단에 투입 슬롯이 있는 Meemo 본체](./03.jpg) ![기기에서 원형 메모가 배출되는 클로즈업](./04.jpg)
-
-<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/nXMv4ztNLbA?rel=0&modestbranding=1" title="Meemo 동작을 담은 영상" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-
 
 ## SOLUTION
 
@@ -50,9 +46,13 @@ draft: false
 
 ![책상 위 Meemo와 색색의 원형 메모지](./02.jpg)
 
+![상단에 투입 슬롯이 있는 Meemo 본체](./03.jpg) ![기기에서 원형 메모가 배출되는 클로즈업](./04.jpg)
+
 ![손글씨를 쓴 노란 원형 메모를 손에 든 모습](./05.png) ![스마트폰으로 디지털화된 메모를 확인하는 화면](./06.png)
 
 ![디지털로 옮긴 뒤 다시 달력에 붙이는 종이 메모](./07.png) ![모니터 옆 책상에 놓인 Meemo](./08.jpg)
+
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/nXMv4ztNLbA?rel=0&modestbranding=1" title="Meemo 동작을 담은 영상" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 
 ## IMPLEMENTATION

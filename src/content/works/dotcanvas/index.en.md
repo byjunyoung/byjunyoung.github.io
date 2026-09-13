@@ -34,10 +34,6 @@ I joined Dot in July 2022 as a hardware UX designer, but the first job was not h
 
 **Then the hardware.** Once Canvas had shipped, I moved to Dot Pad itself. I compared more than 20 braille devices to define its tactile notation and the specs and requirements for the next model, and designed the key functions and the haptic and LED feedback that went into the production model.
 
-![Dot Canvas across the product line: Dot Pad, iPad, and laptop](./04.jpg)
-
-<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/N_L3hR81nik?rel=0&modestbranding=1" title="Introduction to Dot Canvas" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-
 
 ## SOLUTION
 
@@ -52,6 +48,10 @@ Teachers draw tactile graphics in the browser or import a PDF or image and conve
 Drawing happens with iPad touch and the Apple Pencil. With VoiceOver and live drawing, visually impaired users draw for themselves and feel what they drew on Dot Pad right away. Files sync to the web through Dot Cloud.
 
 ![The Dot Canvas app editor open on an iPad](./10.jpg)
+
+![Dot Canvas across the product line: Dot Pad, iPad, and laptop](./04.jpg)
+
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/N_L3hR81nik?rel=0&modestbranding=1" title="Introduction to Dot Canvas" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 ### Dot Pad
 

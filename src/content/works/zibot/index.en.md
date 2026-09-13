@@ -36,10 +36,6 @@ draft: false
 
 ![How the product direction changed with HQ feedback, from U.S. market research to CES 2019](./22.jpg)
 
-![Render of the robot on the color-coding board with the companion app](./04.png)
-
-<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/irJ2ge-0ZDw?rel=0&modestbranding=1" title="The ZIBOT KK concept film" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-
 
 ## SOLUTION
 
@@ -51,9 +47,13 @@ draft: false
 
 **Size:** We set the size so that a child can hold it in one hand, and used prototypes to confirm the smallest dimensions that were feasible.
 
+![Render of the robot on the color-coding board with the companion app](./04.png)
+
 ![Render of the yellow cube robot, marking the dot-matrix face and the magnetic attachment point](./05.png) ![Render marking the modular handle that accessories attach to](./06.png)
 
 ![Render of two robots moving across the grid of colored tiles](./07.png) ![Render of the robot tracing a Z along a line](./09.png)
+
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/irJ2ge-0ZDw?rel=0&modestbranding=1" title="The ZIBOT KK concept film" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 
 ## IMPLEMENTATION

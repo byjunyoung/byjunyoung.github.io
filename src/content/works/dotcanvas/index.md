@@ -34,10 +34,6 @@ draft: false
 
 **그다음 하드웨어.** 캔버스를 내보낸 뒤에는 닷패드 자체로 갔습니다. 점자 디바이스 20종 이상을 비교해 촉각 표기 방식과 차기 모델의 스펙·요구사항을 정의하고, 키 기능과 햅틱·LED 피드백을 설계해 양산 모델에 반영했습니다.
 
-![닷패드와 아이패드, 노트북에서 닷 캔버스를 함께 쓰는 제품 구성](./04.jpg)
-
-<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/N_L3hR81nik?rel=0&modestbranding=1" title="닷 캔버스 소개 영상" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-
 
 ## SOLUTION
 
@@ -52,6 +48,10 @@ draft: false
 아이패드의 터치와 애플 펜슬로 그립니다. 보이스오버와 라이브 드로잉을 지원해 시각장애 사용자도 직접 그리고, 그린 것을 바로 닷패드로 만져 봅니다. 파일은 닷 클라우드로 웹과 공유됩니다.
 
 ![아이패드에서 연 닷 캔버스 앱의 편집 화면](./10.jpg)
+
+![닷패드와 아이패드, 노트북에서 닷 캔버스를 함께 쓰는 제품 구성](./04.jpg)
+
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/N_L3hR81nik?rel=0&modestbranding=1" title="닷 캔버스 소개 영상" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 ### Dot Pad
 

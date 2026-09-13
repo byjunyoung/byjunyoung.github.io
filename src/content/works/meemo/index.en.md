@@ -33,10 +33,6 @@ To get past the limits of the analog system and the digital one, I designed an i
 
 **Building Meemo:** On that design I built Meemo. Real-time conversion of paper notes into digital sits at the center, so the writing environment of paper stays as it is while the search and management convenience of digital notes comes with it.
 
-![The Meemo body with the input slot on top](./03.jpg) ![Close-up of a round note being ejected from the device](./04.jpg)
-
-<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/nXMv4ztNLbA?rel=0&modestbranding=1" title="Film showing Meemo in operation" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-
 
 ## SOLUTION
 
@@ -50,9 +46,13 @@ To get past the limits of the analog system and the digital one, I designed an i
 
 ![Meemo on a desk with round notes in several colors](./02.jpg)
 
+![The Meemo body with the input slot on top](./03.jpg) ![Close-up of a round note being ejected from the device](./04.jpg)
+
 ![A yellow round note with handwriting on it, held in a hand](./05.png) ![Checking the digitized note on a phone](./06.png)
 
 ![The paper note going back onto a calendar after being digitized](./07.png) ![Meemo on a desk beside a monitor](./08.jpg)
+
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/nXMv4ztNLbA?rel=0&modestbranding=1" title="Film showing Meemo in operation" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 
 ## IMPLEMENTATION

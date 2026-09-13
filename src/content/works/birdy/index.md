@@ -39,10 +39,6 @@ draft: false
 
 ![스케치에서 본체와 버튼 변형, 프로토타입을 거쳐 최종 디자인에 이른 과정](./25.jpg)
 
-![원형 종이 카드에 펜으로 메시지를 쓰는 손](./02.jpg) ![쓴 카드를 Birdy 상단 슬롯에 넣는 손. 옆에는 이모지 카드 보관함](./03.jpg) ![Birdy 본체에 카드를 밀어 넣는 모습](./04.jpg)
-
-<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/YvDX9E_5jvk?rel=0&modestbranding=1" title="Birdy 사용 시나리오를 담은 영상" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-
 ## SOLUTION
 
 Birdy는 노년층을 위한 탁상형 메시징 디바이스입니다. 종이와 펜으로 쓴 손글씨가 입력이 되고, 그 손글씨가 그대로 가족에게 갑니다. 설계의 축은 셋이었습니다.
@@ -53,7 +49,11 @@ Birdy는 노년층을 위한 탁상형 메시징 디바이스입니다. 종이�
 
 **조작은 버튼 몇 개로 끝납니다.** 탐색용 물리 버튼과 단순한 인터페이스로 조작 단계를 줄였고, 받은 메시지는 화면에 크게 뜹니다.
 
+![원형 종이 카드에 펜으로 메시지를 쓰는 손](./02.jpg) ![쓴 카드를 Birdy 상단 슬롯에 넣는 손. 옆에는 이모지 카드 보관함](./03.jpg) ![Birdy 본체에 카드를 밀어 넣는 모습](./04.jpg)
+
 ![카드가 들어가는 둥근 모서리 슬롯 클로즈업](./06.jpg) ![하트와 표정이 그려진 이모지 카드를 넘겨 보는 손](./05.jpg) ![손주의 스마트폰 대화창에 손글씨 메시지가 사진으로 도착한 화면](./07.jpg)
+
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/YvDX9E_5jvk?rel=0&modestbranding=1" title="Birdy 사용 시나리오를 담은 영상" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 ## IMPLEMENTATION
 

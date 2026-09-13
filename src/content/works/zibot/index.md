@@ -36,10 +36,6 @@ draft: false
 
 ![미국 시장 조사부터 CES 2019까지, 본사 피드백으로 제품 방향이 바뀐 과정 도식](./22.jpg)
 
-![컬러 코딩 보드 위의 로봇과 연결 앱 화면 렌더](./04.png)
-
-<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/irJ2ge-0ZDw?rel=0&modestbranding=1" title="ZIBOT KK 컨셉 영상" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-
 
 ## SOLUTION
 
@@ -51,9 +47,13 @@ draft: false
 
 **크기:** 아이가 한 손으로 들 수 있는 크기로 잡고, 프로토타입으로 실현 가능한 최소 치수를 확인했습니다.
 
+![컬러 코딩 보드 위의 로봇과 연결 앱 화면 렌더](./04.png)
+
 ![노란 큐브 로봇 렌더. 점 매트릭스 표정과 자석 부착부를 표시](./05.png) ![모듈형 핸들에 액세서리를 붙일 수 있는 구조를 표시한 렌더](./06.png)
 
 ![컬러 타일 격자 위에서 두 대가 움직이는 사용 장면 렌더](./07.png) ![선을 따라 Z 모양을 그리며 주행하는 렌더](./09.png)
+
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/irJ2ge-0ZDw?rel=0&modestbranding=1" title="ZIBOT KK 컨셉 영상" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 
 ## IMPLEMENTATION

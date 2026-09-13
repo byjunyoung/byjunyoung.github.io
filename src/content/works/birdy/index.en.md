@@ -39,10 +39,6 @@ The paper itself took work. A round card is easy to feed into the device but lea
 
 ![From sketches through body and button variants and prototypes to the final design](./25.jpg)
 
-![A hand writing a message on a round paper card](./02.jpg) ![Inserting the written card into the slot on top of Birdy, with the emoji card box beside it](./03.jpg) ![Pushing a card into the Birdy body](./04.jpg)
-
-<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/YvDX9E_5jvk?rel=0&modestbranding=1" title="Film showing how Birdy is used" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-
 ## SOLUTION
 
 Birdy is a desktop messaging device for older adults. Handwriting on paper with a pen is the input, and that handwriting is what the family receives. The design rested on three decisions.
@@ -53,7 +49,11 @@ Birdy is a desktop messaging device for older adults. Handwriting on paper with 
 
 **A few buttons do everything.** Physical buttons for navigation and a simple interface cut the steps down, and received messages appear large on the display.
 
+![A hand writing a message on a round paper card](./02.jpg) ![Inserting the written card into the slot on top of Birdy, with the emoji card box beside it](./03.jpg) ![Pushing a card into the Birdy body](./04.jpg)
+
 ![Close-up of the round-cornered slot the card goes into](./06.jpg) ![Hands leafing through emoji cards printed with a heart and faces](./05.jpg) ![The grandchild's phone thread, where the handwritten message arrives as an image](./07.jpg)
+
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/YvDX9E_5jvk?rel=0&modestbranding=1" title="Film showing how Birdy is used" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 ## IMPLEMENTATION
 
