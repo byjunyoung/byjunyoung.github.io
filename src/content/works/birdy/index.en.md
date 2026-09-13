@@ -22,7 +22,6 @@ Older adults and other users with low digital literacy struggle with messengers 
 
 ![Diagram of how Birdy links older adults and grandchildren: a handwritten card travels through a messenger to a smartphone](./01.jpg)
 
-
 ## APPROACH
 
 We designed Birdy, a dedicated device used in place of a smartphone. As lead researcher, I worked with two assistant researchers through the following steps.
@@ -34,8 +33,6 @@ We designed Birdy, a dedicated device used in place of a smartphone. As lead res
 
 We started with three forms. The stand type could come close to the mailbox the older generation grew up with, but it was awkward to live with day to day, so we dropped it. The wall-mounted type could use a large display but left nowhere to write, so we dropped that too. The desk type remained. It shares the desk with the paper and the pen, and it is easy to move.
 
-![Initial sketches of the three forms: stand, wall-mounted, and desk type](./26.jpg)
-
 For showing the message we also considered a thermal printer. Receiving the message on paper would have been the more analog experience, but we chose a display. In a conversation where short messages come and go quickly, a screen is better for taking in the order and the context, and reloading paper would have been one more barrier for older users.
 
 The paper itself took work. A round card is easy to feed into the device but leaves little room to write; a square one is the opposite. So we made it a square with rounded corners, at 66mm, a little smaller than a sticky note, so that messages stay short by themselves.
@@ -45,7 +42,6 @@ The paper itself took work. A round card is easy to feed into the device but lea
 ![A hand writing a message on a round paper card](./02.jpg) ![Inserting the written card into the slot on top of Birdy, with the emoji card box beside it](./03.jpg) ![Pushing a card into the Birdy body](./04.jpg)
 
 <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/YvDX9E_5jvk?rel=0&modestbranding=1" title="Film showing how Birdy is used" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-
 
 ## SOLUTION
 
@@ -58,7 +54,6 @@ Birdy is a desktop messaging device for older adults. Handwriting on paper with 
 **A few buttons do everything.** Physical buttons for navigation and a simple interface cut the steps down, and received messages appear large on the display.
 
 ![Close-up of the round-cornered slot the card goes into](./06.jpg) ![Hands leafing through emoji cards printed with a heart and faces](./05.jpg) ![The grandchild's phone thread, where the handwritten message arrives as an image](./07.jpg)
-
 
 ## IMPLEMENTATION
 
@@ -84,7 +79,6 @@ Parts were modeled in Fusion 360 and made by 3D printing and CNC machining, with
 
 ![Parts laid out on the workbench: ring LED, boards, housings, and tools](./10.jpeg) ![Housing and handle parts made in several colors](./11.jpg)
 
-
 ## IMPACT
 
 Over the three-week field test, how much the older participants messaged and what they talked about both changed.
@@ -102,7 +96,6 @@ Over the three-week field test, how much the older participants messaged and wha
 ![Messages per week over the three-week field test, one line per family](./15.jpg)
 
 ![Presenting the study results](./24.jpg)
-
 
 ## REFLECTION
 
