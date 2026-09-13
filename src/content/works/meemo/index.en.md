@@ -57,13 +57,15 @@ To get past the limits of the analog system and the digital one, I designed an i
 
 ## IMPLEMENTATION
 
-**Building the physical interaction:** To realize the physical interaction, I built the system on Arduino. When a user inserts paper, an infrared sensor detects it and a servo motor moves it along, and a DC motor turns the disc to show upload progress. This physical interaction was what carried the analog experience into the digital environment.
+**Building the physical interaction:** To realize the physical interaction, I built the system on Arduino. When a user inserts paper, an infrared sensor detects it, a servo motor moves it inside, and a stepper motor turns the disc to show progress. For the capture, a 12-LED NeoPixel ring around the camera lights up white to brighten the dark interior. This physical interaction was what carried the analog experience into the digital environment.
 
-**Cloud integration and application development:** To implement cloud storage, I built a data communication system linking a Raspberry Pi and Arduino. A camera module captures the paper note, and the Dropbox API uploads the image to the cloud.
+**Cloud integration and application development:** To implement cloud storage, I built a data communication system linking a Raspberry Pi and Arduino. When the Arduino reports a detected sheet, the Raspberry Pi takes a 1024×768 photo, crops the center to a square, and applies a round mask in the shape of the memo. The file is named with the capture time and uploaded to Dropbox.
 
 **Product design and mockup fabrication:** The exterior and structure were modeled in 3D with Fusion 360. The outer shell was CNC machined and the internal structural parts were 3D printed, designed for easy assembly and maintenance. Meemo came together as a prototype with a physical interface and a working structure.
 
 ![The six steps one note passes through: insertion, IR detection, servo feed, camera capture, cloud upload, and ejection](./18.jpg)
+
+![The raw photo from inside the device, the image cropped to a circle, and the handwritten memo as uploaded to the cloud](./19.jpg)
 
 ![Meemo's internal structure: gears, Neopixel ring, camera, proximity sensor, step motor, and servo motor](./12.jpg)
 

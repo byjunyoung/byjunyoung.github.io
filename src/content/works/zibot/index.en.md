@@ -26,11 +26,15 @@ draft: false
 
 ## APPROACH
 
-**Researching the U.S. kids robot market and its products:** I compared more than 10 educational robots on the U.S. market by manufacturer, specs, features, and interactions. I bought and used the major products myself, and wrote a report laying out market trends, product characteristics, and opportunity areas.
+**Researching the U.S. kids robot market and its products:** I mapped 52 robots on the U.S. market by use, and tested 12 of them hands-on — 8 STEM, 2 Lego-style, 2 best-sellers — comparing their hardware and software. I wrote a report laying out market trends, product characteristics, and opportunity areas.
+
+**A direction that changed three times with HQ feedback:** After the research, headquarters first chose a Lego-style STEM product, then dropped it for lack of STEM experience and people. The August design brief was a small screen that docks on either a watch strap or the robot’s head, with a digital pet, eye expressions, and gesture and voice control. The brief revised on September 20 settled on app coding, maze content, and color-detection coding, for ages 3 to 6.
 
 **Idea workshop:** With the CEO and the PM, I ran a workshop that pulled key words out of the market and product analysis and combined them. From the results we drew early concepts reflecting the features and design elements U.S. customers were likely to prefer.
 
 **Product concept design and development:** We picked one of those ideas and defined the final product's form and functions through early sketches, 3D modeling, and a physical prototype.
+
+![How the product direction changed with HQ feedback, from U.S. market research to CES 2019](./22.jpg)
 
 ![Render of the robot on the color-coding board with the companion app](./04.png)
 
@@ -56,9 +60,13 @@ draft: false
 
 **Validating the design concept through prototyping:** Building a range of sizes and forms showed what product size was feasible and refined the design toward something close to a real product. The prototypes let me check function and usability together.
 
-**Testing the feature with Arduino and MIT App Inventor:** To check whether color coding would actually work, I built and tested a prototype of the core function with Arduino and MIT App Inventor. The early tests identified functional constraints and room for improvement, and became reference material for later product development.
+**Testing the feature with Arduino and MIT App Inventor:** To check whether color coding would actually work, I built a prototype of the core function. The office had nothing to build with, so I started by ordering parts — five orders in all — and put a color sensor, a Bluetooth module, and two continuous-rotation servos on an Arduino Nano. The app was built in MIT App Inventor. The robot reads the color under it and sends it to the app; solve the quiz in the app, press move, and it goes straight on white, turns right on red, and turns left on blue. The early tests identified functional constraints and room for improvement, and became reference material for later product development.
 
-**Building the CES 2019 exhibition mockup:** Working from what prototyping and testing had shown, I collaborated with Frank, the design team lead at the Chinese headquarters, to settle the final product design concept. From that concept we produced a mockup for the CES 2019 exhibition.
+**Getting ready for CES 2019:** The final design was settled by the design team at the Chinese headquarters, led by Frank. I 3D-printed the design file they sent and fitted my parts inside, but time and print quality kept it from becoming the final prototype. For the CES 2019 booth, I made the product concept film using animations from the HQ team.
+
+<video src="/media/works/zibot/proto.mp4" autoplay muted loop playsinline aria-label="Working prototype demo: the app receives the color the robot read, and after the quiz is solved the robot drives across the color tiles"></video>
+
+![Wiring for the Arduino Nano, color sensor, Bluetooth module, and servos, beside the app screens where a correct quiz answer sets the robot moving](./21.jpg)
 
 ![A paper mockup made to check size](./10.jpg) ![The prototype testing color recognition on a colored tile](./11.jpg)
 

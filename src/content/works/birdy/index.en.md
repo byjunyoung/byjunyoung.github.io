@@ -62,13 +62,23 @@ Birdy is a desktop messaging device for older adults. Handwriting on paper with 
 
 ## IMPLEMENTATION
 
-Development ran along three tracks: hardware, software, and product design. When a paper card goes into the slot, an IR sensor and a linear motor detect and align it, and a wide-angle camera with a ring LED captures it in the narrow, dark interior. Messages travel through the Telegram API, scanned images are post-processed with OpenCV, and Google Teachable Machine recognizes the handwriting and emoji.
+Development ran along three tracks: hardware, software, and product design. The work was split across two boards: an Arduino Nano handled the IR sensor, the linear stepper motor, the ring LED, and the previous/next buttons, and a Raspberry Pi handled the camera, the display, and Telegram. When a card goes in, a wide-angle camera with a ring LED captures it in the narrow, dark interior, and the Raspberry Pi brightens and sharpens the image, applies a round-square mask in the card’s shape, and sends it over Telegram. Replies come in on a separate loop that keeps checking Telegram, and text is rendered as an image for the display.
+
+For emoji cards, I first tried telling them apart with barcodes, but the wide-angle camera distorted them too much to read reliably. So I trained Google Teachable Machine on the 20 emoji cards and treated a card as an emoji only when it was more than 90% confident, sending it as a Telegram sticker. Handwriting isn’t recognized as text; it goes as a photo, just as written.
+
+State is carried by light. A new message blinks blue, sending breathes blue, and a finished send turns green. Paging past either end of the list briefly shows “This is the first message” or “This is the last message.”
+
+The first code started in the Meemo repository, and between February and July 2021 I saved 37 dated versions of the program.
 
 Parts were modeled in Fusion 360 and made by 3D printing and CNC machining, with the structure settled through repeated prototyping. The design is modular for maintenance and fabrication.
 
 ![Birdy's internal parts and exploded drawing: high-luminance LED, camera with a ring LED, IR sensor, linear stepping motor, and the control boards](./12.jpg)
 
 ![Birdy's system diagram: motors and sensors on the Arduino, camera and display on the Raspberry Pi, connected through the messenger server and the recognition model](./13.jpg)
+
+![Six scenes from receiving a message to sending a handwritten reply, showing Birdy’s light, its display, and the smartphone chat](./27.jpg)
+
+![Emoji card recognition trials: barcode results on the left, Teachable Machine’s per-card predictions on the right](./28.jpg)
 
 ![An early foam-board mockup with a message on the display](./08.jpg) ![Testing the prototype at a monitor, the recognized handwriting showing on the device](./09.jpg)
 
