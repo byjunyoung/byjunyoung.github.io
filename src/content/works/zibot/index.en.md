@@ -41,33 +41,23 @@ draft: false
 
 **ZIBOT KK**
 
-### Color coding
-
 ![Render of the robot on the color-coding board with the companion app](./04.png)
 
 ![Render of two robots moving across the grid of colored tiles](./07.png) ![Render of the robot tracing a Z along a line](./09.png)
 
-A learning feature in which the robot recognizes colors and performs the matching action. Children pick up coding principles by arranging color patterns.
-
-### A modular handle
+**Color coding:** A learning feature in which the robot recognizes colors and performs the matching action. Children pick up coding principles by arranging color patterns.
 
 ![Render of the yellow cube robot, marking the dot-matrix face and the magnetic attachment point](./05.png) ![Render marking the modular handle that accessories attach to](./06.png)
 
-The handle was designed as a module so that a variety of accessories can attach to it. That extends its use beyond education to play and exploration.
+**A modular handle:** The handle was designed as a module so that a variety of accessories can attach to it. That extends its use beyond education to play and exploration.
 
-### Size
-
-We set the size so that a child can hold it in one hand, and used prototypes to confirm the smallest dimensions that were feasible.
+**Size:** We set the size so that a child can hold it in one hand, and used prototypes to confirm the smallest dimensions that were feasible.
 
 ## IMPLEMENTATION
 
-### Validating the design concept through prototyping
-
 ![A paper mockup made to check size](./10.jpg) ![The control board and motor inside the mockup](./12.jpg)
 
-Building a range of sizes and forms showed what product size was feasible and refined the design toward something close to a real product. The prototypes let me check function and usability together.
-
-### Testing the feature with Arduino and MIT App Inventor
+**Validating the design concept through prototyping:** Building a range of sizes and forms showed what product size was feasible and refined the design toward something close to a real product. The prototypes let me check function and usability together.
 
 <video src="/media/works/zibot/proto.mp4" autoplay muted loop playsinline aria-label="Working prototype demo: the app receives the color the robot read, and after the quiz is solved the robot drives across the color tiles"></video>
 
@@ -77,11 +67,9 @@ Building a range of sizes and forms showed what product size was feasible and re
 
 ![Block code built in MIT App Inventor to validate the function](./20.jpg)
 
-To check whether color coding would actually work, I built a prototype of the core function. The office had nothing to build with, so I started by ordering parts — five orders in all — and put a color sensor, a Bluetooth module, and two continuous-rotation servos on an Arduino Nano. The app was built in MIT App Inventor. The robot reads the color under it and sends it to the app; solve the quiz in the app, press move, and it goes straight on white, turns right on red, and turns left on blue. The early tests identified functional constraints and room for improvement, and became reference material for later product development.
+**Testing the feature with Arduino and MIT App Inventor:** To check whether color coding would actually work, I built a prototype of the core function. The office had nothing to build with, so I started by ordering parts — five orders in all — and put a color sensor, a Bluetooth module, and two continuous-rotation servos on an Arduino Nano. The app was built in MIT App Inventor. The robot reads the color under it and sends it to the app; solve the quiz in the app, press move, and it goes straight on white, turns right on red, and turns left on blue. The early tests identified functional constraints and room for improvement, and became reference material for later product development.
 
-### Getting ready for CES 2019
-
-The final design was settled by the design team at the Chinese headquarters, led by Frank. I 3D-printed the design file they sent and fitted my parts inside, but time and print quality kept it from becoming the final prototype. For the CES 2019 booth, I made the product concept film using animations from the HQ team.
+**Getting ready for CES 2019:** The final design was settled by the design team at the Chinese headquarters, led by Frank. I 3D-printed the design file they sent and fitted my parts inside, but time and print quality kept it from becoming the final prototype. For the CES 2019 booth, I made the product concept film using animations from the HQ team.
 
 ## IMPACT
 

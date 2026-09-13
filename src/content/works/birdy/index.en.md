@@ -41,51 +41,35 @@ The paper itself took work. A round card is easy to feed into the device but lea
 
 ## SOLUTION
 
-Birdy is a desktop messaging device for older adults. Handwriting on paper with a pen is the input, and that handwriting is what the family receives. The design rested on three decisions.
-
-### The screen shows one message and nothing else
-
 <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/YvDX9E_5jvk?rel=0&modestbranding=1" title="Film showing how Birdy is used" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
-Display size and button layout follow how older adults take in information, and a message-only display keeps information from piling up. Received and sent states are shown by LED light diffused through the translucent acrylic body.
+Birdy is a desktop messaging device for older adults. Handwriting on paper with a pen is the input, and that handwriting is what the family receives. The design rested on three decisions.
 
-### The handwriting stays as it is
+**The screen shows one message and nothing else.** Display size and button layout follow how older adults take in information, and a message-only display keeps information from piling up. Received and sent states are shown by LED light diffused through the translucent acrylic body.
 
 ![A hand writing a message on a round paper card](./02.jpg) ![Hands leafing through emoji cards printed with a heart and faces](./05.jpg) ![The grandchild's phone thread, where the handwritten message arrives as an image](./07.jpg)
 
-A message written on a 66mm paper card is converted and sent by Birdy, with the texture and character of the writing intact. Twenty emoji cards that come with the device add feeling.
-
-### A few buttons do everything
+**The handwriting stays as it is.** A message written on a 66mm paper card is converted and sent by Birdy, with the texture and character of the writing intact. Twenty emoji cards that come with the device add feeling.
 
 ![Inserting the written card into the slot on top of Birdy, with the emoji card box beside it](./03.jpg) ![Pushing a card into the Birdy body](./04.jpg) ![Close-up of the round-cornered slot the card goes into](./06.jpg)
 
-Physical buttons for navigation and a simple interface cut the steps down, and received messages appear large on the display.
+**A few buttons do everything.** Physical buttons for navigation and a simple interface cut the steps down, and received messages appear large on the display.
 
 ## IMPLEMENTATION
-
-Development ran along three tracks: hardware, software, and product design.
-
-### Two boards
 
 ![Birdy's internal parts and exploded drawing: high-luminance LED, camera with a ring LED, IR sensor, linear stepping motor, and the control boards](./12.jpg)
 
 ![Birdy's system diagram: motors and sensors on the Arduino, camera and display on the Raspberry Pi, connected through the messenger server and the recognition model](./13.jpg)
 
-The work was split across two boards: an Arduino Nano handled the IR sensor, the linear stepper motor, the ring LED, and the previous/next buttons, and a Raspberry Pi handled the camera, the display, and Telegram. When a card goes in, a wide-angle camera with a ring LED captures it in the narrow, dark interior, and the Raspberry Pi brightens and sharpens the image, applies a round-square mask in the card’s shape, and sends it over Telegram. Replies come in on a separate loop that keeps checking Telegram, and text is rendered as an image for the display.
-
-### Recognizing emoji cards
+Development ran along three tracks: hardware, software, and product design. The work was split across two boards: an Arduino Nano handled the IR sensor, the linear stepper motor, the ring LED, and the previous/next buttons, and a Raspberry Pi handled the camera, the display, and Telegram. When a card goes in, a wide-angle camera with a ring LED captures it in the narrow, dark interior, and the Raspberry Pi brightens and sharpens the image, applies a round-square mask in the card’s shape, and sends it over Telegram. Replies come in on a separate loop that keeps checking Telegram, and text is rendered as an image for the display.
 
 ![Emoji card recognition trials: barcode results on the left, Teachable Machine’s per-card predictions on the right](./28.jpg)
 
 For emoji cards, I first tried telling them apart with barcodes, but the wide-angle camera distorted them too much to read reliably. So I trained Google Teachable Machine on the 20 emoji cards and treated a card as an emoji only when it was more than 90% confident, sending it as a Telegram sticker. Handwriting isn’t recognized as text; it goes as a photo, just as written.
 
-### State carried by light
-
 ![Six scenes from receiving a message to sending a handwritten reply, showing Birdy’s light, its display, and the smartphone chat](./27.jpg)
 
 State is carried by light. A new message blinks blue, sending breathes blue, and a finished send turns green. Paging past either end of the list briefly shows “This is the first message” or “This is the last message.”
-
-### Prototyping and fabrication
 
 ![An early foam-board mockup with a message on the display](./08.jpg) ![Testing the prototype at a monitor, the recognized handwriting showing on the device](./09.jpg)
 
@@ -103,21 +87,15 @@ Parts were modeled in Fusion 360 and made by 3D printing and CNC machining, with
 
 Over the three-week field test, how much the older participants messaged and what they talked about both changed.
 
-### About three times the contact
-
 ![Messages per week over the three-week field test, one line per family](./15.jpg)
 
 ![When each family member sent handwritten, typed, emoji, and photo messages over the three weeks, with totals by type](./16.jpg)
 
-The older adults in the six family pairs exchanged an average of 21.5 messages a week, about three times as often as before Birdy. One grandparent went from one or two phone calls a week to 35 messages.
+**About three times the contact.** The older adults in the six family pairs exchanged an average of 21.5 messages a week, about three times as often as before Birdy. One grandparent went from one or two phone calls a week to 35 messages.
 
-### Wider conversations
+**Wider conversations.** With the constraints of time and place gone, conversation moved from greetings to everyday life, health, and family news. "Have you eaten?" gave way to a grandchild's exam results and hobbies.
 
-With the constraints of time and place gone, conversation moved from greetings to everyday life, health, and family news. "Have you eaten?" gave way to a grandchild's exam results and hobbies.
-
-### What handwriting and paper carried
-
-70% of participants said handwriting helped them express feeling, and some drew flowers or changed the size of their letters to do it. 83% kept the paper messages they received; one grandparent kept a grandchild's notes in a drawer.
+**What handwriting and paper carried.** 70% of participants said handwriting helped them express feeling, and some drew flowers or changed the size of their letters to do it. 83% kept the paper messages they received; one grandparent kept a grandchild's notes in a drawer.
 
 ## REFLECTION
 
