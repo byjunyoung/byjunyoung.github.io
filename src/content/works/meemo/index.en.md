@@ -36,11 +36,9 @@ To get past the limits of the analog system and the digital one, I designed an i
 
 ![Meemo on a desk with round notes in several colors](./02.jpg)
 
-![The Meemo body with the input slot on top](./03.jpg) ![Close-up of a round note being ejected from the device](./04.jpg)
+![A yellow round note with handwriting on it, held in a hand](./05.png) ![The Meemo body with the input slot on top](./03.jpg) ![Close-up of a round note being ejected from the device](./04.jpg)
 
-![A yellow round note with handwriting on it, held in a hand](./05.png) ![Checking the digitized note on a phone](./06.png)
-
-![The paper note going back onto a calendar after being digitized](./07.png) ![Meemo on a desk beside a monitor](./08.jpg)
+![Checking the digitized note on a phone](./06.png) ![The paper note going back onto a calendar after being digitized](./07.png) ![Meemo on a desk beside a monitor](./08.jpg)
 
 <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/nXMv4ztNLbA?rel=0&modestbranding=1" title="Film showing Meemo in operation" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
@@ -58,13 +56,15 @@ To get past the limits of the analog system and the digital one, I designed an i
 
 ![The raw photo from inside the device, the image cropped to a circle, and the handwritten memo as uploaded to the cloud](./19.jpg)
 
-![Meemo's internal structure: gears, Neopixel ring, camera, proximity sensor, step motor, and servo motor](./12.jpg)
-
-![The camera and sensor seated inside the mockup](./09.jpg) ![The wiring inside, with a blue note fed in](./10.jpg) ![A machined exterior part held in hand](./11.jpg)
-
 **Building the physical interaction:** To realize the physical interaction, I built the system on Arduino. When a user inserts paper, an infrared sensor detects it, a servo motor moves it inside, and a stepper motor turns the disc to show progress. For the capture, a 12-LED NeoPixel ring around the camera lights up white to brighten the dark interior. This physical interaction was what carried the analog experience into the digital environment.
 
 **Cloud integration and application development:** To implement cloud storage, I built a data communication system linking a Raspberry Pi and Arduino. When the Arduino reports a detected sheet, the Raspberry Pi takes a 1024×768 photo, crops the center to a square, and applies a round mask in the shape of the memo. The file is named with the capture time and uploaded to Dropbox.
+
+## PROTOTYPING
+
+![Meemo's internal structure: gears, Neopixel ring, camera, proximity sensor, step motor, and servo motor](./12.jpg)
+
+![The camera and sensor seated inside the mockup](./09.jpg) ![The wiring inside, with a blue note fed in](./10.jpg) ![A machined exterior part held in hand](./11.jpg)
 
 **Product design and mockup fabrication:** The exterior and structure were modeled in 3D with Fusion 360. The outer shell was CNC machined and the internal structural parts were 3D printed, designed for easy assembly and maintenance. Meemo came together as a prototype with a physical interface and a working structure.
 

@@ -27,6 +27,10 @@ draft: false
 
 ## APPROACH
 
+![전시장에서 노트북과 닷패드를 놓고 시연을 준비하는 팀](./06.jpeg) ![교실에서 학생들이 책상마다 닷패드를 놓고 수업하는 모습](./07.jpeg)
+
+![해외 사용자 워크숍. 참가자들이 노트북으로 닷 캔버스를 사용하는 모습](./08.jpeg) ![교실 모니터에 띄운 닷 캔버스 화면과 그 안의 촉각 그래픽](./13.jpeg)
+
 2022년 7월 닷에 하드웨어 UX 디자이너로 합류했지만, 첫 일은 하드웨어가 아니었습니다. 촉각 디스플레이 닷패드는 올릴 촉각 그래픽이 있어야 쓸모가 있는데, 그것을 만드는 도구가 없었습니다. 서비스 기획자, GUI 디자이너와 한 팀으로 3개월 안에 저작 도구 닷 캔버스의 웹과 앱 데모를 내는 것이 목표였습니다.
 
 **사용자가 둘.** 촉각 그래픽은 만드는 사람과 만지는 사람이 다릅니다. 웹은 교사가 자료를 만들고 관리하는 쪽에, 앱은 시각장애 사용자가 직접 그리고 만지는 쪽에 맞췄습니다. 국내에서는 특수학교 교사와 시각장애 학생을 대상으로 필드 스터디를, 해외 사용자는 설문과 다이어리 스터디로 사용 환경과 페인포인트를 조사했습니다. 이 데이터가 초기 캔버스 버전의 문제를 짚고 개선 방향을 정하는 근거가 됐습니다.
@@ -34,6 +38,10 @@ draft: false
 **그다음 하드웨어.** 캔버스를 내보낸 뒤에는 닷패드 자체로 갔습니다. 점자 디바이스 20종 이상을 비교해 촉각 표기 방식과 차기 모델의 스펙·요구사항을 정의하고, 키 기능과 햅틱·LED 피드백을 설계해 양산 모델에 반영했습니다.
 
 ## SOLUTION
+
+![닷패드와 아이패드, 노트북에서 닷 캔버스를 함께 쓰는 제품 구성](./04.jpg)
+
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/N_L3hR81nik?rel=0&modestbranding=1" title="닷 캔버스 소개 영상" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 ### Dot Canvas 웹
 
@@ -44,10 +52,6 @@ draft: false
 ### Dot Canvas 앱
 
 ![아이패드에서 연 닷 캔버스 앱의 편집 화면](./10.jpg)
-
-![닷패드와 아이패드, 노트북에서 닷 캔버스를 함께 쓰는 제품 구성](./04.jpg)
-
-<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/N_L3hR81nik?rel=0&modestbranding=1" title="닷 캔버스 소개 영상" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 아이패드의 터치와 애플 펜슬로 그립니다. 보이스오버와 라이브 드로잉을 지원해 시각장애 사용자도 직접 그리고, 그린 것을 바로 닷패드로 만져 봅니다. 파일은 닷 클라우드로 웹과 공유됩니다.
 
@@ -60,10 +64,6 @@ draft: false
 ## IMPLEMENTATION
 
 ![화이트보드에 화면 설계 출력물을 붙여 흐름을 이어 놓은 작업 벽](./05.jpg)
-
-![전시장에서 노트북과 닷패드를 놓고 시연을 준비하는 팀](./06.jpeg) ![교실에서 학생들이 책상마다 닷패드를 놓고 수업하는 모습](./07.jpeg)
-
-![해외 사용자 워크숍. 참가자들이 노트북으로 닷 캔버스를 사용하는 모습](./08.jpeg) ![교실 모니터에 띄운 닷 캔버스 화면과 그 안의 촉각 그래픽](./13.jpeg)
 
 **화면 설계와 GUI.** 리서치 결과를 바탕으로 닷 캔버스 웹과 앱의 화면을 Figma로 설계하고 GUI를 디자인했습니다. 교사와 시각장애 학생이 함께 쓰는 인터페이스라, UI 구조와 기능 배치를 그 둘에 맞춰 정리했습니다.
 

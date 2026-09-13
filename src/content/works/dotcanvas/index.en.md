@@ -27,6 +27,10 @@ These constraints narrow what students get to learn and put a load on teachers. 
 
 ## APPROACH
 
+![The team setting up a demo with laptops and Dot Pads at a conference](./06.jpeg) ![A classroom where students each work with a Dot Pad at their desk](./07.jpeg)
+
+![A workshop with users abroad, participants using Dot Canvas on laptops](./08.jpeg) ![A classroom monitor showing Dot Canvas with a tactile graphic on the canvas](./13.jpeg)
+
 I joined Dot in July 2022 as a hardware UX designer, but the first job was not hardware. The Dot Pad tactile display is only useful with tactile graphics to show, and there was no tool for making them. Working as one team with a service planner and a GUI designer, the goal was to ship web and app demos of the authoring tool, Dot Canvas, within three months.
 
 **Two users.** The person who makes a tactile graphic and the person who touches it are not the same. The web was aimed at teachers making and managing materials; the app at visually impaired users drawing and touching for themselves. In Korea we ran field studies with special-education teachers and visually impaired students; for users abroad, surveys and diary studies covered the usage environment and its pain points. That data pinned down the problems of the first Canvas version and set the direction for improvements.
@@ -34,6 +38,10 @@ I joined Dot in July 2022 as a hardware UX designer, but the first job was not h
 **Then the hardware.** Once Canvas had shipped, I moved to Dot Pad itself. I compared more than 20 braille devices to define its tactile notation and the specs and requirements for the next model, and designed the key functions and the haptic and LED feedback that went into the production model.
 
 ## SOLUTION
+
+![Dot Canvas across the product line: Dot Pad, iPad, and laptop](./04.jpg)
+
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/N_L3hR81nik?rel=0&modestbranding=1" title="Introduction to Dot Canvas" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 ### Dot Canvas Web
 
@@ -44,10 +52,6 @@ Teachers draw tactile graphics in the browser or import a PDF or image and conve
 ### Dot Canvas App
 
 ![The Dot Canvas app editor open on an iPad](./10.jpg)
-
-![Dot Canvas across the product line: Dot Pad, iPad, and laptop](./04.jpg)
-
-<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/N_L3hR81nik?rel=0&modestbranding=1" title="Introduction to Dot Canvas" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 Drawing happens with iPad touch and the Apple Pencil. With VoiceOver and live drawing, visually impaired users draw for themselves and feel what they drew on Dot Pad right away. Files sync to the web through Dot Cloud.
 
@@ -60,10 +64,6 @@ Dot Pad is a multi-line tactile area for graphics, a single line of braille bene
 ## IMPLEMENTATION
 
 ![Screen printouts pinned to a whiteboard and connected into a flow](./05.jpg)
-
-![The team setting up a demo with laptops and Dot Pads at a conference](./06.jpeg) ![A classroom where students each work with a Dot Pad at their desk](./07.jpeg)
-
-![A workshop with users abroad, participants using Dot Canvas on laptops](./08.jpeg) ![A classroom monitor showing Dot Canvas with a tactile graphic on the canvas](./13.jpeg)
 
 **Screen design and GUI.** Based on the research, I designed the screens for Dot Canvas Web and App in Figma and did the GUI. Because teachers and visually impaired students share the interface, the UI structure and the placement of functions were organized around those two.
 
