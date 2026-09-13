@@ -75,7 +75,7 @@ draft: false
 
 ## IMPACT
 
-닷 캔버스는 CES 2024 Innovation Award를 받고 CSUN 2024에 출품했습니다. 닷패드의 촉각 인터페이스는 양산 모델에 들어갔습니다. 2024년 참관한 맹학교 과학 수업에서는 테이프와 스티커로 만들던 그림 자료가 닷패드로 대체돼 있었습니다.
+닷 캔버스는 CSUN 2023 부스에서 시연했고, CES 2024 Innovation Award를 받은 뒤 CSUN 2024에도 출품했습니다. 닷패드의 촉각 인터페이스는 양산 모델에 들어갔습니다. 2024년 참관한 맹학교 과학 수업에서는 테이프와 스티커로 만들던 그림 자료가 닷패드로 대체돼 있었습니다.
 
 <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/AHK3VnjvA5Y?rel=0&modestbranding=1" title="인천혜광학교의 닷패드 사용 사례 영상" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 

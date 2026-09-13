@@ -75,7 +75,7 @@ Dot Pad is a multi-line tactile area for graphics, a single line of braille bene
 
 ## IMPACT
 
-Dot Canvas won the CES 2024 Innovation Award and was shown at CSUN 2024. Dot Pad's tactile interface went into the production model. In a science class I observed at a school for the blind in 2024, the picture materials once made from tape and stickers had been replaced by Dot Pad.
+Dot Canvas was demoed at the CSUN 2023 booth, and after winning the CES 2024 Innovation Award it was shown at CSUN 2024 as well. Dot Pad's tactile interface went into the production model. In a science class I observed at a school for the blind in 2024, the picture materials once made from tape and stickers had been replaced by Dot Pad.
 
 <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/AHK3VnjvA5Y?rel=0&modestbranding=1" title="Dot Pad use case at Incheon Hyegwang School for the Blind" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
