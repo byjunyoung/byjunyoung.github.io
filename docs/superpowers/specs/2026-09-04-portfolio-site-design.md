@@ -170,14 +170,15 @@ activities frontmatter: title, subtitle, role, period, links[], cover, order, dr
 - 03 타임라인: 마디 16개, CSS 라디오(JS 없음). 왼쪽 목록은 x 오프셋으로 제 길/헤맨 길을 보이고(채운 점=일어난 일, 점선 점=그때 남긴 의심), 오른쪽 패널에 그 시기 케이스 루프 영상 또는 사진 + 이야기 + 케이스·활동·글 링크. 패널 마크업은 목록 안 각 마디 뒤에 두고, 데스크톱은 그리드 2열로 오른쪽에 고정(sticky), 720px 이하는 누른 마디 바로 아래 펼쳐진다. 영상은 케이스 루프 재사용, 사진은 활동·케이스 폴더와 본인 블로그 원본만(2026-09-10). 자산 없는 마디는 글만 둔다.
 - 외부 사진은 라이선스와 저작자를 표기한다(02 Braun T1000CD, CC BY-SA 2.0).
 
-## 13. Resources 페이지 (2026-09-20 추가)
+## 13. Blog 페이지 (2026-09-20 Resources로 추가, 같은 날 Writing과 합쳐 Blog로 개정)
 
-- 목적: 하드웨어 UX가 뭔지 설명할 자료가 마땅치 않아 2018년부터 스스로 모아온 책·논문·아티클 목록(원본: 개인 노션 페이지). WORKS·ACTIVITIES·WRITING은 본인이 만든 것/쓴 것이고, 이 목록은 읽어온 것이라 성격이 달라 별도 최상위 섹션으로 뒀다.
-- 진입: 내비 `works / activities / writing / resources / resume` 순. `/resources/`, `/en/resources/`.
-- 콘텐츠 모델: 다른 컬렉션(폴더당 md 한 개)과 달리 항목이 짧고 45개라 데이터 파일 컬렉션으로 뒀다 — `src/content/resources.yaml`(astro `file()` 로더), 스키마 `{ category: enum(Books/Papers/Articles/Blogs/Others), title, url, order }`. `src/content.config.ts`의 `resources` 컬렉션.
-- 페이지: `src/components/pages/Resources.astro` — 상단 소개글(2~3문장, 실제 있었던 일만: 2018년부터 모음, 2022년 이 목록으로 북스터디) → 카테고리(Books/Papers/Articles/Blogs/Others) 헤더 + 제목·링크만 나열. Others는 이 순서를 유지.
-- "너무 시각 이미지가 없다"는 지적(2026-09-20)에 Books에만 실제 표지 이미지를 붙였다(48×72 세로 썸네일 + 제목, `.resources ul.books`). Papers/Articles/Blogs/Others는 대표 이미지가 원래 없어 텍스트 목록 유지 — 새 이미지를 지어내지 않는다. 표지는 각 항목이 실제로 링크한 판매 페이지의 og:image(구글북스·알라딘·yes24)를 우선 쓰고, 없으면 아마존 링크의 ASIN을 ISBN으로 써서 Open Library Covers API로 받았다. 14권 중 11권 확보, 3권(Designing Smart Objects in Everyday Life·The Revenge of Analog·Maker Pro)은 표지를 못 찾아 tint 배경 빈 박스로 둔다(WRITING의 커버 없는 항목과 같은 처리). 이미지는 `src/assets/resources/`에 로컬 저장 후 컴포넌트에서 정적 import — 외부 이미지를 핫링크하지 않는다.
-- 원본 노션의 "Job Positions & Descriptions"(타사 채용공고 스크랩 425건)는 성격이 다르고 공개 부적절해 전부 제외. Videos 3개는 노션 북마크 임베드라 원본 URL을 못 읽어 제외.
-- 링크 46개 중 `usecon.com`의 아티클 1건은 404 확인돼 제외(45개 게재). 나머지 403 응답은 대부분 봇 차단(Medium, ACM, Fast Company 등)이라 살아있는 것으로 간주.
-- 헤더 nav에 항목이 하나 늘어 모바일에서 마지막 항목이 잘리는 문제가 있어 `.nav nav`에 `@media (max-width: 480px)` 줄바꿈을 추가(포트폴리오·이력서 사이트 둘 다).
-- 이력서 사이트 헤더(`~/Documents/커리어/웹이력서/index.html` `.site-nav`)에도 Resources 링크와 동일한 모바일 줄바꿈을 반영(5-1 규칙).
+- 목적: 하드웨어 UX가 뭔지 설명할 자료가 마땅치 않아 2018년부터 스스로 모아온 책·논문·아티클 목록(원본: 개인 노션 페이지)을 아카이브. 처음엔 WRITING과 나란한 별도 최상위 섹션(`resources`)으로 냈으나, nav가 5개(works/activities/writing/resources/resume)로 늘어난 게 과하다는 지적에 **Writing과 한 페이지로 합쳤다** — 성격은 다르지만(하나는 직접 쓴 글, 하나는 읽은 자료) 굳이 최상위 자리를 따로 줄 정도는 아니라고 판단.
+- 진입: 내비 `works / activities / blog / resume` (4개, writing·resources 항목은 blog로 흡수). `/blog/`, `/en/blog/`. 이전 `/writing/`·`/resources/` 라우트는 삭제(내부 링크 없어 안전).
+- 페이지 구조: `src/components/pages/Blog.astro` 하나 — 상단 `BLOG` 라벨 아래 CSS 라디오 탭 2개(**Posts** 기본 / **HW UX**, JS 없음, About 타임라인과 같은 라디오 트릭). 탭 버튼은 헤더 KR/EN 배지와 같은 필박스 스타일(선택 시 `fg` 채움) — 새 시각 언어를 만들지 않고 기존 토글 패턴 재사용.
+  - **Posts 탭**: 옛 WRITING 그대로 — title·date·source·url·summary, 커버 있으면 16:9 썸네일, 없으면 검정 타이틀카드.
+  - **HW UX 탭**: 옛 Resources 그대로 — 소개글(2018년부터 모음, 2022년 북스터디) → 카테고리(Books/Papers/Articles/Blogs/Others) 헤더 + 제목·링크. "너무 시각 이미지가 없다"는 지적에 Books에만 실제 표지(48×72 세로 썸네일)를 붙였다. 표지는 각 항목이 실제로 링크한 판매 페이지의 og:image(구글북스·알라딘·yes24)를 우선 쓰고, 없으면 아마존 링크 ASIN을 ISBN 삼아 Open Library Covers API로 받았다. 14권 중 11권 확보, 3권(Designing Smart Objects in Everyday Life·The Revenge of Analog·Maker Pro)은 tint 배경 빈 박스. 이미지는 `src/assets/resources/`에 로컬 저장 후 정적 import(핫링크 안 함).
+- 콘텐츠 모델은 컬렉션 두 개 그대로 유지: `src/content/writing/<slug>/index.md`(폴더당 한 개), `src/content/resources.yaml`(데이터 파일 하나, `{ id·category(Books/Papers/Articles/Blogs/Others)·title·url·order }`, astro `file()` 로더). 탭 UI만 한 페이지로 묶었을 뿐 컬렉션은 합치지 않았다.
+- 원본 노션의 "Job Positions & Descriptions"(타사 채용공고 스크랩 425건)는 성격이 다르고 공개 부적절해 전부 제외. Videos 3개는 노션 북마크 임베드라 원본 URL을 못 읽어 제외. 링크 46개 중 `usecon.com`의 아티클 1건은 404 확인돼 제외(45개 게재). 나머지 403 응답은 대부분 봇 차단(Medium, ACM, Fast Company 등)이라 살아있는 것으로 간주.
+- 탭 이름 "HW UX"는 사용자 본인의 2022년 링크드인 글 제목("HW UX가 궁금하신 분들께…")을 그대로 따랐다 — 새로 짓지 않고 기존 표현 재사용.
+- nav가 5개였을 때 모바일에서 마지막 항목이 잘려 `.nav nav`에 `@media (max-width: 480px)` 줄바꿈을 추가했다(포트폴리오·이력서 둘 다). Blog로 합쳐 4개로 줄었지만 줄바꿈 규칙은 방어적으로 유지.
+- 이력서 사이트 헤더(`~/Documents/커리어/웹이력서/index.html` `.site-nav`)의 Writing 링크도 Blog로 교체해 동기화(5-1 규칙).

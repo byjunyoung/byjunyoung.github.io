@@ -11,7 +11,8 @@ Junyoung Kim 포트폴리오. Astro 정적 사이트, GitHub Pages(main 푸시 �
 - `draft: true` 는 빌드에서 빠진다. `order` 가 홈 정렬. `kind` 는 `case-study` | `note`(본문 없이 한 단락).
 - 영문: 같은 폴더의 index.en.md (있는 항목만 /en/에 나온다). 이미지·order·cover 등 공유 값은 두 파일이 같아야 한다.
 - 글(링크 모음): `src/content/writing/<slug>/index.md` — title·date(YYYY-MM-DD)·source·url·summary. 본문 없음, 원문 링크로만 간다. 영문은 index.en.md(제목·요약만).
-- 리소스(하드웨어 UX 리딩 리스트): `src/content/resources.yaml` 데이터 파일 하나(`astro/loaders`의 `file()`). 항목마다 `id·category(Books/Papers/Articles/Blogs/Others)·title·url·order`. 폴더 구조 아님 — 항목 추가·삭제는 이 파일만 고친다. 언어 구분 없음(제목·링크는 원문 그대로, 페이지 소개글만 ko/en). Books 표지는 `src/assets/resources/<id>.jpg`에 두고 `Resources.astro`에서 `id`로 정적 import — 새 책을 추가하면 표지 파일을 넣고 import·매핑을 같이 늘린다. 표지 못 구하면 빈 tint 박스로 둔다(지어내지 않기).
+- 리소스(하드웨어 UX 리딩 리스트): `src/content/resources.yaml` 데이터 파일 하나(`astro/loaders`의 `file()`). 항목마다 `id·category(Books/Papers/Articles/Blogs/Others)·title·url·order`. 폴더 구조 아님 — 항목 추가·삭제는 이 파일만 고친다. 언어 구분 없음(제목·링크는 원문 그대로, 페이지 소개글만 ko/en). Books 표지는 `src/assets/resources/<id>.jpg`에 두고 `Blog.astro`에서 `id`로 정적 import — 새 책을 추가하면 표지 파일을 넣고 import·매핑을 같이 늘린다. 표지 못 구하면 빈 tint 박스로 둔다(지어내지 않기).
+- 위 두 컬렉션(글·리소스)은 별도 페이지가 아니라 `/blog/` 한 페이지 안 CSS 탭(Posts/HW UX)으로 같이 렌더된다 — `src/components/pages/Blog.astro`. `/writing/`·`/resources/` 라우트는 없다(설계 문서 §13).
 
 ## 프로젝트 추가 절차
 1. `npm run new:work <slug>` → 템플릿 생성 (draft)

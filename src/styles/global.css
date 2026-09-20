@@ -40,6 +40,14 @@ img, video { display: block; max-width: 100%; height: auto; }
 .label { font-size: var(--fs-xs); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-align: center; margin: 40px 0 8px; font-weight: 400; }
 .intro { max-width: 620px; margin: 0 auto 48px; text-align: center; color: var(--muted); font-size: var(--fs-sm); }
 
+.tabs > input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.tabnav { display: flex; justify-content: center; gap: 8px; margin: 0 0 12px; }
+.tabnav label { cursor: pointer; font-size: var(--fs-xs); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--line); padding: 6px 14px; border-radius: 2px; }
+.tabnav label:hover { color: var(--fg); }
+.tabpanel { display: none; }
+#tab-posts:checked ~ .panel-posts, #tab-hwux:checked ~ .panel-hwux { display: block; }
+#tab-posts:checked ~ .tabnav label[for="tab-posts"], #tab-hwux:checked ~ .tabnav label[for="tab-hwux"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+
 .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gap); margin-bottom: 96px; }
 @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } }
 .card { display: block; background: var(--bg); border: 1px solid var(--line); }

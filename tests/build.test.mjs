@@ -75,8 +75,8 @@ test('sitemap lists english pages', () => {
   assert.ok(xml.includes('https://byjunyoung.github.io/en/'), 'en in sitemap');
 });
 
-test('writing index exists in both languages and links every published post', () => {
-  for (const [dir, lang] of [['dist/writing/index.html', 'ko'], ['dist/en/writing/index.html', 'en']]) {
+test('blog index exists in both languages and links every published post', () => {
+  for (const [dir, lang] of [['dist/blog/index.html', 'ko'], ['dist/en/blog/index.html', 'en']]) {
     const html = existsSync(dir) ? readFileSync(dir, 'utf8') : '';
     assert.ok(html.includes('<h1 class="label">'), dir);
     for (const slug of slugs('src/content/writing')) {
