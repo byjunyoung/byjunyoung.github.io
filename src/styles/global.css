@@ -28,6 +28,7 @@ img, video { display: block; max-width: 100%; height: auto; }
 .nav .mark { font-size: var(--fs-md); font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; }
 .nav nav { display: flex; gap: 20px; font-size: var(--fs-xs); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
 .nav nav a:hover { color: var(--fg); }
+@media (max-width: 480px) { .nav nav { flex-wrap: wrap; justify-content: center; row-gap: 8px; } }
 
 .lang { position: absolute; right: var(--pad); top: 28px; display: flex; font-size: var(--fs-xs); letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.4; }
 .lang a { color: var(--muted); border: 1px solid var(--line); padding: 4px 10px; border-radius: 2px 0 0 2px; }
@@ -67,6 +68,17 @@ img, video { display: block; max-width: 100%; height: auto; }
 .posts .s { font-size: var(--fs-sm); color: var(--muted); max-width: 640px; }
 .posts a:hover .t { text-decoration: underline; text-underline-offset: 0.15em; }
 @media (max-width: 720px) { .posts a { flex-direction: column; gap: 12px; padding: 20px 0; } .posts .thumb { flex-basis: auto; width: 100%; } .posts .thumb:not(:has(img)) { display: none; } }
+
+.resources { max-width: 640px; margin: 0 auto 96px; }
+.resources h2 { font-size: var(--fs-xs); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 40px 0 4px; }
+.resources section:first-child h2 { margin-top: 0; }
+.resources ul { list-style: none; margin: 0; padding: 0; }
+.resources li { border-bottom: 1px solid var(--line); }
+.resources li a { display: block; padding: 12px 2px; font-size: var(--fs-sm); }
+.resources li a:hover .t { text-decoration: underline; text-underline-offset: 0.15em; }
+.resources ul.books li a { display: flex; align-items: center; gap: 14px; padding: 10px 2px; }
+.resources .cover { flex: 0 0 48px; aspect-ratio: 2 / 3; border: 1px solid var(--line); background: var(--tint); overflow: hidden; }
+.resources .cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 .hero { margin: 24px 0 32px; border: 1px solid var(--line); }
 .hero img, .hero video { width: 100%; }

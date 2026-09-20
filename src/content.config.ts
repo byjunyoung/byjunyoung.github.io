@@ -1,6 +1,6 @@
 // src/content.config.ts
 import { defineCollection, z } from 'astro:content';
-import { glob } from 'astro/loaders';
+import { glob, file } from 'astro/loaders';
 
 const link = z.object({ label: z.string().min(1), url: z.string().url() });
 const localeId = ({ entry }: { entry: string }) => {
@@ -62,4 +62,14 @@ const writing = defineCollection({
   }),
 });
 
-export const collections = { works, activities, writing };
+const resources = defineCollection({
+  loader: file('src/content/resources.yaml'),
+  schema: z.object({
+    category: z.enum(['Books', 'Papers', 'Articles', 'Blogs', 'Others']),
+    title: z.string().min(1),
+    url: z.string().url(),
+    order: z.number().int(),
+  }),
+});
+
+export const collections = { works, activities, writing, resources };

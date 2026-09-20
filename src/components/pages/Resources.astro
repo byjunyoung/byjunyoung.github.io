@@ -1,0 +1,68 @@
+---
+// src/components/pages/Resources.astro
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import type { Lang } from '../../lib/i18n';
+import understandingIndustrialDesign from '../../assets/resources/understanding-industrial-design.jpg';
+import theHardwareStartup from '../../assets/resources/the-hardware-startup-building-your-product-business-and-bran.jpg';
+import designingConnectedProducts from '../../assets/resources/designing-connected-products-ux-for-the-consumer-internet-of.jpg';
+import smartThings from '../../assets/resources/smart-things-ubiquitous-computing-user-experience-design.jpg';
+import designingMultiDeviceExperiences from '../../assets/resources/designing-multi-device-experiences-an-ecosystem-approach-to.jpg';
+import carInterfaceDesign from '../../assets/resources/car-interface-design.jpg';
+import aboutFace4 from '../../assets/resources/about-face-4-the-essentials-of-interaction-design.jpg';
+import designingInteractions from '../../assets/resources/designing-interactions-the-mit-press.jpg';
+import theHardwareHacker from '../../assets/resources/the-hardware-hacker.jpg';
+import hackingTheXbox from '../../assets/resources/hacking-the-xbox.jpg';
+import zeroToMaker from '../../assets/resources/zero-to-maker-learn-just-enough-to-make-just-about-anything.jpg';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const items = (await getCollection('resources')).sort((a, b) => a.data.order - b.data.order);
+const categories = ['Books', 'Papers', 'Articles', 'Blogs', 'Others'] as const;
+
+const covers: Record<string, ImageMetadata> = {
+  'understanding-industrial-design': understandingIndustrialDesign,
+  'the-hardware-startup-building-your-product-business-and-bran': theHardwareStartup,
+  'designing-connected-products-ux-for-the-consumer-internet-of': designingConnectedProducts,
+  'smart-things-ubiquitous-computing-user-experience-design': smartThings,
+  'designing-multi-device-experiences-an-ecosystem-approach-to': designingMultiDeviceExperiences,
+  'car-interface-design': carInterfaceDesign,
+  'about-face-4-the-essentials-of-interaction-design': aboutFace4,
+  'designing-interactions-the-mit-press': designingInteractions,
+  'the-hardware-hacker': theHardwareHacker,
+  'hacking-the-xbox': hackingTheXbox,
+  'zero-to-maker-learn-just-enough-to-make-just-about-anything': zeroToMaker,
+};
+---
+<Base title="Resources" lang={lang} description={lang === 'ko' ? '하드웨어 UX를 공부하며 모아온 책·논문·아티클.' : 'Books, papers, and articles collected while studying hardware UX.'} altPath="/resources/">
+  <h1 class="label">Resources</h1>
+  {lang === 'ko'
+    ? <p class="intro">하드웨어 UX가 정확히 어떤 일을 하는 직군인지 설명할 자료가 마땅치 않아, 2018년 학부생 때부터 스스로 찾아 읽으며 모아온 책과 글입니다. 2022년에는 이 목록을 계기로 관심 있는 분들과 짧은 북스터디도 했습니다. 오래돼 낡은 내용도 섞여 있습니다.</p>
+    : <p class="intro">Books and articles I've collected since 2018 as an undergrad, when there wasn't much material explaining what hardware UX actually does. In 2022 this list turned into a short book study with people who reached out after I shared it. Some of it is dated by now.</p>}
+  <div class="resources">
+    {categories.map((cat) => {
+      const group = items.filter((i) => i.data.category === cat);
+      if (!group.length) return null;
+      return (
+        <section>
+          <h2>{cat}</h2>
+          <ul class={cat === 'Books' ? 'books' : undefined}>
+            {group.map((i) => (
+              <li>
+                <a href={i.data.url} target="_blank" rel="noopener">
+                  {cat === 'Books' && (
+                    covers[i.id]
+                      ? <span class="cover"><Image src={covers[i.id]} alt="" width={96} height={144} loading="lazy" /></span>
+                      : <span class="cover empty" aria-hidden="true"></span>
+                  )}
+                  <span class="t">{i.data.title}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      );
+    })}
+  </div>
+</Base>

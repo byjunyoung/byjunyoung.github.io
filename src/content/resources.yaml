@@ -1,0 +1,229 @@
+- id: understanding-industrial-design
+  category: Books
+  title: Understanding Industrial Design
+  url: https://books.google.co.kr/books/about/Understanding_Industrial_Design.html?id=aVptCwAAQBAJ&printsec=frontcover&source=kp_read_button&hl=en&redir_esc=y#v=onepage&q&f=false
+  order: 1
+- id: the-hardware-startup-building-your-product-business-and-bran
+  category: Books
+  title: 'The Hardware Startup: Building Your Product, Business, and Brand'
+  url: https://www.amazon.com/Hardware-Startup-Building-Product-Business/dp/1449371035
+  order: 2
+- id: designing-connected-products-ux-for-the-consumer-internet-of
+  category: Books
+  title: 'Designing Connected Products: UX for the Consumer Internet of Things'
+  url: https://www.amazon.com/Designing-Connected-Products-Consumer-Internet/dp/1449372562
+  order: 3
+- id: smart-things-ubiquitous-computing-user-experience-design
+  category: Books
+  title: 'Smart Things: Ubiquitous Computing User Experience Design'
+  url: https://www.amazon.com/Smart-Things-Ubiquitous-Computing-Experience/dp/0123748992
+  order: 4
+- id: designing-multi-device-experiences-an-ecosystem-approach-to
+  category: Books
+  title: 'Designing Multi-Device Experiences: An Ecosystem Approach to User Experiences
+    across Devices'
+  url: https://www.amazon.com/Designing-Multi-Device-Experiences-Ecosystem-Approach/dp/1449340385
+  order: 5
+- id: designing-smart-objects-in-everyday-life
+  category: Books
+  title: Designing Smart Objects in Everyday Life
+  url: https://www.bloomsbury.com/uk/designing-smart-objects-in-everyday-life-9781350160125/
+  order: 6
+- id: the-revenge-of-analog-by-david-sax
+  category: Books
+  title: The Revenge of Analog by David Sax
+  url: https://product.kyobobook.co.kr/detail/S000001793694
+  order: 7
+- id: car-interface-design
+  category: Books
+  title: Car Interface Design
+  url: https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=294960244
+  order: 8
+- id: about-face-4-the-essentials-of-interaction-design
+  category: Books
+  title: 'About Face 4: The Essentials of Interaction Design'
+  url: http://www.yes24.com/Product/Goods/18512694
+  order: 9
+- id: designing-interactions-the-mit-press
+  category: Books
+  title: Designing Interactions (The MIT Press)
+  url: https://www.amazon.com/Designing-Interactions-Press-Bill-Moggridge/dp/0262134748/ref=sr_1_1?keywords=9780262134743&linkCode=qs&qid=1674016542&s=books&sr=1-1&ufe=app_do%3Aamzn1.fos.006c50ae-5d4c-4777-9bc0-4513d670b6bc
+  order: 10
+- id: the-hardware-hacker
+  category: Books
+  title: The Hardware Hacker
+  url: https://books.google.co.kr/books/about/The_Hardware_Hacker.html?id=1RVOEAAAQBAJ&source=kp_book_description&redir_esc=y
+  order: 11
+- id: hacking-the-xbox
+  category: Books
+  title: Hacking the Xbox
+  url: https://www.amazon.com/Hacking-Xbox-Introduction-Reverse-Engineering/dp/1593270291
+  order: 12
+- id: zero-to-maker-learn-just-enough-to-make-just-about-anything
+  category: Books
+  title: 'Zero to Maker: Learn (Just Enough) to Make (Just About) Anything'
+  url: https://www.amazon.com/Zero-Maker-Learn-Enough-Anything/dp/1449356435
+  order: 13
+- id: maker-pro-essays-on-making-a-living-as-a-maker
+  category: Books
+  title: 'Maker Pro: Essays on Making a Living as a Maker'
+  url: https://www.amazon.com/Maker-Pro-Essays-Making-Living/dp/1457186187
+  order: 14
+- id: placelessness-spacelessness-and-formlessness-proceedings-of
+  category: Papers
+  title: Placelessness, spacelessness, and formlessness | Proceedings of the 2014
+    conference on Designing interactive systems
+  url: https://dl.acm.org/doi/abs/10.1145/2598510.2598577
+  order: 15
+- id: physical-interaction-in-a-dematerialized-world-semantic-scho
+  category: Papers
+  title: Physical interaction in a dematerialized world | Semantic Scholar
+  url: https://www.semanticscholar.org/paper/Physical-interaction-in-a-dematerialized-world-Campenhout-Frens/842534a31eb5188f6b9e3a871aa3b106045ac9b2
+  order: 16
+- id: a-first-look-inside-googles-top-secret-design-lab
+  category: Articles
+  title: A first look inside Google’s top-secret design lab
+  url: https://www.fastcompany.com/90378288/exclusive-a-first-look-inside-googles-top-secret-design-lab
+  order: 17
+- id: iot-device-and-ux-designer-importance-of-understanding-hardw
+  category: Articles
+  title: 'IoT device and UX designer: Importance of understanding hardware for UX
+    designers'
+  url: http://ixd.prattsi.org/2016/10/iot-device-and-ux-designer-importance-of-understanding-hardware-for-ux-designers/
+  order: 18
+- id: 9-reasons-to-conduct-hardware-ux-research-right-now
+  category: Articles
+  title: 9 reasons to conduct hardware UX research right now
+  url: https://blinkux.com/ideas/9-reasons-to-conduct-hardware-ux-research
+  order: 19
+- id: ask-a-uxpert-how-to-develop-an-effective-multi-device-ux-str
+  category: Articles
+  title: 'Ask a UXpert: How to Develop an Effective, Multi-Device UX Strategy'
+  url: https://xd.adobe.com/ideas/principles/web-design/ux-design-strategy-for-multiple-devices/
+  order: 20
+- id: lets-get-physical
+  category: Articles
+  title: Let’s Get Physical
+  url: https://uxmag.com/articles/lets-get-physical
+  order: 21
+- id: an-essential-guide-to-hardware-ux-research
+  category: Articles
+  title: An Essential Guide to Hardware UX Research
+  url: https://www.answerlab.com/insights/essential-guide-to-hardware-ux-research
+  order: 22
+- id: what-i-learned-from-a-ux-internship-at-google-hardware
+  category: Articles
+  title: What I learned from a UX internship at Google Hardware
+  url: https://blog.prototypr.io/what-i-learned-from-doing-a-ux-internship-at-google-hardware-8db3669e9fc9
+  order: 23
+- id: hardware-development-and-ux-design-top-electronics-considera
+  category: Articles
+  title: 'Hardware Development and UX Design: Top Electronics Considerations'
+  url: https://resources.pcb.cadence.com/blog/2019-hardware-development-and-ux-design-top-electronics-considerations
+  order: 24
+- id: what-is-ux-and-how-does-it-relate-to-hardware
+  category: Articles
+  title: What is UX, and how does it relate to hardware?
+  url: http://www.andrewjdupree.com/blog/2015/9/27/what-is-ux-and-how-does-it-relate-to-hardware
+  order: 25
+- id: 3-reasons-ux-ui-is-important-for-hardware-products
+  category: Articles
+  title: 3 Reasons UX/UI Is Important for Hardware Products
+  url: https://www.designnews.com/design-hardware-software/3-reasons-uxui-important-hardware-products
+  order: 26
+- id: the-importance-of-hardware-software-integration-designing-th
+  category: Articles
+  title: The Importance of Hardware-Software Integration — Designing the Withings
+    Scales
+  url: https://uxdesign.cc/the-importance-of-hardware-software-integration-designing-the-withings-scales-b2c23732f26b
+  order: 27
+- id: things-i-learned-in-designing-interfaces-for-physical-produc
+  category: Articles
+  title: Things I learned in designing interfaces for physical products
+  url: https://jessicacoser.medium.com/things-i-learned-in-designing-interfaces-for-physical-products-7a85b12f5c36
+  order: 28
+- id: lets-get-physical-ux-outside-of-electronic-spaces
+  category: Articles
+  title: 'Let’s Get Physical: UX Outside of Electronic Spaces'
+  url: https://uxpamagazine.org/lets-get-physical/
+  order: 29
+- id: ux-design-for-non-digital-products-the-complete-guide
+  category: Articles
+  title: 'UX Design for Non-Digital Products: The Complete Guide'
+  url: https://careerfoundry.com/en/blog/ux-design/non-digital-ux-design/
+  order: 30
+- id: ux-designers-must-think-physical
+  category: Articles
+  title: UX Designers Must Think Physical
+  url: https://blog.prototypr.io/ux-designers-must-think-physical-78e73b2b5d2d
+  order: 31
+- id: hardware-ux-collective
+  category: Blogs
+  title: Hardware - UX Collective
+  url: https://uxdesign.cc/tagged/hardware
+  order: 32
+- id: rightbrain-lab
+  category: Blogs
+  title: RightBrain lab
+  url: https://blog.rightbrain.co.kr/
+  order: 33
+- id: electronics-archives-lemanoosh
+  category: Blogs
+  title: Electronics Archives - leManoosh
+  url: https://lemanoosh.com/tagged/electronics/
+  order: 34
+- id: gammas-hardware-information
+  category: Blogs
+  title: Gamma's Hardware Information
+  url: https://gamma0burst.tistory.com/
+  order: 35
+- id: category-tangible-ui
+  category: Blogs
+  title: 'Category: Tangible UI'
+  url: https://interaction.tistory.com/category/Tangible%20UI?page=1
+  order: 36
+- id: instagram-hardwareux
+  category: Blogs
+  title: Instagram - @hardwareux
+  url: https://www.instagram.com/hardwareux/?igshid=YmMyMTA2M2Y%3D
+  order: 37
+- id: instagram-baselab-design
+  category: Blogs
+  title: Instagram - @baselab_design
+  url: https://www.instagram.com/baselab_design/
+  order: 38
+- id: ux-design-courses-global-ux-community
+  category: Others
+  title: UX Design Courses & Global UX Community
+  url: http://www.interaction-design.org/
+  order: 39
+- id: space10-research-and-design-lab
+  category: Others
+  title: SPACE10 | Research and Design Lab
+  url: https://space10.com/
+  order: 40
+- id: acm-digital-library
+  category: Others
+  title: ACM Digital Library
+  url: https://dl.acm.org/
+  order: 41
+- id: recommended-user-interface-books
+  category: Others
+  title: Recommended User Interface Books
+  url: https://www.nngroup.com/articles/recommended-user-interface-books/
+  order: 42
+- id: home-laws-of-ux
+  category: Others
+  title: Home | Laws of UX
+  url: https://lawsofux.com/
+  order: 43
+- id: modular-productivity-tool-for-creative-pros
+  category: Others
+  title: Modular Productivity Tool for Creative Pros
+  url: https://monogramcc.com/
+  order: 44
+- id: silicon-valley-innovation-media-the-miilk
+  category: Others
+  title: Silicon Valley Innovation Media - The Miilk
+  url: https://themiilk.com/
+  order: 45

@@ -169,3 +169,15 @@ activities frontmatter: title, subtitle, role, period, links[], cover, order, dr
 - 글의 출처는 본인 글(2018 블로그, 링크드인, 설계자들 북스터디 기록장, 원티드 발표)과 케이스 본문뿐. 해석 문장을 지어 붙이지 않는다. 말투는 다른 페이지보다 캐주얼해도 된다.
 - 03 타임라인: 마디 16개, CSS 라디오(JS 없음). 왼쪽 목록은 x 오프셋으로 제 길/헤맨 길을 보이고(채운 점=일어난 일, 점선 점=그때 남긴 의심), 오른쪽 패널에 그 시기 케이스 루프 영상 또는 사진 + 이야기 + 케이스·활동·글 링크. 패널 마크업은 목록 안 각 마디 뒤에 두고, 데스크톱은 그리드 2열로 오른쪽에 고정(sticky), 720px 이하는 누른 마디 바로 아래 펼쳐진다. 영상은 케이스 루프 재사용, 사진은 활동·케이스 폴더와 본인 블로그 원본만(2026-09-10). 자산 없는 마디는 글만 둔다.
 - 외부 사진은 라이선스와 저작자를 표기한다(02 Braun T1000CD, CC BY-SA 2.0).
+
+## 13. Resources 페이지 (2026-09-20 추가)
+
+- 목적: 하드웨어 UX가 뭔지 설명할 자료가 마땅치 않아 2018년부터 스스로 모아온 책·논문·아티클 목록(원본: 개인 노션 페이지). WORKS·ACTIVITIES·WRITING은 본인이 만든 것/쓴 것이고, 이 목록은 읽어온 것이라 성격이 달라 별도 최상위 섹션으로 뒀다.
+- 진입: 내비 `works / activities / writing / resources / resume` 순. `/resources/`, `/en/resources/`.
+- 콘텐츠 모델: 다른 컬렉션(폴더당 md 한 개)과 달리 항목이 짧고 45개라 데이터 파일 컬렉션으로 뒀다 — `src/content/resources.yaml`(astro `file()` 로더), 스키마 `{ category: enum(Books/Papers/Articles/Blogs/Others), title, url, order }`. `src/content.config.ts`의 `resources` 컬렉션.
+- 페이지: `src/components/pages/Resources.astro` — 상단 소개글(2~3문장, 실제 있었던 일만: 2018년부터 모음, 2022년 이 목록으로 북스터디) → 카테고리(Books/Papers/Articles/Blogs/Others) 헤더 + 제목·링크만 나열. Others는 이 순서를 유지.
+- "너무 시각 이미지가 없다"는 지적(2026-09-20)에 Books에만 실제 표지 이미지를 붙였다(48×72 세로 썸네일 + 제목, `.resources ul.books`). Papers/Articles/Blogs/Others는 대표 이미지가 원래 없어 텍스트 목록 유지 — 새 이미지를 지어내지 않는다. 표지는 각 항목이 실제로 링크한 판매 페이지의 og:image(구글북스·알라딘·yes24)를 우선 쓰고, 없으면 아마존 링크의 ASIN을 ISBN으로 써서 Open Library Covers API로 받았다. 14권 중 11권 확보, 3권(Designing Smart Objects in Everyday Life·The Revenge of Analog·Maker Pro)은 표지를 못 찾아 tint 배경 빈 박스로 둔다(WRITING의 커버 없는 항목과 같은 처리). 이미지는 `src/assets/resources/`에 로컬 저장 후 컴포넌트에서 정적 import — 외부 이미지를 핫링크하지 않는다.
+- 원본 노션의 "Job Positions & Descriptions"(타사 채용공고 스크랩 425건)는 성격이 다르고 공개 부적절해 전부 제외. Videos 3개는 노션 북마크 임베드라 원본 URL을 못 읽어 제외.
+- 링크 46개 중 `usecon.com`의 아티클 1건은 404 확인돼 제외(45개 게재). 나머지 403 응답은 대부분 봇 차단(Medium, ACM, Fast Company 등)이라 살아있는 것으로 간주.
+- 헤더 nav에 항목이 하나 늘어 모바일에서 마지막 항목이 잘리는 문제가 있어 `.nav nav`에 `@media (max-width: 480px)` 줄바꿈을 추가(포트폴리오·이력서 사이트 둘 다).
+- 이력서 사이트 헤더(`~/Documents/커리어/웹이력서/index.html` `.site-nav`)에도 Resources 링크와 동일한 모바일 줄바꿈을 반영(5-1 규칙).
