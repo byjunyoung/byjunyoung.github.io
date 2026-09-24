@@ -35,6 +35,18 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
         location.replace(want === 'en' ? '/en' + altPath : altPath);
       })();
     </script>
+    {/* GA4 — 페이지별 활성 시간·유입 경로. 언어 자동 이동 중이면 이동 전 페이지를 세지 않는다 */}
+    <script is:inline>
+      if (!window.__langRedirect) {
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function () { dataLayer.push(arguments); };
+        gtag('js', new Date());
+        gtag('config', 'G-QNYBB3W6N9');
+        var ga = document.createElement('script');
+        ga.async = true; ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-QNYBB3W6N9';
+        document.head.appendChild(ga);
+      }
+    </script>
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
