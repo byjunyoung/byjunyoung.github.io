@@ -14,6 +14,6 @@ Every screen of a product is a short text file: what is on it, how it looks when
 
 States don't repeat the whole screen; they say what is different, which is also what a reviewer wants to know. Undecided values are written as `$tbd`, along with who owes the decision. Text-only edits apply at once; structural changes wait for a person to approve.
 
-It doesn't compete with tools that generate screens — it takes their output and keeps it. The lint rules come from [fig](/en/playground/fig-pm/). Today it is an engine and a local viewer, and the name is provisional.
+It doesn't compete with tools that generate screens — it takes their output and keeps it. The lint rules come from [fig](/en/play/fig-pm/). Today it is an engine and a local viewer, and the name is provisional.
 
 ![Screen index with states, blocking issues, warnings and undecided values, next to a payment list drawn in default and empty states](./01.png)

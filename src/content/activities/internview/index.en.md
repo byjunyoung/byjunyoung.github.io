@@ -9,7 +9,7 @@ order: 8
 draft: false
 ---
 
-InternView was a short-run content project I did with the colleagues who came along on the [**Silicon Valley internship**](/en/activities/svip), to look at how hiring culture differs between the United States and Korea.
+InternView was a short-run content project I did with the colleagues who came along on the [**Silicon Valley internship**](/en/activity/svip), to look at how hiring culture differs between the United States and Korea.
 
 We introduced Korea's 'jasoseo' (personal statement) culture to the CEOs and developers of the companies that shared our coworking space during the internship, and heard their answers to jasoseo questions. I led the project, handling content planning and video production.
 

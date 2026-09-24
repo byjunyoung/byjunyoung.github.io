@@ -31,11 +31,11 @@
 
 ```
 /                     홈 = 한 줄 소개 + Works 2열 그리드
-/works/{slug}         프로젝트 상세
-/playground           사이드 프로젝트 목록 (§14)
-/playground/{slug}    사이드 프로젝트 상세
-/activities           활동 목록 — 커뮤니티·발표·강의 (§14)
-/activities/{slug}    활동 상세
+/work/{slug}          프로젝트 상세
+/activity             활동 목록 — 커뮤니티·발표·강의 (§14)
+/activity/{slug}      활동 상세
+/play                 사이드 프로젝트 목록 (§14)
+/play/{slug}          사이드 프로젝트 상세
 /about                소개 — 워드마크 링크로만 (§12)
 푸터                  이메일 · LinkedIn · Instagram · 이력서(https://byjunyoung.github.io/resume/)
 ```
@@ -198,3 +198,11 @@ activities frontmatter: title, subtitle, role, period, links[], cover, order, dr
 
 - **Activities 범위 확장**: 커뮤니티·인턴십에 더해 **발표·강의·심사**도 활동으로 둔다. 원티드 온라인 UX 컨퍼런스 발표(2025-07-09), 한성과학고 특강 두 번(2024-09-09 닷 소속 접근성 특강·닷패드 체험, 2025-10-25 영재교육원 진로 특강 — 한 활동으로 합침), 홍익대 디자인엔지니어링 HRI 수업 심사·융합전공 설명회(2026-06-19). 같은 글의 Blog 링크는 그대로 두고 활동 상세에서 링크로 잇는다(About 타임라인이 원티드 글을 참조).
 - 활동 사진은 사진 앱 원본에서 가져오되 EXIF·GPS를 지우고, 학생·청중 얼굴과 이름표가 보이는 컷은 쓰지 않는다. 학생 후기 원문은 옮기지 않는다.
+
+## 15. 메뉴 이름·주소 통일 (2026-09-24)
+
+- 메뉴가 복수(works·activities)와 단수(playground·blog·resume)로 섞여 있다는 지적. 사용자 기준은 "짧은 단어", RESUME은 유지(CV 기각), activities 자리는 "액티비티 같은 느낌"을 원해 단수 **ACTIVITY**(링크드인·GitHub의 Activity 탭 용법)로 확정. TALK·SHARE·EXTRA·ACT·PEOPLE은 기각.
+- 최종 내비: `work / activity / play / blog / resume` — activity를 work 옆에 둔다(사용자 지시). 페이지 라벨·탭 제목·돌아가기 링크도 같은 이름.
+- 주소도 이름에 맞춰 `/work/{slug}`, `/activity/…`, `/play/…`(영문 `/en/…` 동일). 옛 주소는 `astro.config.mjs` `redirects`로 새 주소로 넘긴다(meta refresh + noindex, 사이트맵에서 제외). 홈 `/`는 그대로 WORK.
+- 콘텐츠 컬렉션·폴더 이름(`works`·`activities`·`playground`)과 미디어 경로는 페이지 주소가 아니라서 바꾸지 않았다.
+- 이력서 사이트 헤더도 같은 이름·주소로 맞춤(5-1).

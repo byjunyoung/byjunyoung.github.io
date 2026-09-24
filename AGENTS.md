@@ -41,7 +41,7 @@ Junyoung Kim 포트폴리오. Astro 정적 사이트, GitHub Pages(main 푸시 �
 - 본문 이미지의 alt 는 현재 전부 비어 있다(장식 취급). 채울 때는 사진에 실제로 보이는 것만 한 줄로 — 지어내지 않는다.
 - 본문 영상: `<video src="/media/works/<slug>/02.mp4" autoplay muted loop playsinline></video>`
 - 인용: `>` 블록 = 연한 배경 박스
-- 링크: 마크다운 `[텍스트](url)`. 본문 링크는 밑줄로 표시된다. 사이트 내부는 `/activities/uxeed` 처럼 경로만.
+- 링크: 마크다운 `[텍스트](url)`. 본문 링크는 밑줄로 표시된다. 사이트 내부는 `/activity/uxeed` 처럼 경로만. 페이지 주소는 `/work/`·`/activity/`·`/play/`(2026-09-24 변경, 옛 `/works/`·`/activities/`·`/playground/`는 astro.config 리다이렉트). 콘텐츠 폴더 이름(`src/content/works` 등)과 미디어 경로(`/media/works/…`)는 그대로.
 - 이미지는 반드시 마크다운 문법(`![]()`)으로. `<img>` 를 쓰면 최적화되지 않는다
 - 유튜브: `<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/<ID>?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>` — 전폭 16:9
 

@@ -17,7 +17,7 @@ const rows = [
   ...d.links.map((l) => ({ label: 'Link', value: l.label, href: l.url })),
 ];
 const counterpart = (await getCollection('activities')).find((e) => e.id === counterpartId(entry.id) && !e.data.draft);
-const altPath = counterpart ? `/activities/${slugOf(entry.id)}/` : undefined;
+const altPath = counterpart ? `/activity/${slugOf(entry.id)}/` : undefined;
 ---
 <Base title={d.title} description={d.subtitle} ogImage={og?.src} lang={lang} altPath={altPath}>
   {d.cover && <div class="hero"><Image src={d.cover} alt={d.title} widths={[960, 1440, 2000]} sizes="(max-width: 1120px) 100vw, 1120px" loading="eager" /></div>}
@@ -26,5 +26,5 @@ const altPath = counterpart ? `/activities/${slugOf(entry.id)}/` : undefined;
     <MetaCard rows={rows} />
   </div>
   <article class="prose"><Content /></article>
-  <nav class="next"><a href={localePath(lang, '/activities/')}>← Activities</a><span></span></nav>
+  <nav class="next"><a href={localePath(lang, '/activity/')}>← Activity</a><span></span></nav>
 </Base>

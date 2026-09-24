@@ -24,7 +24,7 @@ const rows = [
   { label: 'Awards', value: d.awards.join(', ') || undefined },
 ];
 const counterpart = (await getCollection('works')).find((e) => e.id === counterpartId(entry.id) && !e.data.draft);
-const altPath = counterpart ? `/works/${slugOf(entry.id)}/` : undefined;
+const altPath = counterpart ? `/work/${slugOf(entry.id)}/` : undefined;
 ---
 <Base title={d.title} description={d.subtitle} ogImage={og.src} lang={lang} altPath={altPath}>
   <div class="hero">
@@ -37,5 +37,5 @@ const altPath = counterpart ? `/works/${slugOf(entry.id)}/` : undefined;
     <MetaCard rows={rows} />
   </div>
   <article class="prose"><Content /></article>
-  <nav class="next"><a href={localePath(lang, '/')}>← Works</a><a href={localePath(lang, `/works/${slugOf(next.id)}/`)}>{next.data.title} →</a></nav>
+  <nav class="next"><a href={localePath(lang, '/')}>← Work</a><a href={localePath(lang, `/work/${slugOf(next.id)}/`)}>{next.data.title} →</a></nav>
 </Base>

@@ -11,7 +11,7 @@ draft: false
 
 In 2017 I took part in the Silicon Valley Internship Program (SVIP), run by the Ministry of Science, ICT and Future Planning and the KAIST Moon Soul Graduate School of Future Strategy.
 
-After two months of entrepreneurship training and a selection process, I was chosen as one of 12 and did my internship at [**ZIBOT**](/en/works/zibot). The internship ran for a year through 2018.
+After two months of entrepreneurship training and a selection process, I was chosen as one of 12 and did my internship at [**ZIBOT**](/en/work/zibot). The internship ran for a year through 2018.
 
 I wrote up the experience at the time on a [**blog**](https://silinsta.wordpress.com/).
 
