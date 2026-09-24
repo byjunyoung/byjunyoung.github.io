@@ -1,0 +1,17 @@
+---
+// src/components/pages/Playground.astro
+import Base from '../../layouts/Base.astro';
+import PlaygroundCard from '../PlaygroundCard.astro';
+import { getCollection } from 'astro:content';
+import { byLang, type Lang } from '../../lib/i18n';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const items = byLang(await getCollection('playground'), lang);
+---
+<Base title="Playground" lang={lang} description={lang === 'ko' ? '회사 일 밖에서 재미로 만드는 것들. 웹앱, AI 도구, 하드웨어 프로토타입.' : 'Things I make for fun outside of work — web apps, AI tools, and hardware prototypes.'} altPath="/playground/">
+  <h1 class="label">Playground</h1>
+  {lang === 'ko'
+    ? <p class="intro">회사 일 밖에서 재미로 만드는 것들입니다. 풋살 팀 웹앱, 디자인·기획 일을 돕는 AI 도구, 그리고 손에 쥐는 하드웨어 프로토타입.</p>
+    : <p class="intro">Things I make for fun outside of work — a web app for my futsal team, AI tools for design and product work, and hardware prototypes you hold in your hand.</p>}
+  <section class="grid">{items.map((a, i) => <PlaygroundCard entry={a} eager={i < 2} />)}</section>
+</Base>

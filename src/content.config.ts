@@ -47,6 +47,22 @@ const activities = defineCollection({
     }),
 });
 
+const playground = defineCollection({
+  loader: glob({ pattern: ['*/index.md', '*/index.en.md'], base: './src/content/playground', generateId: localeId }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string().min(1),
+      subtitle: z.string().min(1),
+      year: z.string().min(1),
+      stack: z.string().min(1),
+      status: z.string().min(1),
+      links: z.array(link).default([]),
+      cover: image().optional(),
+      order: z.number().int(),
+      draft: z.boolean().default(false),
+    }),
+});
+
 const writing = defineCollection({
   loader: glob({ pattern: ['*/index.md', '*/index.en.md'], base: './src/content/writing', generateId: localeId }),
   schema: ({ image }) =>
@@ -72,4 +88,4 @@ const resources = defineCollection({
   }),
 });
 
-export const collections = { works, activities, writing, resources };
+export const collections = { works, activities, playground, writing, resources };

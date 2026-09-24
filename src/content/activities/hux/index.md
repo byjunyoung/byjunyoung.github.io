@@ -5,7 +5,7 @@ role: "Co-Founder"
 period: "2024 - 2025 (2y)"
 links: [{ label: "Home", url: "https://uxdesigners.notion.site/2962d67da32c4f218fbea5944f612e60" }, { label: "Instagram", url: "https://www.instagram.com/designers.ux/" }, { label: "Linkedin", url: "https://www.linkedin.com/groups/14382655/" }]
 cover: ./cover.png
-order: 1
+order: 4
 draft: false
 ---
 

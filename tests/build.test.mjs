@@ -30,6 +30,13 @@ test('published activities each have a page in dist', () => {
   }
 });
 
+test('published playground items each have a page in dist', () => {
+  for (const slug of slugs('src/content/playground')) {
+    const draft = isDraft(`src/content/playground/${slug}/index.md`);
+    assert.equal(existsSync(`dist/playground/${slug}/index.html`), !draft, `playground/${slug}`);
+  }
+});
+
 test('loop videos declared in frontmatter exist under public/', () => {
   for (const slug of slugs('src/content/works')) {
     const m = readFileSync(`src/content/works/${slug}/index.md`, 'utf8').match(/^loop:\s*"?(\/media\/[^"\s]+)/m);
@@ -38,7 +45,7 @@ test('loop videos declared in frontmatter exist under public/', () => {
 });
 
 test('index pages render an h1.label', () => {
-  for (const path of ['dist/index.html', 'dist/activities/index.html']) {
+  for (const path of ['dist/index.html', 'dist/activities/index.html', 'dist/playground/index.html']) {
     const html = existsSync(path) ? readFileSync(path, 'utf8') : '';
     assert.ok(html.includes('<h1 class="label">'), path);
   }
@@ -55,6 +62,7 @@ test('birdy og:image points at an optimized derivative, not the raw cover', () =
 test('english works/activities each have a page under dist/en', () => {
   for (const slug of enSlugs('src/content/works')) assert.ok(existsSync(`dist/en/works/${slug}/index.html`), `en/works/${slug}`);
   for (const slug of enSlugs('src/content/activities')) assert.ok(existsSync(`dist/en/activities/${slug}/index.html`), `en/activities/${slug}`);
+  for (const slug of enSlugs('src/content/playground')) assert.ok(existsSync(`dist/en/playground/${slug}/index.html`), `en/playground/${slug}`);
 });
 
 test('english home exists and links every english work', () => {

@@ -5,7 +5,7 @@ role: "Lead Manager"
 period: "2022 – 2024 (2y)"
 links: [{ label: "Instagram", url: "https://www.instagram.com/ux.eed/" }, { label: "Linkedin", url: "https://www.linkedin.com/groups/14117035/" }]
 cover: ./cover.jpeg
-order: 2
+order: 5
 draft: false
 ---
 

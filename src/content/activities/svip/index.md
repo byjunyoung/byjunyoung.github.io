@@ -5,7 +5,7 @@ role: "Intern"
 period: "2017"
 links: [{ label: "Blog", url: "https://silinsta.wordpress.com/" }]
 cover: ./cover.jpg
-order: 4
+order: 7
 draft: false
 ---
 

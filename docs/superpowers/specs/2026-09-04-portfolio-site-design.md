@@ -32,7 +32,9 @@
 ```
 /                     홈 = 한 줄 소개 + Works 2열 그리드
 /works/{slug}         프로젝트 상세
-/activities           활동 목록
+/playground           사이드 프로젝트 목록 (§14)
+/playground/{slug}    사이드 프로젝트 상세
+/activities           활동 목록 — 커뮤니티·발표·강의 (§14)
 /activities/{slug}    활동 상세
 /about                소개 — 워드마크 링크로만 (§12)
 푸터                  이메일 · LinkedIn · Instagram · 이력서(https://byjunyoung.github.io/resume/)
@@ -182,3 +184,16 @@ activities frontmatter: title, subtitle, role, period, links[], cover, order, dr
 - 탭 이름 "HW UX"는 사용자 본인의 2022년 링크드인 글 제목("HW UX가 궁금하신 분들께…")을 그대로 따랐다 — 새로 짓지 않고 기존 표현 재사용.
 - nav가 5개였을 때 모바일에서 마지막 항목이 잘려 `.nav nav`에 `@media (max-width: 480px)` 줄바꿈을 추가했다(포트폴리오·이력서 둘 다). Blog로 합쳐 4개로 줄었지만 줄바꿈 규칙은 방어적으로 유지.
 - 이력서 사이트 헤더(`~/Documents/커리어/웹이력서/index.html` `.site-nav`)의 Writing 링크도 Blog로 교체해 동기화(5-1 규칙).
+
+## 14. Playground 섹션 + 활동 범위 확장 (2026-09-24 추가)
+
+- **Playground**: 회사·학교 밖에서 재미로 만드는 사이드 프로젝트 모음. Works(제품 일)와 성격이 달라 따로 둔다. 사용자가 "메뉴에 추가"를 골랐다 — 내비는 다시 5개 `works / playground / activities / blog / resume`(직접 만든 것끼리 이어지게 works 바로 뒤). §13의 480px 줄바꿈 규칙이 5개에서도 받친다. 이력서 사이트 헤더도 같이 고친다(5-1).
+- 형식: 활동과 같은 **16:9 카드 그리드 + 상세 페이지**(사용자 선택). `/playground/`, `/playground/{slug}`, `/en/…` 동일.
+- 콘텐츠: `src/content/playground/<slug>/index.md`(+`index.en.md`). 필드는 활동을 따르되 기간 대신 `year`, 역할 대신 `stack`, 진행 단계 `status`, `links`, `cover`(선택), `order`, `draft`.
+- 커버가 없는 항목은 Blog Posts와 같은 **검정 제목 카드**로 채운다(빈 tint 카드는 2026-09-06에 기각됨).
+- 항목 선정(사용자): 웹앱(weekly-fc·tactics-board), AI 도구(claude-product-skills·clawd-statusline·design-core), 하드웨어 프로토(textrip·pet-rock). youtube-highlight는 제외.
+- 비공개 레포(textrip·pet-rock)는 GitHub 링크 없이 설명만. 본문은 각 레포 README·기획서에 적힌 사실만 쓰고 동기·수치를 지어내지 않는다.
+- 공개 금지: weekly-fc 화면의 팀원 실명(캡처 시 가명으로 바꿔 찍음)·계좌번호·구장명, 회사명이 섞인 예시 화면.
+
+- **Activities 범위 확장**: 커뮤니티·인턴십에 더해 **발표·강의·심사**도 활동으로 둔다. 원티드 온라인 UX 컨퍼런스 발표(2025-07-09), 한성과학고 영재교육원 진로 특강(2025-10-25), 홍익대 디자인엔지니어링 HRI 수업 심사·융합전공 설명회(2026-06-19). 같은 글의 Blog 링크는 그대로 두고 활동 상세에서 링크로 잇는다(About 타임라인이 원티드 글을 참조).
+- 활동 사진은 사진 앱 원본에서 가져오되 EXIF·GPS를 지우고, 학생·청중 얼굴과 이름표가 보이는 컷은 쓰지 않는다. 학생 후기 원문은 옮기지 않는다.

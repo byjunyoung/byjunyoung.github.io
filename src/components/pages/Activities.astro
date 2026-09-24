@@ -8,10 +8,10 @@ interface Props { lang: Lang }
 const { lang } = Astro.props;
 const acts = byLang(await getCollection('activities'), lang);
 ---
-<Base title="Activities" lang={lang} description={lang === 'ko' ? '하드웨어 UX 커뮤니티, UX 스터디 그룹, 프로토타이핑 동아리 등 제품 일 밖의 활동.' : 'Communities and side projects outside of product work — a hardware UX community, a UX study group, and a prototyping club.'} altPath="/activities/">
+<Base title="Activities" lang={lang} description={lang === 'ko' ? '발표·강의, 하드웨어 UX 커뮤니티, UX 스터디 그룹, 프로토타이핑 동아리 등 제품 일 밖의 활동.' : 'Talks and communities outside of product work — talks and lectures, a hardware UX community, a UX study group, and a prototyping club.'} altPath="/activities/">
   <h1 class="label">Activities</h1>
   {lang === 'ko'
-    ? <p class="intro">제품 일 밖의 커뮤니티와 사이드 프로젝트입니다. 하드웨어 UX 커뮤니티, UX 스터디 그룹, 프로토타이핑 동아리, 인턴십 프로그램, 그리고 짧은 유튜브 시리즈.</p>
-    : <p class="intro">Communities and side projects outside of product work — a hardware UX community, a UX study group, a prototyping club, an internship program, and a short YouTube series.</p>}
+    ? <p class="intro">제품 일 밖의 발표와 커뮤니티 활동입니다. 발표·강의, 하드웨어 UX 커뮤니티, UX 스터디 그룹, 프로토타이핑 동아리, 인턴십 프로그램, 그리고 짧은 유튜브 시리즈.</p>
+    : <p class="intro">Talks and communities outside of product work — talks and lectures, a hardware UX community, a UX study group, a prototyping club, an internship program, and a short YouTube series.</p>}
   <section class="grid">{acts.map((a, i) => <ActivityCard entry={a} eager={i < 2} />)}</section>
 </Base>

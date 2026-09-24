@@ -1,0 +1,13 @@
+---
+// src/pages/playground/[slug].astro
+import PlaygroundDetail from '../../components/pages/PlaygroundDetail.astro';
+import { getCollection } from 'astro:content';
+import { byLang, slugOf } from '../../lib/i18n';
+
+export async function getStaticPaths() {
+  const items = byLang(await getCollection('playground'), 'ko');
+  return items.map((entry) => ({ params: { slug: slugOf(entry.id) }, props: { entry } }));
+}
+const { entry } = Astro.props;
+---
+<PlaygroundDetail lang="ko" entry={entry} />
