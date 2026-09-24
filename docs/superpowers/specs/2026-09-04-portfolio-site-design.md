@@ -159,6 +159,7 @@ activities frontmatter: title, subtitle, role, period, links[], cover, order, dr
 - 영문 파일이 없는 항목은 `/en/`에서 빠진다(목록·상세 모두). 그 항목의 한국어 페이지는 hreflang 없이 토글만 영문 홈으로 보낸다.
 - 페이지: 홈·활동 목록·프로젝트 상세·활동 상세 본문은 `src/components/pages/`의 컴포넌트가 `lang`을 받아 렌더하고, `src/pages/`와 `src/pages/en/`에는 얇은 래퍼만 둔다.
 - UI 문구(메뉴·메타 라벨·배지·소개문)는 이미 영어라 언어별로 나누지 않는다. `<html lang>`만 언어별. 404는 두 언어 한 줄씩.
+- 자동 전환(2026-09-24 추가): 첫 방문은 브라우저 언어(`navigator.languages[0]`가 ko*면 KR, 아니면 EN)로 정해 같은 페이지의 짝으로 `location.replace`. 국가(IP)가 아니라 브라우저 언어 — GitHub Pages엔 서버가 없고, 해외의 한국인·국내의 외국인에게 더 맞다. 배지를 누르면 그 선택을 `localStorage['site-lang']`에 저장하고 이후엔 자동 판정을 하지 않는다. 키는 이력서 사이트(`/resume/`, 같은 도메인)와 공유해 한쪽에서 고르면 다른 쪽도 따라간다. 봇(UA에 bot·crawl·spider)은 제외 — 색인은 hreflang이 담당. 영어 짝이 없는 페이지는 이동하지 않는다. 헤드 맨 앞 인라인 스크립트(`Base.astro`), 이동 시 `window.__langRedirect`를 세워 분석 스니펫이 이동 전 페이지를 세지 않게 한다.
 - 전환 UI: 헤더 오른쪽 KR/EN 분할 배지(이력서 사이트와 같은 스타일: 11px 대문자, 헤어라인, 2px 모서리, 선택은 fg 채움). 같은 페이지의 다른 언어로 이동. 이력서 링크는 언어와 무관하게 `/resume/`.
 - 번역 원칙: 사실·수치·고유명사 그대로, 수식어 추가 금지, 이력서 영문판 용어를 따른다(tactile display, Dot Canvas tactile-graphics authoring tool, CES 2024 Innovation Award, BarisBrew robot café, AMR, HRI, PUI). 사람 이름은 원문 표기 유지(한글 이름은 한글, 로마자는 로마자), 괄호 안 역할만 번역. 활동 제목 "설계자들"은 고유명사로 유지, "인턴뷰"는 시리즈 표기 "InternView".
 - 검수: 영문 초안 → 로컬 빌드 → 스크린샷·대조표로 사용자 검수 → 수정 → go → push.

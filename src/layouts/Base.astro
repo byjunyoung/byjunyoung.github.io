@@ -18,6 +18,23 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {/* 언어 자동 전환 — 배지로 고른 언어(site-lang, 이력서와 공유)가 있으면 그걸, 없으면 브라우저 언어로 정해 짝 페이지로 보낸다. 그리기 전에 돌아야 해서 헤드 맨 앞 */}
+    <script is:inline define:vars={{ pageLang: lang, altPath: altPath ?? null }}>
+      (function () {
+        if (!altPath) return; // 영어 짝이 없는 페이지는 그대로
+        if (/bot|crawl|spider|slurp|lighthouse/i.test(navigator.userAgent)) return; // 검색 색인은 hreflang이 담당
+        var KEY = 'site-lang', want = null;
+        try { want = localStorage.getItem(KEY); } catch (e) {}
+        if (want !== 'ko' && want !== 'en') {
+          var first = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+          want = /^ko\b/i.test(first) ? 'ko' : 'en';
+          try { localStorage.setItem(KEY, want); } catch (e) {}
+        }
+        if (want === pageLang) return;
+        window.__langRedirect = true; // 분석 스니펫이 이동 전 페이지를 세지 않게 알린다
+        location.replace(want === 'en' ? '/en' + altPath : altPath);
+      })();
+    </script>
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
@@ -47,6 +64,14 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
         <a href={altPath ? `/en${altPath}` : '/en/'} class={lang === 'en' ? 'active' : undefined} hreflang="en" lang="en">EN</a>
       </div>
     </header>
+    <script is:inline>
+      // KR/EN 배지를 누르면 그 선택을 기억해 자동 전환이 다시 끼어들지 않게 한다
+      document.querySelectorAll('.lang a[lang]').forEach(function (a) {
+        a.addEventListener('click', function () {
+          try { localStorage.setItem('site-lang', a.getAttribute('lang')); } catch (e) {}
+        });
+      });
+    </script>
     <main class="wrap"><slot /></main>
     <footer class="footer wrap">
       <div>
