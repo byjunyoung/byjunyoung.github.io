@@ -21,3 +21,7 @@ I built these one at a time for my own work. I use them every day, and so does m
 ![Three problems fig caught in one section](./01.png)
 
 ![Screens nobody drew yet, stubbed as placeholder frames](./02.png)
+
+![fig and pm never call each other; they share two objects in config](./03.png)
+
+![A QA defect report written by checking the dev server against the spec](./04.png)

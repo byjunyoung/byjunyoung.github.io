@@ -21,3 +21,5 @@ draft: false
 <video src="/media/playground/textrip/roll.mp4" aria-label="롤러를 돌리면 실물 e-ink 화면의 페이지가 넘어가는 프로토 영상" autoplay muted loop playsinline></video>
 
 ![롤러·e-ink 화면·보드를 펼쳐 놓은 프로토 부품](./01.jpg) ![textrip 첫 형태 스케치](./02.jpg)
+
+![e-ink 화면에 조판된 한국어 본문](./03.jpg) ![롤러로 넘겨 보는 웹 시뮬레이터](./04.jpg) ![롤러를 쥐고 페이지를 넘기는 손](./05.jpg)

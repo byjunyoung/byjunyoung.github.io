@@ -16,4 +16,8 @@ There is no sign-up or login. You pick your own name from the roster, and admins
 
 The verdict on the first version: "this looks like an admin dashboard, not a game." So I rebuilt it around football game screens like FM, EA FC, and eFootball. Real player photos went in and came out a day later, replaced by full-body 24 × 32 pixel characters drawn by hand.
 
-> Player names in the screenshot have been replaced.
+![Lineup screen with eleven starters placed automatically](./01.png)
+
+![Home locker room with your own player, and the roster table with ratings](./02.png)
+
+> Player names in the screenshots have been replaced.

@@ -17,4 +17,6 @@ Each team saw robots differently, and that view carried all the way into interac
 
 ![A student team's robot with a tablet face](./01.jpg) ![A student team's furry potted-plant robot](./02.jpg) ![A student team's robot arm](./03.jpg)
 
+![A student team's interaction table: poses and eyes for each robot state](./04.jpg) ![Design Engineering program information session screen](./05.jpg) ![A student tuning the potted-plant robot](./06.jpg)
+
 <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/KmozbRRTfqA?rel=0&modestbranding=1" title="Hongik Design Engineering HRI class projects video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>

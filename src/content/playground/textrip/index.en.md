@@ -21,3 +21,5 @@ A solderless prototype showed a 0.70 s e-ink refresh and about one second per pa
 <video src="/media/playground/textrip/roll.mp4" aria-label="Prototype video: turning the roller flips the page on a real e-ink screen" autoplay muted loop playsinline></video>
 
 ![Prototype parts laid out: roller, e-ink screen, and board](./01.jpg) ![First sketch of the textrip form](./02.jpg)
+
+![Korean text typeset on the e-ink screen](./03.jpg) ![Web simulator driven by the physical roller](./04.jpg) ![Turning pages with the roller in hand](./05.jpg)

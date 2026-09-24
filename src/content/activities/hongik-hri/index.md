@@ -17,4 +17,6 @@ draft: false
 
 ![학생 팀의 태블릿 얼굴 로봇](./01.jpg) ![학생 팀의 털 달린 화분형 로봇](./02.jpg) ![학생 팀의 로봇 팔](./03.jpg)
 
+![학생 팀이 발표한 로봇의 상태별 자세·표정 설계표](./04.jpg) ![디자인엔지니어링 융합전공 설명회 안내 화면](./05.jpg) ![화분형 로봇을 조정하는 학생](./06.jpg)
+
 <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/KmozbRRTfqA?rel=0&modestbranding=1" title="홍익대 디자인엔지니어링 HRI 수업 결과물 영상" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>

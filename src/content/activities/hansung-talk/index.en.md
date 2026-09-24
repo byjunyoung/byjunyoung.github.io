@@ -19,4 +19,4 @@ It was my first time telling my story to middle schoolers. After a lot of though
 
 I went there to share my story, but on the way back I found myself checking my own choices once more. I wrote about it on [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7407058311487004672/).
 
-![Invention Learning Center sign at Hansung Science High School](./01.jpg) ![Hansung Science High School campus](./02.jpg)
+![Invention Learning Center sign at Hansung Science High School](./01.jpg) ![Office sign for gifted education at Hansung Science High School](./03.jpg) ![Hansung Science High School campus](./02.jpg)

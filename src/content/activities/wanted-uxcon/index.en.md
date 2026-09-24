@@ -16,6 +16,11 @@ It covered a question I had carried since 2017, when I first got serious about U
 The talk boiled down to one simple line.
 
 > [UX + ______]
+>
 > UX is a posture and a perspective. The blank is the skill you bring to the experience.
 
 My blank is hardware. I announced the talk in [this post](https://www.linkedin.com/feed/update/urn:li:activity:7339094879760748544/) and shared the slides in [a follow-up](https://www.linkedin.com/feed/update/urn:li:activity:7352888194117357568/).
+
+![Slides defining hardware UX and listing the many UX job titles](./01.jpg)
+
+![Slides asking which UX + ___ I will be, then handing the question to the audience](./02.jpg)
