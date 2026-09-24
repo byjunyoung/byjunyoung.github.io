@@ -21,7 +21,9 @@ const counterpart = (await getCollection('playground')).find((e) => e.id === cou
 const altPath = counterpart ? `/playground/${slugOf(entry.id)}/` : undefined;
 ---
 <Base title={d.title} description={d.subtitle} ogImage={og?.src} lang={lang} altPath={altPath}>
-  {d.cover && <div class="hero"><Image src={d.cover} alt={d.title} widths={[960, 1440, 2000]} sizes="(max-width: 1120px) 100vw, 1120px" loading="eager" /></div>}
+  {d.loop
+    ? <div class="hero"><video src={d.loop} poster={og?.src} autoplay muted loop playsinline></video></div>
+    : d.cover && <div class="hero"><Image src={d.cover} alt={d.title} widths={[960, 1440, 2000]} sizes="(max-width: 1120px) 100vw, 1120px" loading="eager" /></div>}
   <div class="detail">
     <div class="detail-head"><h1>{d.title}</h1><p>{d.subtitle}</p></div>
     <MetaCard rows={rows} />

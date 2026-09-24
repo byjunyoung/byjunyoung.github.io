@@ -192,7 +192,7 @@ activities frontmatter: title, subtitle, role, period, links[], cover, order, dr
 - 콘텐츠: `src/content/playground/<slug>/index.md`(+`index.en.md`). 필드는 활동을 따르되 기간 대신 `year`, 역할 대신 `stack`, 진행 단계 `status`, `links`, `cover`(선택), `order`, `draft`.
 - 커버가 없는 항목은 Blog Posts와 같은 **검정 제목 카드**로 채운다(빈 tint 카드는 2026-09-06에 기각됨).
 - 항목 선정(사용자): 웹앱(weekly-fc), AI 도구(claude-product-skills·clawd-statusline·design-core), 하드웨어 프로토(textrip). youtube-highlight는 제외. **구체화 전 단계(컨셉만 있는 pet-rock)와 보관한 프로젝트(tactics-board)는 넣지 않는다**(2026-09-24 사용자 지시).
-- 커버는 프로젝트를 가장 잘 대표하는 장면으로 고른다 — 하드웨어는 손에 쥐고 동작하는 실물(textrip은 사진 앱의 시제품 영상에서 프레임과 8초 루프), 도구는 실제로 하는 일이 보이는 화면(fig·pm은 화살표 전/후 도식), 로고·소개 이미지는 피한다.
+- 커버는 프로젝트를 가장 잘 대표하는 장면으로 고른다 — 하드웨어는 손에 쥐고 동작하는 실물(textrip은 사진 앱의 시제품 영상에서 뽑은 8초 루프를 카드·상세 맨 위에 재생 — Works와 같은 `loop` 필드, 정지 커버는 포스터로만), 도구는 실제로 하는 일이 보이는 화면(fig·pm은 화살표 전/후 도식), 로고·소개 이미지는 피한다.
 - 비공개 레포(textrip)는 GitHub 링크 없이 설명만. 본문은 각 레포 README·기획서에 적힌 사실만 쓰고 동기·수치를 지어내지 않는다.
 - 공개 금지: weekly-fc 화면의 팀원 실명(캡처 시 가명으로 바꿔 찍음)·계좌번호·구장명, 회사명이 섞인 예시 화면.
 

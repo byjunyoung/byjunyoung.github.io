@@ -38,8 +38,8 @@ test('published playground items each have a page in dist', () => {
 });
 
 test('loop videos declared in frontmatter exist under public/', () => {
-  for (const slug of slugs('src/content/works')) {
-    const m = readFileSync(`src/content/works/${slug}/index.md`, 'utf8').match(/^loop:\s*"?(\/media\/[^"\s]+)/m);
+  for (const [dir, slug] of [...slugs('src/content/works').map((s) => ['works', s]), ...slugs('src/content/playground').map((s) => ['playground', s])]) {
+    const m = readFileSync(`src/content/${dir}/${slug}/index.md`, 'utf8').match(/^loop:\s*"?(\/media\/[^"\s]+)/m);
     if (m) assert.ok(existsSync(`public${m[1]}`), m[1]);
   }
 });

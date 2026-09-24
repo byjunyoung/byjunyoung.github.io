@@ -58,6 +58,7 @@ const playground = defineCollection({
       status: z.string().min(1),
       links: z.array(link).default([]),
       cover: image().optional(),
+      loop: z.string().regex(/^\/media\/playground\/[a-z0-9-]+\/[a-z0-9-]+\.mp4$/).optional(),
       order: z.number().int(),
       draft: z.boolean().default(false),
     }),

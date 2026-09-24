@@ -1,15 +1,18 @@
 ---
 // src/components/PlaygroundCard.astro
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import { langOf, slugOf, localePath } from '../lib/i18n';
 interface Props { entry: CollectionEntry<'playground'>; eager?: boolean }
 const { entry, eager = false } = Astro.props;
 const d = entry.data;
+const poster = d.loop && d.cover ? (await getImage({ src: d.cover, width: 960, format: 'jpg' })).src : undefined;
 ---
 <a class="card" href={localePath(langOf(entry.id), `/playground/${slugOf(entry.id)}/`)}>
   <div class:list={['media', { titled: !d.cover }]}>
-    {d.cover
+    {d.loop
+      ? <video src={d.loop} poster={poster} autoplay muted loop playsinline preload="metadata"></video>
+      : d.cover
       ? <Image src={d.cover} alt={d.title} widths={[640, 960, 1280]} sizes="(max-width: 720px) 100vw, 560px" loading={eager ? 'eager' : 'lazy'} />
       : <div class="title-card" aria-hidden="true"><i></i><span>{d.title}</span></div>}
   </div>

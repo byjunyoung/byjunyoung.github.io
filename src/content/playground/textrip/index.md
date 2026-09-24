@@ -6,6 +6,7 @@ stack: "CircuitPython, E-ink, Python"
 status: "시제품 제작 중"
 links: []
 cover: ./cover.jpg
+loop: /media/playground/textrip/roll.mp4
 order: 1
 draft: false
 ---
@@ -17,8 +18,6 @@ draft: false
 페이지는 옆면의 16mm 롤러로 넘깁니다. 한 바퀴에 20칸, 한 칸이 2.51mm라 마우스 휠과 같은 간격입니다. 천천히 굴리면 딸깍이고, 빠르게 굴리면 걸림 없이 돌아갑니다.
 
 납땜 없이 조립한 프로토에서 e-ink 화면 갱신 0.70초, 실사용 한 페이지 넘김 약 1초를 확인했습니다. 다음은 납땜과 알루미늄 시제품입니다.
-
-<video src="/media/playground/textrip/roll.mp4" aria-label="롤러를 돌리면 실물 e-ink 화면의 페이지가 넘어가는 프로토 영상" autoplay muted loop playsinline></video>
 
 ![롤러·e-ink 화면·보드를 펼쳐 놓은 프로토 부품](./01.jpg) ![textrip 첫 형태 스케치](./02.jpg)
 
