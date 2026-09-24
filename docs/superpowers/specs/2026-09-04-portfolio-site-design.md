@@ -191,8 +191,9 @@ activities frontmatter: title, subtitle, role, period, links[], cover, order, dr
 - 형식: 활동과 같은 **16:9 카드 그리드 + 상세 페이지**(사용자 선택). `/playground/`, `/playground/{slug}`, `/en/…` 동일.
 - 콘텐츠: `src/content/playground/<slug>/index.md`(+`index.en.md`). 필드는 활동을 따르되 기간 대신 `year`, 역할 대신 `stack`, 진행 단계 `status`, `links`, `cover`(선택), `order`, `draft`.
 - 커버가 없는 항목은 Blog Posts와 같은 **검정 제목 카드**로 채운다(빈 tint 카드는 2026-09-06에 기각됨).
-- 항목 선정(사용자): 웹앱(weekly-fc·tactics-board), AI 도구(claude-product-skills·clawd-statusline·design-core), 하드웨어 프로토(textrip·pet-rock). youtube-highlight는 제외.
-- 비공개 레포(textrip·pet-rock)는 GitHub 링크 없이 설명만. 본문은 각 레포 README·기획서에 적힌 사실만 쓰고 동기·수치를 지어내지 않는다.
+- 항목 선정(사용자): 웹앱(weekly-fc), AI 도구(claude-product-skills·clawd-statusline·design-core), 하드웨어 프로토(textrip). youtube-highlight는 제외. **구체화 전 단계(컨셉만 있는 pet-rock)와 보관한 프로젝트(tactics-board)는 넣지 않는다**(2026-09-24 사용자 지시).
+- 커버는 프로젝트를 가장 잘 대표하는 장면으로 고른다 — 하드웨어는 손에 쥐고 동작하는 실물(textrip은 사진 앱의 시제품 영상에서 프레임과 8초 루프), 도구는 실제로 하는 일이 보이는 화면(fig·pm은 화살표 전/후 도식), 로고·소개 이미지는 피한다.
+- 비공개 레포(textrip)는 GitHub 링크 없이 설명만. 본문은 각 레포 README·기획서에 적힌 사실만 쓰고 동기·수치를 지어내지 않는다.
 - 공개 금지: weekly-fc 화면의 팀원 실명(캡처 시 가명으로 바꿔 찍음)·계좌번호·구장명, 회사명이 섞인 예시 화면.
 
 - **Activities 범위 확장**: 커뮤니티·인턴십에 더해 **발표·강의·심사**도 활동으로 둔다. 원티드 온라인 UX 컨퍼런스 발표(2025-07-09), 한성과학고 영재교육원 진로 특강(2025-10-25), 홍익대 디자인엔지니어링 HRI 수업 심사·융합전공 설명회(2026-06-19). 같은 글의 Blog 링크는 그대로 두고 활동 상세에서 링크로 잇는다(About 타임라인이 원티드 글을 참조).

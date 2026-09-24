@@ -5,7 +5,7 @@ year: "2026"
 stack: "CircuitPython, E-ink, Python"
 status: "Prototyping"
 links: []
-cover: ./cover.png
+cover: ./cover.jpg
 order: 1
 draft: false
 ---
@@ -17,3 +17,7 @@ There is no reason, and no way, to beat the Kindle on reading features. So textr
 Pages turn with a 16 mm roller on the side: 20 detents per turn, 2.51 mm apart, the same spacing as a mouse wheel. Roll slowly and it clicks; roll fast and it spins free.
 
 A solderless prototype showed a 0.70 s e-ink refresh and about one second per page turn in real use. Next come soldering and an aluminium prototype.
+
+<video src="/media/playground/textrip/roll.mp4" aria-label="Prototype video: turning the roller flips the page on a real e-ink screen" autoplay muted loop playsinline></video>
+
+![Prototype parts laid out: roller, e-ink screen, and board](./01.jpg) ![First sketch of the textrip form](./02.jpg)

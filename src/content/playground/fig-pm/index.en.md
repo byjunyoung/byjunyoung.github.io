@@ -19,3 +19,5 @@ A few principles hold it together. Only `/fig:lint` decides right from wrong. Te
 I built these one at a time for my own work. I use them every day, and so does my UX team.
 
 ![Three problems fig caught in one section](./01.png)
+
+![Screens nobody drew yet, stubbed as placeholder frames](./02.png)
