@@ -1,0 +1,39 @@
+kind: entry-card
+description: "작업·활동·플레이 카드 — 16:9 미디어 위, 제목·번호·소속·부제·메타 아래. 흰 바탕에 헤어라인만"
+usage: { when: "목록 그리드의 한 칸", not: "글 목록 — post-row" }
+anatomy: { media: "커버 사진 또는 루프 영상(16:9)", title: "제목", index: "번호 01~ — 작업만", line: "소속 · 연도(작업) / 역할 · 기간(활동) / 연도 · 상태(플레이)", sub: "부제", badge: "Case study | Note — 작업만", meta: "키워드" }
+maps_to:
+  code: { import: src/components/WorkCard.astro, name: WorkCard, props: { title: data.title, index: index, line: "data.org · data.year", sub: data.subtitle, badge: data.kind, meta: data.tags, cover: data.cover }, note: "ActivityCard·PlaygroundCard도 같은 모양 — index·badge·meta 없이" }
+props:
+  title: { type: string, required: true }
+  index: { type: string }
+  line: { type: string }
+  sub: { type: string }
+  badge: { type: string }
+  meta: { type: string }
+  cover: { type: string }
+tokens:
+  surface: surface.card
+elements:
+  - { id: media, kind: image, src: $cover, alt: "", size: full, fit: cover }
+  - id: body
+    kind: group
+    children:
+      - id: head
+        kind: group
+        children:
+          - { id: title, kind: caption, text: $title, style: title }
+          - { id: index, kind: caption, text: $index, style: eyebrow, show_when: index }
+      - { id: line, kind: caption, text: $line, style: strong, show_when: line }
+      - { id: sub, kind: caption, text: $sub, style: lead, show_when: sub }
+      - id: tags
+        kind: group
+        children:
+          - { id: badge, kind: tag, text: $badge, show_when: badge }
+          - { id: meta, kind: caption, text: $meta, style: eyebrow, show_when: meta }
+layout:
+  root: { kind: stack, direction: column, align: stretch }
+  body: { kind: stack, direction: column, align: stretch, gap: space.2xs, padding: space.md }
+  head: { kind: stack, direction: row, align: space-between }
+  tags: { kind: stack, direction: row, gap: space.xs, wrap: true }
+sample: { title: 에어로 서빙 로봇, index: "01", line: "XYZ · 2025", sub: 매장 서빙 로봇의 인터랙션 설계, badge: CASE STUDY, meta: "HRI · SERVICE ROBOT" }

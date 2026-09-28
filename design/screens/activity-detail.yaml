@@ -1,0 +1,49 @@
+schema: doan/0.2
+id: scr_ACTDETAIL
+screen: activity-detail
+section: "04. Activity - Detail"
+type: detail
+refs:
+  code: file:../src/components/pages/ActivityDetail.astro
+
+elements:
+  - { id: header, kind: site-header, lang: KR }
+  - { id: hero, kind: image, alt: 홍익대 HRI 수업 심사, size: full }
+  - id: detail
+    kind: group
+    children:
+      - id: head
+        kind: group
+        children:
+          - { id: title, kind: caption, text: 홍익대 HRI 수업 심사, style: title }
+          - { id: subtitle, kind: caption, text: "Industry Juror, Human-Robot Interaction Class at Hongik University" }
+      - id: meta
+        kind: card
+        children:
+          - { id: m-role, kind: meta-row, label: ROLE, value: Juror }
+          - { id: m-period, kind: meta-row, label: PERIOD, value: "2026" }
+  - { id: body, kind: prose-section, heading: OVERVIEW, text: 본문은 src/content/activities/<slug>/index.md 가 정본이다. }
+  - id: next
+    kind: group
+    children:
+      - { id: next-line, kind: divider }
+      - { id: back, kind: caption, text: ← Activity }
+  - { id: footer, kind: site-footer }
+
+layout:
+  root: { kind: stack, direction: column, align: stretch, gap: space.lg, padding: space.lg }
+  detail: { kind: grid, justify: start, columns: 2, gap: space.lg }
+  head: { kind: stack, direction: column, align: stretch, gap: space.2xs }
+  meta: { kind: stack, direction: column, align: stretch }
+  next: { kind: stack, direction: column, align: stretch, gap: space.lg }
+
+breakpoints:
+  mobile:
+    - { target: detail, layout: { kind: stack, direction: column, gap: space.lg } }
+
+flows:
+  - { from: back, to: activity-list, gesture: tap, nav: replace }
+
+notes:
+  - 커버가 없는 활동은 히어로가 없다.
+  - 메타 줄 이름과 본문 절 제목(OVERVIEW)은 샘플이다 — 실제 행은 ActivityDetail.astro의 rows, 절은 md.

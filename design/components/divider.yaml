@@ -1,0 +1,6 @@
+kind: divider
+description: A line between blocks.
+props: {}
+tokens:
+  border: color.border
+sample: {}

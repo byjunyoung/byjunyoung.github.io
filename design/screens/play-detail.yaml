@@ -1,0 +1,48 @@
+schema: doan/0.2
+id: scr_PLAYDETAIL
+screen: play-detail
+section: "06. Play - Detail"
+type: detail
+refs:
+  code: file:../src/components/pages/PlaygroundDetail.astro
+
+elements:
+  - { id: header, kind: site-header, lang: KR }
+  - { id: hero, kind: image, alt: textrip, size: full }
+  - id: detail
+    kind: group
+    children:
+      - id: head
+        kind: group
+        children:
+          - { id: title, kind: caption, text: textrip, style: title }
+          - { id: subtitle, kind: caption, text: 쥐고 굴리는 전자책 리더 }
+      - id: meta
+        kind: card
+        children:
+          - { id: m-year, kind: meta-row, label: YEAR, value: "2026" }
+          - { id: m-status, kind: meta-row, label: STATUS, value: 시제품 제작 중 }
+  - { id: body, kind: prose-section, heading: WHY, text: 본문은 src/content/playground/<slug>/index.md 가 정본이다. }
+  - id: next
+    kind: group
+    children:
+      - { id: next-line, kind: divider }
+      - { id: back, kind: caption, text: ← Play }
+  - { id: footer, kind: site-footer }
+
+layout:
+  root: { kind: stack, direction: column, align: stretch, gap: space.lg, padding: space.lg }
+  detail: { kind: grid, justify: start, columns: 2, gap: space.lg }
+  head: { kind: stack, direction: column, align: stretch, gap: space.2xs }
+  meta: { kind: stack, direction: column, align: stretch }
+  next: { kind: stack, direction: column, align: stretch, gap: space.lg }
+
+breakpoints:
+  mobile:
+    - { target: detail, layout: { kind: stack, direction: column, gap: space.lg } }
+
+flows:
+  - { from: back, to: play-list, gesture: tap, nav: replace }
+
+notes:
+  - 메타 줄 이름과 본문 절 제목(WHY)은 샘플이다 — 실제 행은 PlaygroundDetail.astro의 rows, 절은 md.

@@ -1,0 +1,27 @@
+kind: prose-section
+description: "상세 본문(마크다운)의 한 절 — 제목과 28×2 밑줄, 미디어 먼저, 글은 그리드 절반 폭"
+usage: { when: "작업·활동·플레이 상세의 본문 한 절을 모양으로 보일 때", not: "실제 문장 — 본문은 src/content/**/index.md가 정본이다" }
+anatomy: { heading: "PROBLEM · APPROACH …", media: "전폭 이미지 한 장(2·3열은 4:3 그리드)", text: "절반 폭 문단" }
+maps_to:
+  code: { import: src/styles/global.css, name: ".prose", note: "마크다운이 그리는 부분 — doan은 모양만 적고 문장은 적지 않는다" }
+props:
+  heading: { type: string, required: true }
+  text: { type: string }
+  media: { type: string }
+elements:
+  - id: head
+    kind: group
+    children:
+      - { id: heading, kind: caption, text: $heading, style: section }
+      - { id: rule, kind: divider }
+  - { id: media, kind: image, src: $media, alt: "", size: full, show_when: media }
+  - id: cols
+    kind: group
+    children:
+      - { id: text, kind: caption, text: $text, show_when: text }
+      - { id: empty, kind: group }
+layout:
+  root: { kind: stack, direction: column, align: stretch, gap: space.md }
+  head: { kind: stack, direction: column, align: stretch, gap: space.xs, size: sm }
+  cols: { kind: grid, justify: start, columns: 2, gap: space.lg }
+sample: { heading: PROBLEM, text: 절반 폭 문단 자리 }

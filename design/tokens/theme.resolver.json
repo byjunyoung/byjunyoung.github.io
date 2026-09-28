@@ -1,0 +1,37 @@
+{
+  "name": "theme",
+  "version": "2025.10",
+  "description": "원시 + 의미 위에 색. 사이트에 다크가 없어 light 하나.",
+  "sets": {
+    "base": {
+      "sources": [
+        {
+          "$ref": "primitive.tokens.json"
+        },
+        {
+          "$ref": "semantic.tokens.json"
+        }
+      ]
+    }
+  },
+  "modifiers": {
+    "theme": {
+      "contexts": {
+        "light": [
+          {
+            "$ref": "light.tokens.json"
+          }
+        ]
+      },
+      "default": "light"
+    }
+  },
+  "resolutionOrder": [
+    {
+      "$ref": "#/sets/base"
+    },
+    {
+      "$ref": "#/modifiers/theme"
+    }
+  ]
+}

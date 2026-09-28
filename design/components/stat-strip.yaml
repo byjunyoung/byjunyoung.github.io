@@ -1,0 +1,12 @@
+kind: stat-strip
+description: A row of headline numbers with labels.
+props:
+  stats:
+    type: list
+tokens:
+  text: color.text
+  muted: color.muted
+sample:
+  stats:
+    - Orders today
+    - Revenue

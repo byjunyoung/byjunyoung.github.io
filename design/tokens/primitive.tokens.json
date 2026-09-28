@@ -1,0 +1,311 @@
+{
+  "$description": "원시 값 — 사이트 src/styles/global.css :root 를 옮겨 적은 것. 정본은 사이트 CSS, 이 파일은 따라간다. 화면은 이 이름을 직접 쓰지 않는다.",
+  "gray": {
+    "$type": "color",
+    "0": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "hex": "#ffffff"
+      },
+      "$description": "--bg"
+    },
+    "50": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.969,
+          0.969,
+          0.961
+        ],
+        "hex": "#f7f7f5"
+      },
+      "$description": "--surface"
+    },
+    "100": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.937,
+          0.937,
+          0.925
+        ],
+        "hex": "#efefec"
+      },
+      "$description": "--tint — 미디어 로딩 바탕"
+    },
+    "300": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.839,
+          0.839,
+          0.824
+        ],
+        "hex": "#d6d6d2"
+      },
+      "$description": "--line — 헤어라인"
+    },
+    "600": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.42,
+          0.42,
+          0.42
+        ],
+        "hex": "#6b6b6b"
+      },
+      "$description": "--muted"
+    },
+    "900": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.086,
+          0.086,
+          0.086
+        ],
+        "hex": "#161616"
+      },
+      "$description": "--fg"
+    }
+  },
+  "blue": {
+    "400": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.357,
+          0.553,
+          1
+        ],
+        "hex": "#5b8dff"
+      }
+    },
+    "500": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.184,
+          0.435,
+          0.929
+        ],
+        "hex": "#2f6fed"
+      }
+    },
+    "$type": "color"
+  },
+  "red": {
+    "400": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.878,
+          0.38,
+          0.416
+        ],
+        "hex": "#e0616a"
+      }
+    },
+    "500": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.82,
+          0.263,
+          0.294
+        ],
+        "hex": "#d1434b"
+      }
+    },
+    "$type": "color"
+  },
+  "yellow": {
+    "100": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.957,
+          0.839
+        ],
+        "hex": "#fff4d6"
+      }
+    },
+    "500": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.878,
+          0.714,
+          0.29
+        ],
+        "hex": "#e0b64a"
+      }
+    },
+    "900": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.29,
+          0.239,
+          0.078
+        ],
+        "hex": "#4a3d14"
+      }
+    },
+    "$type": "color"
+  },
+  "size": {
+    "$type": "dimension",
+    "0": {
+      "$value": {
+        "value": 0,
+        "unit": "px"
+      }
+    },
+    "1": {
+      "$value": {
+        "value": 4,
+        "unit": "px"
+      }
+    },
+    "2": {
+      "$value": {
+        "value": 8,
+        "unit": "px"
+      }
+    },
+    "3": {
+      "$value": {
+        "value": 12,
+        "unit": "px"
+      }
+    },
+    "4": {
+      "$value": {
+        "value": 16,
+        "unit": "px"
+      }
+    },
+    "6": {
+      "$value": {
+        "value": 24,
+        "unit": "px"
+      }
+    },
+    "8": {
+      "$value": {
+        "value": 32,
+        "unit": "px"
+      }
+    },
+    "10": {
+      "$value": {
+        "value": 40,
+        "unit": "px"
+      }
+    },
+    "12": {
+      "$value": {
+        "value": 48,
+        "unit": "px"
+      }
+    },
+    "24": {
+      "$value": {
+        "value": 96,
+        "unit": "px"
+      }
+    },
+    "280": {
+      "$value": {
+        "value": 1120,
+        "unit": "px"
+      },
+      "$description": "--max — 본문 최대 폭"
+    }
+  },
+  "type": {
+    "sans": {
+      "$type": "fontFamily",
+      "$value": [
+        "Pretendard Variable",
+        "Pretendard",
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "system-ui",
+        "Apple SD Gothic Neo",
+        "Noto Sans KR",
+        "sans-serif"
+      ]
+    },
+    "xs": {
+      "$type": "dimension",
+      "$value": {
+        "value": 11,
+        "unit": "px"
+      },
+      "$description": "--fs-xs"
+    },
+    "sm": {
+      "$type": "dimension",
+      "$value": {
+        "value": 13,
+        "unit": "px"
+      },
+      "$description": "--fs-sm"
+    },
+    "base": {
+      "$type": "dimension",
+      "$value": {
+        "value": 15,
+        "unit": "px"
+      },
+      "$description": "--fs-md"
+    },
+    "lg": {
+      "$type": "dimension",
+      "$value": {
+        "value": 20,
+        "unit": "px"
+      },
+      "$description": "--fs-lg"
+    },
+    "xl": {
+      "$type": "dimension",
+      "$value": {
+        "value": 20,
+        "unit": "px"
+      }
+    },
+    "2xl": {
+      "$type": "dimension",
+      "$value": {
+        "value": 28,
+        "unit": "px"
+      }
+    },
+    "regular": {
+      "$type": "fontWeight",
+      "$value": 400
+    },
+    "medium": {
+      "$type": "fontWeight",
+      "$value": 500
+    },
+    "bold": {
+      "$type": "fontWeight",
+      "$value": 700
+    },
+    "semibold": {
+      "$type": "fontWeight",
+      "$value": 600
+    }
+  }
+}

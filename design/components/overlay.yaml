@@ -1,0 +1,10 @@
+kind: overlay
+description: A veil over a block that is busy, with a line of text.
+props:
+  text:
+    type: string
+tokens:
+  bg: color.bg
+  text: color.text
+sample:
+  text: Saving…

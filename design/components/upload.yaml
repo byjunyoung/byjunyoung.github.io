@@ -1,0 +1,17 @@
+kind: upload
+description: A file chooser.
+props:
+  label:
+    type: string
+  accept:
+    type: string
+  multiple:
+    type: boolean
+    default: false
+tokens:
+  bg: color.bg
+  text: color.text
+  border: color.border
+  radius: radius.sm
+sample:
+  label: Choose file

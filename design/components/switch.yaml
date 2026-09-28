@@ -1,0 +1,14 @@
+kind: switch
+description: On or off, as a toggle.
+props:
+  label:
+    type: string
+  on:
+    type: boolean
+    default: false
+tokens:
+  border: color.border
+  accent: color.primary
+sample:
+  label: Notifications
+  on: true

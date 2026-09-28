@@ -1,0 +1,14 @@
+kind: meta-row
+description: "상세 페이지 메타 표의 한 줄 — 작은 대문자 라벨 위, 값 아래, 줄 사이 헤어라인"
+anatomy: { label: "Organization · Year · Role …", value: "값 — 링크면 밑줄" }
+maps_to:
+  code: { import: src/components/MetaCard.astro, name: "MetaCard dl" }
+props:
+  label: { type: string, required: true }
+  value: { type: string, required: true }
+elements:
+  - { id: label, kind: caption, text: $label, style: eyebrow }
+  - { id: value, kind: caption, text: $value, style: lead }
+layout:
+  root: { kind: stack, direction: column, align: stretch, padding: space.sm }
+sample: { label: ROLE, value: UX Lead }

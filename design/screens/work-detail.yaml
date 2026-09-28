@@ -1,0 +1,67 @@
+schema: doan/0.2
+id: scr_WORKDETAIL
+screen: work-detail
+section: "02. Work - Detail"
+type: detail
+refs:
+  code: file:../src/components/pages/WorkDetail.astro
+
+elements:
+  - { id: header, kind: site-header, lang: KR }
+  - { id: hero, kind: image, alt: DEUX, size: full }
+  - id: detail
+    kind: group
+    children:
+      - id: head
+        kind: group
+        children:
+          - { id: title, kind: caption, text: DEUX, style: title }
+          - { id: subtitle, kind: caption, text: 양팔 휴머노이드 로봇의 표정·소리·목소리와 운영 콘솔 DEUX ON }
+      - id: meta
+        kind: card
+        children:
+          - { id: m-org, kind: meta-row, label: ORGANIZATION, value: XYZ Inc. }
+          - { id: m-year, kind: meta-row, label: YEAR, value: 2026 – 현재 }
+          - { id: m-role, kind: meta-row, label: ROLE, value: UX 디자이너 }
+          - { id: m-resp, kind: meta-row, label: RESPONSIBILITIES, value: "HRI Design, Expression & Sound, Product Design, Front-end" }
+          - { id: m-keywords, kind: meta-row, label: KEYWORDS, value: "humanoid, hri, expressive display, teleoperation, react" }
+          - { id: m-link, kind: meta-row, label: LINK, value: DEUX 홈페이지 }
+          - { id: m-press, kind: meta-row, label: PRESS, value: "전자신문, 머니투데이, 로봇신문" }
+  - id: body
+    kind: group
+    children:
+      - { id: problem, kind: prose-section, heading: PROBLEM, text: 본문은 src/content/works/deux/index.md 가 정본이다. }
+      - { id: approach, kind: prose-section, heading: APPROACH, media: "" }
+  - id: next
+    kind: group
+    children:
+      - { id: next-line, kind: divider }
+      - id: next-row
+        kind: group
+        children:
+          - { id: back, kind: caption, text: ← Work }
+          - { id: forward, kind: caption, text: Baris Brew → }
+  - { id: footer, kind: site-footer }
+
+layout:
+  root: { kind: stack, direction: column, align: stretch, gap: space.lg, padding: space.lg }
+  detail: { kind: grid, justify: start, columns: 2, gap: space.lg }
+  head: { kind: stack, direction: column, align: stretch, gap: space.2xs }
+  meta: { kind: stack, direction: column, align: stretch }
+  body: { kind: stack, direction: column, align: stretch, gap: space.xl }
+  next: { kind: stack, direction: column, align: stretch, gap: space.lg }
+  next-row: { kind: stack, direction: row, align: space-between }
+
+breakpoints:
+  mobile:
+    - { target: detail, layout: { kind: stack, direction: column, gap: space.lg } }
+
+flows:
+  - { from: back, to: work-home, gesture: tap, nav: replace }
+  - { from: forward, to: work-detail, gesture: tap, nav: replace, when: 다음 작업으로 }
+
+notes:
+  - 히어로는 루프 영상이 있으면 영상, 없으면 커버. 헤어라인 테두리.
+  - 메타 표는 값이 있는 줄만 보인다 — Organization · Year · Role · Responsibilities · With · Keywords · Link · Press · Awards 순.
+  - 본문 절은 모양만 적는다(제목+밑줄, 미디어 먼저, 글은 절반 폭). 절 목록·문장·이미지는 마크다운이 정본.
+  - 활동·플레이 상세도 같은 뼈대 — 다음 링크가 목록으로만 간다.

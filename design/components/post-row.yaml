@@ -1,0 +1,28 @@
+kind: post-row
+description: "블로그 글 목록의 한 줄 — 왼쪽 16:9 썸네일, 오른쪽 날짜·출처 → 큰 제목 → 한 줄 요약, 아래 헤어라인"
+usage: { when: "원문 링크로 가는 글 목록", not: "사진 카드 — entry-card(이미지 없는 글이 빈 카드로 남아 기각, 2026-09-06)" }
+anatomy: { thumb: "썸네일 — 없으면 검정 타이틀 카드", when: "날짜 · 출처", title: "제목", summary: "요약" }
+maps_to:
+  code: { import: src/components/pages/Blog.astro, name: ".posts li" }
+props:
+  when: { type: string, required: true }
+  title: { type: string, required: true }
+  summary: { type: string }
+  cover: { type: string }
+elements:
+  - id: row
+    kind: group
+    children:
+      - { id: thumb, kind: image, src: $cover, alt: "", size: md }
+      - id: body
+        kind: group
+        children:
+          - { id: when, kind: caption, text: $when, style: eyebrow }
+          - { id: title, kind: caption, text: $title, style: heading }
+          - { id: summary, kind: caption, text: $summary, style: muted, show_when: summary }
+  - { id: line, kind: divider }
+layout:
+  root: { kind: stack, direction: column, align: stretch }
+  row: { kind: grid, justify: start, columns: "1fr 4fr", gap: space.xl, padding: space.lg }
+  body: { kind: stack, direction: column, align: stretch, gap: space.xs }
+sample: { when: "2026-08 · LINKEDIN", title: 바리스브루 v4를 만들며, summary: 한 줄 요약 }

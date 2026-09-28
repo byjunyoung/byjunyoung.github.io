@@ -1,0 +1,28 @@
+kind: site-footer
+description: "모든 페이지 맨 아래 — 위 헤어라인, 왼쪽 이름·메일, 오른쪽 소셜 링크 셋"
+anatomy: { name: "이름", email: "메일 링크", links: "GitHub · LinkedIn · Instagram" }
+maps_to:
+  code: { import: src/layouts/Base.astro, name: footer.footer }
+props: {}
+elements:
+  - { id: line, kind: divider }
+  - id: row
+    kind: group
+    children:
+      - id: who
+        kind: group
+        children:
+          - { id: name, kind: caption, text: Junyoung Kim }
+          - { id: email, kind: caption, text: junyoung735@gmail.com }
+      - id: links
+        kind: group
+        children:
+          - { id: github, kind: caption, text: GitHub }
+          - { id: linkedin, kind: caption, text: LinkedIn }
+          - { id: instagram, kind: caption, text: Instagram }
+layout:
+  root: { kind: stack, direction: column, align: stretch, gap: space.lg }
+  row: { kind: stack, direction: row, align: space-between }
+  who: { kind: stack, direction: column, align: stretch }
+  links: { kind: stack, direction: row, gap: space.md }
+sample: {}

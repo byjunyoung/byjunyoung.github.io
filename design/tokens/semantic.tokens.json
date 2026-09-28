@@ -1,0 +1,261 @@
+{
+  "$description": "의미 토큰 — 화면·부품이 부르는 이름. 사이트 CSS의 쓰임을 따라 묶었다.",
+  "space": {
+    "$type": "dimension",
+    "2xs": {
+      "$value": "{size.1}"
+    },
+    "xs": {
+      "$value": "{size.2}"
+    },
+    "sm": {
+      "$value": "{size.3}"
+    },
+    "md": {
+      "$value": "{size.4}"
+    },
+    "lg": {
+      "$value": "{size.6}",
+      "$description": "--gap · --pad"
+    },
+    "xl": {
+      "$value": "{size.12}",
+      "$description": "라벨·소개 아래, 상세 머리 아래"
+    },
+    "2xl": {
+      "$value": "{size.24}",
+      "$description": "그리드·목록 아래, 다음 링크 위아래"
+    }
+  },
+  "radius": {
+    "$type": "dimension",
+    "none": {
+      "$value": "{size.0}"
+    },
+    "sm": {
+      "$value": "{size.0}",
+      "$description": "카드·표·히어로는 모서리 없음"
+    },
+    "md": {
+      "$value": "{size.0}"
+    },
+    "badge": {
+      "$value": {
+        "value": 2,
+        "unit": "px"
+      },
+      "$description": "배지·언어 토글·탭"
+    }
+  },
+  "font": {
+    "family": {
+      "$type": "fontFamily",
+      "$value": "{type.sans}"
+    },
+    "size": {
+      "$type": "dimension",
+      "xs": {
+        "$value": "{type.xs}"
+      },
+      "sm": {
+        "$value": "{type.sm}"
+      },
+      "md": {
+        "$value": "{type.base}"
+      },
+      "lg": {
+        "$value": "{type.lg}"
+      },
+      "xl": {
+        "$value": "{type.lg}"
+      },
+      "2xl": {
+        "$value": "{type.lg}"
+      }
+    },
+    "weight": {
+      "$type": "fontWeight",
+      "regular": {
+        "$value": "{type.regular}"
+      },
+      "medium": {
+        "$value": "{type.semibold}"
+      },
+      "bold": {
+        "$value": "{type.semibold}"
+      }
+    }
+  },
+  "control": {
+    "$type": "dimension",
+    "sm": {
+      "$value": "{size.6}"
+    },
+    "md": {
+      "$value": "{size.8}"
+    },
+    "lg": {
+      "$value": "{size.10}"
+    },
+    "xl": {
+      "$value": "{size.12}"
+    }
+  },
+  "text": {
+    "$type": "typography",
+    "display": {
+      "$value": {
+        "fontFamily": "{type.sans}",
+        "fontSize": "{type.lg}",
+        "fontWeight": "{type.semibold}",
+        "lineHeight": 1.35
+      },
+      "$description": "카드 타이틀 카드 글자, 목록 제목"
+    },
+    "heading": {
+      "$value": {
+        "fontFamily": "{type.sans}",
+        "fontSize": "{type.lg}",
+        "fontWeight": "{type.semibold}",
+        "lineHeight": 1.35
+      },
+      "$description": "상세 h1"
+    },
+    "title": {
+      "$value": {
+        "fontFamily": "{type.sans}",
+        "fontSize": "{type.base}",
+        "fontWeight": "{type.semibold}",
+        "lineHeight": 1.5
+      },
+      "$description": "카드 h2"
+    },
+    "body": {
+      "$value": {
+        "fontFamily": "{type.sans}",
+        "fontSize": "{type.base}",
+        "fontWeight": "{type.regular}",
+        "lineHeight": 1.65
+      },
+      "$description": "본문 — html 기본"
+    },
+    "label": {
+      "$value": {
+        "fontFamily": "{type.sans}",
+        "fontSize": "{type.sm}",
+        "fontWeight": "{type.semibold}",
+        "lineHeight": 1.5
+      },
+      "$description": "카드 org 줄"
+    },
+    "caption": {
+      "$value": {
+        "fontFamily": "{type.sans}",
+        "fontSize": "{type.sm}",
+        "fontWeight": "{type.regular}",
+        "lineHeight": 1.65
+      },
+      "$description": "카드 sub · 소개 · 메타 값"
+    },
+    "eyebrow": {
+      "$value": {
+        "fontFamily": "{type.sans}",
+        "fontSize": "{type.xs}",
+        "fontWeight": "{type.regular}",
+        "lineHeight": 1.4,
+        "letterSpacing": {
+          "value": 0.88,
+          "unit": "px"
+        }
+      },
+      "$description": "대문자 라벨 — 0.08em을 11px 기준 px로. 대문자 변환은 토큰으로 못 적어 글자 자체를 대문자로 쓴다"
+    },
+    "section": {
+      "$value": {
+        "fontFamily": "{type.sans}",
+        "fontSize": "{type.sm}",
+        "fontWeight": "{type.semibold}",
+        "lineHeight": 1.5,
+        "letterSpacing": {
+          "value": 0.78,
+          "unit": "px"
+        }
+      },
+      "$description": "본문 h2 — 0.06em@13px, 아래 28×2 밑줄은 부품 몫"
+    },
+    "mark": {
+      "$value": {
+        "fontFamily": "{type.sans}",
+        "fontSize": "{type.base}",
+        "fontWeight": "{type.semibold}",
+        "lineHeight": 1.4,
+        "letterSpacing": {
+          "value": 2.7,
+          "unit": "px"
+        }
+      },
+      "$description": "워드마크 — 0.18em@15px"
+    }
+  },
+  "surface": {
+    "page": {
+      "bg": {
+        "$value": "{color.bg}"
+      }
+    },
+    "card": {
+      "bg": {
+        "$value": "{color.bg}"
+      },
+      "border": {
+        "$value": "{color.border}"
+      },
+      "radius": {
+        "$value": "{radius.none}"
+      }
+    },
+    "raised": {
+      "bg": {
+        "$value": "{color.bg}"
+      },
+      "border": {
+        "$value": "{color.border}"
+      },
+      "radius": {
+        "$value": "{radius.none}"
+      }
+    },
+    "sunken": {
+      "bg": {
+        "$value": "{color.tint}"
+      },
+      "border": {
+        "$value": "{color.border}"
+      },
+      "radius": {
+        "$value": "{radius.none}"
+      }
+    },
+    "title-card": {
+      "bg": {
+        "$value": "{color.text}"
+      },
+      "border": {
+        "$value": "{color.text}"
+      },
+      "radius": {
+        "$value": "{radius.none}"
+      },
+      "text": {
+        "$value": "{color.surface}"
+      }
+    }
+  },
+  "layout": {
+    "$type": "dimension",
+    "max": {
+      "$value": "{size.280}",
+      "$description": "--max"
+    }
+  }
+}

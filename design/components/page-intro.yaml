@@ -1,0 +1,16 @@
+kind: page-intro
+description: "목록 페이지 머리 — 가운데 대문자 라벨과 회색 소개 한 단락"
+anatomy: { label: "페이지 이름 — h1", text: "소개 — 한/영 따로" }
+maps_to:
+  code: { import: src/styles/global.css, name: ".label + .intro" }
+props:
+  label: { type: string, required: true }
+  text: { type: string }
+tokens:
+  gap: space.xs
+elements:
+  - { id: label, kind: caption, text: $label, style: eyebrow }
+  - { id: text, kind: caption, text: $text, style: muted, show_when: text }
+layout:
+  root: { kind: stack, direction: column, align: center, gap: space.xs }
+sample: { label: WORK, text: 하드웨어 UX 디자이너. 화면 밖에 있는 제품의 경험을 설계합니다. }

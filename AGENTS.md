@@ -66,6 +66,13 @@ Junyoung Kim 포트폴리오. Astro 정적 사이트, GitHub Pages(main 푸시 �
 - 손으로 고친 md 는 덮어써진다. 특히 frontmatter `loop:` 는 임포터가 만들지 않으므로 다시 돌리면 사라진다. 다시 돌릴 일은 거의 없다 — 돌리기 전에 `git status` 가 깨끗한지 확인하고, 돌린 뒤 diff 를 검토한다.
 - 임포터 테스트: `npm run test:import` (python unittest, `tests/test_import.py`). `npm test` 에는 포함되지 않는다.
 
+## 디자인 파일 (doan, design/)
+- `design/`은 doan 프로젝트다. 사이트 화면 8장(페이지 유형 7 — 홈·작업 상세·활동 목록/상세·플레이 목록/상세·블로그·About)을 화면 파일(`design/screens/*.yaml`)로 옮겨 적은 것. 사이트 빌드와 무관하고 dist에 들어가지 않는다.
+- 정본은 여전히 사이트 코드다. 토큰(`design/tokens/`)은 `src/styles/global.css`를, 부품(`design/components/`)은 `src/components/`를 따라 적었다. CSS를 바꾸면 토큰도 맞춘다 — 반대 방향으로 자동 반영되는 것은 없다.
+- 본문 문장·이미지는 옮기지 않았다. 화면의 카드·글은 샘플이고 md가 정본.
+- MCP: 레포 루트 `.mcp.json`이 로컬 doan 소스(`../doan/src/cli.js`)를 띄운다 — 두 맥 모두 `~/Documents/Claude/doan`에 클론이 있어야 한다.
+- 뷰어: `node ../doan/src/cli.js serve design --port 4880` (4870·4871은 다른 doan 프로젝트가 쓴다). 검사: `node ../doan/src/cli.js lint design`.
+
 ## 검증
 - `npm test` = 빌드 + dist 검증. `npm run test:import` = 임포터 단위 테스트. `npm run check` = 타입.
 - 화면 확인은 `npm run dev` 후 크롬 스크린샷. 디자인 변경은 스크린샷을 사용자에게 보여주고 승인 후 push.

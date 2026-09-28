@@ -1,0 +1,41 @@
+kind: site-header
+description: "모든 페이지 맨 위 — 가운데 워드마크와 메뉴, 오른쪽 KR/EN 토글, 아래 헤어라인"
+usage: { when: "모든 페이지의 첫 요소", not: "페이지 안의 소제목 — page-intro" }
+anatomy: { mark: "워드마크 — About으로 간다", menu: "메뉴 다섯 개", lang: "언어 토글" }
+maps_to:
+  code: { import: src/layouts/Base.astro, name: header.nav, props: { lang: lang } }
+
+anchors: [mark, work, activity, play, blog, resume, lang]
+
+props:
+  lang: { type: enum, options: [KR, EN], default: KR }
+
+tokens:
+  gap: space.sm
+elements:
+  - id: bar
+    kind: group
+    children:
+      - { id: spacer, kind: group }
+      - id: center
+        kind: group
+        children:
+          - { id: mark, kind: caption, text: JUNYOUNG KIM, style: mark }
+          - id: menu
+            kind: group
+            children:
+              - { id: work, kind: caption, text: WORK, style: eyebrow }
+              - { id: activity, kind: caption, text: ACTIVITY, style: eyebrow }
+              - { id: play, kind: caption, text: PLAY, style: eyebrow }
+              - { id: blog, kind: caption, text: BLOG, style: eyebrow }
+              - { id: resume, kind: caption, text: RESUME, style: eyebrow }
+      - { id: lang, kind: segment, options: [KR, EN], selected: $lang }
+  - { id: line, kind: divider }
+layout:
+  root: { kind: stack, direction: column, align: stretch }
+  bar: { kind: grid, justify: start, columns: "1fr auto 1fr", padding: space.lg }
+  center: { kind: stack, direction: column, align: center, gap: space.xs }
+  menu: { kind: stack, direction: row, gap: space.md }
+  lang: { align: end }
+
+sample: { lang: KR }

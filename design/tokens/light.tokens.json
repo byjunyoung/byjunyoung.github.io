@@ -1,0 +1,140 @@
+{
+  "$description": "색 — 사이트는 라이트 하나뿐이다(다크 없음).",
+  "color": {
+    "$type": "color",
+    "bg": {
+      "$value": "{gray.0}"
+    },
+    "surface": {
+      "$value": "{gray.50}"
+    },
+    "border": {
+      "$value": "{gray.300}"
+    },
+    "text": {
+      "$value": "{gray.900}"
+    },
+    "muted": {
+      "$value": "{gray.600}"
+    },
+    "primary": {
+      "$value": "{gray.900}",
+      "$description": "선택된 언어 배지·탭 — 검정 반전"
+    },
+    "primary-text": {
+      "$value": "{gray.0}"
+    },
+    "danger": {
+      "$value": "{red.500}"
+    },
+    "placeholder": {
+      "$value": "{gray.50}"
+    },
+    "placeholder-border": {
+      "$value": "{gray.300}"
+    },
+    "tbd": {
+      "$value": "{yellow.100}"
+    },
+    "tbd-border": {
+      "$value": "{yellow.500}"
+    },
+    "tint": {
+      "$value": "{gray.100}",
+      "$description": "미디어·썸네일 로딩 바탕 — 남은 회색은 이것뿐"
+    }
+  },
+  "shadow": {
+    "$type": "shadow",
+    "sm": {
+      "$value": {
+        "color": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0.08,
+          "hex": "#000000"
+        },
+        "offsetX": {
+          "value": 0,
+          "unit": "px"
+        },
+        "offsetY": {
+          "value": 1,
+          "unit": "px"
+        },
+        "blur": {
+          "value": 2,
+          "unit": "px"
+        },
+        "spread": {
+          "value": 0,
+          "unit": "px"
+        }
+      }
+    },
+    "md": {
+      "$value": {
+        "color": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0.12,
+          "hex": "#000000"
+        },
+        "offsetX": {
+          "value": 0,
+          "unit": "px"
+        },
+        "offsetY": {
+          "value": 4,
+          "unit": "px"
+        },
+        "blur": {
+          "value": 12,
+          "unit": "px"
+        },
+        "spread": {
+          "value": 0,
+          "unit": "px"
+        }
+      }
+    },
+    "lg": {
+      "$value": {
+        "color": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0.16,
+          "hex": "#000000"
+        },
+        "offsetX": {
+          "value": 0,
+          "unit": "px"
+        },
+        "offsetY": {
+          "value": 12,
+          "unit": "px"
+        },
+        "blur": {
+          "value": 32,
+          "unit": "px"
+        },
+        "spread": {
+          "value": 0,
+          "unit": "px"
+        }
+      }
+    }
+  }
+}

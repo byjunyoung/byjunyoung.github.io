@@ -1,0 +1,27 @@
+kind: image
+description: A picture, at a size class.
+props:
+  size:
+    type: enum
+    options:
+      - sm
+      - md
+      - lg
+      - full
+    default: md
+  src:
+    type: string
+  alt:
+    type: string
+  fit:
+    type: enum
+    options:
+      - cover
+      - contain
+    default: cover
+    description: cover fills the box and crops; contain shows the whole picture
+tokens:
+  bg: color.surface
+  border: color.border
+sample:
+  size: md

@@ -1,0 +1,51 @@
+schema: doan/0.2
+id: scr_ABOUT
+screen: about
+section: "08. About - About"
+type: page
+refs:
+  code: file:../src/components/pages/About.astro
+
+elements:
+  - { id: header, kind: site-header, lang: KR }
+  - { id: intro, kind: page-intro, label: JUNYOUNG KIM, text: "스크린 밖에서 일어나는 경험을 설계하는 하드웨어 UX 디자이너입니다. 지금은 엑스와이지 로봇 디자인팀에서 UX 파트를 이끌고 있습니다." }
+  - id: search
+    kind: prose-section
+    heading: 01  두 번의 탐색
+    text: 기계공학에서 헤매다 UX를 만났고, UX 안에서 다시 하드웨어를 찾아 헤맸습니다. 하드웨어 UX라는 직군이 있는지조차 확신이 없던 때라, 기준을 스스로 만들어 가는 수밖에 없었는데요.
+  - id: timeline
+    kind: group
+    children:
+      - id: nodes
+        kind: group
+        children:
+          - { id: n2013, kind: list-cell, title: 홍익대 기계시스템디자인공학, subtitle: "2013", chevron: false }
+          - { id: n-army, kind: list-cell, title: "군대, 그리고 휴학", chevron: false }
+          - { id: n2017, kind: list-cell, title: SVIP 선발, subtitle: "2017", chevron: false }
+          - { id: n2018, kind: list-cell, title: ZIBOT 캘리포니아, subtitle: "2018", chevron: false }
+      - id: panel
+        kind: group
+        children:
+          - { id: panel-media, kind: image, alt: "", size: full }
+          - { id: panel-title, kind: caption, text: 홍익대 기계시스템디자인공학, style: title }
+          - { id: panel-link, kind: caption, text: 졸업생으로 다시 간 날 }
+  - { id: hwux, kind: prose-section, heading: 02  하드웨어 UX, media: "" }
+  - { id: footer, kind: site-footer }
+
+layout:
+  root: { kind: stack, direction: column, align: stretch, gap: space.xl, padding: space.lg }
+  timeline: { kind: grid, justify: start, columns: 2, gap: space.lg }
+  nodes: { kind: stack, direction: column, align: stretch }
+  panel: { kind: stack, direction: column, align: stretch, gap: space.sm }
+
+breakpoints:
+  mobile:
+    - { target: timeline, layout: { kind: stack, direction: column, gap: space.lg } }
+
+flows:
+  - { from: n2018, to: about, gesture: tap, when: 마디를 누르면 오른쪽 패널이 그 마디로 }
+
+notes:
+  - 내비에 없고 워드마크로만 들어온다.
+  - 타임라인은 마디를 가로 위치(x)로 밀어 "제 길 / 헤맨 것"을 보인다 — 곡선 연결과 들여쓰기는 doan 레이아웃 어휘로 못 적는다. 여기선 목록으로만.
+  - 절은 5개(두 번의 탐색 · 하드웨어 UX · 만들고 싶은 것 · 지금의 기준 · 그 밖에) — 샘플 둘. 절마다 16:9 사진 전폭 + 절반 폭 글.

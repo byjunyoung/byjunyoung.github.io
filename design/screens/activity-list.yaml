@@ -1,0 +1,36 @@
+schema: doan/0.2
+id: scr_ACTLIST
+screen: activity-list
+section: "03. Activity - List"
+type: gallery
+refs:
+  code: file:../src/components/pages/Activities.astro
+
+elements:
+  - { id: header, kind: site-header, lang: KR }
+  - id: intro
+    kind: page-intro
+    label: ACTIVITY
+    text: 제품 일 밖의 발표와 커뮤니티 활동입니다. 발표·강의, 하드웨어 UX 커뮤니티, UX 스터디 그룹, 프로토타이핑 동아리, 인턴십 프로그램, 그리고 짧은 유튜브 시리즈.
+  - id: grid
+    kind: group
+    children:
+      - { id: hongik-hri, kind: entry-card, title: 홍익대 HRI 수업 심사, line: Juror · 2026, sub: "Industry Juror, Human-Robot Interaction Class at Hongik University" }
+      - { id: hansung-talk, kind: entry-card, title: 한성과학고 특강, line: Speaker · 2024 – 2025, sub: Talks at Hansung Science High School }
+      - { id: wanted-uxcon, kind: entry-card, title: 원티드 UX 컨퍼런스, line: Speaker · 2025, sub: Talk at Wanted Online UX Conference 2025 }
+      - { id: hux, kind: entry-card, title: 설계자들, line: Co-Founder · 2024 - 2025 (2y), sub: Hardware UX Community }
+  - { id: footer, kind: site-footer }
+
+layout:
+  root: { kind: stack, direction: column, align: stretch, gap: space.lg, padding: space.lg }
+  grid: { kind: grid, justify: start, columns: 2, gap: space.lg }
+
+breakpoints:
+  mobile:
+    - { target: grid, layout: { kind: grid, columns: 1, gap: space.lg } }
+
+flows:
+  - { from: hongik-hri, to: activity-detail, gesture: tap, nav: push }
+
+notes:
+  - 카드는 샘플 넷이다. 실제는 src/content/activities 전부(지금 8개). 번호·배지·키워드 없이 역할 · 기간.

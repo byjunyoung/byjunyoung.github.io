@@ -1,0 +1,23 @@
+kind: caption
+description: "짧은 글 한 줄. style이 사이트 CSS의 글자 역할 하나를 고른다"
+maps_to:
+  code: { import: src/styles/global.css, name: text, props: { text: children, style: class }, note: "style 값은 사이트 CSS 클래스의 역할 이름 — .label · .mark · .prose h2 …" }
+
+props:
+  text: { type: string, required: true }
+  style: { type: enum, options: [ plain, title, strong, heading, lead, muted, eyebrow, mark, section ], default: plain }
+
+tokens:
+  text: color.text
+  font: text.body
+variants:
+  style:
+    title: { font: text.title }
+    strong: { font: text.label }
+    heading: { font: text.heading }
+    lead: { font: text.caption }
+    muted: { font: text.caption, text: color.muted }
+    eyebrow: { font: text.eyebrow, text: color.muted }
+    mark: { font: text.mark }
+    section: { font: text.section }
+sample: { text: JUNYOUNG KIM, style: mark }

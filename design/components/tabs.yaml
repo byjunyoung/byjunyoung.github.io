@@ -1,0 +1,13 @@
+kind: tabs
+description: Tabs that switch what is under them.
+anchors:
+  - tab
+props:
+  tabs:
+    type: list
+  active:
+    type: string
+sample:
+  tabs:
+    - Overview
+    - History
