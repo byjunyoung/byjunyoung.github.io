@@ -9,7 +9,7 @@ refs:
 elements:
   - { id: header, kind: site-header, lang: KR }
   - { id: label, kind: page-intro, label: Blog }
-  - { id: tabs, kind: tabs, tabs: [Posts, HW UX], active: Posts }
+  - { id: tabs, kind: segment, options: [Posts, HW UX], selected: Posts, apart: true }
   - { id: intro, kind: page-intro, label: " ", text: "글, 발표, 기사. 대부분 하드웨어 UX와 로봇 이야기입니다." }
   - id: posts
     kind: group
@@ -27,7 +27,7 @@ layout:
 
 states:
   Resources:
-    - { target: tabs, set: { active: HW UX } }
+    - { target: tabs, set: { selected: HW UX } }
     - { target: intro, set: { text: "하드웨어 UX가 정확히 어떤 일을 하는 직군인지 설명할 자료가 마땅치 않아, 2018년 학부생 때부터 스스로 찾아 읽으며 모아온 책과 글입니다." } }
     - target: posts
       replace:
@@ -39,9 +39,9 @@ states:
           - { id: r3, kind: list-cell, title: "Designing Connected Products: UX for the Consumer Internet of Things", chevron: false }
 
 flows:
-  - { from: tabs, via: tab, to: blog.Resources, gesture: tap, when: HW UX 탭 }
+  - { from: tabs, via: option, to: blog.Resources, gesture: tap, when: HW UX 탭 }
 
 notes:
-  - 탭은 CSS 라디오 — 페이지 이동 없이 패널만 바뀐다.
+  - 탭은 CSS 라디오 — 페이지 이동 없이 패널만 바뀐다. 모양은 테두리 버튼(segment apart), 고른 칸만 검정.
   - 글 줄은 원문 링크로 나간다(사이트 안 상세 없음). 썸네일 없는 글은 검정 타이틀 카드, 모바일에선 숨김.
   - 글 샘플 셋 — 실제는 src/content/writing 전부(지금 20개). HW UX 목록은 src/content/resources.yaml, 책은 표지 썸네일이 붙는다.

@@ -1,19 +1,31 @@
 kind: segment
-description: One option from a few; selected names the current one.
+description: "몇 개 중 하나를 고르는 버튼 줄 — 언어 토글(붙은 칸), 블로그 탭(apart: 떨어진 칸). 고른 칸만 검정"
 anchors:
   - option
+maps_to:
+  code: { import: src/styles/global.css, name: ".lang · .tabnav", note: "언어 토글은 .lang a, 블로그 탭은 .tabnav label(CSS 라디오)" }
 props:
   options:
     type: list
   selected:
     type: string
+  apart:
+    type: boolean
+    default: false
+    description: 칸 사이를 띄우고 칸마다 테두리 — 블로그 탭
 tokens:
   bg: color.primary
   text: color.primary-text
   border: color.border
   radius: radius.badge
+  idle: color.bg
+  muted: color.muted
+  font: text.eyebrow
+  padding: space.sm
+variants:
+  apart:
+    "true": { gap: space.xs }
 sample:
-  options:
-    - HOT
-    - ICED
-  selected: ICED
+  options: [Posts, HW UX]
+  selected: Posts
+  apart: true
