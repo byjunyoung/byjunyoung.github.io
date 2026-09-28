@@ -8,16 +8,16 @@ refs:
 
 elements:
   - { id: header, kind: site-header, lang: KR }
-  - { id: label, kind: page-intro, label: BLOG }
-  - { id: tabs, kind: segment, options: [POSTS, HW UX], selected: POSTS }
+  - { id: label, kind: page-intro, label: Blog }
+  - { id: tabs, kind: tabs, tabs: [Posts, HW UX], active: Posts }
   - { id: intro, kind: page-intro, label: " ", text: "글, 발표, 기사. 대부분 하드웨어 UX와 로봇 이야기입니다." }
   - id: posts
     kind: group
     children:
       - { id: top-line, kind: divider }
-      - { id: p1, kind: post-row, when: 2026-08-27 · LINKEDIN, title: 디자인하고 기획하는 사람을 위한 Claude Code 스킬 18개 공개, summary: 화면을 그리는 일만큼 정리하고 조율하는 일이 많아지면서 실무에서 하나씩 만든 스킬. 매일 쓰고 있고 UX 파트원들도 함께 쓴다. }
-      - { id: p2, kind: post-row, when: 2026-08-09 · LINKEDIN, title: 어느새 딱 1년이 되었습니다, summary: 작년 8월 4일 XYZ에 합류해 1년. 시장도 제품의 우선순위도 계속 바뀌던 시간을 돌아본다. }
-      - { id: p3, kind: post-row, when: 2026-06-23 · LINKEDIN, title: 홍익대학교 디자인 엔지니어링 학생들의 HRI 수업 결과물, summary: "HRI 수업 발표회에 산업체 심사위원으로, 융합전공 설명회에 졸업생으로 다녀온 이야기." }
+      - { id: p1, kind: post-row, when: 2026-08-27 · LinkedIn, title: 디자인하고 기획하는 사람을 위한 Claude Code 스킬 18개 공개, summary: 화면을 그리는 일만큼 정리하고 조율하는 일이 많아지면서 실무에서 하나씩 만든 스킬. 매일 쓰고 있고 UX 파트원들도 함께 쓴다. }
+      - { id: p2, kind: post-row, when: 2026-08-09 · LinkedIn, title: 어느새 딱 1년이 되었습니다, summary: 작년 8월 4일 XYZ에 합류해 1년. 시장도 제품의 우선순위도 계속 바뀌던 시간을 돌아본다. }
+      - { id: p3, kind: post-row, when: 2026-06-23 · LinkedIn, title: 홍익대학교 디자인 엔지니어링 학생들의 HRI 수업 결과물, summary: "HRI 수업 발표회에 산업체 심사위원으로, 융합전공 설명회에 졸업생으로 다녀온 이야기." }
   - { id: footer, kind: site-footer }
 
 layout:
@@ -27,21 +27,21 @@ layout:
 
 states:
   Resources:
-    - { target: tabs, set: { selected: HW UX } }
+    - { target: tabs, set: { active: HW UX } }
     - { target: intro, set: { text: "하드웨어 UX가 정확히 어떤 일을 하는 직군인지 설명할 자료가 마땅치 않아, 2018년 학부생 때부터 스스로 찾아 읽으며 모아온 책과 글입니다." } }
     - target: posts
       replace:
         kind: section
-        title: BOOKS
+        title: Books
         children:
           - { id: r1, kind: list-cell, title: Understanding Industrial Design, chevron: false }
           - { id: r2, kind: list-cell, title: "The Hardware Startup: Building Your Product, Business, and Brand", chevron: false }
           - { id: r3, kind: list-cell, title: "Designing Connected Products: UX for the Consumer Internet of Things", chevron: false }
 
 flows:
-  - { from: tabs, to: blog.Resources, gesture: tap, when: HW UX 탭 }
+  - { from: tabs, via: tab, to: blog.Resources, gesture: tap, when: HW UX 탭 }
 
 notes:
-  - 탭은 CSS 라디오 — 페이지 이동 없이 패널만 바뀐다. 모양이 같은 segment로 그린다(기본 세트 tabs는 그림이 없다).
+  - 탭은 CSS 라디오 — 페이지 이동 없이 패널만 바뀐다.
   - 글 줄은 원문 링크로 나간다(사이트 안 상세 없음). 썸네일 없는 글은 검정 타이틀 카드, 모바일에선 숨김.
   - 글 샘플 셋 — 실제는 src/content/writing 전부(지금 20개). HW UX 목록은 src/content/resources.yaml, 책은 표지 썸네일이 붙는다.

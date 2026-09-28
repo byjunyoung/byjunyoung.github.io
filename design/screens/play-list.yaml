@@ -10,7 +10,7 @@ elements:
   - { id: header, kind: site-header, lang: KR }
   - id: intro
     kind: page-intro
-    label: PLAY
+    label: Play
     text: 회사 일 밖에서 재미로 만드는 것들입니다. 풋살 팀 웹앱, 디자인·기획 일을 돕는 AI 도구, 그리고 손에 쥐는 하드웨어 프로토타입.
   - id: grid
     kind: group

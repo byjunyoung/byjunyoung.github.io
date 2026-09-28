@@ -20,15 +20,15 @@ elements:
       - id: center
         kind: group
         children:
-          - { id: mark, kind: caption, text: JUNYOUNG KIM, style: mark }
+          - { id: mark, kind: caption, text: Junyoung Kim, style: mark }
           - id: menu
             kind: group
             children:
-              - { id: work, kind: caption, text: WORK, style: eyebrow }
-              - { id: activity, kind: caption, text: ACTIVITY, style: eyebrow }
-              - { id: play, kind: caption, text: PLAY, style: eyebrow }
-              - { id: blog, kind: caption, text: BLOG, style: eyebrow }
-              - { id: resume, kind: caption, text: RESUME, style: eyebrow }
+              - { id: work, kind: caption, text: work, style: eyebrow }
+              - { id: activity, kind: caption, text: activity, style: eyebrow }
+              - { id: play, kind: caption, text: play, style: eyebrow }
+              - { id: blog, kind: caption, text: blog, style: eyebrow }
+              - { id: resume, kind: caption, text: resume, style: eyebrow }
       - { id: lang, kind: segment, options: [KR, EN], selected: $lang }
   - { id: line, kind: divider }
 layout:

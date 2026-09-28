@@ -23,6 +23,6 @@ elements:
   - { id: line, kind: divider }
 layout:
   root: { kind: stack, direction: column, align: stretch }
-  row: { kind: grid, justify: start, columns: "1fr 4fr", gap: space.xl, padding: space.lg }
+  row: { kind: grid, justify: start, columns: "1fr 4fr", gap: space.xl, padding: [space.lg, 0] }
   body: { kind: stack, direction: column, align: stretch, gap: space.xs }
-sample: { when: "2026-08 · LINKEDIN", title: 바리스브루 v4를 만들며, summary: 한 줄 요약 }
+sample: { when: "2026-08 · LinkedIn", title: 바리스브루 v4를 만들며, summary: 한 줄 요약 }

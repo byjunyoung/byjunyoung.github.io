@@ -14,6 +14,7 @@ props:
   cover: { type: string }
 tokens:
   surface: surface.card
+  badge.font: text.eyebrow
 elements:
   - { id: media, kind: image, src: $cover, alt: "", size: full, fit: cover }
   - id: body

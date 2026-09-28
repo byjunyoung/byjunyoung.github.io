@@ -10,5 +10,5 @@ elements:
   - { id: label, kind: caption, text: $label, style: eyebrow }
   - { id: value, kind: caption, text: $value, style: lead }
 layout:
-  root: { kind: stack, direction: column, align: stretch, padding: space.sm }
-sample: { label: ROLE, value: UX Lead }
+  root: { kind: stack, direction: column, align: stretch, padding: [space.sm, space.md] }
+sample: { label: Role, value: UX Lead }

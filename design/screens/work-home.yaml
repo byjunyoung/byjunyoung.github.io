@@ -10,15 +10,15 @@ elements:
   - { id: header, kind: site-header, lang: KR }
   - id: intro
     kind: page-intro
-    label: WORK
+    label: Work
     text: 하드웨어 UX 디자이너. 화면 밖에 있는 제품의 경험, 형태·촉각·공간·피드백을 설계합니다. XYZ 로봇디자인팀 UX 리드이고, 그 전 3년은 닷에서 촉각 디스플레이 닷패드와 CES 2024 Innovation Award를 받은 닷 캔버스를 맡았습니다.
   - id: grid
     kind: group
     children:
-      - { id: deux, kind: entry-card, title: DEUX, index: "01", line: XYZ Inc. · 2026 – 현재, sub: 양팔 휴머노이드 로봇의 표정·소리·목소리와 운영 콘솔 DEUX ON, badge: CASE STUDY, meta: HRI DESIGN · EXPRESSION & SOUND · PRODUCT DESIGN · FRONT-END }
-      - { id: barisbrew, kind: entry-card, title: Baris Brew, index: "02", line: XYZ Inc. · 2025 – 현재, sub: 바리스타 로봇 시스템의 고객·운영자 통합 UX, badge: CASE STUDY, meta: SYSTEM UX · VOICE UX · UX DESIGN OPS }
-      - { id: dotcanvas, kind: entry-card, title: Dot Pad & Dot Canvas, index: "03", line: Dot Inc. · 2022 – 2025, sub: 촉각 디스플레이와 촉각 그래픽 저작 툴의 UX, badge: CASE STUDY, meta: HARDWARE UX DESIGN · UX RESEARCH · WIREFRAME · GUI DESIGN }
-      - { id: storagy, kind: entry-card, title: STORAGY, index: "04", line: XYZ Inc. · 2025 – 현재, sub: 실내 배송 로봇의 비언어적 HRI, badge: CASE STUDY, meta: HRI DESIGN · LED & SOUND FEEDBACK · EXPRESSIVE DISPLAY }
+      - { id: deux, kind: entry-card, title: DEUX, index: "01", line: XYZ Inc. · 2026 – 현재, sub: 양팔 휴머노이드 로봇의 표정·소리·목소리와 운영 콘솔 DEUX ON, badge: Case study, meta: HRI Design · Expression & Sound · Product Design · Front-end }
+      - { id: barisbrew, kind: entry-card, title: Baris Brew, index: "02", line: XYZ Inc. · 2025 – 현재, sub: 바리스타 로봇 시스템의 고객·운영자 통합 UX, badge: Case study, meta: System UX · Voice UX · UX Design Ops }
+      - { id: dotcanvas, kind: entry-card, title: Dot Pad & Dot Canvas, index: "03", line: Dot Inc. · 2022 – 2025, sub: 촉각 디스플레이와 촉각 그래픽 저작 툴의 UX, badge: Case study, meta: Hardware UX Design · UX Research · Wireframe · GUI Design }
+      - { id: storagy, kind: entry-card, title: STORAGY, index: "04", line: XYZ Inc. · 2025 – 현재, sub: 실내 배송 로봇의 비언어적 HRI, badge: Case study, meta: HRI Design · LED & Sound Feedback · Expressive Display }
   - { id: footer, kind: site-footer }
 
 layout:

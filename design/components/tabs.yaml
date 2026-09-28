@@ -2,11 +2,19 @@ kind: tabs
 description: Tabs that switch what is under them.
 anchors:
   - tab
+maps_to:
+  antd: Tabs
+  mui: Tabs
 props:
   tabs:
     type: list
   active:
     type: string
+# the active tab's text and underline; the rest in muted
+tokens:
+  text: color.text
+  muted: color.muted
+  border: color.primary
 sample:
   tabs:
     - Overview

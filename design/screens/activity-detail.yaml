@@ -20,8 +20,8 @@ elements:
       - id: meta
         kind: card
         children:
-          - { id: m-role, kind: meta-row, label: ROLE, value: Juror }
-          - { id: m-period, kind: meta-row, label: PERIOD, value: "2026" }
+          - { id: m-role, kind: meta-row, label: Role, value: Juror }
+          - { id: m-period, kind: meta-row, label: Period, value: "2026" }
   - { id: body, kind: prose-section, heading: OVERVIEW, text: 본문은 src/content/activities/<slug>/index.md 가 정본이다. }
   - id: next
     kind: group

@@ -13,4 +13,5 @@ elements:
   - { id: text, kind: caption, text: $text, style: muted, show_when: text }
 layout:
   root: { kind: stack, direction: column, align: center, gap: space.xs }
-sample: { label: WORK, text: 하드웨어 UX 디자이너. 화면 밖에 있는 제품의 경험을 설계합니다. }
+  text: { align: center }
+sample: { label: Work, text: 하드웨어 UX 디자이너. 화면 밖에 있는 제품의 경험을 설계합니다. }

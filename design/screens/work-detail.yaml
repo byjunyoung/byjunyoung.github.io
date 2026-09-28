@@ -20,13 +20,13 @@ elements:
       - id: meta
         kind: card
         children:
-          - { id: m-org, kind: meta-row, label: ORGANIZATION, value: XYZ Inc. }
-          - { id: m-year, kind: meta-row, label: YEAR, value: 2026 – 현재 }
-          - { id: m-role, kind: meta-row, label: ROLE, value: UX 디자이너 }
-          - { id: m-resp, kind: meta-row, label: RESPONSIBILITIES, value: "HRI Design, Expression & Sound, Product Design, Front-end" }
-          - { id: m-keywords, kind: meta-row, label: KEYWORDS, value: "humanoid, hri, expressive display, teleoperation, react" }
-          - { id: m-link, kind: meta-row, label: LINK, value: DEUX 홈페이지 }
-          - { id: m-press, kind: meta-row, label: PRESS, value: "전자신문, 머니투데이, 로봇신문" }
+          - { id: m-org, kind: meta-row, label: Organization, value: XYZ Inc. }
+          - { id: m-year, kind: meta-row, label: Year, value: 2026 – 현재 }
+          - { id: m-role, kind: meta-row, label: Role, value: UX 디자이너 }
+          - { id: m-resp, kind: meta-row, label: Responsibilities, value: "HRI Design, Expression & Sound, Product Design, Front-end" }
+          - { id: m-keywords, kind: meta-row, label: Keywords, value: "humanoid, hri, expressive display, teleoperation, react" }
+          - { id: m-link, kind: meta-row, label: Link, value: DEUX 홈페이지 }
+          - { id: m-press, kind: meta-row, label: Press, value: "전자신문, 머니투데이, 로봇신문" }
   - id: body
     kind: group
     children:

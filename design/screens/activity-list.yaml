@@ -10,7 +10,7 @@ elements:
   - { id: header, kind: site-header, lang: KR }
   - id: intro
     kind: page-intro
-    label: ACTIVITY
+    label: Activity
     text: 제품 일 밖의 발표와 커뮤니티 활동입니다. 발표·강의, 하드웨어 UX 커뮤니티, UX 스터디 그룹, 프로토타이핑 동아리, 인턴십 프로그램, 그리고 짧은 유튜브 시리즈.
   - id: grid
     kind: group

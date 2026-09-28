@@ -20,8 +20,8 @@ elements:
       - id: meta
         kind: card
         children:
-          - { id: m-year, kind: meta-row, label: YEAR, value: "2026" }
-          - { id: m-status, kind: meta-row, label: STATUS, value: 시제품 제작 중 }
+          - { id: m-year, kind: meta-row, label: Year, value: "2026" }
+          - { id: m-status, kind: meta-row, label: Status, value: 시제품 제작 중 }
   - { id: body, kind: prose-section, heading: WHY, text: 본문은 src/content/playground/<slug>/index.md 가 정본이다. }
   - id: next
     kind: group

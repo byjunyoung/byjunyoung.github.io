@@ -166,9 +166,10 @@
         "letterSpacing": {
           "value": 0.88,
           "unit": "px"
-        }
+        },
+        "textCase": "upper"
       },
-      "$description": "대문자 라벨 — 0.08em을 11px 기준 px로. 대문자 변환은 토큰으로 못 적어 글자 자체를 대문자로 쓴다"
+      "$description": "대문자 라벨 — 0.08em을 11px 기준 px로. 대문자는 textCase(피그마 Case)"
     },
     "section": {
       "$value": {
@@ -192,7 +193,8 @@
         "letterSpacing": {
           "value": 2.7,
           "unit": "px"
-        }
+        },
+        "textCase": "upper"
       },
       "$description": "워드마크 — 0.18em@15px"
     }
