@@ -18,7 +18,7 @@ elements:
       - { id: textrip, kind: entry-card, title: textrip, line: 2026 · 시제품 제작 중, sub: 쥐고 굴리는 전자책 리더 }
       - { id: weekly-fc, kind: entry-card, title: WEEKLY FC, line: 2026 · 운영 중, sub: 매주 토요일 모이는 풋살 팀의 웹 포털 }
       - { id: fig-pm, kind: entry-card, title: fig · pm, line: 2026 · 공개·사용 중, sub: 디자인·기획 일을 위한 Claude Code 플러그인 }
-      - { id: doan, kind: entry-card, title: doan, line: 2026 · npm 공개 (0.2.0), sub: "화면을 파일로 두고, 에이전트가 그리는 디자인 도구" }
+      - { id: doan, kind: entry-card, title: doan, line: 2026 · npm 공개, sub: "화면을 파일로 두고, 에이전트가 그리는 디자인 도구" }
   - { id: footer, kind: site-footer }
 
 layout:

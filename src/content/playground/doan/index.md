@@ -3,7 +3,7 @@ title: "doan"
 subtitle: "화면을 파일로 두고, 에이전트가 그리는 디자인 도구"
 year: "2026"
 stack: "Node, YAML, MCP, antd·MUI"
-status: "npm 공개 (0.2.0)"
+status: "npm 공개"
 links: [{ label: "GitHub", url: "https://github.com/byjunyoung/doan" }, { label: "npm", url: "https://www.npmjs.com/package/@junyoung735/doan" }]
 cover: ./cover.png
 order: 5
