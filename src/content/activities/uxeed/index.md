@@ -3,7 +3,7 @@ title: "UXeed"
 subtitle: "UX Study Club"
 role: "Lead Manager"
 period: "2022 – 2024 (2y)"
-links: [{ label: "Instagram", url: "https://www.instagram.com/ux.eed/" }, { label: "Linkedin", url: "https://www.linkedin.com/groups/14117035/" }]
+links: [{ label: "Instagram", url: "https://www.instagram.com/ux.eed/" }, { label: "LinkedIn", url: "https://www.linkedin.com/groups/14117035/" }]
 cover: ./cover.jpeg
 order: 6
 draft: false

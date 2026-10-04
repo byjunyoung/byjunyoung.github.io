@@ -1,15 +1,15 @@
 ---
-title: "Seolgyejadeul"
+title: "The Architects"
 subtitle: "Hardware UX Community"
 role: "Co-Founder"
 period: "2024 – 2025 (2y)"
-links: [{ label: "Home", url: "https://uxdesigners.notion.site/2962d67da32c4f218fbea5944f612e60" }, { label: "Instagram", url: "https://www.instagram.com/designers.ux/" }, { label: "Linkedin", url: "https://www.linkedin.com/groups/14382655/" }]
+links: [{ label: "Home", url: "https://uxdesigners.notion.site/2962d67da32c4f218fbea5944f612e60" }, { label: "Instagram", url: "https://www.instagram.com/designers.ux/" }, { label: "LinkedIn", url: "https://www.linkedin.com/groups/14382655/" }]
 cover: ./cover.png
 order: 5
 draft: false
 ---
 
-[**Seolgyejadeul**](https://uxdesigners.notion.site/2962d67da32c4f218fbea5944f612e60) is a community for practitioners working on hardware and auditory experience, started together with the co-organizers of [UXeed](/en/activity/uxeed). I co-founded and ran the hardware experience group, which drew about 20 practitioners and researchers.
+[The Architects](https://uxdesigners.notion.site/2962d67da32c4f218fbea5944f612e60) is a community for practitioners working on hardware and auditory experience, started together with the co-organizers of [UXeed](/en/activity/uxeed). I co-founded and ran the hardware experience group, which drew about 20 practitioners and researchers.
 
 The book study was the centre of it. One book takes five weeks: four spent reading alone, the fifth in a room together. Each week had its assigned pages and its deadline, and every member kept a log with three things in it. A passage that struck them and what they made of it, three things the week gave them, and one question for the others.
 

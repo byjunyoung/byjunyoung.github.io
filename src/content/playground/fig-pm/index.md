@@ -3,7 +3,7 @@ title: "fig · pm"
 subtitle: "디자인·기획 일을 위한 Claude Code 플러그인"
 year: "2026"
 stack: "Claude Code 스킬, Figma Plugin API, Python"
-status: "공개·사용 중"
+status: "공개"
 links: [{ label: "GitHub", url: "https://github.com/byjunyoung/claude-product-skills" }]
 cover: ./cover.png
 order: 4
@@ -18,10 +18,10 @@ fig는 화면을 그리기 전후를 맡습니다. 그려야 할 목록을 뽑�
 
 실무에서 하나씩 만든 스킬이라 매일 쓰고 있고, UX 파트원들도 함께 씁니다.
 
-![fig가 한 섹션에서 잡아낸 세 가지 문제](./01.png)
+![fig가 한 섹션에서 잡아낸 3가지 문제](./01.png)
 
 ![아무도 안 그린 화면을 자리표시 프레임으로 먼저 채워 둔 모습](./02.png)
 
-![fig와 pm이 서로를 부르지 않고 설정 두 가지만 공유하는 구조](./03.png)
+![fig와 pm이 서로를 부르지 않고 설정 2가지만 공유하는 구조](./03.png)
 
 ![개발 서버 화면을 기획서와 대조해 쓴 QA 결함 보고서](./04.png)

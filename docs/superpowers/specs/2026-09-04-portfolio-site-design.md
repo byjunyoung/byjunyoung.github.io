@@ -63,7 +63,7 @@
    - 메타 필드: ORGANIZATION · YEAR · ROLE · RESPONSIBILITIES · WITH · KEYWORDS · LINK. 선택: PRESS · AWARDS.
 3. 본문 안에 전폭 미디어·2-up 미디어·인용 박스가 섞임.
 4. 하단: 다음 프로젝트 링크.
-- 본문 헤딩(PROBLEM / APPROACH / IMPLEMENTATION / IMPACT / REFLECTION)은 강제가 아니라 관례. note만 있는 항목은 Note 한 단락.
+- 본문 헤딩(PROBLEM / APPROACH / SOLUTION / IMPLEMENTATION / PROTOTYPING / IMPACT / REFLECTION, PROTOTYPING은 하드웨어 제작이 있는 케이스만)은 강제가 아니라 관례. note만 있는 항목은 Note 한 단락.
 
 ### 활동
 - 목록: 이름 / 한 줄 / 역할 / 기간. 상세는 프로젝트와 같은 레이아웃의 축소판.
@@ -198,7 +198,7 @@ activities frontmatter: title, subtitle, role, period, links[], cover, order, dr
 - 공개 금지: weekly-fc 화면의 팀원 실명(캡처 시 가명으로 바꿔 찍음)·계좌번호·구장명, 회사명이 섞인 예시 화면.
 
 - **Activities 범위 확장**: 커뮤니티·인턴십에 더해 **발표·강의·심사**도 활동으로 둔다. 원티드 온라인 UX 컨퍼런스 발표(2025-07-09), 한성과학고 영재교육원 진로 특강(2025-10-25)과 한성과학고 동아리 특강(2024-09-09 닷 소속 접근성 특강·닷패드 체험 — 별개 행사라 활동을 나눔, 2026-10-04 사용자 지적), 홍익대 디자인엔지니어링 HRI 수업 심사·융합전공 설명회(2026-06-19). 같은 글의 Blog 링크는 그대로 두고 활동 상세에서 링크로 잇는다(About 타임라인이 원티드 글을 참조).
-- 활동 사진은 사진 앱 원본에서 가져오되 EXIF·GPS를 지우고, 학생·청중 얼굴과 이름표가 보이는 컷은 쓰지 않는다. 학생 후기 원문은 옮기지 않는다.
+- 활동 사진은 사진 앱 원본에서 가져오되 EXIF·GPS를 지우고, 학생·청중 얼굴과 이름표가 보이는 컷은 쓰지 않는다. 이름·얼굴이 드러나지 않는 학생 소감문은 발췌 인용할 수 있다(2026-10-04, 한성과학고 진로 특강).
 
 ## 15. 메뉴 이름·주소 통일 (2026-09-24)
 

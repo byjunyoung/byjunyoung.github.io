@@ -9,7 +9,7 @@ order: 7
 draft: false
 ---
 
-DINO is a making club in the design department at [**UNIST**](https://www.unist.ac.kr/), planning and running projects with Arduino, Raspberry Pi, and the like.
+DINO is a making club in the design department at [UNIST](https://www.unist.ac.kr/), planning and running projects with Arduino, Raspberry Pi, and the like.
 
 I joined DINO in 2021 while in graduate school at UNIST.
 

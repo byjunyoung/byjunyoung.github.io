@@ -3,7 +3,7 @@ title: "doan"
 subtitle: "A design tool where screens are files and the agent draws"
 year: "2026"
 stack: "Node, YAML, MCP, antd·MUI"
-status: "Published on npm"
+status: "Public"
 links: [{ label: "GitHub", url: "https://github.com/byjunyoung/doan" }, { label: "npm", url: "https://www.npmjs.com/package/@junyoung735/doan" }]
 cover: ./cover.png
 order: 5

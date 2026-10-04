@@ -41,7 +41,7 @@ The paper itself took work. A round card is easy to feed into the device but lea
 
 ## SOLUTION
 
-![A hand writing a message on a round paper card](./02.jpg) ![Inserting the written card into the slot on top of Birdy, with the emoji card box beside it](./03.jpg) ![Pushing a card into the Birdy body](./04.jpg)
+![A hand writing a message on a round-cornered paper card](./02.jpg) ![Inserting the written card into the slot on top of Birdy, with the emoji card box beside it](./03.jpg) ![Pushing a card into the Birdy body](./04.jpg)
 
 ![Close-up of the round-cornered slot the card goes into](./06.jpg) ![Hands leafing through emoji cards printed with a heart and faces](./05.jpg) ![The grandchild's phone thread, where the handwritten message arrives as an image](./07.jpg)
 

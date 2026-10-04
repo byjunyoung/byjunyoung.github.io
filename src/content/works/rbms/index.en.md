@@ -30,7 +30,7 @@ My part began with defining what would be managed, what state each thing reports
 
 **State was reduced to four fields.** To read eight different things side by side on one screen, the axes have to match: battery, location, operating state, and current task. Facilities have no battery and never move, but the fields stay in place rather than disappear. A list whose rows shift shape is harder to read, not easier.
 
-**Silence was separated from being switched off.** If a robot has not refreshed its state for thirty seconds, the server moves it to disconnected. A robot someone turned off and a robot that stopped answering call for different actions.
+**Silence was separated from being switched off.** If a robot has not refreshed its state for 30 seconds, the server moves it to disconnected. A robot someone turned off and a robot that stopped answering call for different actions.
 
 **The screen was split in two.** Both surfaces sit on the same state, but the control web is where a building operator acts, and the lobby signage is one that visitors only look at.
 
@@ -56,7 +56,7 @@ A conversation panel sits next to the control view. You ask in plain words, and 
 
 ## IMPLEMENTATION
 
-**From document to screen.** I wrote the requirements, the information architecture, and the specs for eleven screens, and designed the dashboard and the signage. The engineering team built it, and I kept revising the screen definitions and display rules alongside.
+**From document to screen.** I wrote the requirements, the information architecture, and the specs for 11 screens, and designed the dashboard and the signage. The engineering team built it, and I kept revising the screen definitions and display rules alongside.
 
 **Runs without a server.** A simulation mode and a live-data mode share one interface, so the whole flow can be shown where there is no robot and no server to connect to.
 

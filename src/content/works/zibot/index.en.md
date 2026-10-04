@@ -45,8 +45,6 @@ draft: false
 
 <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/irJ2ge-0ZDw?rel=0&modestbranding=1" title="The ZIBOT KK concept film" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
-**ZIBOT KK**
-
 **Color coding:** A learning feature in which the robot recognizes colors and performs the matching action. Children pick up coding principles by arranging color patterns.
 
 **A modular handle:** The handle was designed as a module so that a variety of accessories can attach to it. That extends its use beyond education to play and exploration.

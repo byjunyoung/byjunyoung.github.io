@@ -3,15 +3,15 @@ title: "설계자들"
 subtitle: "Hardware UX Community"
 role: "Co-Founder"
 period: "2024 – 2025 (2y)"
-links: [{ label: "Home", url: "https://uxdesigners.notion.site/2962d67da32c4f218fbea5944f612e60" }, { label: "Instagram", url: "https://www.instagram.com/designers.ux/" }, { label: "Linkedin", url: "https://www.linkedin.com/groups/14382655/" }]
+links: [{ label: "Home", url: "https://uxdesigners.notion.site/2962d67da32c4f218fbea5944f612e60" }, { label: "Instagram", url: "https://www.instagram.com/designers.ux/" }, { label: "LinkedIn", url: "https://www.linkedin.com/groups/14382655/" }]
 cover: ./cover.png
 order: 5
 draft: false
 ---
 
-[**설계자들**](https://uxdesigners.notion.site/2962d67da32c4f218fbea5944f612e60)은 [UXeed](/activity/uxeed)의 공동 운영진과 함께 만든 하드웨어·청각 경험 실무자 커뮤니티입니다. 저는 그중 하드웨어 경험 그룹을 공동 설립·운영했고, 약 20명의 실무자·연구자가 모였습니다.
+[설계자들](https://uxdesigners.notion.site/2962d67da32c4f218fbea5944f612e60)은 [UXeed](/activity/uxeed)의 공동 운영진과 함께 만든 하드웨어·청각 경험 실무자 커뮤니티입니다. 저는 그중 하드웨어 경험 그룹을 공동 설립·운영했고, 약 20명의 실무자·연구자가 모였습니다.
 
-운영의 중심은 북스터디였습니다. 한 권에 다섯 주를 씁니다. 네 주는 각자 읽고, 다섯째 주에 오프라인으로 만납니다. 주마다 읽을 범위와 마감 시각을 정해 두고, 사람마다 기록장을 하나씩 열어 세 가지를 적게 했습니다. 인상 깊은 구절과 그에 대한 자기 생각, 그 주에 얻은 것 세 가지, 그리고 다른 멤버에게 묻고 싶은 질문 하나입니다.
+운영의 중심은 북스터디였습니다. 한 권에 5주를 씁니다. 4주는 각자 읽고, 다섯째 주에 오프라인으로 만납니다. 주마다 읽을 범위와 마감 시각을 정해 두고, 사람마다 기록장을 하나씩 열어 3가지를 적게 했습니다. 인상 깊은 구절과 그에 대한 자기 생각, 그 주에 얻은 것 3가지, 그리고 다른 멤버에게 묻고 싶은 질문 하나입니다.
 
 여기에 장치를 하나 넣었습니다. **질문은 먼저 쓰고, 공개는 다음 주에 합니다.** 2주차가 되면 모두의 질문이 한꺼번에 열리고, 그때부터 챕터 단위 토론장에서 서로 답합니다. 남의 질문을 먼저 보고 쓰면 이야기가 비슷한 데로 모이고, 책을 안 읽고도 묻어갈 수 있습니다. 순서를 뒤집으니 각자 읽은 자리에서 출발한 질문이 모였습니다. 주마다 다른 사람들이 어디에 밑줄을 그었는지 요약해 발행했습니다.
 

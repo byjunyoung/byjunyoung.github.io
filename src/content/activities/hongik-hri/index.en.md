@@ -3,7 +3,7 @@ title: "Hongik HRI Class Review"
 subtitle: "Industry Juror, Human-Robot Interaction Class at Hongik University"
 role: "Juror"
 period: "2026"
-links: [{ label: "LinkedIn", url: "https://www.linkedin.com/feed/update/urn:li:activity:7475167157685911552/" }, { label: "Youtube", url: "https://youtu.be/KmozbRRTfqA" }]
+links: [{ label: "LinkedIn", url: "https://www.linkedin.com/feed/update/urn:li:activity:7475167157685911552/" }, { label: "YouTube", url: "https://youtu.be/KmozbRRTfqA" }]
 cover: ./cover.jpg
 order: 1
 draft: false

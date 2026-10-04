@@ -1,5 +1,5 @@
 ---
-title: "Seolgyejadeul book study, February 2024: Robot UX"
+title: "The Architects book study, February 2024: Robot UX"
 date: "2024-01-19"
 source: "LinkedIn"
 url: "https://www.linkedin.com/feed/update/urn:li:activity:7154117500937424896/"

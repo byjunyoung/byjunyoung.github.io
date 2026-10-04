@@ -39,12 +39,15 @@ Junyoung Kim 포트폴리오. Astro 정적 사이트, GitHub Pages(main 푸시 �
 - 미디어는 내용이 맞는 절에 둔다. APPROACH엔 과정 자료(스케치·과정 보드·방향 도식), 완성품 사진·렌더와 시연·컨셉 영상은 SOLUTION에(2026-09-13 지시).
 - 본문 텍스트 블록은 그리드의 절반 폭(`calc(50% - var(--gap)/2)`)이 상한이다. 픽셀 고정 폭으로 바꾸지 않는다.
 - 프런트매터 `with:`는 이름을 밝힐 수 있는 개인 협업자만 적는다(팀·부서명은 쓰지 않는다). 본인 담당은 `responsibilities:`로 명시하고 메타 카드에 Responsibilities 행으로 보인다(2026-09-07 지시).
-- 본문 이미지의 alt 는 현재 전부 비어 있다(장식 취급). 채울 때는 사진에 실제로 보이는 것만 한 줄로 — 지어내지 않는다.
+- 본문 이미지 alt는 사진에 실제로 보이는 것만 한 줄로 쓴다 — 지어내지 않는다.
 - 본문 영상: `<video src="/media/works/<slug>/02.mp4" autoplay muted loop playsinline></video>`
+- 숫자는 아라비아 숫자로 쓴다(수를 세는 말 앞: 3가지·14개 관절·30초). "한 번에", "한 팀으로"처럼 1을 뜻하지 않는 관용 표현은 그대로. 영문은 10 이상만 숫자, 문장 첫머리는 글자로(2026-10-04).
+- 회사 서비스명은 한·영 모두 `Baris Brew`(바리스브루·Barisbrew 쓰지 않음). 설계자들 영문명은 `The Architects`.
+- 플레이 `status`는 단계 셋만: 운영 중 / 공개 / 제작 중 (en: Live / Public / In progress). 배포 채널은 links로 보여 준다.
 - 인용: `>` 블록 = 연한 배경 박스
 - 링크: 마크다운 `[텍스트](url)`. 본문 링크는 밑줄로 표시된다. 사이트 내부는 `/activity/uxeed` 처럼 경로만. 페이지 주소는 `/work/`·`/activity/`·`/play/`(2026-09-24 변경, 옛 `/works/`·`/activities/`·`/playground/`는 astro.config 리다이렉트). 콘텐츠 폴더 이름(`src/content/works` 등)과 미디어 경로(`/media/works/…`)는 그대로.
 - 이미지는 반드시 마크다운 문법(`![]()`)으로. `<img>` 를 쓰면 최적화되지 않는다
-- 유튜브: `<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/<ID>?rel=0&modestbranding=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>` — 전폭 16:9
+- 유튜브: `<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/<ID>?rel=0&modestbranding=1" title="<영상 내용을 한 줄로, 예: Meemo 동작을 담은 영상>" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>` — 전폭 16:9
 
 ## 문구 원칙
 - 담백하고 사실만. 제공되지 않은 사실·수치·효과를 만들거나 부풀리지 않는다.

@@ -3,7 +3,7 @@ title: "fig · pm"
 subtitle: "Claude Code plugins for design and product work"
 year: "2026"
 stack: "Claude Code skills, Figma Plugin API, Python"
-status: "Public, in use"
+status: "Public"
 links: [{ label: "GitHub", url: "https://github.com/byjunyoung/claude-product-skills" }]
 cover: ./cover.png
 order: 4

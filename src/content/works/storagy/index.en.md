@@ -45,11 +45,11 @@ The front display carries the face; the LED under the body shows the system stat
 
 <video src="/media/works/storagy/delivery.mp4" aria-label="STORAGY moving down a corridor, riding the elevator, and delivering to an office" autoplay muted loop playsinline></video>
 
-STORAGY takes the drinks Barisbrew makes, rides the elevator, and delivers them to the desk. I defined the scenarios and states for this multi-floor delivery and planned the features and screens of MobileON, the console that controls the robot remotely. A face was added for each step of the elevator ride, calling, boarding, choosing the floor, and getting off, along with faces for a blocked path and for error and emergency stop.
+STORAGY takes the drinks Baris Brew makes, rides the elevator, and delivers them to the desk. I defined the scenarios and states for this multi-floor delivery and planned the features and screens of MobileON, the console that controls the robot remotely. A face was added for each step of the elevator ride, calling, boarding, choosing the floor, and getting off, along with faces for a blocked path and for error and emergency stop.
 
 ## IMPACT
 
-It runs floor-to-floor delivery with Barisbrew in the Robot Building Solution at the XYZ headquarters in Seongsu, Seoul.
+It runs floor-to-floor delivery with Baris Brew in the Robot Building Solution at the XYZ headquarters in Seongsu, Seoul.
 
 The states and faces defined at the start became the frame everything else hung on. When multi-floor delivery arrived, four elevator steps, calling, boarding, choosing the floor, and getting off, plus a blocked path and an error and emergency stop, were added under the same rules. Impact detection has its key reserved, to be filled in when the detection logic exists.
 
