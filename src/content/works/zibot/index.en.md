@@ -21,7 +21,7 @@ draft: false
 
 **Which product concept fits an entry into the U.S. market?**
 
-[**ZIBOT Inc.**](https://www.zhibankeji.com/) is a China-based startup that builds educational robots for children using natural language analysis. In 2018, having validated its product in the Chinese market, the company set up a Silicon Valley office to enter the U.S. market, but it had little data or insight about that market at the time. The U.S. product team's task was to gather data and insight on the U.S. market and find the opportunity areas that fit it.
+[ZIBOT Inc.](https://www.zhibankeji.com/) is a China-based startup that builds educational robots for children using natural language analysis. In 2018, having validated its product in the Chinese market, the company set up a Silicon Valley office to enter the U.S. market, but it had little data or insight about that market at the time. The U.S. product team's task was to gather data and insight on the U.S. market and find the opportunity areas that fit it.
 
 ## APPROACH
 
