@@ -35,7 +35,7 @@ The problems found on site were concrete. Coupons were hard to find, and the cou
 
 I joined in August 2025 to tie the customer channels and the operations console together as one system UX. I worked as one team with two designers, one on the app and one on the web, and my part as planner and UX lead was to keep the flows and policies consistent across the products. We worked from three principles.
 
-**Field first.** I gathered problems from a trade show operations debrief and an interview with the retail operations lead. In the summer of 2026 I ran field observations across stores and mapped usage patterns by store.
+**Field first.** We gathered problems from a trade show operations debrief and an interview with the retail operations lead. In the summer of 2026 we ran field observations across stores and mapped usage patterns by store.
 
 **One order, one flow.** I defined the states of an order first, from ordering and payment through brewing, pickup, and retrieval, then aligned the kiosk, app, and displays to show the same state in the same words.
 
