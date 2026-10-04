@@ -47,7 +47,7 @@ draft: false
 
 ![메시지를 받고 손글씨로 답장해 전송이 끝나기까지, Birdy의 빛과 화면, 스마트폰 대화창이 바뀌는 여섯 장면](./27.jpg)
 
-<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/YvDX9E_5jvk?rel=0&modestbranding=1" title="Birdy 사용 시나리오를 담은 영상" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/rN6kTZFpDJU?rel=0&modestbranding=1" title="Birdy 사용 시나리오를 담은 영상" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 Birdy는 노년층을 위한 탁상형 메시징 디바이스입니다. 종이와 펜으로 쓴 손글씨가 입력이 되고, 그 손글씨가 그대로 가족에게 갑니다. 설계의 축은 셋이었습니다.
 

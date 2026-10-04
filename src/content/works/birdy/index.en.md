@@ -47,7 +47,7 @@ The paper itself took work. A round card is easy to feed into the device but lea
 
 ![Six scenes from receiving a message to sending a handwritten reply, showing Birdy’s light, its display, and the smartphone chat](./27.jpg)
 
-<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/YvDX9E_5jvk?rel=0&modestbranding=1" title="Film showing how Birdy is used" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/rN6kTZFpDJU?rel=0&modestbranding=1" title="Film showing how Birdy is used" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 Birdy is a desktop messaging device for older adults. Handwriting on paper with a pen is the input, and that handwriting is what the family receives. The design rested on three decisions.
 
