@@ -1,12 +1,12 @@
 ---
-title: "Baris Brew"
+title: "BarisBrew"
 subtitle: "바리스타 로봇 시스템의 고객·운영자 통합 UX"
 org: "XYZ Inc."
 year: "2025 – 현재"
 role: "UX 디자이너"
 responsibilities: ["System UX", "Voice UX", "UX Design Ops"]
 keywords: ["barista robot", "kiosk", "voice order", "llm"]
-link: { label: "Baris Brew 홈페이지", url: "https://xyzcorp.io/baris" }
+link: { label: "BarisBrew 홈페이지", url: "https://xyzcorp.io/baris" }
 press:
   - { label: "벤처스퀘어", url: "https://www.venturesquare.net/1102926" }
   - { label: "머니투데이", url: "https://www.mt.co.kr/future/2025/11/03/2025110314103736602" }
@@ -25,7 +25,7 @@ draft: false
 
 ![매장에서 사람들이 키오스크 앞에 줄지어 주문하는 모습](./01.jpg) ![로봇 팔이 내민 컵을 손으로 받는 픽업 장면](./02.jpg)
 
-바리스타 로봇 카페 Baris Brew에서 한 잔의 주문은 5개의 화면을 지납니다. 키오스크나 앱에서 주문하고, 매장 디스플레이(DID)에서 제조 현황을 확인하고, 픽업존에서 음료를 받습니다. 운영자는 백오피스 BarisON에서 매장을 원격으로 관리합니다. 화면마다 만든 시점과 팀이 달라 같은 상태를 다른 말로 불렀고, 주문은 하나의 흐름으로 읽히지 않았습니다.
+바리스타 로봇 카페 BarisBrew에서 한 잔의 주문은 5개의 화면을 지납니다. 키오스크나 앱에서 주문하고, 매장 디스플레이(DID)에서 제조 현황을 확인하고, 픽업존에서 음료를 받습니다. 운영자는 백오피스 BarisON에서 매장을 원격으로 관리합니다. 화면마다 만든 시점과 팀이 달라 같은 상태를 다른 말로 불렀고, 주문은 하나의 흐름으로 읽히지 않았습니다.
 
 현장에서 확인한 문제는 구체적이었습니다. 쿠폰을 찾기 어렵고, 쿠폰 적용 안내가 결제 버튼을 가렸습니다. 대기 주문이 많아지면 주문번호가 돌아가며 표시돼 대기 시간을 가늠하기 어려웠습니다. 백오피스는 화면 초안과 개발이 기획보다 앞서 나가, 정보 구조와 권한 체계가 비어 있었습니다.
 
@@ -95,7 +95,7 @@ LLM 기반 음성 주문의 프롬프트와 대화 흐름을 개발팀과 함께
 
 ## IMPACT
 
-<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/tAH6xt0qpqk?rel=0&modestbranding=1" title="Baris Brew가 운영 중인 매장을 소개하는 영상" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/tAH6xt0qpqk?rel=0&modestbranding=1" title="BarisBrew가 운영 중인 매장을 소개하는 영상" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 팀이 함께 낸 결과입니다. 설계한 시스템은 공공문화공간, 아파트 커뮤니티, 휴양시설, 무인 빨래방 등 여러 유형의 매장에서 운영 중이고, 음성 주문은 첫 데모 석 달 뒤 매장 시범 운영에 들어갔습니다.
 
@@ -103,7 +103,7 @@ LLM 기반 음성 주문의 프롬프트와 대화 흐름을 개발팀과 함께
 
 **운영 중인 로봇 서비스는 화면이 아니라 시스템으로 설계해야 한다.**
 
-Baris Brew는 실제로 돌아가는 매장이 있는 서비스라, 현장의 피드백이 바로 설계에 반영되는 환경이었습니다. 화면 하나가 아니라 시스템 단위로 기획하고 설계하게 됐고, 어떤 변경이든 운영에 미치는 영향을 먼저 생각해야 했습니다. 관리자, 카페 운영자, 카페 고객처럼 이해관계가 다른 사용자가 얽혀 있었고, 앱과 웹을 맡은 디자이너 둘과 역할을 나눠 한 팀으로 움직이며 리드하는 법을 배웠습니다.
+BarisBrew는 실제로 돌아가는 매장이 있는 서비스라, 현장의 피드백이 바로 설계에 반영되는 환경이었습니다. 화면 하나가 아니라 시스템 단위로 기획하고 설계하게 됐고, 어떤 변경이든 운영에 미치는 영향을 먼저 생각해야 했습니다. 관리자, 카페 운영자, 카페 고객처럼 이해관계가 다른 사용자가 얽혀 있었고, 앱과 웹을 맡은 디자이너 둘과 역할을 나눠 한 팀으로 움직이며 리드하는 법을 배웠습니다.
 
 음성 주문은 기술 이슈의 연속이었습니다. 매장 소음, 마이크 수음, 호출어 인식 같은 문제가 운영에 들어가서야 드러났고, 초반에는 로그를 모아 모니터링하며 자주 고쳤습니다. 재미있었던 건 사람들이 이 기능을 재미 요소로 썼다는 점입니다. 사투리를 시켜 보는 식이었습니다. 다시 한다면 기능을 덜고 싶습니다. 1.0이 어느 정도 완료된 뒤에 합류했는데 기능이 너무 많았고, 핵심만 남긴 뒤 그 사용성과 안정성을 최우선으로 고도화했을 겁니다.
 

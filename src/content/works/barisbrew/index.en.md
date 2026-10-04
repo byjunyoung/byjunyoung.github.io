@@ -1,12 +1,12 @@
 ---
-title: "Baris Brew"
+title: "BarisBrew"
 subtitle: "Unified customer and operator UX for a barista robot system"
 org: "XYZ Inc."
 year: "2025 – Present"
 role: "UX Designer"
 responsibilities: ["System UX", "Voice UX", "UX Design Ops"]
 keywords: ["barista robot", "kiosk", "voice order", "llm"]
-link: { label: "Baris Brew Website", url: "https://xyzcorp.io/baris" }
+link: { label: "BarisBrew Website", url: "https://xyzcorp.io/baris" }
 press:
   - { label: "VentureSquare", url: "https://www.venturesquare.net/1102926" }
   - { label: "Money Today", url: "https://www.mt.co.kr/future/2025/11/03/2025110314103736602" }
@@ -25,7 +25,7 @@ draft: false
 
 ![People lined up at the kiosks to order in the store](./01.jpg) ![A hand taking the cup the robot arm holds out](./02.jpg)
 
-At Baris Brew, a barista robot café, a single order passes through five screens. Customers order at a kiosk or in the app, follow the brewing status on the store display (DID), and collect their drink at the pickup zone. Operators run the store remotely from the back office, BarisON. Each screen had been built at a different time by a different team, so the same state went by different names and an order never read as one flow.
+At BarisBrew, a barista robot café, a single order passes through five screens. Customers order at a kiosk or in the app, follow the brewing status on the store display (DID), and collect their drink at the pickup zone. Operators run the store remotely from the back office, BarisON. Each screen had been built at a different time by a different team, so the same state went by different names and an order never read as one flow.
 
 The problems found on site were concrete. Coupons were hard to find, and the coupon confirmation covered the pay button. When orders queued up, order numbers rotated on screen and customers could not judge their wait. In the back office, screen drafts and development had run ahead of planning, leaving the information architecture and permission model undefined.
 
@@ -95,7 +95,7 @@ With the engineering team, I designed the prompts and conversation flow for LLM-
 
 ## IMPACT
 
-<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/tAH6xt0qpqk?rel=0&modestbranding=1" title="Film introducing the stores where Baris Brew runs" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/tAH6xt0qpqk?rel=0&modestbranding=1" title="Film introducing the stores where BarisBrew runs" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 These are the team's results. The system runs in stores of many kinds, including public cultural spaces, apartment community centers, corporate retreats, and unmanned laundromats, and voice ordering went into a store pilot three months after its first demo.
 
@@ -103,7 +103,7 @@ These are the team's results. The system runs in stores of many kinds, including
 
 **A robot service in live operation has to be designed as a system, not as screens.**
 
-Baris Brew runs in real stores, so feedback from the field went straight back into the design. I came to plan and design at the level of the system rather than a single screen, and every change had to be weighed against its effect on operations. The users had different stakes: administrators, café operators, and café customers. I split the work with two designers, one on the app and one on the web, and learned to lead while moving as one team.
+BarisBrew runs in real stores, so feedback from the field went straight back into the design. I came to plan and design at the level of the system rather than a single screen, and every change had to be weighed against its effect on operations. The users had different stakes: administrators, café operators, and café customers. I split the work with two designers, one on the app and one on the web, and learned to lead while moving as one team.
 
 VoiceOrder was one technical issue after another. Store noise, microphone pickup, and wake word recognition only showed their problems once the feature was in operation, and early on we collected logs, monitored, and fixed things often. What was fun was that people treated the feature as entertainment, asking it to speak in dialect. If I did it again, I would cut features. I joined after version 1.0 was largely done, and there were too many features; I would keep the core, then put its usability and stability first.
 

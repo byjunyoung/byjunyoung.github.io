@@ -42,7 +42,7 @@ Junyoung Kim 포트폴리오. Astro 정적 사이트, GitHub Pages(main 푸시 �
 - 본문 이미지 alt는 사진에 실제로 보이는 것만 한 줄로 쓴다 — 지어내지 않는다.
 - 본문 영상: `<video src="/media/works/<slug>/02.mp4" autoplay muted loop playsinline></video>`
 - 숫자는 아라비아 숫자로 쓴다(수를 세는 말 앞: 3가지·14개 관절·30초). "한 번에", "한 팀으로"처럼 1을 뜻하지 않는 관용 표현은 그대로. 영문은 10 이상만 숫자, 문장 첫머리는 글자로(2026-10-04).
-- 회사 서비스명은 한·영 모두 `Baris Brew`(바리스브루·Barisbrew 쓰지 않음). 설계자들 영문명은 `The Architects`.
+- 회사 서비스명은 한·영 모두 `BarisBrew`(붙여 쓰는 게 공식, 바리스브루·Barisbrew·Baris Brew 쓰지 않음). 설계자들 영문명은 `The Architects`.
 - 플레이 `status`는 단계 셋만: 운영 중 / 공개 / 제작 중 (en: Live / Public / In progress). 배포 채널은 links로 보여 준다.
 - 인용: `>` 블록 = 연한 배경 박스
 - 링크: 마크다운 `[텍스트](url)`. 본문 링크는 밑줄로 표시된다. 사이트 내부는 `/activity/uxeed` 처럼 경로만. 페이지 주소는 `/work/`·`/activity/`·`/play/`(2026-09-24 변경, 옛 `/works/`·`/activities/`·`/playground/`는 astro.config 리다이렉트). 콘텐츠 폴더 이름(`src/content/works` 등)과 미디어 경로(`/media/works/…`)는 그대로.
