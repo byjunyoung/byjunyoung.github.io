@@ -22,3 +22,5 @@ People outside the company don't know who "Baris" is. So the title stays "Robot 
 ![Mobile: title, gameplay, and result card](./02.png)
 
 The customers are named after my coworkers, and the three executives are VIP customers — serve them for a tip, miss them and pay a penalty. Grades go by sales alone, and anyone who passes Master Barista (₩40,000) gets a coffee from me.
+
+> Customer names in the screenshots were swapped for made-up ones.
