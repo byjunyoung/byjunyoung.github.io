@@ -29,9 +29,9 @@ There was a problem on the operating side too. The screen that controls the 14 a
 
 ## APPROACH
 
-**Vocabulary first.** I split the channels into face, sound, voice, and gesture, and defined each channel's vocabulary in one database. Each row holds the name engineering calls as a trigger, when it is used, and which file it is. Emotion and intent go through the eyes and the voice, and sound is kept for system and state signals that are awkward to put into words.
+I split the channels into face, sound, voice, and gesture, and defined each channel's vocabulary in one database. Each row holds the name engineering calls as a trigger, when it is used, and which file it is. Emotion and intent go through the eyes and the voice, and sound is kept for system and state signals that are awkward to put into words.
 
-**DEUX ON, from document to code.** I wrote the PRD that would serve as the screen's baseline, laid out the screen as an HTML prototype, then ported it to React and built it myself. The control team owns the backend; the UX part manages the front-end repository. I used AI coding tools for the implementation.
+For DEUX ON, I wrote the PRD that would serve as the screen's baseline, laid out the screen as an HTML prototype, then ported it to React and built it myself. The control team owns the backend; the UX part manages the front-end repository. I used AI coding tools for the implementation.
 
 The Robot Design team shaped the robot, the Robot Intelligence team put the faces on the robot and prepared the demos, and the Robot Automation team owned control and the backend. My part, in between, was defining the interaction and the operations screen.
 
@@ -61,9 +61,9 @@ A few rules were set in moving it from a developer tool to a product screen. Whi
 
 ## IMPLEMENTATION
 
-**Handoff and application.** The 20 faces were produced as GIF and MP4 and handed over together with the vocabulary database; the robot's display plays them as MP4. The Robot Intelligence team wired the face-and-sound mapping and the demo voice lines to controller buttons.
+The 20 faces were produced as GIF and MP4 and handed over together with the vocabulary database; the robot's display plays them as MP4. The Robot Intelligence team wired the face-and-sound mapping and the demo voice lines to controller buttons.
 
-**Building DEUX ON.** It is written in React and TypeScript, and the 3D pose view renders the robot's URDF model with three.js. It deploys to the robot's isolated on-site network without internet, with the backend address set in a single config file. The screen's history lives in the PRD change log, and the repository keeps a record of changes per session.
+DEUX ON is written in React and TypeScript, and the 3D pose view renders the robot's URDF model with three.js. It deploys to the robot's isolated on-site network without internet, with the backend address set in a single config file. The screen's history lives in the PRD change log, and the repository keeps a record of changes per session.
 
 ## IMPACT
 
