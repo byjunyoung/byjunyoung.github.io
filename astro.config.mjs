@@ -17,11 +17,13 @@ export default defineConfig({
     '/playground/[slug]': '/play/[slug]',
     '/en/playground': '/en/play',
     '/en/playground/[slug]': '/en/play/[slug]',
-    // design-core 레포가 doan(도안)으로 이름을 바꿨다
-    '/play/design-core': '/play/doan',
-    '/en/play/design-core': '/en/play/doan',
-    '/playground/design-core': '/play/doan',
-    '/en/playground/design-core': '/en/play/doan',
+    // doan(옛 design-core)은 2026-10-17 폐기 — 옛 링크는 플레이 목록으로
+    '/play/doan': '/play',
+    '/en/play/doan': '/en/play',
+    '/play/design-core': '/play',
+    '/en/play/design-core': '/en/play',
+    '/playground/design-core': '/play',
+    '/en/playground/design-core': '/en/play',
   },
   integrations: [sitemap({ i18n: { defaultLocale: 'ko', locales: { ko: 'ko-KR', en: 'en-US' } } })],
 });

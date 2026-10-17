@@ -1,9 +1,0 @@
-kind: section
-description: A titled block of a page.
-props:
-  title:
-    type: string
-tokens:
-  text: color.text
-sample:
-  title: Details
