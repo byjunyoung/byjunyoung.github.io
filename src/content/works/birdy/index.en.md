@@ -28,10 +28,10 @@ Older adults and other users with low digital literacy struggle with messengers 
 
 We designed Birdy, a dedicated device used in place of a smartphone. As lead researcher, I worked with two assistant researchers through the following steps.
 
-1. **User research:** Through a literature review, task analysis, and user interviews, we identified the obstacles and needs of users with low digital literacy.
-1. **Product design:** Building on the research, we worked out a design that brought together analog elements and physical interaction, and visualized the early concept.
+1. **User research:** Through a literature review, task analysis, and user interviews, we found where users with low digital literacy get stuck and what they want.
+1. **Product design:** From the research, we shaped a design that mixes analog elements like paper with hands-on controls, and sketched the first concept.
 1. **Prototype build and testing:** We built three working mockups and ran a three-week field test with six family pairs.
-1. **Data analysis:** Using the qualitative and quantitative data, we analyzed user behavior and experience and evaluated Birdy's effect.
+1. **Data analysis:** With the qualitative and quantitative data, we looked at how people used it and how it felt, and weighed what Birdy changed.
 
 We started with three forms. The stand type could come close to the mailbox the older generation grew up with, but it was awkward to live with day to day, so we dropped it. The wall-mounted type could use a large display but left nowhere to write, so we dropped that too. The desk type remained. It shares the desk with the paper and the pen, and it is easy to move.
 
@@ -49,13 +49,13 @@ The paper itself took work. A round card is easy to feed into the device but lea
 
 <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/rN6kTZFpDJU?rel=0&modestbranding=1" title="Film showing how Birdy is used" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
-Birdy is a desktop messaging device for older adults. Handwriting on paper with a pen is the input, and that handwriting is what the family receives. The design rested on three decisions.
+Birdy is a desktop messaging device for older adults. Handwriting on paper with a pen is the input, and that handwriting is what the family receives.
 
-**The screen shows one message and nothing else.** Display size and button layout follow how older adults take in information, and a message-only display keeps information from piling up. Received and sent states are shown by LED light diffused through the translucent acrylic body.
+The screen shows one message at a time. Display size and button layout follow how older adults take in information, and a separate message-only display keeps things from piling up. LED light glowing through the translucent acrylic body shows whether a message came in or went out.
 
-**The handwriting stays as it is.** A message written on a 66mm paper card is converted and sent by Birdy, with the texture and character of the writing intact. Twenty emoji cards that come with the device add feeling.
+Birdy converts a message written on a 66mm paper card and sends it. The texture and quirks of the writing still come through. Twenty emoji cards that come with the device add feeling.
 
-**A few buttons do everything.** Physical buttons for navigation and a simple interface cut the steps down, and received messages appear large on the display.
+A few buttons are all it takes. Physical buttons for paging and a simple screen cut the steps down, and received messages appear large on the display.
 
 ## IMPLEMENTATION
 
@@ -65,7 +65,7 @@ Birdy is a desktop messaging device for older adults. Handwriting on paper with 
 
 ![Emoji card recognition trials: barcode results on the left, Teachable Machine’s per-card predictions on the right](./28.jpg)
 
-Development ran along three tracks: hardware, software, and product design. The work was split across two boards: an Arduino Nano handled the IR sensor, the linear stepper motor, the ring LED, and the previous/next buttons, and a Raspberry Pi handled the camera, the display, and Telegram. When a card goes in, a wide-angle camera with a ring LED captures it in the narrow, dark interior, and the Raspberry Pi brightens and sharpens the image, applies a round-square mask in the card’s shape, and sends it over Telegram. Replies come in on a separate loop that keeps checking Telegram, and text is rendered as an image for the display.
+Development ran along three tracks: hardware, software, and product design. The work was split across two boards: an Arduino Nano handled the IR sensor, the linear stepper motor, the ring LED, and the previous/next buttons, and a Raspberry Pi handled the camera, the display, and Telegram. When a card goes in, a wide-angle camera with a ring LED captures it in the narrow, dark interior. The Raspberry Pi brightens and sharpens the photo, masks it to the card’s rounded-square shape, and sends it over Telegram. Replies come in on a separate loop that keeps checking Telegram, and text is rendered as an image for the display.
 
 For emoji cards, I first tried telling them apart with barcodes, but the wide-angle camera distorted them too much to read reliably. So I trained Google Teachable Machine on the 20 emoji cards and treated a card as an emoji only when it was more than 90% confident, sending it as a Telegram sticker. Handwriting isn’t recognized as text; it goes as a photo, just as written.
 
@@ -95,16 +95,14 @@ The code started in the Meemo repository. Between February and July 2021, 37 dat
 
 Over the three-week field test, how much the older participants messaged and what they talked about both changed.
 
-**About three times the contact.** The older adults in the six family pairs exchanged an average of 21.5 messages a week, about three times as often as before Birdy. One grandparent went from one or two phone calls a week to 35 messages.
+The older adults in the six family pairs exchanged an average of 21.5 messages a week. That is about three times as many as before Birdy. One grandparent went from one or two phone calls a week to 35 messages.
 
-**Wider conversations.** With the constraints of time and place gone, conversation moved from greetings to everyday life, health, and family news. "Have you eaten?" gave way to a grandchild's exam results and hobbies.
+Once they could send at any time, from anywhere, the conversations widened too. Talk that had stopped at greetings moved to everyday life, health, and family news. "Have you eaten?" made room for a grandchild's exam results and hobbies.
 
-**What handwriting and paper carried.** 70% of participants said handwriting helped them express feeling, and some drew flowers or changed the size of their letters to do it. 83% kept the paper messages they received; one grandparent kept a grandchild's notes in a drawer.
+70% of participants said handwriting helped them express feeling. Some drew flowers or changed the size of their letters to do it. 83% kept the paper messages they received, and one grandparent kept a grandchild's notes in a drawer.
 
 ## REFLECTION
 
 ![Presenting the study results](./24.jpg)
 
-**Can a hardware product be more than a device, a tool that connects feelings?**
-
-Birdy was the first time I went through every stage of getting a hardware product into a user's hands. From design to prototyping, user training, and feedback collection, I had to secure the stability of an IoT device and the user experience at the same time. Repeated prototype tests and firmware tuning showed me how much it matters to design hardware and software together. It was also the first project that made me think about what it means to design a solution to a social problem with technology.
+With Birdy I went through every stage of getting a hardware product into a user's hands for the first time. I designed it, built prototypes, showed people how to use it, and collected feedback. Through all of it the device had to keep working and stay easy to use. Testing prototypes and fixing firmware over and over taught me that hardware and software have to be designed together. It was also the first project that made me think about designing with technology for a social problem.

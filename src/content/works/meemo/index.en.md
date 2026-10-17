@@ -18,19 +18,19 @@ draft: false
 
 ## PROBLEM
 
-Analog notes are good for capturing ideas because you can write without being tied to a format, but they are hard to organize and to keep for the long term. Digital notes, on the other hand, give you storage and search but narrow the range of expression.
+Paper notes are good for ideas because you can write any way you like. They are hard to organize and keep, though. Digital notes are easy to store and search, but you can express less with them.
 
-Many people use both at once, which weakens the consistency of how information is kept and makes search harder. What is needed is a way to have the freedom of analog notes and the order of digital ones together.
+So many people use both. Then notes end up scattered and hard to find. I wanted a way to write as freely as on paper and keep things as tidy as digital.
 
 ## APPROACH
 
 ![A Venn diagram overlapping the advantages of paper notes and digital notes](./01.png)
 
-To get past the limits of the analog system and the digital one, I designed an integrated system that joins the way analog notes are written to the storage and search of digital ones.
+I designed a system that leaves the way people write paper notes alone and moves only storage and search to digital.
 
-**Designing a system that links analog and digital:** Through user interviews and research, I analyzed how people use analog and digital notes. That confirmed the need for a medium to carry notes made in the physical world into the digital one, so I designed a way to connect the two environments without changing existing note-taking habits.
+First I looked, through user interviews and research, at how people use paper and digital notes. Something had to carry notes written on paper into the digital world, and it could not change anyone's note-taking habits.
 
-**Building Meemo:** On that design I built Meemo. Real-time conversion of paper notes into digital sits at the center, so the writing environment of paper stays as it is while the search and management convenience of digital notes comes with it.
+That something became Meemo. Turning paper notes into digital ones right away sits at its center. Writing happens on paper; finding and organizing happen digitally.
 
 ## SOLUTION
 
@@ -42,11 +42,11 @@ To get past the limits of the analog system and the digital one, I designed an i
 
 <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/nXMv4ztNLbA?rel=0&modestbranding=1" title="Film showing Meemo in operation" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
-**Instant cloud upload and digitization:** When a user puts a handwritten paper note into the device, Meemo converts it to a digital image and uploads it to the cloud (Dropbox) right away. Writing stays on paper, while the note becomes searchable in the digital environment and usable on other devices.
+Put a paper note into the device and Meemo turns it into an image and uploads it to Dropbox right away. The writing still happens on paper, but the note can be searched digitally and opened on other devices.
 
-**Rotating-disc feedback:** While a note is being scanned, the disc on the front face turns slowly, and it stops when the scan is done. The movement lets the user know the scan is in progress, and adds a small pleasure to writing a note.
+While it scans, the disc on the front turns slowly, and it stops when the scan is done. The turning disc tells you the scan is in progress, and it adds a little fun to taking notes.
 
-**Input and output that bridge analog and digital:** Insert a note and it is digitized; when the work is done the note comes back out to be used again or filed away. The process moves a note into the digital environment without breaking the analog workflow.
+When the scan is done, the note comes back out to be used again or filed away. The paper workflow is not interrupted. Only the note moves into the digital world.
 
 ## IMPLEMENTATION
 
@@ -56,9 +56,9 @@ To get past the limits of the analog system and the digital one, I designed an i
 
 ![The raw photo from inside the device, the image cropped to a circle, and the handwritten memo as uploaded to the cloud](./19.jpg)
 
-**Building the physical interaction:** To realize the physical interaction, I built the system on Arduino. When a user inserts paper, an infrared sensor detects it, a servo motor moves it inside, and a stepper motor turns the disc to show progress. For the capture, a 12-LED NeoPixel ring around the camera lights up white to brighten the dark interior. This physical interaction was what carried the analog experience into the digital environment.
+The hands-on part runs on Arduino. When you insert paper, an infrared sensor detects it and a servo motor moves it inside. A stepper motor turns the disc to show progress. For the capture, a 12-LED NeoPixel ring around the camera lights up white to brighten the dark interior.
 
-**Cloud integration and application development:** To implement cloud storage, I built a data communication system linking a Raspberry Pi and Arduino. When the Arduino reports a detected sheet, the Raspberry Pi takes a 1024×768 photo, crops the center to a square, and applies a round mask in the shape of the memo. The file is named with the capture time and uploaded to Dropbox.
+Cloud storage comes from linking a Raspberry Pi to the Arduino. When the Arduino reports a sheet, the Raspberry Pi takes a 1024×768 photo, crops the center to a square, and applies a round mask in the shape of the memo. The file is named with the capture time and uploaded to Dropbox.
 
 ## PROTOTYPING
 
@@ -86,8 +86,6 @@ It was presented at the HCI Korea 2021 conference and published in the proceedin
 
 ![Meemo on a display shelf](./20.jpg)
 
-**Turning imagination into something real is as tangled and unpredictable as untangling a knot of string.**
-
 Meemo was the first time I took an idea of my own all the way to a product. Wiring Arduino and Raspberry Pi together, designing the internal structure, 3D printing, and CNC machining were all new to me, and when I got stuck I asked specialists and fixed things one at a time.
 
-I learned that an idea that looks easy in your head turns, once you build it for real, into a long run of complicated and unpredictable problem-solving — much like untangling a knot of string.
+Ideas that looked easy in my head threw up one unexpected problem after another once I built them. It was a lot like untangling a knot of string.

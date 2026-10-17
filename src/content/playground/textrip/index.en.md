@@ -11,9 +11,9 @@ order: 1
 draft: false
 ---
 
-An e-reader you hold and roll. Reading follows proven conventions; the difference starts where your hand touches it.
+An e-reader you hold and roll. There is no reason, and no way, to beat the Kindle on reading features. So the software follows the usual e-reader conventions, and the rest of the effort goes into the object you hold while you read: material, machining, and touch.
 
-There is no reason, and no way, to beat the Kindle on reading features. So textrip competes as **the object in your hand while you read**. The software follows convention, and everything left over goes into material, machining, and touch. After weighing 12 form factors, I settled on a slim landscape bar (120 × 70 × 12 mm) — the width worked back from the screen, the length from the controls.
+After weighing 12 form factors, I settled on a slim landscape bar (120 × 70 × 12 mm). The width is worked back from the screen, the length from the controls.
 
 Pages turn with a 16 mm roller on the side: 20 detents per turn, 2.51 mm apart, the same spacing as a mouse wheel. Roll slowly and it clicks; roll fast and it spins free.
 

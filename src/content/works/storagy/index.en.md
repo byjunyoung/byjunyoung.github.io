@@ -23,7 +23,7 @@ STORAGY, an indoor delivery robot, shares hallways, elevators, and offices with 
 
 ## APPROACH
 
-We defined the robot's states first, then split the channels. The robot reports two kinds of state: system state, such as booting, normal, warning, error, and battery, and operation state, such as idle, driving, docked, and the task at hand. System state has to be readable by an operator from anywhere at a glance, so it went to the LED under the body, with sound. Driving state has to be read by the person in front of the robot, so it went to the face on the front display, with sound. Display and LED feedback were mapped state by state and that table became the source of truth, with sound added afterward. Engineering built to the states as defined, and we put it on the real robot and revised as we went.
+We defined the robot's states first, then split the channels. The robot reports two kinds of state: system state, such as booting, normal, warning, error, and battery, and operation state, such as idle, driving, docked, and the task at hand. System state has to be readable by an operator from anywhere at a glance, so it went to the LED under the body, with sound. Driving state has to be read by the person in front of the robot, so it went to the face on the front display, with sound. A table pairing display and LED feedback for each state became the reference, with sound added afterward. Engineering built to the states as defined, and we put it on the real robot and revised as we went.
 
 ## SOLUTION
 
@@ -51,14 +51,14 @@ STORAGY takes the drinks BarisBrew makes, rides the elevator, and delivers them 
 
 It runs floor-to-floor delivery with BarisBrew in the Robot Building Solution at the XYZ headquarters in Seongsu, Seoul.
 
-The states and faces defined at the start became the frame everything else hung on. When multi-floor delivery arrived, four elevator steps, calling, boarding, choosing the floor, and getting off, plus a blocked path and an error and emergency stop, were added under the same rules. Impact detection has its key reserved, to be filled in when the detection logic exists.
+When multi-floor delivery came in, it used the same rules for states and faces set at the start. That is how four elevator steps, calling, boarding, choosing the floor, and getting off, plus a blocked path and an error and emergency stop, were added. Impact detection has its key reserved, to be filled in when the detection logic exists.
 
 ## REFLECTION
 
-**Feedback for a moving robot begins with defining its states and continues with handling the exceptions.**
+**The exceptions were harder than the normal flow.**
 
-STORAGY was not a product on a screen but a robot running down hallways. To define feedback state by state, I first had to understand in what order the robot moves and where it stops, what it senses and what it cannot know. Half the work, then, was learning how the robot operates; the other half was translating the states and feedback I had defined into units and formats the engineering team could implement as written. Splitting the channels into face, LED, and sound, and treating the state-by-state mapping table as the source of truth, both came out of that process.
+STORAGY is a robot that runs down hallways. To define feedback for each state, I first had to know in what order the robot moves and where it stops, what it senses and what it cannot know. Half the work was learning how the robot moves. The rest was putting the states and feedback into units and formats the engineering team could build as written. Splitting the channels into face, LED, and sound, and treating the state-by-state mapping table as the source of truth, both came out of that process.
 
-The ideal scenario was not the hard part. Waiting, moving, and arriving are covered by six faces. What is hard is everything else: what the robot should show when it meets an obstacle, when nobody picks up what it delivered, when it has to turn back. None of that was defined in one pass, and it is still being filled in on site. This project taught me that a robot's HRI is not a design that ends at launch but one that is revised repeatedly in operation. So it is too early to say what I would do differently next time.
+The ideal scenario was not the hard part. Waiting, moving, and arriving are covered by six faces. What is hard is everything else: what the robot should show when it meets an obstacle, when nobody picks up what it delivered, when it has to turn back. None of that was defined in one pass, and it is still being filled in on site. This project taught me that a robot's HRI keeps being revised in operation, well after launch. So it is too early to say what I would do differently next time.
 
-For my career, it meant working on a robot that moves rather than a device that sits still, and taking on the whole service scenario of indoor delivery.
+In my career, it was the project where I worked on a moving robot instead of a device that stays put, and handled the whole service scenario of indoor delivery.

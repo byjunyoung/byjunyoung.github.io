@@ -11,7 +11,7 @@ draft: false
 
 On July 9, 2025, I gave a talk at the Wanted Online UX Conference titled *Designing Your Own Career at the Blurry Edges of UX*.
 
-It covered a question I had carried since 2017, when I first got serious about UX as a mechanical engineering student: what counts as UX design, what doesn't, and what kind of UX designer I want to be. When the invitation came I doubted I was qualified — but that doubt was exactly why the organizers reached out. They wanted someone to share the questions many people in the field were already asking themselves.
+I talked about a question I'd been carrying since 2017, when I got serious about UX as a mechanical engineering student: what counts as UX design, what doesn't, and what kind of UX designer I want to be. When the invitation came I wasn't sure I was qualified. But that question was exactly why the organizers reached out. They wanted a talk that people asking the same thing could relate to.
 
 The talk boiled down to one simple line.
 

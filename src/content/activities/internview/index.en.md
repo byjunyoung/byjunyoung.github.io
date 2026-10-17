@@ -9,11 +9,11 @@ order: 9
 draft: false
 ---
 
-InternView was a short-run content project I did with the colleagues who came along on the [Silicon Valley internship](/en/activity/svip), to look at how hiring culture differs between the United States and Korea.
+InternView was a short content project I made with the colleagues who came along on the [Silicon Valley internship](/en/activity/svip). We wanted to see how hiring culture differs between the United States and Korea.
 
-We introduced Korea's 'jasoseo' (personal statement) culture to the CEOs and developers of the companies that shared our coworking space during the internship, and heard their answers to jasoseo questions. I led the project, handling content planning and video production.
+We told the CEOs and developers at companies in our coworking space about Korea's 'jasoseo' (personal statement) culture and asked them to answer jasoseo questions themselves. I led the project and handled planning and video production.
 
-The results were uploaded to the [InternView YouTube channel](https://youtube.com/channel/UC97ypfun0Tm-McZTefrvyDQ?si=IxVxEQSbrXfjh5bK).
+The videos are on the [InternView YouTube channel](https://youtube.com/channel/UC97ypfun0Tm-McZTefrvyDQ?si=IxVxEQSbrXfjh5bK).
 
 <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/cbzAvICNlKA?rel=0&modestbranding=1" title="Internview, episode 1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 

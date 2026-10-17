@@ -23,7 +23,7 @@ draft: false
 
 Visually impaired students cannot take in graphic information by sight, so they learn from the tactile graphics in braille textbooks or from separate tactile teaching aids. Those materials are always in short supply. Tactile graphics in braille textbooks are hard to produce and maintain, and they never cover every figure in the original, so only some make it in. Tactile aids are mostly made by teachers themselves. Sit in on a class at a school for the blind and you will find picture materials built from tape and stickers. They take time and money to make, and they do not last.
 
-These constraints narrow what students get to learn and put a load on teachers. Another way of making tactile materials was needed.
+So students get less to learn from, and teachers spend their time making materials. Tactile materials needed another way to be made.
 
 ## APPROACH
 
@@ -31,9 +31,9 @@ These constraints narrow what students get to learn and put a load on teachers. 
 
 I joined Dot in July 2022 as a hardware UX designer, but the first job was not hardware. The Dot Pad tactile display is only useful with tactile graphics to show, and there was no tool for making them. Working as one team with a service planner and a GUI designer, the goal was to ship web and app demos of the authoring tool, Dot Canvas, within three months.
 
-**Two users.** The person who makes a tactile graphic and the person who touches it are not the same. The web was aimed at teachers making and managing materials; the app at visually impaired users drawing and touching for themselves. In Korea we ran field studies with special-education teachers and visually impaired students; for users abroad, surveys and diary studies covered the usage environment and its pain points. That data pinned down the problems of the first Canvas version and set the direction for improvements.
+The person who makes a tactile graphic and the person who touches it are not the same. The web was aimed at teachers making and managing materials; the app at visually impaired users drawing and touching for themselves. In Korea we ran field studies with special-education teachers and visually impaired students; for users abroad, surveys and diary studies covered the usage environment and its pain points. The problems of the first Canvas version, and how to fix them, came out of that research.
 
-**Then the hardware.** Once Canvas had shipped, I moved to Dot Pad itself. I compared more than 20 braille devices to define its tactile notation and the specs and requirements for the next model, and designed the key functions and the haptic and LED feedback that went into the production model.
+Once Canvas had shipped, I moved to the Dot Pad hardware. I compared more than 20 braille devices to set its tactile notation and the specs and requirements for the next model. I also designed the key functions and the haptic and LED feedback, which went into the production model.
 
 ## SOLUTION
 
@@ -57,7 +57,7 @@ Drawing happens with iPad touch and the Apple Pencil. With VoiceOver and live dr
 
 <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/iSmRM2PUBzA?rel=0&modestbranding=1" title="Introduction to Dot Pad" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
-Dot Pad is a multi-line tactile area for graphics, a single line of braille beneath it, and physical keys. A visually impaired user cannot pick a key by looking at it. The same key has to do the same thing every time, and keys have to be told apart by touch. So I defined the key functions consistently, added physical markings, and designed the haptic and LED feedback that confirms an input and shows the device's state; all of it went into the production model. A comparative analysis of more than 20 braille devices set the tactile notation and defined the specs and requirements for the next model, and user evaluations gathered the feedback to carry into it.
+Dot Pad is a multi-line tactile area for graphics, a single line of braille beneath it, and physical keys. A visually impaired user cannot pick a key by looking at it. The same key has to do the same thing every time, and keys have to be told apart by touch. So each key got one fixed function and a marking you can feel. Haptics and LEDs tell you whether an input registered and what state the device is in. That feedback went into the production model. What came out of user evaluations went on to the next model.
 
 ## IMPLEMENTATION
 
@@ -65,9 +65,9 @@ Dot Pad is a multi-line tactile area for graphics, a single line of braille bene
 
 ![The team setting up a demo with laptops and Dot Pads at a conference](./06.jpeg) ![A classroom where students each work with a Dot Pad at their desk](./07.jpeg) ![A workshop with users abroad, participants using Dot Canvas on laptops](./08.jpeg)
 
-**Screen design and GUI.** Based on the research, I designed the screens for Dot Canvas Web and App in Figma, and worked on the GUI with the GUI designer. Because teachers and visually impaired students share the interface, the UI structure and the placement of functions were organized around those two.
+I designed the Dot Canvas Web and App screens in Figma from what the research showed, and made the GUI with the GUI designer. Teachers and visually impaired students use the same screens, so the structure and the placement of functions had to work for both.
 
-**Documents and collaboration.** I documented screen specs and functional specifications and tracked issues in JIRA, working with the development team to absorb technical changes and keep the schedule for improvements and release.
+I wrote the screen specs and functional specifications and tracked issues in JIRA. Technical changes were worked out with the development team as we scheduled improvements and the release.
 
 ## IMPACT
 
@@ -81,10 +81,8 @@ Dot Canvas was demoed at the CSUN 2023 booth, and after winning the CES 2024 Inn
 
 ![The Dot booth during setup](./16.jpg)
 
-**The price of moving fast comes due later, in maintenance.**
+Dot Canvas had to ship web and app demos in a short window. The team had little relevant experience, and we had three months to produce something usable. We filled whiteboards and prototyped quickly, and alongside UX design I handled the work with developers and the schedule.
 
-Dot Canvas had to ship web and app demos in a short window. The team had little relevant experience, and we had three months to produce something usable. We filled whiteboards and prototyped quickly, and I handled not only UX design but collaboration with developers and the schedule.
+We paid for the hurry later. We made the three-month goal, but the design had not planned for growth, so maintenance meant a lot of rework and some parts stayed rough. Hearing feedback directly in user studies, I felt how much the balance between speed and quality matters in UX design.
 
-The price of moving fast was just as clear. We hit the short-term goal, but the design had not accounted for scale, so maintenance later required a lot of rework, and parts of it were rough. Hearing feedback directly in user studies showed me how much the balance between speed and quality matters in UX design.
-
-What I learned most was the users. Meeting visually impaired users up close taught me that accessibility is not something added at the last step of a product, but something to work on from the first chapter of the UX.
+I learned the most from the users. Meeting visually impaired users up close, I saw that accessibility cannot be added once the product is done. It has to be there from the first design.

@@ -11,8 +11,8 @@ draft: false
 
 UXeed is short for 'UX + Seed', a UX study group that students and practitioners started on their own.
 
-As lead manager for two years, I ran the online book study and held occasional book talks and networking events. I built a semi-anonymous way of running the group, with nicknames that pair a modifier with a fruit or vegetable and avatars we made ourselves, and I designed the Notion- and Discord-based community system myself.
+For two years I was lead manager. I ran the online book study and now and then held book talks and networking events. Nicknames paired a modifier with a fruit or vegetable, and we drew the avatars ourselves, so members took part half-anonymously. I set up the community on Notion and Discord myself.
 
-Most of the early members were students, and they now work as practitioners at a range of companies. Practitioners from other fields joined later, and since I handed it over, a later team of organizers has kept it going as a networking group.
+Most of the first members were students. Now they work as practitioners at different companies. Practitioners from other fields joined along the way. Since I handed it over, the next organizers have kept it going as a networking group.
 
 ![A UXeed session in progress](./01.jpeg) ![Members gathered at a book talk](./04.jpeg) ![The UXeed book talk poster](./05.jpeg)

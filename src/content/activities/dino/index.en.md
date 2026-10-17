@@ -9,11 +9,9 @@ order: 7
 draft: false
 ---
 
-DINO is a making club in the design department at [UNIST](https://www.unist.ac.kr/), planning and running projects with Arduino, Raspberry Pi, and the like.
+DINO is a making club in the design department at [UNIST](https://www.unist.ac.kr/). Its members build their own projects with things like Arduino and Raspberry Pi.
 
-I joined DINO in 2021 while in graduate school at UNIST.
-
-For about a year I took part in the club's making projects.
+I joined in 2021 while in graduate school at UNIST and made things with the club for about a year.
 
 ![Club members building with Lego bricks](./01.jpg) ![Photographing the finished build](./02.jpeg) ![A campus built from Lego](./03.jpeg)
 

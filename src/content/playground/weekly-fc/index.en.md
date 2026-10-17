@@ -24,7 +24,9 @@ Each day gets one match, and the players who played that day vote for POTM on ma
 
 ![Match records with POTM and the match video](./03.png)
 
-The good news is that the team actually uses it. In the six days since the tier game opened on September 24, 361 duels were played and ratings moved 987 times. The rough numbers I first put in were re-ranked by teammates in under a week. From day one it ran at 40–90 duels a day, stopping only on Saturdays when we play. That said, six people still do most of it, and one of them played 150. With a few people carrying the load, widening participation looks like the next challenge. So far 9 of 31 players have linked an account.
+The team actually uses it. In the six days since the tier game opened on September 24, 361 duels were played and ratings moved 987 times. Within a week, teammates had re-ranked the rough numbers I first put in. From day one it ran at 40–90 duels a day, stopping only on Saturdays when we play.
+
+Still, six people do most of it, and one of them played 150. Getting more people to play is the next job. So far 9 of 31 players have linked an account.
 
 Since the team link travels mostly through KakaoTalk, it had to open cleanly in KakaoTalk's in-app browser. Sign-in is a single code sent by email, and you link your account by picking your name from the roster.
 
