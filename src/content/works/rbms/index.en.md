@@ -20,7 +20,7 @@ draft: false
 
 Inside one building a guide robot, a delivery robot, a patrol robot, a cleaning robot, and a barista robot all work at once. Alongside them run the CCTV cameras, the climate sensors, and the elevators. Each robot had its own control screen, and the facilities were watched somewhere else again. Whoever ran the building had nowhere to see, in one place, what state the building was in.
 
-It was not only an operations problem. To anyone walking through the lobby, there was nothing to show that the building ran on robots.
+Visitors had the same gap. To anyone walking through the lobby, nothing showed that the building ran on robots.
 
 ## APPROACH
 
@@ -28,7 +28,7 @@ It was not only an operations problem. To anyone walking through the lobby, ther
 
 My part began with defining what would be managed, what state each thing reports, and what screens were needed. For five robots and three kinds of facility, I set down in a document what gets read, under what name, and where it appears.
 
-State was reduced to four fields. To read eight different things side by side on one screen, the axes have to match: battery, location, operating state, and current task. Facilities have no battery and never move, but the fields stay in place rather than disappear. A list whose rows shift shape is harder to read, not easier.
+State was reduced to four fields. To read eight different things side by side on one screen, the axes have to match: battery, location, operating state, and current task. Facilities have no battery and never move, but the fields stay in place rather than disappear. A list whose rows shift shape is harder to read.
 
 Silence was separated from being switched off. If a robot has not refreshed its state for 30 seconds, the server moves it to disconnected. A robot someone turned off and a robot that stopped answering call for different actions.
 

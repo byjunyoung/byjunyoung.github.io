@@ -33,7 +33,7 @@ I joined Dot in July 2022 as a hardware UX designer, but the first job was not h
 
 The person who makes a tactile graphic and the person who touches it are not the same. The web was aimed at teachers making and managing materials; the app at visually impaired users drawing and touching for themselves. In Korea we ran field studies with special-education teachers and visually impaired students; for users abroad, surveys and diary studies covered the usage environment and its pain points. The problems of the first Canvas version, and how to fix them, came out of that research.
 
-Once Canvas had shipped, I moved to the Dot Pad hardware. I compared more than 20 braille devices to set its tactile notation and the specs and requirements for the next model. I also designed the key functions and the haptic and LED feedback, which went into the production model.
+Once Canvas had shipped, I moved to the Dot Pad hardware. I compared more than 20 braille devices to set its tactile notation and the specs and requirements for the next model. I also designed the main functions and the haptic and LED feedback, which went into the production model.
 
 ## SOLUTION
 

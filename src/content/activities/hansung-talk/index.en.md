@@ -11,7 +11,7 @@ draft: false
 
 On October 25, 2025, I gave a career talk to 28 middle school students at the Hansung Science High School gifted education center, titled *Making Your Own Path: From Engineering Student to UX Designer*.
 
-It was my first time telling my story to middle schoolers. After a lot of thought, I decided to say what I would tell my younger self — the one who only studied hard. The talk had three messages.
+It was my first time telling my story to middle schoolers. After a lot of thought, I decided to say what I would tell my younger self, who only studied hard. The talk had three messages.
 
 1. Exploring a career starts with exploring yourself.
 2. Wandering is not failure; it means the questions have started.

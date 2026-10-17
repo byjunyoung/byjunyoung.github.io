@@ -14,4 +14,4 @@ Clawd, the mascot already inside Claude Code, standing in your status line. Its 
 
 It started with `/buddy`, which has since been removed. `/buddy` never grew and behaved the same however you worked. So Clawd reacts to your actual usage.
 
-It wraps whatever status line you already run instead of replacing it, so your original status line still shows. It uses only Anthropic's four original poses — my own faces looked like a knock-off, and a level card, a wardrobe, and three new creatures were built and dropped too. Each run takes 0.027 s.
+It wraps whatever status line you already run instead of replacing it, so your original status line still shows. It uses only Anthropic's four original poses. My own faces looked like a knock-off, and a level card, a wardrobe, and three new creatures were built and dropped too. Each run takes 0.027 s.

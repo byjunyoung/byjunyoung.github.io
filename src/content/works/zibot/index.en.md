@@ -27,7 +27,7 @@ draft: false
 
 ![How the product direction changed with HQ feedback, from U.S. market research to CES 2019](./22.jpg)
 
-**Researching the U.S. kids robot market and products:** I mapped 52 robots on the U.S. market by use, and tested 12 of them hands-on — 8 STEM, 2 Lego-style, 2 best-sellers — comparing their hardware and software. I wrote a report laying out market trends, product characteristics, and opportunity areas.
+**Researching the U.S. kids robot market and products:** I mapped 52 robots on the U.S. market by use, and tested 12 of them hands-on (8 STEM, 2 Lego-style, 2 best-sellers), comparing their hardware and software. I wrote a report laying out market trends, product characteristics, and opportunity areas.
 
 **A direction that changed three times with HQ feedback:** After the research, headquarters first chose a Lego-style STEM product, then dropped it for lack of STEM experience and people. The August design brief was a small screen that docks on either a watch strap or the robot’s head, with a digital pet, eye expressions, and gesture and voice control. The brief revised on September 20 settled on app coding, maze content, and color-detection coding, for ages 3 to 6.
 
@@ -65,7 +65,7 @@ draft: false
 
 **Testing the concept with prototypes:** I built several sizes and forms to find a size we could actually make, and refined the shape toward a real product. The prototypes also showed whether it worked and whether it was easy to use.
 
-**Testing the feature with Arduino and MIT App Inventor:** To check whether color coding would actually work, I built a prototype of the core function. The office had nothing to build with, so I started by ordering parts — five orders in all — and put a color sensor, a Bluetooth module, and two continuous-rotation servos on an Arduino Nano. The app was built in MIT App Inventor. The robot reads the color under it and sends it to the app; solve the quiz in the app, press move, and it goes straight on white, turns right on red, and turns left on blue. The constraints and fixes the early tests turned up were written up for later product development to review.
+**Testing the feature with Arduino and MIT App Inventor:** To check whether color coding would actually work, I built a prototype of the core function. The office had nothing to build with, so I started by ordering parts, five orders in all, and put a color sensor, a Bluetooth module, and two continuous-rotation servos on an Arduino Nano. The app was built in MIT App Inventor. The robot reads the color under it and sends it to the app; solve the quiz in the app, press move, and it goes straight on white, turns right on red, and turns left on blue. The constraints and fixes the early tests turned up were written up for later product development to review.
 
 **Getting ready for CES 2019:** The final design was settled by the design team at the Chinese headquarters, led by Frank. I 3D-printed the design file they sent and fitted my parts inside, but time and print quality kept it from becoming the final prototype. For the CES 2019 booth, I made the product concept film using animations from the HQ team.
 

@@ -30,7 +30,7 @@ I designed a system that leaves the way people write paper notes alone and moves
 
 First I looked, through user interviews and research, at how people use paper and digital notes. Something had to carry notes written on paper into the digital world, and it could not change anyone's note-taking habits.
 
-That something became Meemo. Turning paper notes into digital ones right away sits at its center. Writing happens on paper; finding and organizing happen digitally.
+That something became Meemo, whose main job is turning paper notes into digital ones right away. Writing happens on paper; finding and organizing happen digitally.
 
 ## SOLUTION
 
@@ -46,7 +46,7 @@ Put a paper note into the device and Meemo turns it into an image and uploads it
 
 While it scans, the disc on the front turns slowly, and it stops when the scan is done. The turning disc tells you the scan is in progress, and it adds a little fun to taking notes.
 
-When the scan is done, the note comes back out to be used again or filed away. The paper workflow is not interrupted. Only the note moves into the digital world.
+When the scan is done, the note comes back out to be used again or filed away, so the paper workflow carries on as before.
 
 ## IMPLEMENTATION
 

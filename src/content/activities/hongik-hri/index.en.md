@@ -13,7 +13,7 @@ On June 19, 2026, I went back to Hongik University's Design Engineering program 
 
 This is the program where I first found UX while studying mechanical engineering. I'd wished I could take the HRI class since I heard it was opening. Now I work as a UX designer at a robotics company, and I got to review the students' work in person.
 
-Each team saw robots differently, and that view carried into the interaction details: movement, sound, light. They didn't stop at showing features. You could see them working out why a robot should respond the way it does. I went to judge and came back having learned more than I gave.
+Each team saw robots differently, and that view carried into the interaction details: movement, sound, light. Beyond showing features, you could see them working out why a robot should respond the way it does, and I learned a lot from that.
 
 ![A student team's robot with a tablet face](./01.jpg) ![A student team's furry potted-plant robot](./02.jpg) ![A student team's robot arm](./03.jpg)
 

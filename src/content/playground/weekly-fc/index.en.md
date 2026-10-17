@@ -10,11 +10,11 @@ order: 3
 draft: false
 ---
 
-A portal for the futsal team that meets every Saturday — roster, lineups, match records, tactics, and house rules in one place.
+A portal for the futsal team that meets every Saturday, with the roster, lineups, match records, tactics, and house rules in one place.
 
 The verdict on the first version: "this looks like an admin dashboard, not a game." So I rebuilt it around football game screens like FM, EA FC, and eFootball. Real player photos went in and came out a day later, replaced by full-body 24 × 32 pixel characters drawn by hand. Honestly, once it turned into pixel art, building it got a lot more fun for me too.
 
-Ratings aren't set by me — the team sets them. In the tier game you pick one of two players for a question like "Who's faster?", the numbers shift on the spot, and the ranking splits everyone into tiers from S to D. Player cards follow the FIFA card layout, and when one stat clearly stands out within the team, the player earns a title like Winger or Poacher.
+I don't set the ratings; the team does. In the tier game you pick one of two players for a question like "Who's faster?", the numbers shift on the spot, and the ranking splits everyone into tiers from S to D. Player cards follow the FIFA card layout, and when one stat clearly stands out within the team, the player earns a title like Winger or Poacher.
 
 ![Player page with the rating card and title](./01.png)
 
