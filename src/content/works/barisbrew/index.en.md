@@ -73,7 +73,7 @@ In a store with no staff, the display does the calling. It splits orders being b
 
 ![The pickup zone display, showing an order number and drink name at each spot where a cup is placed](./08.jpg)
 
-The pickup zone shows each order on a display beneath the spot where the cup is placed. Nobody touches a screen here. Picking up the drink is the input. A camera detects the pickup and clears the card, and exceptions such as retrieval and disposal are worded the same way in the app and on the display. People stand here only for a moment. In that moment they had to see exactly which drink was theirs, and solving that was the part of this project I enjoyed most.
+The pickup zone shows each order on a display beneath the spot where the cup is placed. It is a tangible interaction: instead of touching a screen, picking up the drink is the input. A camera detects the pickup and clears the card, and exceptions such as retrieval and disposal are worded the same way in the app and on the display. People stand here only for a moment. In that moment they had to see exactly which drink was theirs, and solving that was the part of this project I enjoyed most.
 
 ### Operations console, BarisON
 

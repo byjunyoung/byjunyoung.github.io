@@ -1,6 +1,6 @@
 ---
 title: "fig · pm"
-subtitle: "디자인·기획 일을 위한 Claude Code 플러그인"
+subtitle: "디자인과 기획 일을 위한 Claude Code 플러그인"
 year: "2026"
 stack: "Claude Code 스킬, Figma Plugin API, Python"
 status: "공개"

@@ -1,6 +1,6 @@
 ---
 title: "textrip"
-subtitle: "An e-reader you hold and roll"
+subtitle: "A tangible-interaction e-reader you page through with a roller"
 year: "2026"
 stack: "CircuitPython, E-ink, Python"
 status: "In progress"
@@ -11,7 +11,7 @@ order: 1
 draft: false
 ---
 
-An e-reader you hold and roll. There is no reason, and no way, to beat the Kindle on reading features. So the software follows the usual e-reader conventions, and the rest of the effort goes into the object you hold while you read: material, machining, and touch.
+An e-reader built around tangible interaction: you turn pages by rolling a roller on its side. There is no reason, and no way, to beat the Kindle on reading features. So the software follows the usual e-reader conventions, and the rest of the effort goes into the object you hold while you read: material, machining, and touch.
 
 After weighing 12 form factors, I settled on a slim landscape bar (120 × 70 × 12 mm). The width is worked back from the screen, the length from the controls.
 
