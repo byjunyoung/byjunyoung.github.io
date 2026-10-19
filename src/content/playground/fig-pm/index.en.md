@@ -14,7 +14,7 @@ Most Claude Code plugins work on code. fig and pm help with the work next to it:
 
 fig covers before and after drawing a screen: the to-draw list first, then the audit and sync. It catches settings carried over when a screen is duplicated, a canonical page left stale, broken arrows, and screens nobody drew. pm writes and verifies specs, then drafts, files, and reconciles the tasks.
 
-Only `/fig:lint` decides what is right or wrong. Team conventions are read from the file instead of asked, and anything uncertain stays empty. fig never writes to Figma. pm writes only after it shows a preview and gets an approval.
+Only `/fig:lint` decides what is right or wrong. Team conventions are read from the file instead of asked, and anything uncertain stays empty. pm writes only after it shows a preview and gets an approval, except the daily work log, which runs only when called by name and writes one local file.
 
 I built these one at a time for my own work. I use them every day, and so does my UX team.
 
@@ -22,6 +22,6 @@ I built these one at a time for my own work. I use them every day, and so does m
 
 ![Screens nobody drew yet, stubbed as placeholder frames](./02.png)
 
-![fig and pm never call each other; they share two objects in config](./03.png)
+![The flow from pm's draft and spec through fig's drawing, audit and handoff to pm's ticket and fig's QA, with a table of the names each plugin gives the spec and the task record](./03.png)
 
 ![A QA defect report written by checking the dev server against the spec](./04.png)
