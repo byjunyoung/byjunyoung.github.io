@@ -79,7 +79,7 @@ The pickup zone shows each order on a display beneath the spot where the cup is 
 
 ![The BarisON operations console: the dashboard and the stock management screen](./07.jpg)
 
-BarisON is the console from which headquarters runs unmanned stores remotely. We planned power, status, and camera control for stores and robots, one place to manage the headquarters master catalog and each store's products and stock, an alarm system sorted by how urgent each alarm is for operations, and a three-tier account model for headquarters admins, operations staff, and store owners. We also set common policies such as input form validation and button label conventions.
+BarisON is the console from which headquarters runs unmanned stores remotely. We planned power, status, and camera control for stores and robots, one place to manage the headquarters master catalog and each store's products and stock, an alarm system sorted by how urgent each alarm is for operations, and account roles split between headquarters admins and store owners. We also set common policies such as input form validation and button label conventions.
 
 ### Voice ordering, VoiceOrder
 

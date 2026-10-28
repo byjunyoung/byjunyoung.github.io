@@ -4,9 +4,9 @@ subtitle: "One screen for five robots and a building's facilities"
 org: "XYZ Inc."
 year: "2026 – Present"
 role: "UX Designer"
-responsibilities: ["System UX", "Information Architecture", "Dashboard Design"]
+responsibilities: ["System UX", "Information Architecture", "Dashboard Design", "Front-end"]
 keywords: ["robot fleet", "building management", "dashboard", "signage", "ai agent"]
-tags: ["System UX", "Information Architecture", "Dashboard Design"]
+tags: ["System UX", "Information Architecture", "Dashboard Design", "Front-end"]
 kind: case-study
 cover: ./cover.jpg
 loop: "/media/works/rbms/loop.mp4"
@@ -38,28 +38,28 @@ The screen was split in two. Both surfaces sit on the same state, but the contro
 
 ### Control web
 
-<video src="/media/works/rbms/console.mp4" aria-label="The lobby conversation view and the building-section dashboard side by side" autoplay muted loop playsinline></video>
+![The control web dashboard and the robot dispatch view. Left, the building section and the alert feed; right, a dispatched cleaning robot's progress and the task queue](./03.jpg)
 
-Robot positions sit on the building plan, and the status of robots and facilities collects in one panel. Selecting an item opens its battery, location, and current task; the robot detail hands off to that robot's own console. Anything abnormal is announced at one of three levels: information, warning, urgent. Registering and editing devices, and managing floor information and notices, happen on the same screen.
+Robot positions sit on a section of the building, and the status of robots and facilities collects in one panel. Selecting an item opens its battery, location, and current task. Anything abnormal is announced at one of three levels: information, warning, urgent. From an alert you can open the CCTV at that spot or dispatch a robot. A dispatched robot shows its progress as moving, working, and done, and anything waiting stacks up in a task queue. Switching the first-floor lights and air conditioners, connecting robots and IoT devices, renaming them, managing floor information and notices, and issuing accounts all happen in the control web.
 
 ### Lobby signage
 
 <video src="/media/works/rbms/signage.mp4" aria-label="The same signage screen at three moments, robots moving between floors as the readings change" autoplay muted loop playsinline></video>
 
-The same data, rearranged for visitors. A vertical section of the building carries a robot on each floor, so what is moving where reads from across the room. Beside it sit the facility status, the robot roster, and the building's notices.
+The same data, rearranged for visitors. A vertical section of the building carries a robot on each floor, so what is moving where reads from across the room. Beside it sit the facility status, the robot roster, and the building's notices. Notices and the floor-by-floor tenant directory used to be uploaded as images; I changed them to typed text. The building manager can now edit them straight from the control web, and the lettering stays sharp from across the room. The standing display in the lobby also cycles through images uploaded from the control web.
 
 ### AI agent
 
-![The conversation panel on the lobby screen, with a question about the building's robots and the quick-command buttons](./02.jpg)
+<video src="/media/works/rbms/console.mp4" aria-label="The lobby conversation view and the building-section dashboard side by side" autoplay muted loop playsinline></video>
 
-A conversation panel sits next to the control view. You ask in plain words, and the answers and the robot event alerts stack up in one timeline. Rules that let the building act on its own are handled here too, written as a single line: at this time, in this place, on this event, do this.
+A button at the top of every control web screen opens ROBI, the conversation panel. You ask in plain words, and the answers and the robot event alerts stack up in one timeline.
 
 ## IMPLEMENTATION
 
-I wrote the requirements, the information architecture, and the specs for 11 screens, and designed the dashboard and the signage. The engineering team built it, and I kept revising the screen definitions and display rules alongside.
+I wrote the requirements, the information architecture, and the screen specs, and designed the dashboard and the signage. From September 2026 I also took on building the screens. The engineering team builds the server; I write the front-end code for the control web and the signage myself and check it against the real robots and facilities. Moving every screen onto the company design system happened in the same stretch.
 
 A simulation mode and a live-data mode share one interface, so the whole flow can be shown where there is no robot and no server to connect to.
 
 ## IMPACT
 
-Control that had been scattered across individual robots is now held at the level of the building. The control web and the lobby signage are up at the Seongsu headquarters, showing five robots and the facilities together.
+Control that had been scattered across individual robots is now held at the level of the building. The control web shows the robots and facilities of the Seongsu headquarters on one screen and actually switches the first-floor lights and air conditioners. The lobby signage and the standing display take their content from the control web and hang in the building.
