@@ -46,7 +46,7 @@ Robot positions sit on a section of the building, and the status of robots and f
 
 <video src="/media/works/rbms/signage.mp4" aria-label="The same signage screen at three moments, robots moving between floors as the readings change" autoplay muted loop playsinline></video>
 
-The same data, rearranged for visitors. A vertical section of the building carries a robot on each floor, so what is moving where reads from across the room. Beside it sit the facility status, the robot roster, and the building's notices. Notices and the floor-by-floor tenant directory used to be uploaded as images; I changed them to typed text. The building manager can now edit them straight from the control web, and the lettering stays sharp from across the room. The standing display in the lobby also cycles through images uploaded from the control web.
+The same data, rearranged for visitors. A vertical section of the building carries a robot on each floor, so what is moving where reads from across the room. Beside it sit the facility status, the robot roster, and the building's notices. Notices and the floor-by-floor tenant directory used to be uploaded as images; I changed them to typed text. The building manager can now edit them straight from the control web, and the lettering is sharp now. The standing display in the lobby also cycles through images uploaded from the control web.
 
 ### AI agent
 
@@ -62,4 +62,4 @@ A simulation mode and a live-data mode share one interface, so the whole flow ca
 
 ## IMPACT
 
-Control that had been scattered across individual robots is now held at the level of the building. The control web shows the robots and facilities of the Seongsu headquarters on one screen and actually switches the first-floor lights and air conditioners. The lobby signage and the standing display take their content from the control web and hang in the building.
+Control that had been scattered across individual robots is now held at the level of the building. The control web shows the robots and facilities of the Seongsu headquarters on one screen and actually switches the first-floor lights and air conditioners. The lobby signage and the standing display take their content from the control web and run in the building.
