@@ -44,8 +44,6 @@ Robot positions sit on a section of the building, and the status of robots and f
 
 ### Lobby signage
 
-<video src="/media/works/rbms/signage.mp4" aria-label="The same signage screen at three moments, robots moving between floors as the readings change" autoplay muted loop playsinline></video>
-
 The same data, rearranged for visitors. A vertical section of the building carries a robot on each floor, so what is moving where reads from across the room. Beside it sit the facility status, the robot roster, and the building's notices. Notices and the floor-by-floor tenant directory used to be uploaded as images and are now typed text. I set the direction; the engineering team built the server side. The building manager can now edit them straight from the control web, and the lettering is sharp now. The standing display in the lobby also cycles through images uploaded from the control web.
 
 ### AI agent
