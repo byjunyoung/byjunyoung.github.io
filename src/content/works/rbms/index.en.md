@@ -1,6 +1,6 @@
 ---
 title: "RBMS"
-subtitle: "One screen for five robots and a building's facilities"
+subtitle: "One screen for a building's robots and facilities"
 org: "XYZ Inc."
 year: "2026 – Present"
 role: "UX Designer"

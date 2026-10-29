@@ -1,6 +1,6 @@
 ---
 title: "RBMS"
-subtitle: "로봇 5종과 건물 설비를 한 화면에서 보는 관제 시스템"
+subtitle: "건물의 로봇과 설비를 한 화면에서 보는 관제 시스템"
 org: "XYZ Inc."
 year: "2026 – 현재"
 role: "UX 디자이너"
