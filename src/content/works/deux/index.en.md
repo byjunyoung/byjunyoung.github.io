@@ -31,7 +31,7 @@ There was a problem on the operating side too. The screen that controls the 14 a
 
 I split the channels into face, sound, voice, and gesture, and defined each channel's vocabulary in one database. Each row holds the name engineering calls as a trigger, when it is used, and which file it is. Emotion and intent go through the eyes and the voice, and sound is kept for system and state signals that are awkward to put into words.
 
-For DEUX ON, I wrote the PRD that would serve as the screen's baseline, laid out the screen as an HTML prototype, then ported it to React and built it myself. The control team owns the backend; the UX part manages the front-end repository. I used AI coding tools for the implementation.
+For DEUX ON, I wrote the PRD that would serve as the screen's baseline, laid out the screen as an HTML prototype, then built the screens on the React app the control team had ported. The control team owns the backend; the UX part manages the front-end repository. I used AI coding tools for the implementation.
 
 The Robot Design team shaped the robot, the Robot Intelligence team put the faces on the robot and prepared the demos, and the Robot Automation team owned control and the backend. My part, in between, was defining the interaction and the operations screen.
 

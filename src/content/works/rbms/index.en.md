@@ -30,7 +30,7 @@ My part began with defining what would be managed, what state each thing reports
 
 State was reduced to four fields. To read eight different things side by side on one screen, the axes have to match: battery, location, operating state, and current task. Facilities have no battery and never move, but the fields stay in place rather than disappear. A list whose rows shift shape is harder to read.
 
-Silence was separated from being switched off. If a robot has not refreshed its state for 30 seconds, the server moves it to disconnected. A robot someone turned off and a robot that stopped answering call for different actions.
+Silence and being switched off are treated separately. If a robot has not refreshed its state for 30 seconds, the server moves it to disconnected. A robot someone turned off and a robot that stopped answering call for different actions.
 
 The screen was split in two. Both surfaces sit on the same state, but the control web is where a building operator acts, and the lobby signage is one that visitors only look at.
 
@@ -46,7 +46,7 @@ Robot positions sit on a section of the building, and the status of robots and f
 
 <video src="/media/works/rbms/signage.mp4" aria-label="The same signage screen at three moments, robots moving between floors as the readings change" autoplay muted loop playsinline></video>
 
-The same data, rearranged for visitors. A vertical section of the building carries a robot on each floor, so what is moving where reads from across the room. Beside it sit the facility status, the robot roster, and the building's notices. Notices and the floor-by-floor tenant directory used to be uploaded as images; I changed them to typed text. The building manager can now edit them straight from the control web, and the lettering is sharp now. The standing display in the lobby also cycles through images uploaded from the control web.
+The same data, rearranged for visitors. A vertical section of the building carries a robot on each floor, so what is moving where reads from across the room. Beside it sit the facility status, the robot roster, and the building's notices. Notices and the floor-by-floor tenant directory used to be uploaded as images and are now typed text. I set the direction; the engineering team built the server side. The building manager can now edit them straight from the control web, and the lettering is sharp now. The standing display in the lobby also cycles through images uploaded from the control web.
 
 ### AI agent
 
@@ -56,7 +56,7 @@ A button at the top of every control web screen opens ROBI, the conversation pan
 
 ## IMPLEMENTATION
 
-I wrote the requirements, the information architecture, and the screen specs, and designed the dashboard and the signage. From September 2026 I also took on building the screens. The engineering team builds the server; I write the front-end code for the control web and the signage myself and check it against the real robots and facilities. Moving every screen onto the company design system happened in the same stretch.
+I wrote the requirements, the information architecture, and the screen specs, and designed the dashboard and the signage. From September 2026 I also took part in building the screens. The engineering team builds the server; I share the front-end code with a developer and check it against the real robots and facilities. Moving every screen onto the company design system was my part.
 
 A simulation mode and a live-data mode share one interface, so the whole flow can be shown where there is no robot and no server to connect to.
 

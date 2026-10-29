@@ -33,7 +33,7 @@ draft: false
 
 **Idea workshop:** With the CEO and the PM, I pulled key words out of the market and product research and tried combining them. Those combinations became early concepts with the features and design U.S. customers were likely to want.
 
-**Product concept design and development:** We picked one idea and worked out the final form and functions through early sketches, 3D modeling, and a physical prototype.
+**Product concept design and development:** We picked one idea and worked out the concept's form and functions through early sketches, 3D modeling, and a physical prototype.
 
 ## SOLUTION
 
@@ -81,4 +81,4 @@ The final ZIBOT KK mockup was shown at ZIBOT's booth at CES 2019. It was the fir
 
 **A hard place to work was where I learned the most.**
 
-The internship in Silicon Valley in 2018 was nothing like what I had expected. It was a small U.S. branch of a Chinese startup, and the team was two people, a CTO and a PM. Putting the team together and settling how it worked had only just begun. I used drawings and documents to get past the trouble communicating with the Chinese headquarters, and fixed inefficient steps myself to sort out how the team worked. The company then started a new project based on what I had made, and I took on product planning and design.
+The internship in Silicon Valley in 2018 was nothing like what I had expected. It was a small U.S. branch of a Chinese startup, and the team was two people, a CTO and a PM. Putting the team together and settling how it worked had only just begun. I used drawings and documents to get past the trouble communicating with the Chinese headquarters, and fixed inefficient steps myself to sort out how the team worked. The company then started a new project based on this concept, and I took on product planning and design.
